@@ -1,0 +1,153 @@
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>DNI</label>
+      <%= form.text_field :dni, class: 'form-control just-number dni-employee', maxlength: 8 %>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="form-group">
+      <label>Nombres y apellidos</label>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Domicilio fiscal</label>
+      <%= form.text_field :address, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>Fecha de nacimiento</label>
+      <%= form.date_field :birthday, class: 'form-control datepicker' %>
+    </div>
+  </div>
+  <div class="col-lg-1">
+    <div class="form-group">
+      <label>Edad</label>
+      <%= form.text_field :age, class: 'form-control just-number' %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-3">
+    <div class="form-group ">
+      <label>Av/calle/Jr/Pasaje</label>
+      <%= form.text_field :address, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group ">
+      <label>N°/Depart/Interior</label>
+      <%= form.text_field :numb_depart_int, class: 'form-control just-number' %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Urbanización</label>
+      <%= form.text_field :urbanization, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group ">
+      <label>Departamento</label>
+      <%= form.text_field :department, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group ">
+      <label>Provincia</label>
+      <%= form.text_field :province, class: 'form-control' %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group ">
+      <label>Distrito</label>
+      <%= form.text_field :district, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <div class="checkbox">
+        <label>
+          <%= form.check_box :resi_in_place_work %><b>Residencia en el lugar de trabajo</b>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>Tiempo de residencia</label>
+      <%= form.text_field :time_place_work, class: 'form-control col-ms-4 just-number', placeholder: 'En años', readonly: true, maxlength: 2 %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <div class="checkbox">
+        <label>
+          <%= form.check_box :essalud %>ESSALUD
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <%= form.check_box :sctr %>SCTR
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-1">
+    <div class="form-group">
+      <div class="checkbox">
+        <label>
+          <%= form.check_box :eps %>EPS
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <%= form.check_box :other %>Otros
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group ">
+      <label>Estado civil</label>
+      <%= form.select(:civil_status, civil_status_for_select, { include_blank: 'Seleccionar estado civil' }, :class => "form-control") %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>N° de hijos vivos</label>
+      <%= form.text_field :number_children, class: 'form-control just-number', maxlength: 1 %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>N° de dependientes</label>
+      <%= form.text_field :number_dependents, class: 'form-control col-ms-4 just-number', maxlength: 2 %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group ">
+      <label>Grado de instrucción</label>
+      <%= form.text_field :degree_instruction, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Email</label>
+      <%= form.text_field :email, class: 'form-control validate-email' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>Teléfono</label>
+      <%= form.text_field :phone, class: 'form-control just-number', maxlength: 9 %>
+    </div>
+  </div>
+</div>

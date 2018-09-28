@@ -1,0 +1,48 @@
+<div class="col-lg-12" >
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label>Padre</label>
+      <%= text_field_tag "employee[pathologicals_history_family][father]", @employee.pathologicals_history_family[:father], class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label>Madre</label>
+      <%= text_field_tag "employee[pathologicals_history_family][mother]", @employee.pathologicals_history_family[:mother], class: 'form-control' %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label>Hermanos</label>
+      <%= text_field_tag "employee[pathologicals_history_family][brothers]", @employee.pathologicals_history_family[:brothers], class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label>
+        Esposo(a)
+      </label>
+      <%= text_field_tag "employee[pathologicals_history_family][husbands]", @employee.pathologicals_history_family[:husbands], class: 'form-control' %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label>
+        Hijos vivos
+      </label>
+      <%= text_field_tag "employee[pathologicals_history_family][living_children]", @employee.pathologicals_history_family[:living_children], class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label>
+        Hijos fallecidos
+      </label>
+      <%= text_field_tag "employee[pathologicals_history_family][deceased_children]", @employee.pathologicals_history_family[:deceased_children], class: 'form-control' %>
+    </div>
+  </div>
+</div>

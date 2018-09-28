@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  Bienvenido <%= current_user.email %>
+  <%= link_to "Salir", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Ingresar", new_user_session_path %>
+<% end %>

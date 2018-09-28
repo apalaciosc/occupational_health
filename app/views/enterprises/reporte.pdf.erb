@@ -1,0 +1,25 @@
+<h1 align="center" style="color:#172e74 ">Reporte de empresas</h1>
+<br>
+<table class="table">
+	<thead class="thead-primary">
+		<tr><th>Ruc</th>
+			<th>Nombre</th>
+			<th>Actividad económica</th>
+			<th>Lugar de trabajo</th>
+			<th>Departamento</th>
+			<th>Distrito</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @enterprises.each do |enterprise| %>
+		<tr>
+			<td><%= enterprise.ruc %></td>
+			<td><%= enterprise.name %></td>
+			<td><%= enterprise.economic_activity %></td>
+			<td><%= enterprise.workplace %></td>
+			<td><%= enterprise.departament %></td>
+			<td><%= enterprise.district %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

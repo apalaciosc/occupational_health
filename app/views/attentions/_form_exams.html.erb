@@ -1,0 +1,35 @@
+<% if @type_exam.present? && @type_exam.view == 'physical_exam' %>
+<%= render partial: 'attentions/partials_exams/physical_exam', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'psychological_evaluation' %>
+<%= render partial: 'attentions/partials_exams/psychological_evaluation', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'simple_reading_torax' %>
+<%= render partial: 'attentions/partials_exams/simple_reading_torax', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'lateral_of_lungs' %>
+<%= render partial: 'attentions/partials_exams/lateral_of_lungs', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'lumbosacral' %>
+<%= render partial: 'attentions/partials_exams/lumbosacral', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'reading_2000_oit' %>
+<%= render partial: 'attentions/partials_exams/reading_2000_oit', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'audiometry' %>
+<%= render partial: 'attentions/partials_exams/audiometry', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'spirometry' %>
+<%= render partial: 'attentions/partials_exams/spirometry', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'test_ophthalmology' %>
+<%= render partial: 'attentions/partials_exams/test_ophthalmology', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>

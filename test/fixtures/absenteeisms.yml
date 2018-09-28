@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  illness_accident: MyString
+  associated_with_work: MyString
+  year: MyString
+  days_off: 1
+
+two:
+  employee: two
+  illness_accident: MyString
+  associated_with_work: MyString
+  year: MyString
+  days_off: 1

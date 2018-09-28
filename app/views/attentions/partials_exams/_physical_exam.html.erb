@@ -1,0 +1,662 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if !@edit == 1 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Exámen Físico</h3>
+      </div>
+      <div class="box-body table-responsive no-padding">
+        <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg .tg-2xbj{font-weight:bold;font-size:18px;border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-7btt{font-weight:bold;border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+        .tg .tg-fymr{font-weight:bold;border-color:inherit;text-align:left;vertical-align:top}
+        .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+        .tg .tg-0lax{text-align:left;vertical-align:top}
+        </style>
+        <table class="tg table-hover" style="undefined;table-layout: fixed; width: 1259px">
+          <colgroup>
+            <col style="width: 50px">
+            <col style="width: 20px">
+            <col style="width: 20px">
+            <col style="width: 40px">
+            <col style="width: 40px">
+            <col style="width: 40px">
+            <col style="width: 40px">
+            <col style="width: 40px">
+            <col style="width: 60px">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="tg-amwm" rowspan="2" style="font-weight:bold;font-size:18px;text-align:center;vertical-align:top">
+                <br>Órgano o sistema<br>
+              </th>
+              <th class="tg-amwm" colspan="2" style="font-weight:bold;font-size:18px;text-align:center;vertical-align:top">
+                Hallazgo
+              </th>
+              <th class="tg-amwm" colspan="6" rowspan="2" style="font-weight:bold;font-size:18px;text-align:center;vertical-align:top">
+                <br>HALLAZGOS<br>
+              </th>
+            </tr>
+            <tr>
+              <td class="tg-amwm">SI</td>
+              <td class="tg-amwm">NO</td>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Piel</td>
+              <% if @exam.data[:skin].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][skin_option]', @exam.data[:skin_option], true, value: 'yes', id:'skin_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][skin_option]', @exam.data[:skin_option], false, value: 'no', id:'skin_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][skin]", @exam.data[:skin], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][skin_option]', @exam.data[:skin_option], false, value: 'yes', id:'skin_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][skin_option]', @exam.data[:skin_option], true, value: 'no', id:'skin_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][skin]", @exam.data[:skin], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Cabello</td>
+              <% if @exam.data[:hair].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][hair_option]', @exam.data[:hair_option], true, value: 'yes', id:'hair_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][hair_option]', @exam.data[:hair_option], false, value: 'no', id:'hair_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][hair]", @exam.data[:hair], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][hair_option]', @exam.data[:hair_option], false, value: 'yes', id:'hair_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][hair_option]', @exam.data[:hair_option], true, value: 'no', id:'hair_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][hair]", @exam.data[:hair], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <% if @exam.data[:od_close_without_correctors].present? || @exam.data[:oi_close_without_correctors].present? || @exam.data[:od_close_with_correctors].present? || @exam.data[:oi_close_with_correctors].present? || @exam.data[:od_away_without_correctors].present? || @exam.data[:oi_away_without_correctors].present? || @exam.data[:od_away_with_correctors].present? || @exam.data[:oi_away_with_correctors].present? || @exam.data[:fundus].present? || @exam.data[:vision_colors].present? || @exam.data[:depth_vision].present? %>
+            <tr>
+              <th class="tg-amwm" rowspan="6">
+                <br><br><br><br><br>
+                Ojos y Anexos
+                <br><br><br><br><br>
+              </th>
+              <th class="tg-amwm" rowspan="6">
+                <br><br><br><br><br>
+                <%= radio_button_tag 'exam[data][eyes_option]', @exam.data[:eyes_option], true, value: 'yes', id:'eyes_option_yes' %>
+                <br><br><br><br><br>
+              </th>
+              <th class="tg-amwm" rowspan="6">
+                <br><br><br><br><br>
+                <%= radio_button_tag 'exam[data][eyes_option]', @exam.data[:eyes_option], false, value: 'no', id:'eyes_option_no' %>
+                <br><br><br><br><br>
+              </th>
+              <th colspan="2" rowspan="2" style="width: 250px">
+              </th>
+              <th class="tg-amwm" colspan="2">
+                <span style="font-weight:bold">Sin Correctores</span>
+              </th>
+              <th class="tg-amwm" colspan="2">
+                <span style="font-weight:bold">Con Correctores</span>
+              </th>
+            </tr>
+            <tr>
+              <td class="tg-amwm">OD</td>
+              <td class="tg-amwm">OI</td>
+              <td class="tg-amwm">OD</td>
+              <td class="tg-amwm">OI</td>
+            </tr>
+            <tr>
+              <td class="tg-amwm" rowspan="2"><br>Agudeza Visual<br>
+              </td>
+              <td class="tg-amwm">Cerca</td>
+              <td>
+                <%= text_field_tag "exam[data][od_close_without_correctors]", @exam.data[:od_close_without_correctors], class: 'form-control' %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][oi_close_without_correctors]", @exam.data[:oi_close_without_correctors], class: 'form-control' %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][od_close_with_correctors]", @exam.data[:od_close_with_correctors], class: 'form-control' %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][oi_close_with_correctors]", @exam.data[:oi_close_with_correctors], class: 'form-control' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Lejos</td>
+              <td>
+                <%= text_field_tag "exam[data][od_away_without_correctors]", @exam.data[:od_away_without_correctors], class: 'form-control' %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][oi_away_without_correctors]", @exam.data[:oi_away_without_correctors], class: 'form-control' %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][od_away_with_correctors]", @exam.data[:od_away_with_correctors], class: 'form-control' %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][oi_away_with_correctors]", @exam.data[:oi_away_with_correctors], class: 'form-control' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Fondo de ojo</td>
+              <td colspan="2">
+                <%= text_field_tag "exam[data][fundus]", @exam.data[:fundus], class: 'form-control' %>
+              </td>
+              <td class="tg-amwm" colspan="2">Visión de colores</td>
+              <td>
+                <%= text_field_tag "exam[data][vision_colors]", @exam.data[:vision_colors], class: 'form-control' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-amwm" colspan="2">Visión de profundidad</td>
+              <td colspan="4">
+                <%= text_field_tag "exam[data][depth_vision]", @exam.data[:depth_vision], class: 'form-control' %>
+              </td>
+            </tr>
+            <% else %>
+            <tr>
+              <th class="tg-amwm" rowspan="6">
+                <br><br><br><br><br>
+                Ojos y Anexos
+                <br><br><br><br><br>
+              </th>
+              <th class="tg-amwm" rowspan="6">
+                <br><br><br><br><br>
+                <%= radio_button_tag 'exam[data][eyes_option]', @exam.data[:eyes_option], false, value: 'yes', id:'eyes_option_yes' %>
+                <br><br><br><br><br>
+              </th>
+              <th class="tg-amwm" rowspan="6">
+                <br><br><br><br><br>
+                <%= radio_button_tag 'exam[data][eyes_option]', @exam.data[:eyes_option], true, value: 'no', id:'eyes_option_no' %>
+                <br><br><br><br><br>
+              </th>
+              <th colspan="2" rowspan="2" style="width: 250px">
+              </th>
+              <th class="tg-amwm" colspan="2">
+                <span style="font-weight:bold">Sin Correctores</span>
+              </th>
+              <th class="tg-amwm" colspan="2">
+                <span style="font-weight:bold">Con Correctores</span>
+              </th>
+            </tr>
+            <tr>
+              <td class="tg-amwm">OD</td>
+              <td class="tg-amwm">OI</td>
+              <td class="tg-amwm">OD</td>
+              <td class="tg-amwm">OI</td>
+            </tr>
+            <tr>
+              <td class="tg-amwm" rowspan="2"><br>Agudeza Visual<br>
+              </td>
+              <td class="tg-amwm">Cerca</td>
+              <td>
+                <%= text_field_tag "exam[data][od_close_without_correctors]", @exam.data[:od_close_without_correctors], class: 'form-control', readonly: true %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][oi_close_without_correctors]", @exam.data[:oi_close_without_correctors], class: 'form-control', readonly: true %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][od_close_with_correctors]", @exam.data[:od_close_with_correctors], class: 'form-control', readonly: true %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][oi_close_with_correctors]", @exam.data[:oi_close_with_correctors], class: 'form-control', readonly: true %>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Lejos</td>
+              <td>
+                <%= text_field_tag "exam[data][od_away_without_correctors]", @exam.data[:od_away_without_correctors], class: 'form-control', readonly: true %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][oi_away_without_correctors]", @exam.data[:oi_away_without_correctors], class: 'form-control', readonly: true %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][od_away_with_correctors]", @exam.data[:od_away_with_correctors], class: 'form-control', readonly: true %>
+              </td>
+              <td>
+                <%= text_field_tag "exam[data][oi_away_with_correctors]", @exam.data[:oi_away_with_correctors], class: 'form-control', readonly: true %>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Fondo de ojo</td>
+              <td colspan="2">
+                <%= text_field_tag "exam[data][fundus]", @exam.data[:fundus], class: 'form-control', readonly: true %>
+              </td>
+              <td class="tg-amwm" colspan="2">Visión de colores</td>
+              <td>
+                <%= text_field_tag "exam[data][vision_colors]", @exam.data[:vision_colors], class: 'form-control', readonly: true %>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-amwm" colspan="2">Visión de profundidad</td>
+              <td colspan="4">
+                <%= text_field_tag "exam[data][depth_vision]", @exam.data[:depth_vision], class: 'form-control', readonly: true %>
+              </td>
+            </tr>
+            <% end %>
+            <tr>
+              <td class="tg-amwm">Oídos</td>
+              <% if @exam.data[:ears].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][ears_option]', @exam.data[:ears_option],true, value: 'yes', id:'ears_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][ears_option]', @exam.data[:ears_option], false, value: 'no', id:'ears_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][ears]", @exam.data[:ears], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][ears_option]', @exam.data[:ears_option],false, value: 'yes', id:'ears_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][ears_option]', @exam.data[:ears_option], true, value: 'no', id:'ears_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][ears]", @exam.data[:ears], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Nariz</td>
+              <% if @exam.data[:nose].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][nose_option]', @exam.data[:nose_option],true, value: 'yes', id:'nose_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][nose_option]', @exam.data[:nose_option], false, value: 'no', id:'nose_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][nose]", @exam.data[:nose], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][nose_option]', @exam.data[:nose_option],false, value: 'yes', id:'nose_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][nose_option]', @exam.data[:nose_option], true, value: 'no', id:'nose_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][nose]", @exam.data[:nose], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <% if @exam.data[:mouth].present? %>
+              <td class="tg-amwm">Boca</td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][mouth_option]', @exam.data[:mouth_option],true, value: 'yes', id:'mouth_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][mouth_option]', @exam.data[:mouth_option], false, value: 'no', id:'mouth_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][mouth]", @exam.data[:mouth], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">Boca</td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][mouth_option]', @exam.data[:mouth_option],false, value: 'yes', id:'mouth_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][mouth_option]', @exam.data[:mouth_option], true, value: 'no', id:'mouth_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][mouth]", @exam.data[:mouth], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Faringe</td>
+              <% if @exam.data[:pharynx].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][pharynx_option]', @exam.data[:pharynx_option],true, value: 'yes', id:'pharynx_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][pharynx_option]', @exam.data[:pharynx_option], false, value: 'no', id:'pharynx_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][pharynx]", @exam.data[:pharynx], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][pharynx_option]', @exam.data[:pharynx_option],false, value: 'yes', id:'pharynx_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][pharynx_option]', @exam.data[:pharynx_option], true, value: 'no', id:'pharynx_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][pharynx]", @exam.data[:pharynx], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Cuello</td>
+              <% if @exam.data[:neck].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][neck_option]', @exam.data[:neck_option],true, value: 'yes', id:'neck_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][neck_option]', @exam.data[:neck_option], false, value: 'no', id:'neck_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][neck]", @exam.data[:neck], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][neck_option]', @exam.data[:neck_option],false, value: 'yes', id:'neck_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][neck_option]', @exam.data[:neck_option], true, value: 'no', id:'neck_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][neck]", @exam.data[:neck], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Aparato Repiratorio</td>
+              <% if @exam.data[:respiratory_system].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][respiratory_system_option]', @exam.data[:respiratory_system_option],true, value: 'yes', id:'respiratory_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][respiratory_system_option]', @exam.data[:respiratory_system_option], false, value: 'no', id:'respiratory_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][respiratory_system]", @exam.data[:respiratory_system], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][respiratory_system_option]', @exam.data[:respiratory_system_option],false, value: 'yes', id:'respiratory_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][respiratory_system_option]', @exam.data[:respiratory_system_option], true, value: 'no', id:'respiratory_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][respiratory_system]", @exam.data[:respiratory_system], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Aparato Cardiovascular</td>
+              <% if @exam.data[:cardiovascular_system].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][cardiovascular_system_option]', @exam.data[:cardiovascular_system_option],true, value: 'yes', id:'cardiovascular_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][cardiovascular_system_option]', @exam.data[:cardiovascular_system_option], false, value: 'no', id:'cardiovascular_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][cardiovascular_system]", @exam.data[:cardiovascular_system], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][cardiovascular_system_option]', @exam.data[:cardiovascular_system_option],false, value: 'yes', id:'cardiovascular_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][cardiovascular_system_option]', @exam.data[:cardiovascular_system_option], true, value: 'no', id:'cardiovascular_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][cardiovascular_system]", @exam.data[:cardiovascular_system], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Aparato Digestivo</td>
+              <% if @exam.data[:digestive_system].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][digestive_system_option]', @exam.data[:digestive_system_option],true, value: 'yes', id:'digestive_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][digestive_system_option]', @exam.data[:digestive_system_option], false, value: 'no', id:'digestive_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][digestive_system]", @exam.data[:digestive_system], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][digestive_system_option]', @exam.data[:digestive_system_option],false, value: 'yes', id:'digestive_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][digestive_system_option]', @exam.data[:digestive_system_option], true, value: 'no', id:'digestive_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][digestive_system]", @exam.data[:digestive_system], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Aparato Genitourinario</td>
+              <% if @exam.data[:genitourinary_system].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][genitourinary_system_option]', @exam.data[:genitourinary_system_option],true, value: 'yes', id:'genitourinary_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][genitourinary_system_option]', @exam.data[:genitourinary_system_option], false, value: 'no', id:'genitourinary_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][genitourinary_system]", @exam.data[:genitourinary_system], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][genitourinary_system_option]', @exam.data[:genitourinary_system_option],false, value: 'yes', id:'genitourinary_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][genitourinary_system_option]', @exam.data[:genitourinary_system_option], true, value: 'no', id:'genitourinary_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][genitourinary_system]", @exam.data[:genitourinary_system], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Aparato Locomotor</td>
+              <% if @exam.data[:locomotor_system].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][locomotor_system_option]', @exam.data[:locomotor_system_option],true, value: 'yes', id:'locomotor_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][locomotor_system_option]', @exam.data[:locomotor_system_option], false, value: 'no', id:'locomotor_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][locomotor_system]", @exam.data[:locomotor_system], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][locomotor_system_option]', @exam.data[:locomotor_system_option],false, value: 'yes', id:'locomotor_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][locomotor_system_option]', @exam.data[:locomotor_system_option], true, value: 'no', id:'locomotor_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][locomotor_system]", @exam.data[:locomotor_system], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Marcha</td>
+              <% if @exam.data[:march].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][march_option]', @exam.data[:march_option],true, value: 'yes', id:'march_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][march_option]', @exam.data[:march_option], false, value: 'no', id:'march_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][march]", @exam.data[:march], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][march_option]', @exam.data[:march_option],false, value: 'yes', id:'march_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][march_option]', @exam.data[:march_option], true, value: 'no', id:'march_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][march]", @exam.data[:march], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Columna</td>
+              <% if @exam.data[:column].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][column_option]', @exam.data[:column_option],true, value: 'yes', id:'column_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][column_option]', @exam.data[:column_option], false, value: 'no', id:'column_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][column]", @exam.data[:column], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][column_option]', @exam.data[:column_option],false, value: 'yes', id:'column_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][column_option]', @exam.data[:column_option], true, value: 'no', id:'column_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][column]", @exam.data[:column], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Miembros Superiores</td>
+              <% if @exam.data[:superior_members].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][superior_members_option]', @exam.data[:superior_members_option],true, value: 'yes', id:'superior_members_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][superior_members_option]', @exam.data[:superior_members_option], false, value: 'no', id:'superior_members_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][superior_members]", @exam.data[:superior_members], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][superior_members_option]', @exam.data[:superior_members_option],false, value: 'yes', id:'superior_members_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][superior_members_option]', @exam.data[:superior_members_option], true, value: 'no', id:'superior_members_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][superior_members]", @exam.data[:superior_members], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Miembros Inferiores</td>
+              <% if @exam.data[:lower_limbs].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lower_limbs_option]', @exam.data[:lower_limbs_option],true, value: 'yes', id:'lower_limbs_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lower_limbs_option]', @exam.data[:lower_limbs_option], false, value: 'no', id:'lower_limbs_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][lower_limbs]", @exam.data[:lower_limbs], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lower_limbs_option]', @exam.data[:lower_limbs_option],false, value: 'yes', id:'lower_limbs_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lower_limbs_option]', @exam.data[:lower_limbs_option], true, value: 'no', id:'lower_limbs_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][lower_limbs]", @exam.data[:lower_limbs], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Sistema Linfático</td>
+              <% if @exam.data[:lymphatic_system].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lymphatic_system_option]', @exam.data[:lymphatic_system_option],true, value: 'yes', id:'lymphatic_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lymphatic_system_option]', @exam.data[:lymphatic_system_option], false, value: 'no', id:'lymphatic_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][lymphatic_system]", @exam.data[:lymphatic_system], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lymphatic_system_option]', @exam.data[:lymphatic_system_option],false, value: 'yes', id:'lymphatic_system_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lymphatic_system_option]', @exam.data[:lymphatic_system_option], true, value: 'no', id:'lymphatic_system_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][lymphatic_system]", @exam.data[:lymphatic_system], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="tg-amwm">Sistema Nervioso</td>
+              <% if @exam.data[:lymphatic_nervous].present? %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lymphatic_nervous_option]', @exam.data[:lymphatic_nervous_option],true, value: 'yes', id:'lymphatic_nervous_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lymphatic_nervous_option]', @exam.data[:lymphatic_nervous_option], false, value: 'no', id:'lymphatic_nervous_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][lymphatic_nervous]", @exam.data[:lymphatic_nervous], class: 'form-control' %>
+              </td>
+              <% else %>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lymphatic_nervous_option]', @exam.data[:lymphatic_nervous_option],false, value: 'yes', id:'lymphatic_nervous_option_yes' %>
+              </td>
+              <td class="tg-amwm">
+                <%= radio_button_tag 'exam[data][lymphatic_nervous_option]', @exam.data[:lymphatic_nervous_option], true, value: 'no', id:'lymphatic_nervous_option_no' %>
+              </td>
+              <td class="tg-amwm" colspan="6">
+                <%= text_field_tag "exam[data][lymphatic_nervous]", @exam.data[:lymphatic_nervous], class: 'form-control', readonly: true %>
+              </td>
+              <% end %>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box-body">
+        <div class="form-group">
+          <div class="col-lg-12 text-center">
+            <%= f.submit 'Guardar', class:'btn btn-primary' %>
+            <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

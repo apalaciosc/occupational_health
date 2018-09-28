@@ -1,0 +1,46 @@
+<div class="modal-body" >
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="box-body">
+        <div class="form-group">
+          <label>RUC</label>
+          <% if edit == 1 %>
+            <%= form.text_field :ruc, class: "form-control input-sm just-number ruc-enterprise", id:"input-ruc", readonly: 'true' %>
+          <% else %>
+            <%= form.text_field :ruc, class: "form-control input-sm just-number ruc-enterprise", id:"input-ruc", maxlength: 11 %>
+          <% end %>
+        </div>
+        <div class="form-group">
+          <label>Nombre:</label>
+          <%= form.text_field :name, class: "form-control input-sm", id:"input-name" %>
+        </div>
+        <div class="form-group">
+          <label>Lugar de trabajo:</label>
+          <%= form.text_field :workplace, class: "form-control input-sm", id:"input-workplace" %>
+        </div>
+        <div class="form-group">
+          <label>Actividad económica:</label>
+          <%= form.text_field :economic_activity, class: "form-control input-sm", id:"input-economic_activity" %>
+        </div>
+        <div class="form-group">
+          <label>Departamento:</label>
+          <%= form.text_field :departament, class: "form-control input-sm", id:"input-departament" %>
+        </div>
+        <div class="form-group">
+          <label>Provincia:</label>
+          <%= form.text_field :province, class: "form-control input-sm", id:"input-province" %>
+        </div>
+        <div class="form-group">
+          <label>Distrito:</label>
+          <%= form.text_field :district, class: "form-control input-sm", id:"input-district" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <div class="actions">
+    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+    <%= form.submit 'Guardar', class:'btn btn-primary' %>
+  </div>
+</div>

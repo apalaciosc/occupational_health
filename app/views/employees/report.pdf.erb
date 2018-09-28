@@ -1,0 +1,27 @@
+<h1 align="center" style="color:#172e74 ">Reporte de empleados</h1>
+<br>
+<table class="table">
+	<thead class="thead-primary">
+		<tr><th>Nombre</th>
+			<th>Dni</th>
+			<th>Dirección</th>
+			<th>Essalud</th>
+			<th>Eps</th>
+			<th>Sctr</th>
+			<th>Otro</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @employees.each do |employee| %>
+		<tr>
+			<td><%= link_to employee.name, employee %></td>
+			<td><%= employee.dni %></td>
+			<td><%= employee.address %></td>
+			<td><%= employee.essalud? ? "Si" : "No" %></td>
+			<td><%= employee.eps? ? "Si" : "No" %></td>
+			<td><%= employee.sctr? ? "Si" : "No" %></td>
+			<td><%= employee.other? ? "Si" : "No" %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

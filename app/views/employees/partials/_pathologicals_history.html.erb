@@ -1,0 +1,338 @@
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <% if @employee.pathologicals_history[:allergy].present? %>
+      <label><input type="checkbox" id="chk1" checked> Alergias</input></label>
+      <%= text_field_tag "employee[pathologicals_history][allergy]", @employee.pathologicals_history[:allergy], class: 'form-control', id:'myCheck'%>
+      <% else %>
+      <label><input type="checkbox" id="chk1"> Alergias</input></label>
+      <%= text_field_tag "employee[pathologicals_history][allergy]", @employee.pathologicals_history[:allergy], class: 'form-control', id:'myCheck', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <% if @employee.pathologicals_history[:burn].present? %>
+      <label><input type="checkbox" id="chk2" checked> Quemaduras</input></label>
+      <%= text_field_tag "employee[pathologicals_history][burn]", @employee.pathologicals_history[:burn], class: 'form-control', id:'myCheck2' %>
+      <% else %>
+      <label><input type="checkbox" id="chk2"> Quemaduras</input></label>
+      <%= text_field_tag "employee[pathologicals_history][burn]", @employee.pathologicals_history[:burn], class: 'form-control', id:'myCheck2', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <% if @employee.pathologicals_history[:surgeries].present? %>
+      <label><input type="checkbox" id="chk3" checked> Cirugias</input></label>
+      <%= text_field_tag "employee[pathologicals_history][surgeries]", @employee.pathologicals_history[:surgeries], class: 'form-control', id:'myCheck3' %>
+      <% else %>
+      <label><input type="checkbox" id="chk3"> Cirugias</input></label>
+      <%= text_field_tag "employee[pathologicals_history][surgeries]", @employee.pathologicals_history[:surgeries], class: 'form-control', id:'myCheck3', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <% if @employee.pathologicals_history[:poisoning].present? %>
+      <label><input type="checkbox" id="chk4" checked> Intoxicaciones</input></label>
+      <%= text_field_tag "employee[pathologicals_history][poisoning]", @employee.pathologicals_history[:poisoning], class: 'form-control', id:'myCheck4'%>
+      <% else %>
+      <label><input type="checkbox" id="chk4"> Intoxicaciones</input></label>
+      <%= text_field_tag "employee[pathologicals_history][poisoning]", @employee.pathologicals_history[:poisoning], class: 'form-control', id:'myCheck4', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <% if @employee.pathologicals_history[:others].present? %>
+      <label><input type="checkbox" id="chk5" checked> Otros</input></label>
+      <%= text_field_tag "employee[pathologicals_history][others]", @employee.pathologicals_history[:others], class: 'form-control', id:'myCheck5' %>
+      <% else %>
+      <label><input type="checkbox" id="chk5"> Otros</input></label>
+      <%= text_field_tag "employee[pathologicals_history][others]", @employee.pathologicals_history[:others], class: 'form-control', id:'myCheck5', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <% if @employee.pathologicals_history[:convulsion].present? && @employee.pathologicals_history[:convulsion] == 'on' %>
+      <label><%= check_box_tag "employee[pathologicals_history][convulsion]", @employee.pathologicals_history[:convulsion], checked:true %> Convulsiones</label>
+      <% else %>
+      <label><%= check_box_tag "employee[pathologicals_history][convulsion]", @employee.pathologicals_history[:convulsion] %> Convulsiones</label>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <% if @employee.pathologicals_history[:diabetes].present? && @employee.pathologicals_history[:diabetes] == 'on' %>
+      <label><%= check_box_tag "employee[pathologicals_history][diabetes]", @employee.pathologicals_history[:diabetes], checked: true %> Diabetes</label>
+      <% else %>
+      <label><%= check_box_tag "employee[pathologicals_history][diabetes]", @employee.pathologicals_history[:diabetes] %> Diabetes</label>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>
+        <% if @employee.pathologicals_history[:tbc].present? && @employee.pathologicals_history[:tbc] == 'on' %>
+        <label><%= check_box_tag "employee[pathologicals_history][tbc]", @employee.pathologicals_history[:tbc], checked: true %> TBC</label>
+        <% else %>
+        <label><%= check_box_tag "employee[pathologicals_history][tbc]", @employee.pathologicals_history[:tbc] %> TBC</label>
+        <% end %>
+      </label>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>
+        <% if @employee.pathologicals_history[:hepatitisb].present? && @employee.pathologicals_history[:hepatitisb] == 'on' %>
+        <label><%= check_box_tag "employee[pathologicals_history][hepatitisb]", @employee.pathologicals_history[:hepatitisb], checked: true %> Hepatitis B</label>
+        <% else %>
+        <label><%= check_box_tag "employee[pathologicals_history][hepatitisb]", @employee.pathologicals_history[:hepatitisb] %> Hepatitis B</label>
+        <% end %>
+      </label>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>
+        <% if @employee.pathologicals_history[:asthma].present? && @employee.pathologicals_history[:asthma] == 'on' %>
+        <label><%= check_box_tag "employee[pathologicals_history][asthma]", @employee.pathologicals_history[:asthma], checked: true %> Asma</label>
+        <% else %>
+        <label><%= check_box_tag "employee[pathologicals_history][asthma]", @employee.pathologicals_history[:asthma] %> Asma</label>
+        <% end %>
+      </label>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>
+        <% if @employee.pathologicals_history[:bronchitis].present? && @employee.pathologicals_history[:bronchitis] == 'on' %>
+        <label><%= check_box_tag "employee[pathologicals_history][bronchitis]", @employee.pathologicals_history[:bronchitis], checked: true %> Bronquitis</label>
+        <% else %>
+        <label><%= check_box_tag "employee[pathologicals_history][bronchitis]", @employee.pathologicals_history[:bronchitis] %> Bronquitis</label>
+        <% end %>
+      </label>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>
+        <% if @employee.pathologicals_history[:its].present? && @employee.pathologicals_history[:its] == 'on' %>
+        <label><%= check_box_tag "employee[pathologicals_history][its]", @employee.pathologicals_history[:its], checked: true %> ITS</label>
+        <% else %>
+        <label><%= check_box_tag "employee[pathologicals_history][its]", @employee.pathologicals_history[:its] %> ITS</label>
+        <% end %>
+      </label>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>
+        <% if @employee.pathologicals_history[:hta].present? && @employee.pathologicals_history[:hta] == 'on' %>
+        <label><%= check_box_tag "employee[pathologicals_history][hta]", @employee.pathologicals_history[:hta], checked: true %> HTA</label>
+        <% else %>
+        <label><%= check_box_tag "employee[pathologicals_history][hta]", @employee.pathologicals_history[:hta] %> HTA</label>
+        <% end %>
+      </label>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>
+        <% if @employee.pathologicals_history[:neoplasia].present? && @employee.pathologicals_history[:neoplasia] == 'on' %>
+        <label><%= check_box_tag "employee[pathologicals_history][neoplasia]", @employee.pathologicals_history[:neoplasia], checked: true %> Neoplasia</label>
+        <% else %>
+        <label><%= check_box_tag "employee[pathologicals_history][neoplasia]", @employee.pathologicals_history[:neoplasia] %> Neoplasia</label>
+        <% end %>
+      </label>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>
+        <% if @employee.pathologicals_history[:typhoid].present? && @employee.pathologicals_history[:typhoid] == 'on' %>
+        <label><%= check_box_tag "employee[pathologicals_history][typhoid]", @employee.pathologicals_history[:typhoid], checked: true %> Tifoidea</label>
+        <% else %>
+        <label><%= check_box_tag "employee[pathologicals_history][typhoid]", @employee.pathologicals_history[:typhoid] %> Tifoidea</label>
+        <% end %>
+      </label>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-4">
+    <div class="form-group">
+      <label> HABITOS NOCIVOS:</label>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <% if @employee.pathologicals_history[:alcohol_type].present? || @employee.pathologicals_history[:alcohol_quantity].present? || @employee.pathologicals_history[:alcohol_frequency].present? %>
+      <label><input type="checkbox" id="chk6" checked> Alcohol</input></label>
+      <% else %>
+      <label><input type="checkbox" id="chk6"> Alcohol</input></label>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Tipo</label>
+      <% if @employee.pathologicals_history[:alcohol_type].present? || @employee.pathologicals_history[:alcohol_quantity].present? || @employee.pathologicals_history[:alcohol_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][alcohol_type]", @employee.pathologicals_history[:alcohol_type], class: 'form-control', id:'myCheck6' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][alcohol_type]", @employee.pathologicals_history[:alcohol_type], class: 'form-control', id:'myCheck6', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Cantidad</label>
+      <% if @employee.pathologicals_history[:alcohol_type].present? || @employee.pathologicals_history[:alcohol_quantity].present? || @employee.pathologicals_history[:alcohol_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][alcohol_quantity]", @employee.pathologicals_history[:alcohol_quantity], class: 'form-control', id:'myCheck7' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][alcohol_quantity]", @employee.pathologicals_history[:alcohol_quantity], class: 'form-control', id:'myCheck7', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Frecuencia</label>
+      <% if @employee.pathologicals_history[:alcohol_type].present? || @employee.pathologicals_history[:alcohol_quantity].present? || @employee.pathologicals_history[:alcohol_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][alcohol_frequency]", @employee.pathologicals_history[:alcohol_frequency], class: 'form-control', id:'myCheck8' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][alcohol_frequency]", @employee.pathologicals_history[:alcohol_frequency], class: 'form-control', id:'myCheck8', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <% if @employee.pathologicals_history[:tobacco_type].present? || @employee.pathologicals_history[:tobacco_quantity].present? || @employee.pathologicals_history[:tobacco_frequency].present? %>
+      <label><input type="checkbox" id="chk7" checked> Tabaco</input></label>
+      <% else %>
+      <label><input type="checkbox" id="chk7"> Tabaco</input></label>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Tipo</label>
+      <% if @employee.pathologicals_history[:tobacco_type].present? || @employee.pathologicals_history[:tobacco_quantity].present? || @employee.pathologicals_history[:tobacco_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][tobacco_type]", @employee.pathologicals_history[:tobacco_type], class: 'form-control', id:'myCheck66' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][tobacco_type]", @employee.pathologicals_history[:tobacco_type], class: 'form-control', id:'myCheck66', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Cantidad</label>
+      <% if @employee.pathologicals_history[:tobacco_type].present? || @employee.pathologicals_history[:tobacco_quantity].present? || @employee.pathologicals_history[:tobacco_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][tobacco_quantity]", @employee.pathologicals_history[:tobacco_quantity], class: 'form-control', id:'myCheck77' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][tobacco_quantity]", @employee.pathologicals_history[:tobacco_quantity], class: 'form-control', id:'myCheck77', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Frecuencia</label>
+      <% if @employee.pathologicals_history[:tobacco_type].present? || @employee.pathologicals_history[:tobacco_quantity].present? || @employee.pathologicals_history[:tobacco_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][tobacco_frequency]", @employee.pathologicals_history[:tobacco_frequency], class: 'form-control', id:'myCheck88' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][tobacco_frequency]", @employee.pathologicals_history[:tobacco_frequency], class: 'form-control', id:'myCheck88', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <% if @employee.pathologicals_history[:drug_type].present? || @employee.pathologicals_history[:drug_quantity].present? || @employee.pathologicals_history[:drug_frequency].present? %>
+      <label><input type="checkbox" id="chk8" checked> Drogas</input></label>
+      <% else %>
+      <label><input type="checkbox" id="chk8"> Drogas</input></label>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Tipo</label>
+      <% if @employee.pathologicals_history[:drug_type].present? || @employee.pathologicals_history[:drug_quantity].present? || @employee.pathologicals_history[:drug_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][drug_type]", @employee.pathologicals_history[:drug_type], class: 'form-control', id:'myCheck666' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][drug_type]", @employee.pathologicals_history[:drug_type], class: 'form-control', id:'myCheck666', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Cantidad</label>
+      <% if @employee.pathologicals_history[:drug_type].present? || @employee.pathologicals_history[:drug_quantity].present? || @employee.pathologicals_history[:drug_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][drug_quantity]", @employee.pathologicals_history[:drug_quantity], class: 'form-control', id:'myCheck777' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][drug_quantity]", @employee.pathologicals_history[:drug_quantity], class: 'form-control', id:'myCheck777', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Frecuencia</label>
+      <% if @employee.pathologicals_history[:drug_type].present? || @employee.pathologicals_history[:drug_quantity].present? || @employee.pathologicals_history[:drug_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][drug_frequency]", @employee.pathologicals_history[:drug_frequency], class: 'form-control', id:'myCheck888' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][drug_frequency]", @employee.pathologicals_history[:drug_frequency], class: 'form-control', id:'myCheck888', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <% if @employee.pathologicals_history[:medicine_type].present? || @employee.pathologicals_history[:medicine_quantity].present? || @employee.pathologicals_history[:medicine_frequency].present? %>
+      <label><input type="checkbox" id="chk9" checked> Medicamentos</input></label>
+      <% else %>
+      <label><input type="checkbox" id="chk9"> Medicamentos</input></label>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Tipo</label>
+      <% if @employee.pathologicals_history[:medicine_type].present? || @employee.pathologicals_history[:medicine_quantity].present? || @employee.pathologicals_history[:medicine_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][medicine_type]", @employee.pathologicals_history[:medicine_type], class: 'form-control', id:'myCheck6666' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][medicine_type]", @employee.pathologicals_history[:medicine_type], class: 'form-control', id:'myCheck6666', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Cantidad</label>
+      <% if @employee.pathologicals_history[:medicine_type].present? || @employee.pathologicals_history[:medicine_quantity].present? || @employee.pathologicals_history[:medicine_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][medicine_quantity]", @employee.pathologicals_history[:medicine_quantity], class: 'form-control', id:'myCheck7777' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][medicine_quantity]", @employee.pathologicals_history[:medicine_quantity], class: 'form-control', id:'myCheck7777', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Frecuencia</label>
+      <% if @employee.pathologicals_history[:medicine_type].present? || @employee.pathologicals_history[:medicine_quantity].present? || @employee.pathologicals_history[:medicine_frequency].present? %>
+      <%= text_field_tag "employee[pathologicals_history][medicine_frequency]", @employee.pathologicals_history[:medicine_frequency], class: 'form-control', id:'myCheck8888' %>
+      <% else %>
+      <%= text_field_tag "employee[pathologicals_history][medicine_frequency]", @employee.pathologicals_history[:medicine_frequency], class: 'form-control', id:'myCheck8888', readonly: true %>
+      <% end %>
+    </div>
+  </div>
+</div>

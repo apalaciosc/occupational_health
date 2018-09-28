@@ -1,0 +1,20 @@
+tr{
+	border-bottom: solid;
+	border-width:2px;
+	border-color:#2f5b70;
+
+}
+td, th{
+	text-align:left;
+}
+th{
+	background-color:#2f5b70;
+	color:white;
+
+}
+table , tr, td, th,tbody, thead, tfoot{
+	page-breake-inside: avoid !important;
+}
+row{
+	margin-left: 80px;
+}

@@ -1,0 +1,5 @@
+es: 
+  activerecord:
+    attributes:
+      text_field:
+        minlength: 'es demasiado corto (%{count} caracteres mínimo)'

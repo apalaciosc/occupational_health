@@ -1,0 +1,137 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#employee" aria-expanded="true">Datos principales</a>
+        </li>
+        <% if @edit == 1 %>
+        <li>
+          <a data-toggle="tab" href="#occupational_history" aria-expanded="false">Antecedentes ocupacionales</a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#pathologicals_history" aria-expanded="false">Antecedentes patológicos personales</a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#pathologicals_history_family" aria-expanded="false">Antecedentes patológicos familiares</a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#absentismo">Absentismo</a>
+        </li>
+        <% end %>
+      </ul>
+      <%= form_for @employee do |form| %>
+      <div class="tab-content">
+        <div class="tab-pane active" id="employee">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <% if employee.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+                <ul>
+                  <% employee.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+              <% end %>
+              <div class="row">
+                <%= render partial: 'employees/partials/employee', locals: { form: form } %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="occupational_history">
+          <div class="box box-default">
+            <div class="box-body">
+              <div class="occ-fields">
+                <%= form.fields_for :occupational_histories do |occ| %>
+                <%= render 'occupational_histories_fields', f: occ %><br>
+                <% end %>
+              </div>
+              <div class="text-left">
+                <%= link_to_add_association '+', form, :occupational_histories,'data-association-insertion-node' => '.occ-fields', 'data-association-insertion-method' => 'append', partial: 'occupational_histories_fields', class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="pathologicals_history">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <%= render partial: 'employees/partials/pathologicals_history', locals: { employee: @employee } %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="pathologicals_history_family">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <%= render partial: 'employees/partials/pathologicals_history_family', locals: { employee: @employee } %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="absentismo">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="col-lg-8">
+                    <label>Enfermedades y Accidentes (asociados al trabajo o no):</label>
+                  </div>
+                </div>
+              </div>
+              <div class="ab-fields">
+                <%= form.fields_for :absenteeisms do |ab| %>
+                <%= render 'absenteeisms_fields', f: ab %><br>
+                <% end %>
+              </div>
+              <div class="text-left">
+                <%= link_to_add_association '+', form, :absenteeisms,'data-association-insertion-node' => '.ab-fields', 'data-association-insertion-method' => 'append', partial: 'absenteeisms_fields', class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-body">
+        <div class="form-group">
+          <div class="col-lg-12 text-center">
+            <%= form.submit 'Guardar', class:'btn btn-primary' %>
+            <%= link_to 'Volver', employees_path, class:'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

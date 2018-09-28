@@ -1,0 +1,2 @@
+json.extract! attention, :id, :employee_id, :nro_hc, :type, :department, :province, :district, :general, :physical, :psychological, :radiology, :x_ray_oit, :pathological_findings, :audiometry, :spirometry, :ophthalmological, :electrocardiogram, :epworth_test, :structural_height_test, :stress_test, :personality_test, :odontogram, :occupational_medical_diagnosis, :other_diagnoses, :recommendations, :created_at, :updated_at
+json.url attention_url(attention, format: :json)

@@ -1,0 +1,137 @@
+<%= form_with(model: attention, local: true) do |form| %>
+  <% if attention.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attention.errors.count, "error") %> prohibited this attention from being saved:</h2>
+
+      <ul>
+      <% attention.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :employee_id %>
+    <%= form.text_field :employee_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nro_hc %>
+    <%= form.text_field :nro_hc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.number_field :type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department %>
+    <%= form.text_field :department %>
+  </div>
+
+  <div class="field">
+    <%= form.label :province %>
+    <%= form.text_field :province %>
+  </div>
+
+  <div class="field">
+    <%= form.label :district %>
+    <%= form.text_field :district %>
+  </div>
+
+  <div class="field">
+    <%= form.label :general %>
+    <%= form.text_area :general %>
+  </div>
+
+  <div class="field">
+    <%= form.label :physical %>
+    <%= form.text_area :physical %>
+  </div>
+
+  <div class="field">
+    <%= form.label :psychological %>
+    <%= form.text_area :psychological %>
+  </div>
+
+  <div class="field">
+    <%= form.label :radiology %>
+    <%= form.text_area :radiology %>
+  </div>
+
+  <div class="field">
+    <%= form.label :x_ray_oit %>
+    <%= form.text_area :x_ray_oit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pathological_findings %>
+    <%= form.text_area :pathological_findings %>
+  </div>
+
+  <div class="field">
+    <%= form.label :audiometry %>
+    <%= form.text_area :audiometry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :spirometry %>
+    <%= form.text_area :spirometry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ophthalmological %>
+    <%= form.text_area :ophthalmological %>
+  </div>
+
+  <div class="field">
+    <%= form.label :electrocardiogram %>
+    <%= form.text_area :electrocardiogram %>
+  </div>
+
+  <div class="field">
+    <%= form.label :epworth_test %>
+    <%= form.text_area :epworth_test %>
+  </div>
+
+  <div class="field">
+    <%= form.label :structural_height_test %>
+    <%= form.text_area :structural_height_test %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stress_test %>
+    <%= form.text_area :stress_test %>
+  </div>
+
+  <div class="field">
+    <%= form.label :personality_test %>
+    <%= form.text_area :personality_test %>
+  </div>
+
+  <div class="field">
+    <%= form.label :odontogram %>
+    <%= form.text_area :odontogram %>
+  </div>
+
+  <div class="field">
+    <%= form.label :occupational_medical_diagnosis %>
+    <%= form.text_area :occupational_medical_diagnosis %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_diagnoses %>
+    <%= form.text_area :other_diagnoses %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recommendations %>
+    <%= form.text_area :recommendations %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

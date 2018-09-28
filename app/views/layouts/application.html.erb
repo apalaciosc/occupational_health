@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Policlínico San Vicente</title>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag    'application' %>
+  <%= javascript_include_tag 'application' %>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="container" data-sign-in="<%= user_signed_in? %>">
+  <% if flash[:notice] %>
+    <script type="text/javascript">
+       var notify = $.notify(
+      {
+        // options
+        icon: '',
+        title: '',
+        message: '<%= flash[:notice].to_s %>',
+        url: '',
+        target: ''
+      });
+    </script>
+    <% end %>
+    <% if flash[:alert] %>
+    <script type="text/javascript">
+       var notify = $.notify(
+      {
+        // options
+        icon: '',
+        title: '',
+        message: '<%= flash[:alert].to_s %>',
+        url: '',
+        target: ''
+      });
+    </script>
+    <% end %>
+  </div>
+
+  <div class="wrapper">
+    <header class="main-header">
+      <%= link_to root_path, class: 'logo' do %>
+      <span class="logo-mini"><b>P</b>SV</span>
+      <span class="logo-lg"><b>P. San Vicente</b></span>
+      <% end %>
+      <%= render partial: 'partials/navbar' %>
+    </header>
+    <%= render partial: 'partials/sidebar' %>
+    <div class="content-wrapper">
+      <section class="content">
+        <%= yield %>
+      </section>
+    </div>
+    <%= render partial: 'partials/footer' %>
+  </div>
+  <script>$.widget.bridge('uibutton', $.ui.button);</script>
+  <script src="/assets/morris.min.js"></script>
+
+</body>
+</html>

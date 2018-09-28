@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Empleados</h3>
+        <%= link_to new_employee_path do %>
+          <img src="<%= asset_path 'User_Ad.ico' %>">
+        <% end %>
+        <div class="box-tools">
+          <form class="" action="/employees" method="get">
+            <div style="float: left; margin-right: 3px;height:3px" >
+              <%= link_to employees_path(format: :pdf, search: @search), target: '_blank' do %>
+                <%= image_tag ('pdft.jpg') %>
+              <% end %>
+            </div>
+            <div class="input-group input-group-sm" style="width: 150px;">
+              <input type="text" name="search" class="form-control pull-right" placeholder="Buscar" <%= @search %> >
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <th>Nombre</th>
+              <th>Dni</th>
+              <th>Dirección</th>
+              <th>Essalud</th>
+              <th>Eps</th>
+              <th>Sctr</th>
+              <th>Otro</th>
+              <th colspan="3"></th>
+            </tr>
+            <% @employees.each do |employee| %>
+            <tr>
+              <td><%= link_to employee.name, employee %></td>
+              <td><%= employee.dni %></td>
+              <td><%= employee.address %></td>
+              <td><%= employee.essalud? ? "Si" : "No" %></td>
+              <td><%= employee.eps? ? "Si" : "No" %></td>
+              <td><%= employee.sctr? ? "Si" : "No" %></td>
+              <td><%= employee.other? ? "Si" : "No" %></td>
+              <td><%= link_to image_tag('User_Editar.ico'), edit_employee_path(employee) %></td>
+              <td><%= link_to image_tag('User_Eliminar.ico'), employee, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+      </div>
+        <%= will_paginate @employees, previous_label: "Atras", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
+    </div>
+  </div>
+</div>

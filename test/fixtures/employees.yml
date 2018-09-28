@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  enterprise: one
+  name: MyString
+  birthday: 2018-09-11
+  age: 1
+  dni: MyString
+  address: MyString
+  way: 1
+  numb_depart_int: 1
+  urbanization: MyString
+  district: MyString
+  province: MyString
+  department: MyString
+  resi_in_place_work: false
+  time_place_work: 1
+  essalud: false
+  eps: false
+  sctr: false
+  other: false
+  email: MyString
+  civil_status: 1
+  degree_instruction: MyString
+  number_children: 1
+  number_dependents: 1
+
+two:
+  enterprise: two
+  name: MyString
+  birthday: 2018-09-11
+  age: 1
+  dni: MyString
+  address: MyString
+  way: 1
+  numb_depart_int: 1
+  urbanization: MyString
+  district: MyString
+  province: MyString
+  department: MyString
+  resi_in_place_work: false
+  time_place_work: 1
+  essalud: false
+  eps: false
+  sctr: false
+  other: false
+  email: MyString
+  civil_status: 1
+  degree_instruction: MyString
+  number_children: 1
+  number_dependents: 1

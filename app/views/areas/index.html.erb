@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Áreas</h3>
+        <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false">
+          <img src="<%= asset_path 'User_Ad.ico' %>">
+        </a>
+        <div class="box-tools">
+          <form class="" action="/areas" method="get">
+            <div class="input-group input-group-sm" style="width: 150px;">
+              <input type="text" name="search" class="form-control pull-right" placeholder="Buscar" <%= @search %> >
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th colspan="2"></th>
+            </tr>
+            <% @areas.each do |area| %>
+            <tr>
+              <td><%= area.name.capitalize %></td>
+              <td><%= area.description.capitalize %></td>
+              <td><a data-toggle="modal" data-target="#modalUpdate<%= area.id %>" data-backdrop="static" data-keyboard="false"><img src="<%= asset_path 'User_Editar.ico' %>"></a></td>
+              <td><%= link_to image_tag('User_Eliminar.ico'), area, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <%= will_paginate @areas, previous_label: "Atras", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="modal" id="modalCreate">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="col-lg-12">
+            <div class="col-lg-11 text-center">
+              <h4 class="modal-title">Registrar Área</h4>
+            </div>
+            <div class="col-lg-1 text-right">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+          </div>
+        </div>
+        <%= form_for(@area, url: areas_path, remote: 'true') do |form| %>
+        <%= render partial: 'areas/form', locals: { form: form } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% @areas.each do |area| %>
+<div class="container modalUpdate">
+  <div class="modal" id="modalUpdate<%= area.id %>">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="col-lg-12">
+            <div class="col-lg-11 text-center">
+              <h4 class="modal-title">Actualizar área</h4>
+            </div>
+            <div class="col-lg-1 text-right">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+          </div>
+        </div>
+        <%= form_for(area, url: area_path(area.id), remote: 'true') do |form| %>
+        <%= render partial: 'areas/form', locals: { form: form} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

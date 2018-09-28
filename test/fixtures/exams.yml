@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type_test: one
+  attention: one
+  data: 
+  result: MyText
+
+two:
+  type_test: two
+  attention: two
+  data: 
+  result: MyText

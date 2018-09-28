@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LOGIN SAN VICENTE</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <%= stylesheet_link_tag    'application-login' %>
+  <%= javascript_include_tag 'application-login' %>
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+</head>
+<body style= 'background-image: url("https://www.watanserb.com/wp-content/uploads/%D8%A7%D8%B7%D8%A8%D8%A7%D8%A1.jpg");height: 100%;background-position: center; background-repeat: no-repeat; background-size: cover;'>
+  <div class="agileits">
+    <h1><b style="color:#01BCD3;font-weight: bold;">Bienvenido</b></h1>
+    <div class="w3-agileits-info">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

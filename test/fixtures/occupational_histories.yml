@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  company: MyString
+  work_area: MyString
+  ocupation: MyString
+  date_init: 2018-09-13
+  date_finish: 2018-09-13
+  time: MyString
+  ocupational_exposure: MyString
+  epp: MyString
+
+two:
+  employee: two
+  company: MyString
+  work_area: MyString
+  ocupation: MyString
+  date_init: 2018-09-13
+  date_finish: 2018-09-13
+  time: MyString
+  ocupational_exposure: MyString
+  epp: MyString

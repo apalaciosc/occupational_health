@@ -1,0 +1,20 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class:'new_user form animate-form'})  do |f| %>
+<p class="w3agileits">Ingresar</p>
+<div class='form-group has-feedback wthree'>
+  <label class='control-label sr-only' for='email'>Email address</label>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", id:'email', placeholder: 'Ingrese email',class:'form-control'%>
+</div>
+<div class='form-group has-feedback agile'>
+  <label class='control-label sr-only' for='password'>Password</label>
+  <%= f.password_field :password, autocomplete: "current-password", class: 'form-control w3l', placeholder: 'Clave' %>
+</div>
+<% if devise_mapping.rememberable? -%>
+<div class="field">
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %>
+</div>
+<% end -%>
+<div class='submit w3-agile actions'>
+  <%= f.submit "Ingresar", class:'btn btn-lg'  %>
+</div>
+<% end %>

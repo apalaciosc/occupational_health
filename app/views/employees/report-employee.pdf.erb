@@ -1,0 +1,132 @@
+<h2 class="page-header">
+  <i class="fa fa-globe"></i> <%= @employee.name %>
+  <small style="float: right;">Fecha de nacimiento: <%= @employee.birthday.strftime(" %m-%d-%Y")  %></small>
+</h2>
+<div class="row invoice-info">
+  <div class="col-sm-4 invoice-col">
+    <% if @employee.dni.present? %>
+    <strong>DNI:</strong>
+    <address>
+      <%= @employee.dni %>
+    </address>
+    <% end %>
+    <% if @employee.age.present? %>
+    <strong>Edad:</strong>
+    <address>
+      <%= @employee.age %> años
+    </address>
+    <% end %>
+    <% if @employee.enterprise.present? %>
+    <strong>Empresa a la que pertenece:</strong>
+    <address>
+      <%= @employee.enterprise.name %>
+    </address>
+    <% end %>
+    <% if @employee.email.present? %>
+    <strong>Email:</strong>
+    <address>
+      <%= @employee.email %>
+    </address>
+    <% end %>
+    <% if @employee.phone.present? %>
+    <strong>Teléfono:</strong>
+    <address>
+      <%= @employee.phone %>
+    </address>
+    <% end %>
+  </div>
+  <div class="col-sm-4 invoice-col">
+    <% if @employee.address.present? %>
+    <strong>Dirección:</strong>
+    <address>
+      <%= @employee.address %>
+    </address>
+    <% end %>
+    <% if @employee.way.present? %>
+    <strong>Av/Calle/Jirón/Pasaje:</strong>
+    <address>
+      <%= @employee.way %>
+    </address>
+    <% end %>
+    <% if @employee.numb_depart_int.present? %>
+    <strong>Nro/Departamento/Interior:</strong>
+    <address>
+      <%= @employee.numb_depart_int %>
+    </address>
+    <% end %>
+    <% if @employee.urbanization.present? %>
+    <strong>Urbanización:</strong>
+    <address>
+      <%= @employee.urbanization %>
+    </address>
+    <% end %>
+    <% if @employee.province.present? %>
+    <strong>Provincia:</strong>
+    <address>
+      <%= @employee.province %>
+    </address>
+    <% end %>
+    <% if @employee.district.present? %>
+    <strong>Distrito:</strong>
+    <address>
+      <%= @employee.district %>
+    </address>
+    <% end %>
+    <% if @employee.department.present? %>
+    <strong>Departmento:</strong>
+    <address>
+      <%= @employee.department %>
+    </address>
+    <% end %>
+    <% if @employee.time_place_work.present? %>
+    <strong>Tiempo de residencia en lugar de trabajo:</strong>
+    <address>
+      <%= @employee.time_place_work %> años
+    </address>
+    <% end %>
+  </div>
+  <div class="col-sm-4 invoice-col">
+    <% if @employee.civil_status.present? %>
+    <strong>Estado civil:</strong>
+    <address>
+      <%= @employee.civil_status.capitalize %>
+    </address>
+    <% end %>
+    <% if @employee.degree_instruction.present? %>
+    <strong>Grado de instrucción:</strong>
+    <address>
+      <%= @employee.degree_instruction %>
+    </address>
+    <% end %>
+    <% if @employee.number_children.present? %>
+    <strong>Número de hijos:</strong>
+    <address>
+      <%= @employee.number_children %>
+    </address>
+    <% end %>
+    <% if @employee.number_dependents.present? %>
+    <strong>Número de dependientes:</strong>
+    <address>
+      <%= @employee.number_dependents %>
+    </address>
+    <% end %>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Essalud</th>
+      <th>EPS</th>
+      <th>SCTR</th>
+      <th>Otro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @employee.essalud? ? "Si" : "No" %></td>
+      <td><%= @employee.eps? ? "Si" : "No" %></td>
+      <td><%= @employee.sctr? ? "Si" : "No" %></td>
+      <td><%= @employee.other? ? "Si" : "No" %></td>
+    </tr>
+  </tbody>
+</table>

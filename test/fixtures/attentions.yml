@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  nro_hc: MyString
+  type: 1
+  department: MyString
+  province: MyString
+  district: MyString
+  general: MyText
+  physical: MyText
+  psychological: MyText
+  radiology: MyText
+  x_ray_oit: MyText
+  pathological_findings: MyText
+  audiometry: MyText
+  spirometry: MyText
+  ophthalmological: MyText
+  electrocardiogram: MyText
+  epworth_test: MyText
+  structural_height_test: MyText
+  stress_test: MyText
+  personality_test: MyText
+  odontogram: MyText
+  occupational_medical_diagnosis: MyText
+  other_diagnoses: MyText
+  recommendations: MyText
+
+two:
+  employee: two
+  nro_hc: MyString
+  type: 1
+  department: MyString
+  province: MyString
+  district: MyString
+  general: MyText
+  physical: MyText
+  psychological: MyText
+  radiology: MyText
+  x_ray_oit: MyText
+  pathological_findings: MyText
+  audiometry: MyText
+  spirometry: MyText
+  ophthalmological: MyText
+  electrocardiogram: MyText
+  epworth_test: MyText
+  structural_height_test: MyText
+  stress_test: MyText
+  personality_test: MyText
+  odontogram: MyText
+  occupational_medical_diagnosis: MyText
+  other_diagnoses: MyText
+  recommendations: MyText

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  economic_activity: MyString
+  workplace: MyString
+  location: MyString
+  departament: MyString
+  province: MyString
+  district: MyString
+
+two:
+  name: MyString
+  economic_activity: MyString
+  workplace: MyString
+  location: MyString
+  departament: MyString
+  province: MyString
+  district: MyString
