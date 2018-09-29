@@ -31,6 +31,7 @@
 //= require cocoon
 //= require bootstrap_notify
 //= require type_exams
+//= require exams
 
 //Just numbers
 $(document).on('keypress', '.just-number', function(e){
