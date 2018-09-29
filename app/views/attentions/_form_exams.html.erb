@@ -33,3 +33,7 @@
 <% if @type_exam.present? && @type_exam.view == 'test_ophthalmology' %>
 <%= render partial: 'attentions/partials_exams/test_ophthalmology', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'epworth_test' %>
+<%= render partial: 'attentions/partials_exams/epworth_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
