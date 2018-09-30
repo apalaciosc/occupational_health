@@ -1,0 +1,350 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="box box-default">
+        <div class="box-body">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-2">
+                <label class="col-lg-12">Odontograma </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <style type="text/css">
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg .tg-s268{text-align:left}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+            </style>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <div class="col-lg-12">
+                <table class="tg " style="undefined;table-layout: fixed; width: 950px">
+                  <colgroup>
+                    <col style="width: 55px">
+                      <col style="width: 52px">
+                        <col style="width: 50px">
+                          <col style="width: 55px">
+                            <col style="width: 55px">
+                              <col style="width: 52px">
+                                <col style="width: 55px">
+                                  <col style="width: 55px">
+                                    <col style="width: 55px">
+                                      <col style="width: 55px">
+                                        <col style="width: 55px">
+                                          <col style="width: 55px">
+                                            <col style="width: 55px">
+                                              <col style="width: 55px">
+                                                <col style="width: 55px">
+                                                  <col style="width: 55px">
+                                                  </col>
+                                                </col>
+                                              </col>
+                                            </col>
+                                          </col>
+                                        </col>
+                                      </col>
+                                    </col>
+                                  </col>
+                                </col>
+                              </col>
+                            </col>
+                          </col>
+                        </col>
+                      </col>
+                    </col>
+                  </colgroup>
+                  <tr>
+                    <th class="tg-s268">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-s268">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-s268">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-s268">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-s268">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-s268">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-s268">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-s268">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-s268">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-0lax">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-0lax">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-0lax">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-0lax">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-0lax">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-0lax">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                    <th class="tg-0lax">
+                      <input class="form-control" type="text">
+                      </input>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="tg-s268" style="border-collapse:collapse; border: none;">
+                    </td>
+                    <td class="tg-s268" style="border-collapse:collapse; border: none;">
+                    </td>
+                    <td class="tg-s268" style="border-collapse:collapse; border: none;">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-0lax">
+                    </td>
+                    <td class="tg-0lax">
+                    </td>
+                    <td class="tg-0lax">
+                    </td>
+                    <td class="tg-0lax">
+                    </td>
+                    <td class="tg-0lax" style="border-collapse:collapse; border: none;">
+                    </td>
+                    <td class="tg-0lax" style="border-collapse:collapse; border: none;">
+                    </td>
+                    <td class="tg-0lax" style="border-collapse:collapse; border: none;">
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-lg-12">
+                <label>
+                </label>
+              </div>
+              <div class="col-lg-12">
+                <label>
+                </label>
+              </div>
+              <div class="col-lg-12">
+                <img src="odontograma.png" style="height: 530px;width: 950px;">
+                </img>
+              </div>
+              <div class="col-lg-12">
+                <label>
+                </label>
+              </div>
+              <div class="col-lg-12">
+                <label>
+                </label>
+              </div>
+              <div class="col-lg-12">
+                <table class="tg " style="undefined;table-layout: fixed; width: 950px">
+                  <colgroup>
+                    <col style="width: 55px">
+                      <col style="width: 52px">
+                        <col style="width: 50px">
+                          <col style="width: 55px">
+                            <col style="width: 55px">
+                              <col style="width: 52px">
+                                <col style="width: 65px">
+                                  <col style="width: 60px">
+                                    <col style="width: 65px">
+                                      <col style="width: 60px">
+                                        <col style="width: 60px">
+                                          <col style="width: 55px">
+                                            <col style="width: 55px">
+                                              <col style="width: 55px">
+                                                <col style="width: 55px">
+                                                  <col style="width: 55px">
+                                                  </col>
+                                                </col>
+                                              </col>
+                                            </col>
+                                          </col>
+                                        </col>
+                                      </col>
+                                    </col>
+                                  </col>
+                                </col>
+                              </col>
+                            </col>
+                          </col>
+                        </col>
+                      </col>
+                    </col>
+                  </colgroup>
+                  <tr>
+                    <th class="tg-s268" style="border-collapse:collapse; border: none;">
+                    </th>
+                    <th class="tg-s268" style="border-collapse:collapse; border: none;">
+                    </th>
+                    <th class="tg-s268" style="border-collapse:collapse; border: none;">
+                    </th>
+                    <th class="tg-s268">
+                    </th>
+                    <th class="tg-s268">
+                    </th>
+                    <th class="tg-s268">
+                    </th>
+                    <th class="tg-s268">
+                    </th>
+                    <th class="tg-s268">
+                    </th>
+                    <th class="tg-s268">
+                    </th>
+                    <th class="tg-0lax">
+                    </th>
+                    <th class="tg-0lax">
+                    </th>
+                    <th class="tg-0lax">
+                    </th>
+                    <th class="tg-0lax">
+                    </th>
+                    <th class="tg-0lax" style="border-collapse:collapse; border: none;">
+                    </th>
+                    <th class="tg-0lax" style="border-collapse:collapse; border: none;">
+                    </th>
+                    <th class="tg-0lax" style="border-collapse:collapse; border: none;">
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-s268">
+                    </td>
+                    <td class="tg-0lax">
+                    </td>
+                    <td class="tg-0lax">
+                    </td>
+                    <td class="tg-0lax">
+                    </td>
+                    <td class="tg-0lax">
+                    </td>
+                    <td class="tg-0lax">
+                    </td>
+                    <td class="tg-0lax">
+                    </td>
+                    <td class="tg-0lax">
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <label>
+              </label>
+            </div>
+            <div class="col-lg-12">
+              <label>
+              </label>
+            </div>
+            <div class="col-lg-12">
+              <label>
+              </label>
+            </div>
+            <div class="col-lg-12">
+              <label>
+                Impresión diagnóstica:
+              </label>
+            </div>
+            <div class="col-l2">
+              <label>
+                <br/>
+              </label>
+            </div>
+            <div class="col-lg-4">
+              <label>
+                CIE l0:
+              </label>
+              <%= text_area_tag "exam[data][cie_10]", @exam.data[:cie_10], class: 'form-control', rows: '4' %>
+            </div>
+            <div class="col-lg-7">
+              <label>
+                Diagnostico
+              </label>
+              <%= text_area_tag "exam[data][diagnostic]", @exam.data[:diagnostic], class: 'form-control', rows: '4' %>
+            </div>
+            <div class="col-lg-11">
+              <label>
+                Recomendación
+              </label>
+              <%= text_area_tag "exam[data][recommendation]", @exam.data[:recommendation], class: 'form-control', rows: '4' %>
+            </div>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="form-group">
+            <div class="col-sm-offset-5 col-sm-10">
+              <%= f.submit 'Guardar', class:'btn btn-primary' %>
+              <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
