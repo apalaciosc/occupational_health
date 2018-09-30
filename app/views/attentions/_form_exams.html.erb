@@ -41,3 +41,7 @@
 <% if @type_exam.present? && @type_exam.view == 'personality_test' %>
 <%= render partial: 'attentions/partials_exams/personality_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'occupational_medical_diagnosis' %>
+<%= render partial: 'attentions/partials_exams/occupational_medical_diagnosis', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
