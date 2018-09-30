@@ -42,6 +42,10 @@
 <%= render partial: 'attentions/partials_exams/personality_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
 
+<% if @type_exam.present? && @type_exam.view == 'stress_test' %>
+<%= render partial: 'attentions/partials_exams/stress_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
+
 <% if @type_exam.present? && @type_exam.view == 'height_test' %>
 <%= render partial: 'attentions/partials_exams/height_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
@@ -52,8 +56,4 @@
 
 <% if @type_exam.present? && @type_exam.view == 'medical_exam' %>
 <%= render partial: 'attentions/partials_exams/medical_exam', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
-<% end %>
-
-<% if @type_exam.present? && @type_exam.view == 'stress_test' %>
-<%= render partial: 'attentions/partials_exams/stress_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
