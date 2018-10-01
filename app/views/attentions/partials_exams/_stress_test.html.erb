@@ -68,24 +68,19 @@
                     Duermo un numero de horas adecuado a mis necesidades
                   </td>
                   <td class="tg-s6z2">
-                    <input name="a" type="radio" value="3">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question1]', '0', !!(@exam.data[:question1] == '0') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="a" type="radio" value="2">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question1]', '1', !!(@exam.data[:question1] == '1') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="a" type="radio" value="1">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question1]', '2', !!(@exam.data[:question1] == '2') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="a" type="radio" value="0">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question1]', '3', !!(@exam.data[:question1] == '3') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
+                    <%= text_field_tag "exam[data][total_1]", @exam.data[:total_1], class: 'form-control', readonly: true %>
                   </td>
                 </tr>
                 <tr>
@@ -93,24 +88,19 @@
                     Como a horas fijas
                   </td>
                   <td class="tg-s6z2">
-                    <input name="b" type="radio" value="3">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question2]', '0', !!(@exam.data[:question2] == '0') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="b" type="radio" value="2">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question2]', '1', !!(@exam.data[:question2] == '1') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="b" type="radio" value="1">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question2]', '2', !!(@exam.data[:question2] == '2') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="b" type="radio" value="0">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question2]', '3', !!(@exam.data[:question2] == '3') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
+                    <%= text_field_tag "exam[data][total_2]", @exam.data[:total_2], class: 'form-control', readonly: true %>
                   </td>
                 </tr>
                 <tr>
@@ -118,24 +108,19 @@
                     Cuando estoy nervioso tomo tranquilizantes
                   </td>
                   <td class="tg-s6z2">
-                    <input name="c" type="radio" value="0">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question3]', '0', !!(@exam.data[:question3] == '0') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="c" type="radio" value="1">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question3]', '1', !!(@exam.data[:question3] == '1') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="c" type="radio" value="2">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question3]', '2', !!(@exam.data[:question3] == '2') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="c" type="radio" value="3">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question3]', '3', !!(@exam.data[:question3] == '3') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
+                    <%= text_field_tag "exam[data][total_3]", @exam.data[:total_3], class: 'form-control', readonly: true %>
                   </td>
                 </tr>
                 <tr>
@@ -143,24 +128,19 @@
                     Para ocupar mi tiempo libre veo la televisión o el video
                   </td>
                   <td class="tg-s6z2">
-                    <input name="d" type="radio" value="0">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question4]', '0', !!(@exam.data[:question4] == '0') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="d" type="radio" value="1">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question4]', '1', !!(@exam.data[:question4] == '1') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="d" type="radio" value="2">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question4]', '2', !!(@exam.data[:question4] == '2') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="d" type="radio" value="3">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question4]', '3', !!(@exam.data[:question4] == '3') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
+                    <%= text_field_tag "exam[data][total_4]", @exam.data[:total_4], class: 'form-control', readonly: true %>
                   </td>
                 </tr>
                 <tr>
@@ -168,24 +148,19 @@
                     Hago ejercicio físico de forma regular
                   </td>
                   <td class="tg-s6z2">
-                    <input name="e" type="radio" value="3">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question5]', '0', !!(@exam.data[:question5] == '0') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="e" type="radio" value="2">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question5]', '1', !!(@exam.data[:question5] == '1') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="e" type="radio" value="1">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question5]', '2', !!(@exam.data[:question5] == '2') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input name="e" type="radio" value="0">
-                    </input>
+                    <%= radio_button_tag 'exam[data][question5]', '3', !!(@exam.data[:question5] == '3') %>
                   </td>
                   <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
+                    <%= text_field_tag "exam[data][total_5]", @exam.data[:total_5], class: 'form-control', readonly: true %>
                   </td>
                 </tr>
                 <tr>
