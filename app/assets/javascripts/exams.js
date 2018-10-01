@@ -1,4 +1,5 @@
 $(function(){
+  //****************************++++Epworth test*********************************
   $('input[type=radio][name="exam[data][question1]"]').on( 'change', function() {
     var value_radio = $('input[name="exam[data][question1]"]:checked').val();
     $('#exam_data_total_1').val(value_radio);
@@ -57,4 +58,8 @@ $(function(){
       $('#exam_data_total_general').val(total)
     }
   }
+  //****************************++++Electrocardiogram*********************************
+  $('#add-cie10').on('click',function(){
+    $('#cie10').append('<div class="col-lg-6"><label>CIE 10:</label><input type="text" name="exam[data][cie10][]" id="exam_data_cie10_" value="" class="form-control"></div><div class="col-lg-6"><label>Descripción:</label><input type="text" name="exam[data][description_cie10][]" id="exam_data_cie10_" value="" class="form-control"></div>')
+  })
 })
