@@ -1,0 +1,125 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#activity">EVALUACIÓN MÉDICA</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="active tab-pane" id="activity">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>ANAMNESIS:</label>
+                    <%= text_field_tag "exam[data][anamnesis]", @exam.data[:anamnesis], class: 'form-control'%>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>EXAMEN CLÍNICO:</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Talla</label>
+                      <%= text_field_tag "exam[data][size]", @exam.data[:size], class: 'form-control'%>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Peso</label>
+                      <%= text_field_tag "exam[data][weight]", @exam.data[:weight], class: 'form-control'%>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>IMC</label>
+                      <%= text_field_tag "exam[data][imc]", @exam.data[:imc], class: 'form-control'%>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Perimetro abdominal</label>
+                      <%= text_field_tag "exam[data][abdominal_perimeter]", @exam.data[:abdominal_perimeter], class: 'form-control'%>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>F. Respiratoria</label>
+                      <%= text_field_tag "exam[data][breathing_frequency]", @exam.data[:breathing_frequency], class: 'form-control'%>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>F. Cardíaca</label>
+                      <%= text_field_tag "exam[data][heart_rate]", @exam.data[:heart_rate], class: 'form-control'%>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>PA</label>
+                      <%= text_field_tag "exam[data][pa]", @exam.data[:pa], class: 'form-control'%>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Temperatura</label>
+                      <%= text_field_tag "exam[data][temperature]", @exam.data[:temperature], class: 'form-control'%>
+                    </div>
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="form-group">
+                      <label>Otros</label>
+                      <%= text_field_tag "exam[data][others]", @exam.data[:others], class: 'form-control'%>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>ECTOCOSPIA:</label>
+                    <%= text_field_tag "exam[data][ectoscopy]", @exam.data[:ectoscopy], class: 'form-control'%>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>ESTADO MENTAL:</label>
+                    <%= text_field_tag "exam[data][state_of_mind]", @exam.data[:state_of_mind], class: 'form-control'%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="form-group">
+            <div class="col-sm-offset-5 col-sm-10">
+              <%= f.submit 'Guardar', class:'btn btn-primary' %>
+              <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>¿
+</div>
+<% end %>
