@@ -44,4 +44,8 @@
 
 <% if @type_exam.present? && @type_exam.view == 'height_test' %>
 <%= render partial: 'attentions/partials_exams/height_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+
+<% if @type_exam.present? && @type_exam.view == 'electrocardiogram' %>
+<%= render partial: 'attentions/partials_exams/electrocardiogram', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+
 <% end %>
