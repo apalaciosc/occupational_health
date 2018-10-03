@@ -48,6 +48,7 @@
 
 <% if @type_exam.present? && @type_exam.view == 'electrocardiogram' %>
 <%= render partial: 'attentions/partials_exams/electrocardiogram', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
 
 <% if @type_exam.present? && @type_exam.view == 'odontogram' %>
 <%= render partial: 'attentions/partials_exams/odontogram', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
