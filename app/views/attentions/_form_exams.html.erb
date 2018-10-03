@@ -57,3 +57,7 @@
 <% if @type_exam.present? && @type_exam.view == 'medical_exam' %>
 <%= render partial: 'attentions/partials_exams/medical_exam', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'camo' %>
+<%= render partial: 'attentions/partials_exams/camo', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
