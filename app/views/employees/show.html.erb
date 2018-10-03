@@ -152,6 +152,9 @@
     <%= link_to employee_path(format: :pdf, id: @employee.id),class:"btn btn-primary pull-right", style:"margin-right: 5px;", target: '_blank'  do %>
     <i class="fa fa-download"></i> Exportar a PDF
     <% end %>
+     <%= link_to employees_fmo_path(format: :pdf, id: @employee.id),class:"btn btn-danger pull-center", style:"margin-right: 5px;", target: '_blank'  do %>
+                  <i class="fa fa-download"></i> Exportar Ficha Médica Ocupacional
+                  <% end %>
   </div>
 </div>
 

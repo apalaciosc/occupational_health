@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :edit, :update, :destroy, :roadmap]
+  before_action :set_employee, only: [:show, :edit, :update, :destroy, :roadmap, :fmo]
   before_action :authenticate_user!
 
   # GET /employees
@@ -37,6 +37,14 @@ def roadmap
       format.html
       format.json
       format.pdf {render template: 'employees/roadmap', pdf: 'roadmap'}
+    end
+  
+end
+def fmo
+   respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'employees/fmo', pdf: 'fmo'}
     end
   
 end
