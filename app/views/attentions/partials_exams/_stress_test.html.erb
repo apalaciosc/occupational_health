@@ -20,2932 +20,2932 @@
           <div class="col-lg-12">
             <div class="box-body table-responsive no-padding">
               <style type="text/css">
-                  .tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-s6z2{text-align:center;font-weight:bold}
-.tg .tg-hgcj{font-weight:bold;text-align:center}
-.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+              .tg  {border-collapse:collapse;border-spacing:0;}
+              .tg td{font-family:Arial, sans-serif;font-size:14px;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg .tg-s6z2{text-align:center;font-weight:bold}
+              .tg .tg-hgcj{font-weight:bold;text-align:center}
+              .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
               </style>
               <br/>
               <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
                 <colgroup>
                   <col style="width: 500.88889px">
-                    <col style="width: 80px">
-                      <col style="width: 81.88889px">
-                        <col style="width: 120px">
-                          <col style="width: 100px">
-                            <col style="width: 100.88889px">
-                            </col>
-                          </col>
-                        </col>
-                      </col>
-                    </col>
-                  </col>
-                </colgroup>
-                <tr>
-                  <th class="tg-s6z2">
-                    Estilo de vida
-                  </th>
-                  <th class="tg-s6z2">
-                    Nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Frecuentemente
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi siempre
-                  </th>
-                  <th class="tg-s6z2">
-                    Total
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    Duermo un numero de horas adecuado a mis necesidades
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question1]', '0', !!(@exam.data[:question1] == '0') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question1]', '1', !!(@exam.data[:question1] == '1') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question1]', '2', !!(@exam.data[:question1] == '2') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question1]', '3', !!(@exam.data[:question1] == '3') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= text_field_tag "exam[data][total_1]", @exam.data[:total_1], class: 'form-control', readonly: true %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Como a horas fijas
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question2]', '0', !!(@exam.data[:question2] == '0') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question2]', '1', !!(@exam.data[:question2] == '1') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question2]', '2', !!(@exam.data[:question2] == '2') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question2]', '3', !!(@exam.data[:question2] == '3') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= text_field_tag "exam[data][total_2]", @exam.data[:total_2], class: 'form-control', readonly: true %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Cuando estoy nervioso tomo tranquilizantes
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question3]', '0', !!(@exam.data[:question3] == '0') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question3]', '1', !!(@exam.data[:question3] == '1') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question3]', '2', !!(@exam.data[:question3] == '2') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question3]', '3', !!(@exam.data[:question3] == '3') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= text_field_tag "exam[data][total_3]", @exam.data[:total_3], class: 'form-control', readonly: true %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Para ocupar mi tiempo libre veo la televisión o el video
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question4]', '0', !!(@exam.data[:question4] == '0') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question4]', '1', !!(@exam.data[:question4] == '1') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question4]', '2', !!(@exam.data[:question4] == '2') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question4]', '3', !!(@exam.data[:question4] == '3') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= text_field_tag "exam[data][total_4]", @exam.data[:total_4], class: 'form-control', readonly: true %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Hago ejercicio físico de forma regular
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question5]', '0', !!(@exam.data[:question5] == '0') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question5]', '1', !!(@exam.data[:question5] == '1') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question5]', '2', !!(@exam.data[:question5] == '2') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= radio_button_tag 'exam[data][question5]', '3', !!(@exam.data[:question5] == '3') %>
-                  </td>
-                  <td class="tg-s6z2">
-                    <%= text_field_tag "exam[data][total_5]", @exam.data[:total_5], class: 'form-control', readonly: true %>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Como deprisa
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Como muchas cosas saturadas de colesterol
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Consumo frutas y verduras diariamente
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Bebo agua fuera de las comidas
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Pico entre horas
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Realizo un desayuno abundante
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Ceno de forma frugal, ligera
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Fumo
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Bebo alcohol con frecuencia
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Disfruto de naturaleza y aire puro cuando puedo
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Tengo una afición que me ayuda a relajarme
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tg-s6z2" colspan="5">
-                    Total Estilo de vida
-                  </td>
-                  <td>
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div class="col-lg-12">
-            <div class="box-body table-responsive no-padding">
-              <br/>
-              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
-                <colgroup>
-                  <col style="width: 500.88889px">
-                    <col style="width: 80px">
-                      <col style="width: 81.88889px">
-                        <col style="width: 120px">
-                          <col style="width: 100px">
-                            <col style="width: 100.88889px">
-                            </col>
-                          </col>
-                        </col>
-                      </col>
-                    </col>
-                  </col>
-                </colgroup>
-                <tr>
-                  <th class="tg-s6z2">
-                    Ambiente
-                  </th>
-                  <th class="tg-s6z2">
-                    Nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Frecuentemente
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi siempre
-                  </th>
-                  <th class="tg-s6z2">
-                    Total
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    Mi familia es bastante ruidosa
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aa" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aa" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aa" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aa" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Siento que necesito más espacio en casa
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bb" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bb" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bb" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bb" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Todas mis cosas están en su sitio
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="cc" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="cc" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="cc" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="cc" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Disfruto de mi casa y de las personas que hay dentro
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="dd" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="dd" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="dd" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="dd" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mis vecinos son muy escandalosos
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ee" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ee" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ee" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ee" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Suele haber mucha gente y ruído en la zona donde vivo
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ff" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ff" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ff" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ff" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mi casa está ordenada y limpia
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="gg" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="gg" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="gg" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="gg" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    En casa me relajo con facilidad
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hh" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hh" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hh" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hh" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    El dormitorio se me hace pequeño
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ii" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ii" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ii" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ii" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Siento que vivimos demasiados en una casa como esta
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jj" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jj" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jj" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jj" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me gusta la decoración de mi casa
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kk" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kk" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kk" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kk" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mi casa es suficiente para las necesidades actuales
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ll" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ll" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ll" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ll" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    En mi barrio hay olores desagradables
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mm" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mm" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mm" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mm" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    La zona en al que vivo es ruidosa
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nn" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nn" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nn" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nn" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    El aire que se respira en mi localidad es muy limpio
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="oo" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="oo" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="oo" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="oo" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Las calles y espacios públicos están cuidados
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="pp" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="pp" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="pp" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="pp" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tg-s6z2" colspan="5">
-                    Total Ambiente
-                  </td>
-                  <td>
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div class="col-lg-12">
-            <label>
-            </label>
-          </div>
-          <div class="col-lg-12">
-            <label>
-            </label>
-          </div>
-          <div class="col-l2">
-            <label>
-            <br/>
-            </label>
-          </div>
-          <div class="col-l2">
-            <label>
-            <br/>
-            </label>
-          </div>
-          <div class="col-lg-12">
-            <div class="box-body table-responsive no-padding">
-              <br/>
-              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
-                <colgroup>
-                  <col style="width: 500.88889px">
-                    <col style="width: 80px">
-                      <col style="width: 81.88889px">
-                        <col style="width: 120px">
-                          <col style="width: 100px">
-                            <col style="width: 100.88889px">
-                            </col>
-                          </col>
-                        </col>
-                      </col>
-                    </col>
-                  </col>
-                </colgroup>
-                <tr>
-                  <th class="tg-s6z2">
-                    Sintomas
-                  </th>
-                  <th class="tg-s6z2">
-                    Nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Frecuentemente
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi siempre
-                  </th>
-                  <th class="tg-s6z2">
-                    Total
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    Sufro dolores de cabeza
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aaa" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aaa" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aaa" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aaa" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Tengo dolores abdominales
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bbb" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bbb" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bbb" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bbb" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Hago bien la digestión
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ccc" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ccc" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ccc" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ccc" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Voy al baño con regularidad
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ddd" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ddd" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ddd" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ddd" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me molesta la zona lumbar
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="eee" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="eee" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="eee" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="eee" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Sufro de taquicardias
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="fff" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="fff" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="fff" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="fff" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Tengo alergía todos los años
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ggg" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ggg" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ggg" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ggg" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Sufro de sensaciones de ahogo
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hhh" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hhh" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hhh" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hhh" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Se me tensan la espalda y el cuello
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="iii" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="iii" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="iii" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="iii" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mi tensión sanguínea está dentro de la normalidad
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jjj" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jjj" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jjj" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jjj" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mi memoria es bastante eficaz, sin apenas olvidos
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kkk" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kkk" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kkk" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kkk" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Tengo poco apetito
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="lll" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="lll" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="lll" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="lll" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me siento cansado y sin apenas energía
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mmm" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mmm" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mmm" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mmm" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Padezco de insomnio
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nnn" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nnn" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nnn" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nnn" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Sudo mucho, aunque no haya motivos objetivos
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ooo" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ooo" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ooo" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ooo" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me desespero, incluso lloro, con facilidad
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ppp" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ppp" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ppp" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ppp" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tg-s6z2" colspan="5">
-                    Total Sintomas
-                  </td>
-                  <td>
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div class="col-lg-12">
-            <label>
-            </label>
-          </div>
-          <div class="col-lg-12">
-            <label>
-            </label>
-          </div>
-          <div class="col-l2">
-            <label>
-            <br/>
-            </label>
-          </div>
-          <div class="col-l2">
-            <label>
-            <br/>
-            </label>
-          </div>
-          <div class="col-lg-12">
-            <div class="box-body table-responsive no-padding">
-              <br/>
-              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
-                <colgroup>
-                  <col style="width: 500.88889px">
-                    <col style="width: 80px">
-                      <col style="width: 81.88889px">
-                        <col style="width: 120px">
-                          <col style="width: 100px">
-                            <col style="width: 100.88889px">
-                            </col>
-                          </col>
-                        </col>
-                      </col>
-                    </col>
-                  </col>
-                </colgroup>
-                <tr>
-                  <th class="tg-s6z2">
-                    Trabajo y ocupaciones
-                  </th>
-                  <th class="tg-s6z2">
-                    Nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Frecuentemente
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi siempre
-                  </th>
-                  <th class="tg-s6z2">
-                    Total
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    Mi labor cotidiana me provoca mucha tensión
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aaaa" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aaaa" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aaaa" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="aaaa" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    En mis ratos libres pienso en los problemas del trabajo
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bbbb" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bbbb" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bbbb" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="bbbb" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mi horario de trabajo es bastante bueno
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="cccc" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="cccc" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="cccc" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="cccc" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Puedo comer con tranquilidad, tengo tiempo
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="dddd" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="dddd" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="dddd" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="dddd" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Trabajo por la noche, incluso algún fin de semana en casa
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="eeee" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="eeee" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="eeee" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="eeee" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Tengo que trabajar en más de un sitio /empresa
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ffff" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ffff" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ffff" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="ffff" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Trabajando se me pasa el tiempo volando
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="gggg" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="gggg" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="gggg" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="gggg" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me siento útil y estoy satisfecho con lo que hago
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hhhh" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hhhh" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hhhh" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="hhhh" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Tengo miedo de perder el empleo en algún momento
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="iiii" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="iiii" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="iiii" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="iiii" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me llevo mal con la gente del trabajo
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jjjj" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jjjj" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jjjj" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="jjjj" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mantengo buenas relaciones con mi jefe
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kkkk" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kkkk" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kkkk" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="kkkk" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Considero muy estable mi trabajo /profesión
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="llll" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="llll" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="llll" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="llll" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Utilizo el coche para moverme por temas de trabajo
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mmmm" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mmmm" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mmmm" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="mmmm" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    A veces me olvido de comer por urgencias laborales
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nnnn" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nnnn" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nnnn" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="nnnn" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Estoy capacitado para lo que tengo que hacer
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="oooo" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="oooo" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="oooo" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="oooo" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mi familia y mi jefe parecen valorar lo que hago
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="pppp" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="pppp" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="pppp" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="pppp" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tg-s6z2" colspan="5">
-                    Total Trabajo y Ocupaciones
-                  </td>
-                  <td>
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div class="col-lg-12">
-            <label>
-            </label>
-          </div>
-          <div class="col-lg-12">
-            <label>
-            </label>
-          </div>
-          <div class="col-l2">
-            <label>
-            <br/>
-            </label>
-          </div>
-          <div class="col-lg-12">
-            <div class="box-body table-responsive no-padding">
-              <br/>
-              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
-                <colgroup>
-                  <col style="width: 500.88889px">
-                    <col style="width: 80px">
-                      <col style="width: 81.88889px">
-                        <col style="width: 120px">
-                          <col style="width: 100px">
-                            <col style="width: 100.88889px">
-                            </col>
-                          </col>
-                        </col>
-                      </col>
-                    </col>
-                  </col>
-                </colgroup>
-                <tr>
-                  <th class="tg-s6z2">
-                    Relaciones
-                  </th>
-                  <th class="tg-s6z2">
-                    Nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Frecuentemente
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi siempre
-                  </th>
-                  <th class="tg-s6z2">
-                    Total
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    Disfruto siendo amable y cortes con la gente
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="a2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="a2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="a2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="a2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Suelo confiar en los demás
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="b2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="b2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="b2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="b2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me siento molesto /a cuando mis planes dependen de otros
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="c2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="c2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="c2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="c2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me afectan mucho las disputas con otras personas
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="d2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="d2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="d2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="d2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Hay personas amigas dispuesta a escucharme
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="e2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="e2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="e2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="e2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Soy una persona sexualmente satisfecha
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    La opinión de los demás sobre mi es muy importante
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Siempre compito por hacer las cosas mejor que los demás
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mis compañeros de trabajo son personas amigas también
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Soy paciente escuchando los problemas de otras personas
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mi pareja tiene que cambiar para mejorar la relación
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Hablo demasiado
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Cuando discuto tiendo a alzar la voz muy pronto
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Siento envidia de que a muchos otros les va mejor
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Cuando discuto pienso más en qué decir que en escuchar
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Cuando me dan órdenes me pongo nervioso
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p2" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p2" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p2" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p2" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tg-s6z2" colspan="5">
-                    Total Relaciones
-                  </td>
-                  <td>
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div class="col-lg-12">
-            <label>
-            </label>
-          </div>
-          <div class="col-lg-12">
-            <label>
-            </label>
-          </div>
-          <div class="col-l2">
-            <label>
-            <br/>
-            </label>
-          </div>
-          <div class="col-lg-12">
-            <div class="box-body table-responsive no-padding">
-              <br/>
-              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
-                <colgroup>
-                  <col style="width: 500.88889px">
-                    <col style="width: 80px">
-                      <col style="width: 81.88889px">
-                        <col style="width: 120px">
-                          <col style="width: 100px">
-                            <col style="width: 100.88889px">
-                            </col>
-                          </col>
-                        </col>
-                      </col>
-                    </col>
-                  </col>
-                </colgroup>
-                <tr>
-                  <th class="tg-s6z2">
-                    Personalidad
-                  </th>
-                  <th class="tg-s6z2">
-                    Nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi nunca
-                  </th>
-                  <th class="tg-s6z2">
-                    Frecuentemente
-                  </th>
-                  <th class="tg-s6z2">
-                    Casi siempre
-                  </th>
-                  <th class="tg-s6z2">
-                    Total
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    En general me siento satisfecho con mi vida
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="a3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="a3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="a3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="a3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me gusta hablar bien de la gente
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="b3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="b3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="b3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="b3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Cuando conduzco me molestan los que van muy lento
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="c3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="c3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="c3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="c3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Si hay demasiada cola en un lugar me marcho sin esperar
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="d3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="d3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="d3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="d3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Suelo darme tiempo para hacer las cosas, sin presionarme
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="e3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="e3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="e3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="e3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Tengo confianza en el futuro
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="f3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Aun cuando no me agrada, suelo ponerme en lo peor
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="g3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me irrito cuando no puedo hacer algo a mi manera
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="h3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Tengo un gran sentido del humor
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="i3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    En general estoy cómodo con mi forma de ser
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="j3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Si estoy enfrascado en algo no acepto interrupciones
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="k3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Soy perfeccionista
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="l3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Pienso en el dinero que me deben con frecuencia
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="m3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me pongo nervioso en los atascos de tráfico
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="n3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    En las vacaciones me aburro pronto y deseo regresar
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="o3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Me aterra poder contraer una enfermedad grave
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p3" type="radio" value="0">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p3" type="radio" value="1">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p3" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="p3" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tg-s6z2" colspan="5">
-                    Total Personalidad
-                  </td>
-                  <td>
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-              </table>
-              <br/>
-              <br/>
-              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
-                <colgroup>
-                  <col style="width: 319.88889px">
-                    <col style="width: 67.88889px">
-                      <col style="width: 322.88889px">
-                        <col style="width: 65.88889px">
-                          <col style="width: 71.88889px">
-                          </col>
-                        </col>
-                      </col>
-                    </col>
-                  </col>
-                </colgroup>
-                <tr>
-                  <th class="tg-s6z2" colspan="4">
-                    Elija las siguientes opciones
-                  </th>
-                  <th class="tg-s6z2">
-                    Total
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    Entre 25 y 34 años
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="a4" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td>
-                    Entre 35 y 60 años
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="a4" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    ¿Está divorciada o separada?
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="b4" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td>
-                    ¿Está soltera o es una persona viuda?
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="b4" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    ¿Vive en una ciudad muy pequeña?
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="c4" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td>
-                    ¿Vive en una ciudad grande?
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="c4" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    ¿Tiene hasta dos hijos viviendo en su casa?
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="d4" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td>
-                    ¿Tiene más de dos hijos viviendo en su casa?
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="d4" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    ¿Está desempleada?
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="e4" type="radio" value="3">
-                    </input>
-                  </td>
-                  <td>
-                    ¿Tiene trabajos temporales?
-                  </td>
-                  <td class="tg-s6z2">
-                    <input name="e4" type="radio" value="2">
-                    </input>
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tg-s6z2" colspan="4">
-                    Total
-                  </td>
-                  <td class="tg-s6z2">
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </td>
-                </tr>
-              </table>
-              <br/>
-              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
-                <colgroup>
-                  <col style="width: 500px">
-                    <col style="width: 46.88889px">
-                    </col>
-                  </col>
-                </colgroup>
-                <tr>
-                  <th class="tg-s6z2">
-                    Puntuación global
-                  </th>
-                  <th>
-                    <input class="form-control" readonly="true" type="text">
-                    </input>
-                  </th>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div class="col-lg-12">
-            <label>
-            </label>
-          </div>
-          <div class="col-lg-12">
-            <label>
-            </label>
-          </div>
-          <div class="col-lg-12">
-            <div class="form-group">
-              <label>
-                Conclusiones:
-              </label>
-              <input class="form-control" placeholder="Escriba las conclusiones" type="text">
-              </input>
-            </div>
-          </div>
-          <div class="col-l2">
-            <label>
-              <br/>
-            </label>
-          </div>
-        </div>
-        <div class="box-body">
-          <div class="form-group">
-            <div class="col-sm-offset-5 col-sm-10">
-              <%= f.submit 'Guardar', class:'btn btn-primary' %>
-              <%= link_to 'Volver', :back, class:'btn btn-danger' %>
-            </div>
-          </div>
-        </div>
-      </div>
+                  <col style="width: 80px">
+                  <col style="width: 81.88889px">
+                  <col style="width: 120px">
+                  <col style="width: 100px">
+                  <col style="width: 100.88889px">
+                </col>
+              </col>
+            </col>
+          </col>
+        </col>
+      </col>
+    </colgroup>
+    <tr>
+      <th class="tg-s6z2">
+        Estilo de vida
+      </th>
+      <th class="tg-s6z2">
+        Nunca
+      </th>
+      <th class="tg-s6z2">
+        Casi nunca
+      </th>
+      <th class="tg-s6z2">
+        Frecuentemente
+      </th>
+      <th class="tg-s6z2">
+        Casi siempre
+      </th>
+      <th class="tg-s6z2">
+        Total
+      </th>
+    </tr>
+    <tr>
+      <td>
+        Duermo un numero de horas adecuado a mis necesidades
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question1]', '0', !!(@exam.data[:question1] == '0') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question1]', '1', !!(@exam.data[:question1] == '1') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question1]', '2', !!(@exam.data[:question1] == '2') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question1]', '3', !!(@exam.data[:question1] == '3') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= text_field_tag "exam[data][total_1]", @exam.data[:total_1], class: 'form-control', readonly: true %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Como a horas fijas
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question2]', '0', !!(@exam.data[:question2] == '0') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question2]', '1', !!(@exam.data[:question2] == '1') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question2]', '2', !!(@exam.data[:question2] == '2') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question2]', '3', !!(@exam.data[:question2] == '3') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= text_field_tag "exam[data][total_2]", @exam.data[:total_2], class: 'form-control', readonly: true %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Cuando estoy nervioso tomo tranquilizantes
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question3]', '0', !!(@exam.data[:question3] == '0') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question3]', '1', !!(@exam.data[:question3] == '1') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question3]', '2', !!(@exam.data[:question3] == '2') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question3]', '3', !!(@exam.data[:question3] == '3') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= text_field_tag "exam[data][total_3]", @exam.data[:total_3], class: 'form-control', readonly: true %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Para ocupar mi tiempo libre veo la televisión o el video
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question4]', '0', !!(@exam.data[:question4] == '0') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question4]', '1', !!(@exam.data[:question4] == '1') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question4]', '2', !!(@exam.data[:question4] == '2') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question4]', '3', !!(@exam.data[:question4] == '3') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= text_field_tag "exam[data][total_4]", @exam.data[:total_4], class: 'form-control', readonly: true %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Hago ejercicio físico de forma regular
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question5]', '0', !!(@exam.data[:question5] == '0') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question5]', '1', !!(@exam.data[:question5] == '1') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question5]', '2', !!(@exam.data[:question5] == '2') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= radio_button_tag 'exam[data][question5]', '3', !!(@exam.data[:question5] == '3') %>
+      </td>
+      <td class="tg-s6z2">
+        <%= text_field_tag "exam[data][total_5]", @exam.data[:total_5], class: 'form-control', readonly: true %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Como deprisa
+      </td>
+      <td class="tg-s6z2">
+        <input name="f" type="radio" value="0">
+      </input>
+    </td>
+    <td class="tg-s6z2">
+      <input name="f" type="radio" value="1">
+    </input>
+  </td>
+  <td class="tg-s6z2">
+    <input name="f" type="radio" value="2">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="f" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Como muchas cosas saturadas de colesterol
+  </td>
+  <td class="tg-s6z2">
+    <input name="g" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="g" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="g" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="g" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Consumo frutas y verduras diariamente
+  </td>
+  <td class="tg-s6z2">
+    <input name="h" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="h" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="h" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="h" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Bebo agua fuera de las comidas
+  </td>
+  <td class="tg-s6z2">
+    <input name="i" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="i" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="i" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="i" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Pico entre horas
+  </td>
+  <td class="tg-s6z2">
+    <input name="j" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="j" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="j" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="j" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Realizo un desayuno abundante
+  </td>
+  <td class="tg-s6z2">
+    <input name="k" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="k" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="k" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="k" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Ceno de forma frugal, ligera
+  </td>
+  <td class="tg-s6z2">
+    <input name="l" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="l" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="l" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="l" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Fumo
+  </td>
+  <td class="tg-s6z2">
+    <input name="m" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="m" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="m" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="m" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Bebo alcohol con frecuencia
+  </td>
+  <td class="tg-s6z2">
+    <input name="n" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="n" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="n" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="n" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Disfruto de naturaleza y aire puro cuando puedo
+  </td>
+  <td class="tg-s6z2">
+    <input name="o" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="o" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="o" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="o" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Tengo una afición que me ayuda a relajarme
+  </td>
+  <td class="tg-s6z2">
+    <input name="p" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="p" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="p" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="p" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td class="tg-s6z2" colspan="5">
+    Total Estilo de vida
+  </td>
+  <td>
+    <input class="form-control" readonly="true" type="text">
+  </input>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="col-lg-12">
+  <div class="box-body table-responsive no-padding">
+    <br/>
+    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+      <colgroup>
+        <col style="width: 500.88889px">
+        <col style="width: 80px">
+        <col style="width: 81.88889px">
+        <col style="width: 120px">
+        <col style="width: 100px">
+        <col style="width: 100.88889px">
+      </col>
+    </col>
+  </col>
+</col>
+</col>
+</col>
+</colgroup>
+<tr>
+  <th class="tg-s6z2">
+    Ambiente
+  </th>
+  <th class="tg-s6z2">
+    Nunca
+  </th>
+  <th class="tg-s6z2">
+    Casi nunca
+  </th>
+  <th class="tg-s6z2">
+    Frecuentemente
+  </th>
+  <th class="tg-s6z2">
+    Casi siempre
+  </th>
+  <th class="tg-s6z2">
+    Total
+  </th>
+</tr>
+<tr>
+  <td>
+    Mi familia es bastante ruidosa
+  </td>
+  <td class="tg-s6z2">
+    <input name="aa" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="aa" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="aa" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="aa" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Siento que necesito más espacio en casa
+  </td>
+  <td class="tg-s6z2">
+    <input name="bb" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="bb" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="bb" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="bb" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Todas mis cosas están en su sitio
+  </td>
+  <td class="tg-s6z2">
+    <input name="cc" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="cc" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="cc" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="cc" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Disfruto de mi casa y de las personas que hay dentro
+  </td>
+  <td class="tg-s6z2">
+    <input name="dd" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="dd" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="dd" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="dd" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Mis vecinos son muy escandalosos
+  </td>
+  <td class="tg-s6z2">
+    <input name="ee" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="ee" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ee" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ee" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Suele haber mucha gente y ruído en la zona donde vivo
+  </td>
+  <td class="tg-s6z2">
+    <input name="ff" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="ff" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ff" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ff" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Mi casa está ordenada y limpia
+  </td>
+  <td class="tg-s6z2">
+    <input name="gg" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="gg" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="gg" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="gg" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    En casa me relajo con facilidad
+  </td>
+  <td class="tg-s6z2">
+    <input name="hh" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="hh" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="hh" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="hh" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    El dormitorio se me hace pequeño
+  </td>
+  <td class="tg-s6z2">
+    <input name="ii" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="ii" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ii" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ii" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Siento que vivimos demasiados en una casa como esta
+  </td>
+  <td class="tg-s6z2">
+    <input name="jj" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="jj" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="jj" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="jj" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me gusta la decoración de mi casa
+  </td>
+  <td class="tg-s6z2">
+    <input name="kk" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="kk" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="kk" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="kk" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Mi casa es suficiente para las necesidades actuales
+  </td>
+  <td class="tg-s6z2">
+    <input name="ll" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="ll" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ll" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ll" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    En mi barrio hay olores desagradables
+  </td>
+  <td class="tg-s6z2">
+    <input name="mm" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="mm" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="mm" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="mm" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    La zona en al que vivo es ruidosa
+  </td>
+  <td class="tg-s6z2">
+    <input name="nn" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="nn" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="nn" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="nn" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    El aire que se respira en mi localidad es muy limpio
+  </td>
+  <td class="tg-s6z2">
+    <input name="oo" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="oo" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="oo" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="oo" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Las calles y espacios públicos están cuidados
+  </td>
+  <td class="tg-s6z2">
+    <input name="pp" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="pp" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="pp" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="pp" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td class="tg-s6z2" colspan="5">
+    Total Ambiente
+  </td>
+  <td>
+    <input class="form-control" readonly="true" type="text">
+  </input>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="col-lg-12">
+  <label>
+  </label>
+</div>
+<div class="col-lg-12">
+  <label>
+  </label>
+</div>
+<div class="col-l2">
+  <label>
+    <br/>
+  </label>
+</div>
+<div class="col-l2">
+  <label>
+    <br/>
+  </label>
+</div>
+<div class="col-lg-12">
+  <div class="box-body table-responsive no-padding">
+    <br/>
+    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+      <colgroup>
+        <col style="width: 500.88889px">
+        <col style="width: 80px">
+        <col style="width: 81.88889px">
+        <col style="width: 120px">
+        <col style="width: 100px">
+        <col style="width: 100.88889px">
+      </col>
+    </col>
+  </col>
+</col>
+</col>
+</col>
+</colgroup>
+<tr>
+  <th class="tg-s6z2">
+    Sintomas
+  </th>
+  <th class="tg-s6z2">
+    Nunca
+  </th>
+  <th class="tg-s6z2">
+    Casi nunca
+  </th>
+  <th class="tg-s6z2">
+    Frecuentemente
+  </th>
+  <th class="tg-s6z2">
+    Casi siempre
+  </th>
+  <th class="tg-s6z2">
+    Total
+  </th>
+</tr>
+<tr>
+  <td>
+    Sufro dolores de cabeza
+  </td>
+  <td class="tg-s6z2">
+    <input name="aaa" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="aaa" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="aaa" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="aaa" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Tengo dolores abdominales
+  </td>
+  <td class="tg-s6z2">
+    <input name="bbb" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="bbb" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="bbb" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="bbb" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Hago bien la digestión
+  </td>
+  <td class="tg-s6z2">
+    <input name="ccc" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="ccc" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ccc" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ccc" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Voy al baño con regularidad
+  </td>
+  <td class="tg-s6z2">
+    <input name="ddd" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="ddd" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ddd" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ddd" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me molesta la zona lumbar
+  </td>
+  <td class="tg-s6z2">
+    <input name="eee" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="eee" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="eee" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="eee" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Sufro de taquicardias
+  </td>
+  <td class="tg-s6z2">
+    <input name="fff" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="fff" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="fff" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="fff" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Tengo alergía todos los años
+  </td>
+  <td class="tg-s6z2">
+    <input name="ggg" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="ggg" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ggg" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ggg" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Sufro de sensaciones de ahogo
+  </td>
+  <td class="tg-s6z2">
+    <input name="hhh" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="hhh" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="hhh" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="hhh" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Se me tensan la espalda y el cuello
+  </td>
+  <td class="tg-s6z2">
+    <input name="iii" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="iii" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="iii" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="iii" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Mi tensión sanguínea está dentro de la normalidad
+  </td>
+  <td class="tg-s6z2">
+    <input name="jjj" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="jjj" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="jjj" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="jjj" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Mi memoria es bastante eficaz, sin apenas olvidos
+  </td>
+  <td class="tg-s6z2">
+    <input name="kkk" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="kkk" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="kkk" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="kkk" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Tengo poco apetito
+  </td>
+  <td class="tg-s6z2">
+    <input name="lll" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="lll" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="lll" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="lll" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me siento cansado y sin apenas energía
+  </td>
+  <td class="tg-s6z2">
+    <input name="mmm" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="mmm" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="mmm" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="mmm" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Padezco de insomnio
+  </td>
+  <td class="tg-s6z2">
+    <input name="nnn" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="nnn" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="nnn" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="nnn" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Sudo mucho, aunque no haya motivos objetivos
+  </td>
+  <td class="tg-s6z2">
+    <input name="ooo" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="ooo" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ooo" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ooo" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me desespero, incluso lloro, con facilidad
+  </td>
+  <td class="tg-s6z2">
+    <input name="ppp" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="ppp" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ppp" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ppp" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td class="tg-s6z2" colspan="5">
+    Total Sintomas
+  </td>
+  <td>
+    <input class="form-control" readonly="true" type="text">
+  </input>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="col-lg-12">
+  <label>
+  </label>
+</div>
+<div class="col-lg-12">
+  <label>
+  </label>
+</div>
+<div class="col-l2">
+  <label>
+    <br/>
+  </label>
+</div>
+<div class="col-l2">
+  <label>
+    <br/>
+  </label>
+</div>
+<div class="col-lg-12">
+  <div class="box-body table-responsive no-padding">
+    <br/>
+    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+      <colgroup>
+        <col style="width: 500.88889px">
+        <col style="width: 80px">
+        <col style="width: 81.88889px">
+        <col style="width: 120px">
+        <col style="width: 100px">
+        <col style="width: 100.88889px">
+      </col>
+    </col>
+  </col>
+</col>
+</col>
+</col>
+</colgroup>
+<tr>
+  <th class="tg-s6z2">
+    Trabajo y ocupaciones
+  </th>
+  <th class="tg-s6z2">
+    Nunca
+  </th>
+  <th class="tg-s6z2">
+    Casi nunca
+  </th>
+  <th class="tg-s6z2">
+    Frecuentemente
+  </th>
+  <th class="tg-s6z2">
+    Casi siempre
+  </th>
+  <th class="tg-s6z2">
+    Total
+  </th>
+</tr>
+<tr>
+  <td>
+    Mi labor cotidiana me provoca mucha tensión
+  </td>
+  <td class="tg-s6z2">
+    <input name="aaaa" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="aaaa" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="aaaa" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="aaaa" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    En mis ratos libres pienso en los problemas del trabajo
+  </td>
+  <td class="tg-s6z2">
+    <input name="bbbb" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="bbbb" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="bbbb" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="bbbb" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Mi horario de trabajo es bastante bueno
+  </td>
+  <td class="tg-s6z2">
+    <input name="cccc" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="cccc" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="cccc" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="cccc" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Puedo comer con tranquilidad, tengo tiempo
+  </td>
+  <td class="tg-s6z2">
+    <input name="dddd" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="dddd" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="dddd" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="dddd" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Trabajo por la noche, incluso algún fin de semana en casa
+  </td>
+  <td class="tg-s6z2">
+    <input name="eeee" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="eeee" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="eeee" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="eeee" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Tengo que trabajar en más de un sitio /empresa
+  </td>
+  <td class="tg-s6z2">
+    <input name="ffff" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="ffff" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ffff" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="ffff" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Trabajando se me pasa el tiempo volando
+  </td>
+  <td class="tg-s6z2">
+    <input name="gggg" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="gggg" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="gggg" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="gggg" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me siento útil y estoy satisfecho con lo que hago
+  </td>
+  <td class="tg-s6z2">
+    <input name="hhhh" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="hhhh" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="hhhh" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="hhhh" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Tengo miedo de perder el empleo en algún momento
+  </td>
+  <td class="tg-s6z2">
+    <input name="iiii" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="iiii" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="iiii" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="iiii" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me llevo mal con la gente del trabajo
+  </td>
+  <td class="tg-s6z2">
+    <input name="jjjj" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="jjjj" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="jjjj" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="jjjj" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Mantengo buenas relaciones con mi jefe
+  </td>
+  <td class="tg-s6z2">
+    <input name="kkkk" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="kkkk" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="kkkk" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="kkkk" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Considero muy estable mi trabajo /profesión
+  </td>
+  <td class="tg-s6z2">
+    <input name="llll" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="llll" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="llll" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="llll" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Utilizo el coche para moverme por temas de trabajo
+  </td>
+  <td class="tg-s6z2">
+    <input name="mmmm" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="mmmm" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="mmmm" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="mmmm" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    A veces me olvido de comer por urgencias laborales
+  </td>
+  <td class="tg-s6z2">
+    <input name="nnnn" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="nnnn" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="nnnn" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="nnnn" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Estoy capacitado para lo que tengo que hacer
+  </td>
+  <td class="tg-s6z2">
+    <input name="oooo" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="oooo" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="oooo" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="oooo" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Mi familia y mi jefe parecen valorar lo que hago
+  </td>
+  <td class="tg-s6z2">
+    <input name="pppp" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="pppp" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="pppp" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="pppp" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td class="tg-s6z2" colspan="5">
+    Total Trabajo y Ocupaciones
+  </td>
+  <td>
+    <input class="form-control" readonly="true" type="text">
+  </input>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="col-lg-12">
+  <label>
+  </label>
+</div>
+<div class="col-lg-12">
+  <label>
+  </label>
+</div>
+<div class="col-l2">
+  <label>
+    <br/>
+  </label>
+</div>
+<div class="col-lg-12">
+  <div class="box-body table-responsive no-padding">
+    <br/>
+    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+      <colgroup>
+        <col style="width: 500.88889px">
+        <col style="width: 80px">
+        <col style="width: 81.88889px">
+        <col style="width: 120px">
+        <col style="width: 100px">
+        <col style="width: 100.88889px">
+      </col>
+    </col>
+  </col>
+</col>
+</col>
+</col>
+</colgroup>
+<tr>
+  <th class="tg-s6z2">
+    Relaciones
+  </th>
+  <th class="tg-s6z2">
+    Nunca
+  </th>
+  <th class="tg-s6z2">
+    Casi nunca
+  </th>
+  <th class="tg-s6z2">
+    Frecuentemente
+  </th>
+  <th class="tg-s6z2">
+    Casi siempre
+  </th>
+  <th class="tg-s6z2">
+    Total
+  </th>
+</tr>
+<tr>
+  <td>
+    Disfruto siendo amable y cortes con la gente
+  </td>
+  <td class="tg-s6z2">
+    <input name="a2" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="a2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="a2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="a2" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Suelo confiar en los demás
+  </td>
+  <td class="tg-s6z2">
+    <input name="b2" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="b2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="b2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="b2" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me siento molesto /a cuando mis planes dependen de otros
+  </td>
+  <td class="tg-s6z2">
+    <input name="c2" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="c2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="c2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="c2" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me afectan mucho las disputas con otras personas
+  </td>
+  <td class="tg-s6z2">
+    <input name="d2" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="d2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="d2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="d2" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Hay personas amigas dispuesta a escucharme
+  </td>
+  <td class="tg-s6z2">
+    <input name="e2" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="e2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="e2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="e2" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Soy una persona sexualmente satisfecha
+  </td>
+  <td class="tg-s6z2">
+    <input name="f2" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="f2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="f2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="f2" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    La opinión de los demás sobre mi es muy importante
+  </td>
+  <td class="tg-s6z2">
+    <input name="g2" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="g2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="g2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="g2" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Siempre compito por hacer las cosas mejor que los demás
+  </td>
+  <td class="tg-s6z2">
+    <input name="h2" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="h2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="h2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="h2" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Mis compañeros de trabajo son personas amigas también
+  </td>
+  <td class="tg-s6z2">
+    <input name="i2" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="i2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="i2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="i2" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Soy paciente escuchando los problemas de otras personas
+  </td>
+  <td class="tg-s6z2">
+    <input name="j2" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="j2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="j2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="j2" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Mi pareja tiene que cambiar para mejorar la relación
+  </td>
+  <td class="tg-s6z2">
+    <input name="k2" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="k2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="k2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="k2" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Hablo demasiado
+  </td>
+  <td class="tg-s6z2">
+    <input name="l2" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="l2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="l2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="l2" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Cuando discuto tiendo a alzar la voz muy pronto
+  </td>
+  <td class="tg-s6z2">
+    <input name="m2" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="m2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="m2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="m2" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Siento envidia de que a muchos otros les va mejor
+  </td>
+  <td class="tg-s6z2">
+    <input name="n2" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="n2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="n2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="n2" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Cuando discuto pienso más en qué decir que en escuchar
+  </td>
+  <td class="tg-s6z2">
+    <input name="o2" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="o2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="o2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="o2" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Cuando me dan órdenes me pongo nervioso
+  </td>
+  <td class="tg-s6z2">
+    <input name="p2" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="p2" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="p2" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="p2" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td class="tg-s6z2" colspan="5">
+    Total Relaciones
+  </td>
+  <td>
+    <input class="form-control" readonly="true" type="text">
+  </input>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="col-lg-12">
+  <label>
+  </label>
+</div>
+<div class="col-lg-12">
+  <label>
+  </label>
+</div>
+<div class="col-l2">
+  <label>
+    <br/>
+  </label>
+</div>
+<div class="col-lg-12">
+  <div class="box-body table-responsive no-padding">
+    <br/>
+    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+      <colgroup>
+        <col style="width: 500.88889px">
+        <col style="width: 80px">
+        <col style="width: 81.88889px">
+        <col style="width: 120px">
+        <col style="width: 100px">
+        <col style="width: 100.88889px">
+      </col>
+    </col>
+  </col>
+</col>
+</col>
+</col>
+</colgroup>
+<tr>
+  <th class="tg-s6z2">
+    Personalidad
+  </th>
+  <th class="tg-s6z2">
+    Nunca
+  </th>
+  <th class="tg-s6z2">
+    Casi nunca
+  </th>
+  <th class="tg-s6z2">
+    Frecuentemente
+  </th>
+  <th class="tg-s6z2">
+    Casi siempre
+  </th>
+  <th class="tg-s6z2">
+    Total
+  </th>
+</tr>
+<tr>
+  <td>
+    En general me siento satisfecho con mi vida
+  </td>
+  <td class="tg-s6z2">
+    <input name="a3" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="a3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="a3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="a3" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me gusta hablar bien de la gente
+  </td>
+  <td class="tg-s6z2">
+    <input name="b3" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="b3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="b3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="b3" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Cuando conduzco me molestan los que van muy lento
+  </td>
+  <td class="tg-s6z2">
+    <input name="c3" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="c3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="c3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="c3" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Si hay demasiada cola en un lugar me marcho sin esperar
+  </td>
+  <td class="tg-s6z2">
+    <input name="d3" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="d3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="d3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="d3" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Suelo darme tiempo para hacer las cosas, sin presionarme
+  </td>
+  <td class="tg-s6z2">
+    <input name="e3" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="e3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="e3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="e3" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Tengo confianza en el futuro
+  </td>
+  <td class="tg-s6z2">
+    <input name="f3" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="f3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="f3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="f3" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Aun cuando no me agrada, suelo ponerme en lo peor
+  </td>
+  <td class="tg-s6z2">
+    <input name="g3" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="g3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="g3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="g3" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me irrito cuando no puedo hacer algo a mi manera
+  </td>
+  <td class="tg-s6z2">
+    <input name="h3" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="h3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="h3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="h3" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Tengo un gran sentido del humor
+  </td>
+  <td class="tg-s6z2">
+    <input name="i3" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="i3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="i3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="i3" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    En general estoy cómodo con mi forma de ser
+  </td>
+  <td class="tg-s6z2">
+    <input name="j3" type="radio" value="3">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="j3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="j3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="j3" type="radio" value="0">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Si estoy enfrascado en algo no acepto interrupciones
+  </td>
+  <td class="tg-s6z2">
+    <input name="k3" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="k3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="k3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="k3" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Soy perfeccionista
+  </td>
+  <td class="tg-s6z2">
+    <input name="l3" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="l3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="l3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="l3" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Pienso en el dinero que me deben con frecuencia
+  </td>
+  <td class="tg-s6z2">
+    <input name="m3" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="m3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="m3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="m3" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me pongo nervioso en los atascos de tráfico
+  </td>
+  <td class="tg-s6z2">
+    <input name="n3" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="n3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="n3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="n3" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    En las vacaciones me aburro pronto y deseo regresar
+  </td>
+  <td class="tg-s6z2">
+    <input name="o3" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="o3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="o3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="o3" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    Me aterra poder contraer una enfermedad grave
+  </td>
+  <td class="tg-s6z2">
+    <input name="p3" type="radio" value="0">
+  </input>
+</td>
+<td class="tg-s6z2">
+  <input name="p3" type="radio" value="1">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="p3" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input name="p3" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td class="tg-s6z2" colspan="5">
+    Total Personalidad
+  </td>
+  <td>
+    <input class="form-control" readonly="true" type="text">
+  </input>
+</td>
+</tr>
+</table>
+<br/>
+<br/>
+<table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+  <colgroup>
+    <col style="width: 319.88889px">
+    <col style="width: 67.88889px">
+    <col style="width: 322.88889px">
+    <col style="width: 65.88889px">
+    <col style="width: 71.88889px">
+  </col>
+</col>
+</col>
+</col>
+</col>
+</colgroup>
+<tr>
+  <th class="tg-s6z2" colspan="4">
+    Elija las siguientes opciones
+  </th>
+  <th class="tg-s6z2">
+    Total
+  </th>
+</tr>
+<tr>
+  <td>
+    Entre 25 y 34 años
+  </td>
+  <td class="tg-s6z2">
+    <input name="a4" type="radio" value="2">
+  </input>
+</td>
+<td>
+  Entre 35 y 60 años
+</td>
+<td class="tg-s6z2">
+  <input name="a4" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    ¿Está divorciada o separada?
+  </td>
+  <td class="tg-s6z2">
+    <input name="b4" type="radio" value="3">
+  </input>
+</td>
+<td>
+  ¿Está soltera o es una persona viuda?
+</td>
+<td class="tg-s6z2">
+  <input name="b4" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    ¿Vive en una ciudad muy pequeña?
+  </td>
+  <td class="tg-s6z2">
+    <input name="c4" type="radio" value="2">
+  </input>
+</td>
+<td>
+  ¿Vive en una ciudad grande?
+</td>
+<td class="tg-s6z2">
+  <input name="c4" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    ¿Tiene hasta dos hijos viviendo en su casa?
+  </td>
+  <td class="tg-s6z2">
+    <input name="d4" type="radio" value="2">
+  </input>
+</td>
+<td>
+  ¿Tiene más de dos hijos viviendo en su casa?
+</td>
+<td class="tg-s6z2">
+  <input name="d4" type="radio" value="3">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td>
+    ¿Está desempleada?
+  </td>
+  <td class="tg-s6z2">
+    <input name="e4" type="radio" value="3">
+  </input>
+</td>
+<td>
+  ¿Tiene trabajos temporales?
+</td>
+<td class="tg-s6z2">
+  <input name="e4" type="radio" value="2">
+</input>
+</td>
+<td class="tg-s6z2">
+  <input class="form-control" readonly="true" type="text">
+</input>
+</td>
+</tr>
+<tr>
+  <td class="tg-s6z2" colspan="4">
+    Total
+  </td>
+  <td class="tg-s6z2">
+    <input class="form-control" readonly="true" type="text">
+  </input>
+</td>
+</tr>
+</table>
+<br/>
+<table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+  <colgroup>
+    <col style="width: 500px">
+    <col style="width: 46.88889px">
+  </col>
+</col>
+</colgroup>
+<tr>
+  <th class="tg-s6z2">
+    Puntuación global
+  </th>
+  <th>
+    <input class="form-control" readonly="true" type="text">
+  </input>
+</th>
+</tr>
+</table>
+</div>
+</div>
+<div class="col-lg-12">
+  <label>
+  </label>
+</div>
+<div class="col-lg-12">
+  <label>
+  </label>
+</div>
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>
+      Conclusiones:
+    </label>
+    <input class="form-control" placeholder="Escriba las conclusiones" type="text">
+  </input>
+</div>
+</div>
+<div class="col-l2">
+  <label>
+    <br/>
+  </label>
+</div>
+</div>
+<div class="box-body">
+  <div class="form-group">
+    <div class="col-sm-offset-5 col-sm-10">
+      <%= f.submit 'Guardar', class:'btn btn-primary' %>
+      <%= link_to 'Volver', :back, class:'btn btn-danger' %>
     </div>
   </div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <% end %>
