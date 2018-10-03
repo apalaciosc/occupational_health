@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+  <meta charset="utf-8">
+  <title>Hoja de ruta</title>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="content">
+    <section>
+      <div class="row">
+        <table>
+          <colgroup>
+            <col style="width: 320.88889px">
+            <col style="width: 400.88889px">
+          </colgroup>
+          <tr>
+            <td> MEDICO OCUPACIONALES</td>
+            <td>
+              <h4 class="col-lg-offset-2 " style="color:#0067A3">
+                POLICLINICO "SAN VICENTE"- CAÑETE E.I.R.L
+              </h4>
+            </td>
+          </tr>
+        </table>
+        <div class="col-lg-9" align="left"></div>
+        <div class="col-lg-12">
+          <h3 align="center">
+            HOJA DE RUTA DE EXÁMENES MEDICO OCUPACIONALES
+          </h3>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <p class="col-lg-12">
+          De acuerdo al Protocolo Ocupacionales, se debe tener en cuenta estos Obligatorios, lo cual el participante debe obtener todos estos documentos que comprueban haber completado todos los examenes Médicos Ocupacionales
+        </p>
+      </div>
+      <style type="text/css">td { border = 0; }</style>
+      <table class="tg"  style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 117.88889px">
+          <col style="width: 128.88889px">
+          <col style="width: 160.88889px">
+          <col style="width: 120.88889px">
+          <col style="width: 125.88889px">
+          <col style="width: 190.88889px">
+          <col style="width: 200.88889px">
+        </colgroup>
+        <tr>
+          <td class="tg-xrpy">DNI</td>
+          <td class="tg-xrpy"><%= @employee.dni %></td>
+          <td class="tg-xrpy">Nombres y Apellidos</td>
+          <td class="tg-xrpy" colspan="2"><%= @employee.name %></td>
+          <td class="tg-xrpy">Fecha de Nacimiento</td>
+          <td class="tg-xrpy"><%= @employee.birthday %></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Edad</td>
+          <td class="tg-xrpy"><%= @employee.age %></td>
+          <td class="tg-xrpy">Sexo</td>
+          <td class="tg-xrpy"></td>
+          <td class="tg-xrpy">Empresa</td>
+          <td class="tg-xrpy" colspan="2"><%= @employee.enterprise.name %></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Tipo de examen</td>
+          <td class="tg-s268"></td>
+          <td class="tg-xrpy">Cargo</td>
+          <td class="tg-xrpy"></td>
+        </tr>
+      </table>
+      <style type="text/css">
+      .tg  {border-collapse:collapse;border-spacing:0;}
+      .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+      .tg th{ font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+      .letra { font-family:Arial, sans-serif;font-size:20px;}
+      .espacio{font-family:Arial;font-size:18px;padding:40px 40px;}
+      .tg .tg-xrpy{font-weight:bold;font-size:16px;border-color:inherit;text-align:center;}
+      .cuadrado {width: 120px; height: 120px; border: 3px solid #555;}
+      </style>
+      <br><br>
+      <div class="box-body table-responsive no-padding">
+        <table align="center" class="tg" style="undefined;table-layout: fixed; width: 1000px">
+          <colgroup>
+            <col style="width: 350.88889px">
+            <col style="width: 200.88889px">
+          </colgroup>
+          <tr>
+            <th class="tg-xrpy">
+              ACTUACIONES Y/O SERVICIOS
+            </th>
+            <th class="tg-xrpy">
+              FIRMA Y/O SELLO
+            </th>
+          </tr>
+          <tr>
+            <td class="tg-xrpy">
+              RECEPCIÓN
+              <br>
+              (Incripción y verificación en lista, ingreso de datos, orientación de exámenes, firmado de consentimiento)
+            </td>
+            <td class="tg-xrpy"></td>
+          </tr>
+          <tr>
+            <td class="tg-xrpy">
+              LABORATORIO CLINICO
+              <br>
+              (Grupo y factor, Glucosa, Hemograma completo, Examen de orina, Colesterol total y trigiceridos)
+            </td>
+            <td class="tg-xrpy"></td>
+          </tr>
+          <tr>
+            <td class="tg-xrpy">
+              EXAMEN MÉDICO FISICO
+              <br>
+              (Evaluación medica exploratoria, Historia Clinica, Antecedentes Personales y Familiares, Examen Musculo Esqueletico, Habitos Nocivos,etc)
+            </td>
+            <td class="tg-xrpy"></td>
+          </tr>
+          <tr>
+            <td class="tg-xrpy">
+              <br>
+              OFTALMOLOGÍA
+              <br>
+              (Evaluación de Agudeza Visual y Test de Ishihara)
+            </td>
+            <td class="tg-xrpy"></td>
+          </tr>
+          <tr>
+            <td class="tg-xrpy">
+              <br>
+              ESPIROMETRÍA
+              <br>
+            </td>
+            <td class="tg-xrpy"></td>
+          </tr>
+          <tr>
+            <td class="tg-xrpy">
+              <br>
+              AUDIOMETRÍA
+              <br>
+            </td>
+            <td class="tg-xrpy"></td>
+          </tr>
+          <tr>
+            <td class="tg-xrpy">
+              <br>
+              RAYOS X
+              <br>
+              TORAX SIMPLE
+            </td>
+            <td class="tg-xrpy"></td>
+          </tr>
+          <tr>
+            <td class="tg-xrpy">
+              <br>
+              ESPIROMETRÍA
+              <br>
+            </td>
+            <td class="tg-xrpy"></td>
+          </tr>
+          <tr>
+            <td class="tg-xrpy">
+              <br>
+              ODONTOLOGÍA
+              <br>
+            </td>
+            <td class="tg-xrpy"></td>
+          </tr>
+          <tr>
+            <td class="tg-xrpy">
+              <br>
+              ELECTROCARDIOGRAMA
+              <br>
+              MAYORES DE 45 AÑOS
+            </td>
+            <td class="tg-xrpy"></td>
+          </tr>
+          <tr>
+            <td class="tg-xrpy">
+              <br>
+              EVALUACIÓN PSICOLÓGICA
+              <br>
+            </td>
+            <td class="tg-xrpy"></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <h3 class="site-logo logo " id="logo">
+    <a class="site-logo-anch" href="https://www.policlinicosanvicente.com/">
+      <img alt="Policlinico San Vicente - Cañete" class="logo-img site-logo-img" src="https://www.policlinicosanvicente.com/wp-content/uploads/2018/03/Logo-Policlinico-San-Vicente-1.png" title="Laboratorio, Ecografias y Radiografias"/>
+    </a>
+    <p style="float: right;">
+      <%= Time.now.strftime("%d/%m/%Y") %>
+    </p>
+  </h3>
+  <b style="font-size:15px"></b>
+  <div align="center">
+    <label class="letra" > CONSENTIMIENTO INFORMADO PARA EXAMEN MEDICO, AUTORIZACIÓN DE ENTREGA DE RESULTADOS Y DECLARACIÓN JURADA DE VERACIDAD DEINFORMACIÓN</label>
+  </div>
+  <div class="espacio" style="text-align:justify">
+    <p>Yo, <%= @employee.name %>, identificado con el DNI N° <%= @employee.dni %>, con ocupación laboral de OPERARIO
+      DE REPOSICION certifico con este documento, que he sido informado acerca de la naturaleza y propósito de los
+      Exámenes Médicos Ocupacionales y pruebas complementarias que la empresa  <%= @employee.enterprise.name %> solicita, de
+      acuerdo a los riesgos de mi puesto de trabajo y que todas mis dudas y preguntas han sido absueltas. Por tanto de
+      forma voluntaria otorgo mi consentimiento para que procedan a realizar los exámenes que correspondan y así
+      mismo autorizo que los resultados sean entregados área de salud ocupacional de la empresa  <%= @employee.enterprise.name %>
+      S.A., con la finalidad de realizar la vigilancia médica ocupacional ordenada por la Ley de Seguridad y salud en el
+      trabajo 29783 y su modificatoria Ley 30222. Además DECLARO BAJO JURAMENTO que toda la información
+      proporcionada a los profesionales médicos o funcionarios responsables es de carácter verídico, para el cargo
+      correspondiente al que postulo de la empresa  <%= @employee.enterprise.name %>.
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 500.88889px">
+        <col style="width: 250.88889px">
+      </colgroup>
+      <tr>
+        <td>
+          <p>_________________________________</p>
+          <p><%= @employee.name %></p>
+          <p>DNI : <%= @employee.dni %></p>
+        </td>
+        <td></td>
+        <td>
+          <p class="cuadrado"></p>
+          <p align="center">Huella Digital</p>
+        </td>
+      </tr>
+    </table>
+    <b style="font-size:15px">
+      Presente documento se realiza en cumplimiento de la ley general de salud N° 26842, artículo 25 inciso a), y artículo 27, art 36 y art 15.
+    </b>
+  </div>
+  <div align="center">
+    <label class="letra" >
+      CONSENTIMIENTO INFORMADO PARA EXAMEN MEDICO, AUTORIZACIÓN DE ENTREGA DE RESULTADOS Y DECLARACIÓN JURADA DE VERACIDAD DE INFORMACIÓN
+    </label>
+  </div>
+  <div class="espacio" style="text-align:justify">
+    <p>Yo, <%= @employee.name %>, identificado con el DNI N° <%= @employee.dni %>, con ocupación laboral de OPERARIO DE REPOSICION certifico con este documento, que he sido informado acerca de la naturaleza y propósito de los Exámenes Médicos Ocupacionales y pruebas complementarias que la empresa  <%= @employee.enterprise.name %> solicita, de acuerdo a los riesgos de mi puesto de trabajo y que todas mis dudas y preguntas han sido absueltas. Por tanto de forma voluntaria otorgo mi consentimiento para que procedan a realizar los exámenes que correspondan y así
+      mismo autorizo que los resultados sean entregados área de salud ocupacional de la empresa  <%= @employee.enterprise.name %> S.A., con la finalidad de realizar la vigilancia médica ocupacional ordenada por la Ley de Seguridad y salud en el trabajo 29783 y su modificatoria Ley 30222. Además DECLARO BAJO JURAMENTO que toda la información
+      proporcionada a los profesionales médicos o funcionarios responsables es de carácter verídico, para el cargo correspondiente al que postulo de la empresa  <%= @employee.enterprise.name %>.
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 500.88889px;">
+        <col style="width: 250.88889px;">
+      </colgroup>
+      <tr>
+        <td>
+          <p>_________________________________</p>
+          <p><%= @employee.name %></p>
+          <p>DNI : <%= @employee.dni %></p>
+        </td>
+        <td></td>
+        <td>
+          <p class="cuadrado"></p>
+          <p align="center">Huella Digital</p>
+        </td>
+      </tr>
+    </table>
+    <b style="font-size:15px">
+      Presente documento se realiza en cumplimiento de la ley general de salud N° 26842, artículo 25 inciso a), y artículo 27, art 36 y art 15.
+    </b>
+  </div>
+</body>
+</html>
