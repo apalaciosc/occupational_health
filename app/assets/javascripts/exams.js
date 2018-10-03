@@ -207,6 +207,165 @@ $(function(){
   $('input[type=radio][name="exam[data][st_question_48]"]').on( 'change', function() {
     QuestionStress('st_question_48')
   });
+  $('input[type=radio][name="exam[data][st_question_49]"]').on( 'change', function() {
+    QuestionStress('st_question_49')
+  });
+  $('input[type=radio][name="exam[data][st_question_50]"]').on( 'change', function() {
+    QuestionStress('st_question_50')
+  });
+  $('input[type=radio][name="exam[data][st_question_51]"]').on( 'change', function() {
+    QuestionStress('st_question_51')
+  });
+  $('input[type=radio][name="exam[data][st_question_52]"]').on( 'change', function() {
+    QuestionStress('st_question_52')
+  });
+  $('input[type=radio][name="exam[data][st_question_53]"]').on( 'change', function() {
+    QuestionStress('st_question_53')
+  });
+  $('input[type=radio][name="exam[data][st_question_54]"]').on( 'change', function() {
+    QuestionStress('st_question_54')
+  });
+  $('input[type=radio][name="exam[data][st_question_55]"]').on( 'change', function() {
+    QuestionStress('st_question_55')
+  });
+  $('input[type=radio][name="exam[data][st_question_56]"]').on( 'change', function() {
+    QuestionStress('st_question_56')
+  });
+  $('input[type=radio][name="exam[data][st_question_57]"]').on( 'change', function() {
+    QuestionStress('st_question_57')
+  });
+  $('input[type=radio][name="exam[data][st_question_58]"]').on( 'change', function() {
+    QuestionStress('st_question_58')
+  });
+  $('input[type=radio][name="exam[data][st_question_59]"]').on( 'change', function() {
+    QuestionStress('st_question_59')
+  });
+  $('input[type=radio][name="exam[data][st_question_60]"]').on( 'change', function() {
+    QuestionStress('st_question_60')
+  });
+  $('input[type=radio][name="exam[data][st_question_61]"]').on( 'change', function() {
+    QuestionStress('st_question_61')
+  });
+  $('input[type=radio][name="exam[data][st_question_62]"]').on( 'change', function() {
+    QuestionStress('st_question_62')
+  });
+  $('input[type=radio][name="exam[data][st_question_63]"]').on( 'change', function() {
+    QuestionStress('st_question_63')
+  });
+  $('input[type=radio][name="exam[data][st_question_64]"]').on( 'change', function() {
+    QuestionStress('st_question_64')
+  });
+  $('input[type=radio][name="exam[data][st_question_65]"]').on( 'change', function() {
+    QuestionStress('st_question_65')
+  });
+  $('input[type=radio][name="exam[data][st_question_66]"]').on( 'change', function() {
+    QuestionStress('st_question_66')
+  });
+  $('input[type=radio][name="exam[data][st_question_67]"]').on( 'change', function() {
+    QuestionStress('st_question_67')
+  });
+  $('input[type=radio][name="exam[data][st_question_68]"]').on( 'change', function() {
+    QuestionStress('st_question_68')
+  });
+  $('input[type=radio][name="exam[data][st_question_69]"]').on( 'change', function() {
+    QuestionStress('st_question_69')
+  });
+  $('input[type=radio][name="exam[data][st_question_70]"]').on( 'change', function() {
+    QuestionStress('st_question_70')
+  });
+  $('input[type=radio][name="exam[data][st_question_71]"]').on( 'change', function() {
+    QuestionStress('st_question_71')
+  });
+  $('input[type=radio][name="exam[data][st_question_72]"]').on( 'change', function() {
+    QuestionStress('st_question_72')
+  });
+  $('input[type=radio][name="exam[data][st_question_73]"]').on( 'change', function() {
+    QuestionStress('st_question_73')
+  });
+  $('input[type=radio][name="exam[data][st_question_74]"]').on( 'change', function() {
+    QuestionStress('st_question_74')
+  });
+  $('input[type=radio][name="exam[data][st_question_75]"]').on( 'change', function() {
+    QuestionStress('st_question_75')
+  });
+  $('input[type=radio][name="exam[data][st_question_76]"]').on( 'change', function() {
+    QuestionStress('st_question_76')
+  });
+  $('input[type=radio][name="exam[data][st_question_77]"]').on( 'change', function() {
+    QuestionStress('st_question_77')
+  });
+  $('input[type=radio][name="exam[data][st_question_78]"]').on( 'change', function() {
+    QuestionStress('st_question_78')
+  });
+  $('input[type=radio][name="exam[data][st_question_79]"]').on( 'change', function() {
+    QuestionStress('st_question_79')
+  });
+  $('input[type=radio][name="exam[data][st_question_80]"]').on( 'change', function() {
+    QuestionStress('st_question_80')
+  });
+  $('input[type=radio][name="exam[data][st_question_81]"]').on( 'change', function() {
+    QuestionStress('st_question_81')
+  });
+  $('input[type=radio][name="exam[data][st_question_82]"]').on( 'change', function() {
+    QuestionStress('st_question_82')
+  });
+  $('input[type=radio][name="exam[data][st_question_83]"]').on( 'change', function() {
+    QuestionStress('st_question_83')
+  });
+  $('input[type=radio][name="exam[data][st_question_84]"]').on( 'change', function() {
+    QuestionStress('st_question_84')
+  });
+  $('input[type=radio][name="exam[data][st_question_85]"]').on( 'change', function() {
+    QuestionStress('st_question_85')
+  });
+  $('input[type=radio][name="exam[data][st_question_86]"]').on( 'change', function() {
+    QuestionStress('st_question_86')
+  });
+  $('input[type=radio][name="exam[data][st_question_87]"]').on( 'change', function() {
+    QuestionStress('st_question_87')
+  });
+  $('input[type=radio][name="exam[data][st_question_88]"]').on( 'change', function() {
+    QuestionStress('st_question_88')
+  });
+  $('input[type=radio][name="exam[data][st_question_89]"]').on( 'change', function() {
+    QuestionStress('st_question_89')
+  });
+  $('input[type=radio][name="exam[data][st_question_90]"]').on( 'change', function() {
+    QuestionStress('st_question_90')
+  });
+  $('input[type=radio][name="exam[data][st_question_91]"]').on( 'change', function() {
+    QuestionStress('st_question_91')
+  });
+  $('input[type=radio][name="exam[data][st_question_92]"]').on( 'change', function() {
+    QuestionStress('st_question_92')
+  });
+  $('input[type=radio][name="exam[data][st_question_93]"]').on( 'change', function() {
+    QuestionStress('st_question_93')
+  });
+  $('input[type=radio][name="exam[data][st_question_94]"]').on( 'change', function() {
+    QuestionStress('st_question_94')
+  });
+  $('input[type=radio][name="exam[data][st_question_95]"]').on( 'change', function() {
+    QuestionStress('st_question_95')
+  });
+  $('input[type=radio][name="exam[data][st_question_96]"]').on( 'change', function() {
+    QuestionStress('st_question_96')
+  });
+  $('input[type=radio][name="exam[data][st_question_97]"]').on( 'change', function() {
+    QuestionStress('st_question_97')
+  });
+  $('input[type=radio][name="exam[data][st_question_98]"]').on( 'change', function() {
+    QuestionStress('st_question_98')
+  });
+  $('input[type=radio][name="exam[data][st_question_99]"]').on( 'change', function() {
+    QuestionStress('st_question_99')
+  });
+  $('input[type=radio][name="exam[data][st_question_100]"]').on( 'change', function() {
+    QuestionStress('st_question_100')
+  });
+  $('input[type=radio][name="exam[data][st_question_101]"]').on( 'change', function() {
+    QuestionStress('st_question_101')
+  });
 
   function QuestionStress(question){
     var value_radio = $('input[name="exam[data][' + question + ']"]:checked').val();
@@ -239,15 +398,51 @@ $(function(){
         $('#exam_data_total_3').val(total)
       }
     }
+    else if (question == 'st_question_49' || question == 'st_question_50' || question == 'st_question_51' || question == 'st_question_52' || question == 'st_question_53' || question == 'st_question_54' || question == 'st_question_55' || question == 'st_question_56' || question == 'st_question_57' || question == 'st_question_58' || question == 'st_question_59' || question == 'st_question_60' || question == 'st_question_61' || question == 'st_question_62' || question == 'st_question_63' || question == 'st_question_64' ) {
+      if (!$('#exam_data_st_answer_49').val() || !$('#exam_data_st_answer_50').val() || !$('#exam_data_st_answer_51').val() || !$('#exam_data_st_answer_52').val() || !$('#exam_data_st_answer_53').val() || !$('#exam_data_st_answer_54').val() || !$('#exam_data_st_answer_55').val() || !$('#exam_data_st_answer_56').val() || !$('#exam_data_st_answer_57').val() || !$('#exam_data_st_answer_58').val() || !$('#exam_data_st_answer_59').val() || !$('#exam_data_st_answer_60').val() || !$('#exam_data_st_answer_61').val() || !$('#exam_data_st_answer_62').val() || !$('#exam_data_st_answer_63').val() || !$('#exam_data_st_answer_64').val() ) {
+        $('#exam_data_total_4').val('-')
+      }
+      else{
+        var total = parseInt($('#exam_data_st_answer_49').val()) + parseInt($('#exam_data_st_answer_50').val()) + parseInt($('#exam_data_st_answer_51').val()) + parseInt($('#exam_data_st_answer_52').val()) + parseInt($('#exam_data_st_answer_53').val()) + parseInt($('#exam_data_st_answer_54').val()) + parseInt($('#exam_data_st_answer_55').val()) + parseInt($('#exam_data_st_answer_56').val()) + parseInt($('#exam_data_st_answer_57').val()) + parseInt($('#exam_data_st_answer_58').val()) + parseInt($('#exam_data_st_answer_59').val()) +  parseInt($('#exam_data_st_answer_60').val()) +  parseInt($('#exam_data_st_answer_61').val()) +  parseInt($('#exam_data_st_answer_62').val()) +  parseInt($('#exam_data_st_answer_63').val()) +  parseInt($('#exam_data_st_answer_64').val())
+        $('#exam_data_total_4').val(total)
+      }
+    }
+    else if (question == 'st_question_65' || question == 'st_question_66' || question == 'st_question_67' || question == 'st_question_68' || question == 'st_question_69' || question == 'st_question_70' || question == 'st_question_71' || question == 'st_question_72' || question == 'st_question_73' || question == 'st_question_74' || question == 'st_question_75' || question == 'st_question_76' || question == 'st_question_77' || question == 'st_question_78' || question == 'st_question_79' || question == 'st_question_80' ) {
+      if (!$('#exam_data_st_answer_65').val() || !$('#exam_data_st_answer_66').val() || !$('#exam_data_st_answer_67').val() || !$('#exam_data_st_answer_68').val() || !$('#exam_data_st_answer_69').val() || !$('#exam_data_st_answer_70').val() || !$('#exam_data_st_answer_71').val() || !$('#exam_data_st_answer_72').val() || !$('#exam_data_st_answer_73').val() || !$('#exam_data_st_answer_74').val() || !$('#exam_data_st_answer_75').val() || !$('#exam_data_st_answer_76').val() || !$('#exam_data_st_answer_77').val() || !$('#exam_data_st_answer_78').val() || !$('#exam_data_st_answer_79').val() || !$('#exam_data_st_answer_80').val() ) {
+        $('#exam_data_total_5').val('-')
+      }
+      else{
+        var total = parseInt($('#exam_data_st_answer_65').val()) + parseInt($('#exam_data_st_answer_66').val()) + parseInt($('#exam_data_st_answer_67').val()) + parseInt($('#exam_data_st_answer_68').val()) + parseInt($('#exam_data_st_answer_69').val()) + parseInt($('#exam_data_st_answer_70').val()) + parseInt($('#exam_data_st_answer_71').val()) + parseInt($('#exam_data_st_answer_72').val()) + parseInt($('#exam_data_st_answer_73').val()) + parseInt($('#exam_data_st_answer_74').val()) + parseInt($('#exam_data_st_answer_75').val()) +  parseInt($('#exam_data_st_answer_76').val()) +  parseInt($('#exam_data_st_answer_77').val()) +  parseInt($('#exam_data_st_answer_78').val()) +  parseInt($('#exam_data_st_answer_79').val()) +  parseInt($('#exam_data_st_answer_80').val())
+        $('#exam_data_total_5').val(total)
+      }
+    }
+    else if (question == 'st_question_81' || question == 'st_question_82' || question == 'st_question_83' || question == 'st_question_84' || question == 'st_question_85' || question == 'st_question_86' || question == 'st_question_87' || question == 'st_question_88' || question == 'st_question_89' || question == 'st_question_90' || question == 'st_question_91' || question == 'st_question_92' || question == 'st_question_93' || question == 'st_question_94' || question == 'st_question_95' || question == 'st_question_96' ) {
+      if (!$('#exam_data_st_answer_81').val() || !$('#exam_data_st_answer_82').val() || !$('#exam_data_st_answer_83').val() || !$('#exam_data_st_answer_84').val() || !$('#exam_data_st_answer_85').val() || !$('#exam_data_st_answer_86').val() || !$('#exam_data_st_answer_87').val() || !$('#exam_data_st_answer_88').val() || !$('#exam_data_st_answer_89').val() || !$('#exam_data_st_answer_90').val() || !$('#exam_data_st_answer_91').val() || !$('#exam_data_st_answer_92').val() || !$('#exam_data_st_answer_93').val() || !$('#exam_data_st_answer_94').val() || !$('#exam_data_st_answer_95').val() || !$('#exam_data_st_answer_96').val() ) {
+        $('#exam_data_total_6').val('-')
+      }
+      else{
+        var total = parseInt($('#exam_data_st_answer_81').val()) + parseInt($('#exam_data_st_answer_82').val()) + parseInt($('#exam_data_st_answer_83').val()) + parseInt($('#exam_data_st_answer_84').val()) + parseInt($('#exam_data_st_answer_85').val()) + parseInt($('#exam_data_st_answer_86').val()) + parseInt($('#exam_data_st_answer_87').val()) + parseInt($('#exam_data_st_answer_88').val()) + parseInt($('#exam_data_st_answer_89').val()) + parseInt($('#exam_data_st_answer_90').val()) + parseInt($('#exam_data_st_answer_91').val()) +  parseInt($('#exam_data_st_answer_92').val()) +  parseInt($('#exam_data_st_answer_93').val()) +  parseInt($('#exam_data_st_answer_94').val()) +  parseInt($('#exam_data_st_answer_95').val()) +  parseInt($('#exam_data_st_answer_96').val())
+        $('#exam_data_total_6').val(total)
+      }
+    }
+    else if (question == 'st_question_97' || question == 'st_question_98' || question == 'st_question_99' || question == 'st_question_100' || question == 'st_question_101') {
+      if (!$('#exam_data_st_answer_97').val() || !$('#exam_data_st_answer_98').val() || !$('#exam_data_st_answer_99').val() || !$('#exam_data_st_answer_100').val() || !$('#exam_data_st_answer_101').val() ) {
+        $('#exam_data_total_7').val('-')
+      }
+      else{
+        var total = parseInt($('#exam_data_st_answer_97').val()) + parseInt($('#exam_data_st_answer_98').val()) + parseInt($('#exam_data_st_answer_99').val()) + parseInt($('#exam_data_st_answer_100').val()) + parseInt($('#exam_data_st_answer_101').val())
+        $('#exam_data_total_7').val(total)
+      }
+    }
     CalculateTotal_Stress()
   }
   function CalculateTotal_Stress(){
     var total = 0;
-    if (!$('#exam_data_total_1').val() || !$('#exam_data_total_2').val() || !$('#exam_data_total_3').val() || !$('#exam_data_total_4').val() || !$('#exam_data_total_5').val() || !$('#exam_data_total_6').val() || !$('#exam_data_total_7').val() || !$('#exam_data_total_8').val() || !$('#exam_data_total_9').val() || !$('#exam_data_total_10').val() || !$('#exam_data_total_11').val() || !$('#exam_data_total_12').val() ) {
+    if (!$('#exam_data_total_1').val() || !$('#exam_data_total_2').val() || !$('#exam_data_total_3').val() || !$('#exam_data_total_4').val() || !$('#exam_data_total_5').val() || !$('#exam_data_total_6').val() || !$('#exam_data_total_7').val() ) {
       $('#exam_data_global').val('-')
     }
     else{
-      var total = parseInt($('#exam_data_total_1').val()) + parseInt($('#exam_data_total_2').val()) + parseInt($('#exam_data_total_3').val()) + parseInt($('#exam_data_total_4').val()) + parseInt($('#exam_data_total_5').val()) + parseInt($('#exam_data_total_6').val()) + parseInt($('#exam_data_total_7').val()) + parseInt($('#exam_data_total_8').val()) + parseInt($('#exam_data_total_9').val()) + parseInt($('#exam_data_total_10').val()) + parseInt($('#exam_data_total_11').val()) + parseInt($('#exam_data_total_12').val())
+      var total = parseInt($('#exam_data_total_1').val()) + parseInt($('#exam_data_total_2').val()) + parseInt($('#exam_data_total_3').val()) + parseInt($('#exam_data_total_4').val()) + parseInt($('#exam_data_total_5').val()) + parseInt($('#exam_data_total_6').val()) + parseInt($('#exam_data_total_7').val())
       $('#exam_data_global').val(total)
     }
   }

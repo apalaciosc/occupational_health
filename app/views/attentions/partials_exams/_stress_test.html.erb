@@ -1984,7 +1984,7 @@
                     <%= radio_button_tag 'exam[data][st_question_97]', '3', !!(@exam.data[:st_question_97] == '3') %>
                   </td>
                   <td class="tg-s6z2">
-                    <%= text_field_tag "exam[data][total_7]", @exam.data[:total_7], class: 'form-control col-lg-12', readonly: true %>
+                    <%= text_field_tag "exam[data][st_answer_97]", @exam.data[:st_answer_97], class: 'form-control col-lg-12', readonly: true %>
                   </td>
                 </tr>
                 <tr>
@@ -1997,7 +1997,7 @@
                     <%= radio_button_tag 'exam[data][st_question_98]', '2', !!(@exam.data[:st_question_98] == '2') %>
                   </td>
                   <td class="tg-s6z2">
-                    <%= text_field_tag "exam[data][total_8]", @exam.data[:total_8], class: 'form-control col-lg-12', readonly: true %>
+                    <%= text_field_tag "exam[data][st_answer_98]", @exam.data[:st_answer_98], class: 'form-control col-lg-12', readonly: true %>
                   </td>
                 </tr>
                 <tr>
@@ -2010,7 +2010,7 @@
                     <%= radio_button_tag 'exam[data][st_question_99]', '3', !!(@exam.data[:st_question_99] == '3') %>
                   </td>
                   <td class="tg-s6z2">
-                    <%= text_field_tag "exam[data][total_9]", @exam.data[:total_9], class: 'form-control col-lg-12', readonly: true %>
+                    <%= text_field_tag "exam[data][st_answer_99]", @exam.data[:st_answer_99], class: 'form-control col-lg-12', readonly: true %>
                   </td>
                 </tr>
                 <tr>
@@ -2023,7 +2023,7 @@
                     <%= radio_button_tag 'exam[data][st_question_100]', '3', !!(@exam.data[:st_question_100] == '3') %>
                   </td>
                   <td class="tg-s6z2">
-                    <%= text_field_tag "exam[data][total_10]", @exam.data[:total_10], class: 'form-control col-lg-12', readonly: true %>
+                    <%= text_field_tag "exam[data][st_answer_100]", @exam.data[:st_answer_100], class: 'form-control col-lg-12', readonly: true %>
                   </td>
                 </tr>
                 <tr>
@@ -2036,13 +2036,13 @@
                     <%= radio_button_tag 'exam[data][st_question_101]', '2', !!(@exam.data[:st_question_101] == '2') %>
                   </td>
                   <td class="tg-s6z2">
-                    <%= text_field_tag "exam[data][total_11]", @exam.data[:total_11], class: 'form-control col-lg-12', readonly: true %>
+                    <%= text_field_tag "exam[data][st_answer_101]", @exam.data[:st_answer_101], class: 'form-control col-lg-12', readonly: true %>
                   </td>
                 </tr>
                 <tr>
                   <td class="tg-s6z2" colspan="4">Total</td>
                   <td class="tg-s6z2">
-                    <%= text_field_tag "exam[data][total_12]", @exam.data[:total_12], class: 'form-control col-lg-12', readonly: true %>
+                    <%= text_field_tag "exam[data][total_7]", @exam.data[:total_7], class: 'form-control col-lg-12', readonly: true %>
                   </td>
                 </tr>
               </table>
@@ -2052,9 +2052,7 @@
                   <col style="width: 46.88889px">
                 </colgroup>
                 <tr>
-                  <th class="tg-s6z2">
-                    Puntuación global
-                  </th>
+                  <th class="tg-s6z2">Puntuación global</th>
                   <th>
                     <%= text_field_tag "exam[data][global]", @exam.data[:global], class: 'form-control col-lg-12', readonly: true %>
                   </th>
