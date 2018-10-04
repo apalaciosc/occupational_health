@@ -92,7 +92,6 @@ class AttentionsController < ApplicationController
   def edit_exams
     @exam = Exam.find(params[:id])
     @edit = 1
-    puts @type_exam
   end
 
   private

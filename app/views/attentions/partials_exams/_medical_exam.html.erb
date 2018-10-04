@@ -69,7 +69,7 @@
                   </div>
                   <div class="col-lg-2">
                     <div class="form-group">
-                      <label>F. Cardíaca</label>
+                      <label>F. Cardiaca</label>
                       <%= text_field_tag "exam[data][heart_rate]", @exam.data[:heart_rate], class: 'form-control'%>
                     </div>
                   </div>
@@ -77,7 +77,7 @@
                 <div class="col-lg-12">
                   <div class="col-lg-2">
                     <div class="form-group">
-                      <label>PA</label>
+                      <label>Presión arterial</label>
                       <%= text_field_tag "exam[data][pa]", @exam.data[:pa], class: 'form-control'%>
                     </div>
                   </div>
@@ -87,7 +87,13 @@
                       <%= text_field_tag "exam[data][temperature]", @exam.data[:temperature], class: 'form-control'%>
                     </div>
                   </div>
-                  <div class="col-lg-8">
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Perímetro cervical</label>
+                      <%= text_field_tag "exam[data][cervical_perimeter]", @exam.data[:cervical_perimeter], class: 'form-control'%>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
                     <div class="form-group">
                       <label>Otros</label>
                       <%= text_field_tag "exam[data][others]", @exam.data[:others], class: 'form-control'%>
