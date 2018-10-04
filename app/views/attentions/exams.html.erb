@@ -13,7 +13,31 @@
           <div class="col-md-12">
             <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">Lista de exámenes</h3>
+                <div class="row">
+                  <div class="col-lg-11">
+                    <h3 class="box-title">
+                      Lista de exámenes
+                    </h3>
+                  </div>
+                  <% if @attention.type_attention == 'pre-ocupacional' %>
+                  <div class="col-lg-1">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="font-size:0px; padding:6px 5px;">
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <% @type_exam_ohs = TypeExam.find_by(view: 'occupational_health_summary') %>
+                        <% @occupational_health_summary = @attention.exams.find_by(type_exam_id: @type_exam_ohs.id) %>
+                        <% if @occupational_health_summary.present? %>
+                        <li><%= link_to @type_exam_ohs.name.capitalize, exam_edit_path(:id => @occupational_health_summary.id, :type_exam => @type_exam_ohs.id), target: '_blank' %></li>
+                        <% else %>
+                        <li><%= link_to @type_exam_ohs.name.capitalize, attention_new_exams_path(:id => @attention.id, :type_exam => @type_exam_ohs.id), target: '_blank' %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                  <% end %>
+                </div>
               </div>
               <div class="box-body">
                 <table class="table table-bordered">
@@ -25,7 +49,7 @@
                     </tr>
                     <% @exams.each_with_index do |e,index| %>
                     <tr>
-                      <td><%= index+1 %></td>
+                      <td><%= index + 1 %></td>
                       <td><%= e.type_exam.name.capitalize %></td>
                       <td>
                         <a><%= link_to image_tag('User_Editar.ico', style:'width:25px'), exam_edit_path(:id => e.id, :type_exam => e.type_exam.id)%></a>
@@ -37,18 +61,18 @@
                 </table>
               </div>
               <!-- <div class="box-footer clearfix">
-                <ul class="pagination pagination-sm no-margin pull-right">
-                  <li><a href="#">«</a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">»</a></li>
-                </ul>
-              </div> -->
-            </div>
-          </div>
+              <ul class="pagination pagination-sm no-margin pull-right">
+              <li><a href="#">«</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">»</a></li>
+            </ul>
+          </div> -->
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
