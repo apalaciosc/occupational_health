@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+  <meta charset="utf-8">
+  <title>Ficha Médica ocupacional</title>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="content">
+    <section>
+      <div class="row">
+        <table>
+          <colgroup>
+            <col style="width: 240.88889px">
+            <col style="width: 80.88889px">
+            <col style="width: 400.88889px">
+          </colgroup>
+          <tr>
+            <td>PROTOCOLO DE EXÁMENES MÉDICO OCUPACIONALES</td>
+            <td></td>
+            <td>
+              <h4 class="col-lg-offset-2 " style="color:#0067A3">POLICLÍNICO "SAN VICENTE"- CAÑETE E.I.R.L</h4>
+            </td>
+          </tr>
+        </table>
+        <div align="left" class="col-lg-9">
+        </div>
+        <div class="col-lg-12">
+          <h3 align="center">FICHA MÉDICO OCUPACIONAL</h3>
+        </div>
+      </div>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1040px">
+        <colgroup>
+          <col style="width: 246.88889px">
+          <col style="width: 253.88889px">
+          <col style="width: 260.88889px">
+          <col style="width: 249.88889px">
+        </colgroup>
+        <tr>
+          <td class="tg-xrpy">Número de Ficha Médica</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">Fecha</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Tipo de Evaluación</td>
+          <td class="tg-xrpc">
+          </td>
+          <td class="tg-xrpy">Lugar de Exámen</td>
+          <td class="tg-xrpc"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1040px">
+        <colgroup>
+          <col style="width: 140.88889px">
+          <col style="width: 152.88889px">
+          <col style="width: 150.88889px">
+          <col style="width: 142.88889px">
+          <col style="width: 192.88889px">
+          <col style="width: 265.88889px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="6">I. DATOS DE LA EMPRESA</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Razón Social</td>
+          <td colspan="3">
+            <%= @employee.enterprise.name %>
+          </td>
+          <td class="tg-xrpy">Actividad Económica</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Lugar de Trabajo</td>
+          <td colspan="2"></td>
+          <td class="tg-xrpy" colspan="2">Puesto al que Postula (solo pre ocupacional</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Departamento</td>
+          <td></td>
+          <td class="tg-xrpy">Provincia</td>
+          <td></td>
+          <td class="tg-xrpy">Distrito</td>
+          <td></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 117.88889px">
+          <col style="width: 128.88889px">
+          <col style="width: 160.88889px">
+          <col style="width: 120.88889px">
+          <col style="width: 125.88889px">
+          <col style="width: 190.88889px">
+          <col style="width: 200.88889px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="7">II. FILIACIÓN DEL TRABAJDOR</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" colspan="2">Nombres y Apellidos</td>
+          <td class="tg-xrpc" colspan="3"><%= @employee.name %></td>
+          <td class="tg-xrpy">Fecha de Nacimiento</td>
+          <td class="tg-xrpc"><%= @employee.birthday %></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Edad</td>
+          <td class="tg-xrpc"><%= @employee.age %></td>
+          <td class="tg-xrpy" colspan="4">Documento de Identidad(Carnet de extranjería,DNI,Pasaporte)</td>
+          <td class="tg-xrpc"><%= @employee.dni %></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" colspan="2">Domicilio Fiscal</td>
+          <td class="tg-xrpc" colspan="5"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" colspan="2">Avenida/Calle/Jirón/Pasaje</td>
+          <td class="tg-xrpc" colspan="5"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" colspan="2">Nro/Departamento/Interior</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">Urbanización</td>
+          <td class="tg-xrpc" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Distrito</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">Provincia</td>
+          <td class="tg-xrpc" colspan="2"></td>
+          <td class="tg-xrpy">Departamento</td>
+          <td class="tg-xrpc"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" colspan="2">Residencia en el lugar de trabajo</td>
+          <td class="tg-xrpc" colspan="1"></td>
+          <td class="tg-xrpy" colspan="3">Tiempo de residencia en el lugar de trabajo</td>
+          <td class="tg-xrpc" colspan="1"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">ESSALUD</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">EPS</td>
+          <td class="tg-xrpc" colspan="2"></td>
+          <td class="tg-xrpy">OTRO</td>
+          <td class="tg-xrpc"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">SCTR</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">Correo electrónico</td>
+          <td class="tg-xrpc" colspan="2"></td>
+          <td class="tg-xrpy">Teléfono</td>
+          <td class="tg-xrpc"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Estado civil</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy" colspan="2">Grado de instrucción</td>
+          <td class="tg-xrpc" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" colspan="2">N° Total de hijos vivos</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy" colspan="2">N° de dependientes</td>
+          <td class="tg-xrpc" colspan="2"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 117.88889px">
+          <col style="width: 128.88889px">
+          <col style="width: 160.88889px">
+          <col style="width: 120.88889px">
+          <col style="width: 125.88889px">
+          <col style="width: 190.88889px">
+          <col style="width: 200.88889px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="7">III. ANTECEDENTES OCUPACIONALES</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc">Empresa</td>
+          <td class="tg-xrpc">Área de trabajo</td>
+          <td class="tg-xrpc">Ocupación</td>
+          <td class="tg-xrpc">Fecha</td>
+          <td class="tg-xrpc">Tiempo</td>
+          <td class="tg-xrpc">Exposición ocupacional</td>
+          <td class="tg-xrpc">EPP</td>
+        </tr>
+        <tr>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpc"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">IV. ANTECEDENTES PATOLÓGICOS PERSONALES</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Alergias</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">Diabetes</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">TBC</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">Hepatitis B</td>
+          <td class="tg-xrpc"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Asma</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">HTA</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">ITS</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">Tifoidea</td>
+          <td class="tg-xrpc"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Bronquitis</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">Neoplasia</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy" colspan="3">Convulsiones</td>
+          <td class="tg-xrpc"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Otros</td>
+          <td class="tg-xrpc" colspan="7"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Quemaduras</td>
+          <td class="tg-xrpc" colspan="7"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Cirugías</td>
+          <td class="tg-xrpc" colspan="3"></td>
+          <td class="tg-xrpy">Intoxicaciones</td>
+          <td class="tg-xrpc" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" colspan="2">Habitos nocivos</td>
+          <td class="tg-xrpy" colspan="2">Tipo</td>
+          <td class="tg-xrpy" colspan="2">Cantidad</td>
+          <td class="tg-xrpy" colspan="2">Frecuencia</td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" colspan="2">Alcohol</td>
+          <td class="tg-xrpc" colspan="2"></td>
+          <td class="tg-xrpc" colspan="2"></td>
+          <td class="tg-xrpc" colspan="2"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" colspan="2">Tabaco</td>
+          <td class="tg-xrpc" colspan="2"></td>
+          <td class="tg-xrpc" colspan="2"></td>
+          <td class="tg-xrpc" colspan="2"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" colspan="2">Drogas</td>
+          <td class="tg-xrpc" colspan="2"></td>
+          <td class="tg-xrpc" colspan="2"></td>
+          <td class="tg-xrpc" colspan="2"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1040px">
+        <colgroup>
+          <col style="width: 140.88889px">
+          <col style="width: 152.88889px">
+          <col style="width: 150.88889px">
+          <col style="width: 142.88889px">
+          <col style="width: 192.88889px">
+          <col style="width: 265.88889px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="6">V. ANTECEDENTES PATOLÓGICOS FAMILIARES</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Padre</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">Madre</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">Hermanos</td>
+          <td class="tg-xrpc"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">Esposo(a)</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">N° hijos vivos</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">N° Hijos fallecidos</td>
+          <td class="tg-xrpc"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">Absentismo: enfermedades y accidentes (asociado al trabajo o no)</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" rowspan="2" colspan="4"><br>Enfermedad, accidente<br></td>
+          <td class="tg-xrpy" colspan="2">Asociado al trabajo</td>
+          <td class="tg-xrpy" rowspan="2" colspan="1"><br>Año<br></td>
+          <td class="tg-xrpy" rowspan="2" colspan="1"><br>Días de descanso<br></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">SI</td>
+          <td class="tg-xrpy">NO</td>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="4"></td>
+          <td class="tg-xrpc" colspan="2"></td>
+          <td class="tg-xrpc" colspan="1"></td>
+          <td class="tg-xrpc" colspan="1"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">VI. EVALUACIÓN MÉDICA</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8">Anamnesis: </td>
+        </tr>
+        <tr>
+          <td class="tg-xrpc">Talla (cm.)</td>
+          <td class="tg-xrpy"></td>
+          <td class="tg-xrpc">Peso (Kg.)</td>
+          <td class="tg-xrpy"></td>
+          <td class="tg-xrpc">IMC</td>
+          <td class="tg-xrpy"></td>
+          <td class="tg-xrpc">Perímetro abdominal</td>
+          <td class="tg-xrpy"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpc">F. Resp.</td>
+          <td class="tg-xrpy"></td>
+          <td class="tg-xrpc">F. card.</td>
+          <td class="tg-xrpy"></td>
+          <td class="tg-xrpc">PA</td>
+          <td class="tg-xrpy"></td>
+          <td class="tg-xrpc">Temperatura</td>
+          <td class="tg-xrpy"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="1">Otros: </td>
+          <td class="tg-xrpy" colspan="7"> </td>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8">Ectoscopía: </td>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="1">Estado mental: </td>
+          <td class="tg-xrpy" colspan="7"> </td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg table-hover" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 50px">
+          <col style="width: 20px">
+          <col style="width: 20px">
+          <col style="width: 40px">
+          <col style="width: 40px">
+          <col style="width: 40px">
+          <col style="width: 40px">
+          <col style="width: 40px">
+          <col style="width: 60px">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th class="tg-xrpy" colspan="9">EXÁMEN FÍSICO</th>
+          </tr>
+          <tr>
+            <td class="tg-amwm" style="font-weight:bold;font-size:18px;text-align:center;vertical-align:top">
+              Órgano o sistema
+            </td>
+            <td class="tg-amwm" colspan="2" style="font-weight:bold;font-size:18px;text-align:center;vertical-align:top">
+              Hallazgo
+            </td>
+            <td class="tg-amwm" colspan="6" style="font-weight:bold;font-size:18px;text-align:center;vertical-align:top">
+              HALLAZGOS
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Piel</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Cabello</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm" rowspan="6">
+              <br><br><br><br><br>
+              Ojos y Anexos
+              <br><br><br><br><br>
+            </td>
+            <td class="tg-amwm" rowspan="6">
+              <br><br><br><br><br>
+
+              <br><br><br><br><br>
+            </td>
+            <td class="tg-amwm" rowspan="6">
+              <br><br><br><br><br>
+
+              <br><br><br><br><br>
+            </td>
+            <td colspan="2" rowspan="2" style="width: 250px">
+            </td>
+            <td class="tg-amwm" colspan="2">
+              <span style="font-weight:bold">Sin Correctores</span>
+            </td>
+            <td class="tg-amwm" colspan="2">
+              <span style="font-weight:bold">Con Correctores</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">OD</td>
+            <td class="tg-amwm">OI</td>
+            <td class="tg-amwm">OD</td>
+            <td class="tg-amwm">OI</td>
+          </tr>
+          <tr>
+            <td class="tg-amwm" rowspan="2"><br>Agudeza Visual<br>
+            </td>
+            <td class="tg-amwm">Cerca</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Lejos</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Fondo de ojo</td>
+            <td colspan="2"></td>
+            <td class="tg-amwm" colspan="2">Visión de colores</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm" colspan="2">Visión de profundidad</td>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Oídos</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Nariz</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Boca</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Faringe</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Cuello</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Aparato Repiratorio</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Aparato Cardiovascular</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Aparato Digestivo</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Aparato Genitourinario</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Aparato Locomotor</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Marcha</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Columna</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Miembros Superiores</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Miembros Inferiores</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Sistema Linfático</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+          <tr>
+            <td class="tg-amwm">Sistema Nervioso</td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm"></td>
+            <td class="tg-amwm" colspan="6"></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">VII. CONDICIÓN FINAL DE EVALUACIÓN PSICOLÓGICA</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">VIII. CONCLUSIÓN DE RADIOLOGÍA</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">IX. CONCLUSIÓN DE RAYOS X OIT</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">X. HALLAZGOS PATOLÓGICOS DE LABORATORIO</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="2">ANÁLISIS DE SANGRE</td>
+          <td class="tg-xrpc" colspan="6"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="2">UROANÁLISIS</td>
+          <td class="tg-xrpc" colspan="6"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">XI. CONCLUSIÓN AUDIOMETRÍA</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">XII. CONCLUSIÓN ESPIROMETRÍA</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">XIII. CONCLUSIÓN EXÁMEN OFTALMOLÓGICO</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="2">EMÉTROPE</td>
+          <td class="tg-xrpc" colspan="6"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="2">TEST ISHIHARA</td>
+          <td class="tg-xrpc" colspan="6"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">XIV. CONCLUSIÓN ELECTROCARDIOGRAMA</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">XV. CONCLUSIÓN TEST DE EPWORTH</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">XVI. CONCLUSIÓN TEST DE ALTURA ESTRUCTURAL 1.80 CM.</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">XVII. CONCLUSIÓN TEST DE ESTRÉS</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">XVIII. CONCLUSIÓN TEST DE PERSONALIDAD</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">XIX. CONCLUSIÓN ODONTOGRAMA</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">XX. DIAGNÓSTICO MÉDICO OCUPACIONAL</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="5"></td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpc" colspan="2"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy" colspan="8">OTROS DIAGNÓSTICOS</td>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="5"></td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpc" colspan="2"></td>
+        </tr>
+        <tr>
+          <td class="tg-xrpy">APTO</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy" colspan="2">APTO CON RESTRICCIONES</td>
+          <td class="tg-xrpc"></td>
+          <td class="tg-xrpy">NO APTO</td>
+          <td class="tg-xrpc" colspan="2"></td>
+        </tr>
+      </table>
+      <br>
+      <table class="tg" style="undefined;table-layout: fixed; width: 1042px">
+        <colgroup>
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+          <col style="width: 70px">
+        </colgroup>
+        <tr>
+          <th class="tg-xrpy" colspan="8">VX. RECOMENDACIONES</th>
+        </tr>
+        <tr>
+          <td class="tg-xrpc" colspan="8"></td>
+        </tr>
+      </table>
+      <br>
+      <table>
+        <colgroup>
+          <col style="width: 500.88889px;">
+          <col style="width: 250.88889px;">
+        </colgroup>
+        <tr>
+          <td>
+            <p class="cuadrado"></p>
+            <p align="center">Huella Digital y Firma del Paciente (con la cual declara que la información declarada es veraz)</p>
+          </td>
+          <td></td>
+          <td>
+            <p class="cuadrado"></p>
+            <p align="center">Nombre, Firma y Sello de Médico Evaluador</p>
+          </td>
+        </tr>
+      </table>
+
+      <style type="text/css">
+      .tg  {border-collapse:collapse;border-spacing:0;}
+      .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+      .tg th{ font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+      .letra { font-family:Arial, sans-serif;font-size:20px;}
+      .espacio{font-family:Arial;font-size:18px;padding:40px 40px;}
+      .tg .tg-xrpy{font-weight:bold;font-size:16px;border-color:inherit;text-align:center;}
+      .tg .tg-xrpc{font-size:16px;border-color:inherit;text-align:center;}
+      .cuadrado {width: 430px; height: 120px; border: 3px solid #555;}
+      </style>
+    </section>
+  </div>
+</body>
+</html>
