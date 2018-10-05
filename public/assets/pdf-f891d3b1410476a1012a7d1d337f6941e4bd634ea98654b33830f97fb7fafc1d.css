@@ -1,0 +1,27 @@
+/* line 1, /Users/andersson/Documents/Proyects/san_vicente/app/assets/stylesheets/pdf.css.scss */
+tr {
+  border-bottom: solid;
+  border-width: 2px;
+  border-color: #2f5b70;
+}
+
+/* line 7, /Users/andersson/Documents/Proyects/san_vicente/app/assets/stylesheets/pdf.css.scss */
+td, th {
+  text-align: left;
+}
+
+/* line 10, /Users/andersson/Documents/Proyects/san_vicente/app/assets/stylesheets/pdf.css.scss */
+th {
+  background-color: #2f5b70;
+  color: white;
+}
+
+/* line 15, /Users/andersson/Documents/Proyects/san_vicente/app/assets/stylesheets/pdf.css.scss */
+table, tr, td, th, tbody, thead, tfoot {
+  page-breake-inside: avoid !important;
+}
+
+/* line 18, /Users/andersson/Documents/Proyects/san_vicente/app/assets/stylesheets/pdf.css.scss */
+row {
+  margin-left: 80px;
+}
