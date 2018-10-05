@@ -46,7 +46,7 @@
           <td class="tg-xrpy">DNI</td>
           <td class="tg-s268"><%= @employee.dni %></td>
           <td class="tg-xrpy">Nombres y Apellidos</td>
-          <td class="tg-s268" colspan="2"><%= @employee.name.upcase %></td>
+          <td class="tg-s268" colspan="2"><%= @employee.name.upcase if @employee.name.present? %></td>
           <td class="tg-xrpy">Fecha de Nacimiento</td>
           <td class="tg-s268"><%= @employee.birthday %></td>
         </tr>
@@ -54,15 +54,15 @@
           <td class="tg-xrpy">Edad</td>
           <td class="tg-s268"><%= @employee.age %></td>
           <td class="tg-xrpy">Sexo</td>
-          <td class="tg-s268"><%= @employee.sex.upcase %></td>
+          <td class="tg-s268"><%= @employee.sex.upcase if @employee.sex.present? %></td>
           <td class="tg-xrpy">Empresa</td>
-          <td class="tg-s268" colspan="2"><%= @employee.enterprise.name.upcase %></td>
+          <td class="tg-s268" colspan="2"><%= @employee.enterprise.name.upcase if @employee.enterprise.name.present? %></td>
         </tr>
         <tr>
           <td class="tg-xrpy">Tipo de examen</td>
           <td class="tg-s268">PREOCUPACIONAL</td>
           <td class="tg-xrpy">Cargo</td>
-          <td class="tg-s268"><%= @employee.assignment.upcase %></td>
+          <td class="tg-s268"><%= @employee.assignment.upcase if @employee.assignment.present? %></td>
         </tr>
       </table>
       <style type="text/css">
@@ -194,15 +194,15 @@
     <label class="letra" > CONSENTIMIENTO INFORMADO PARA EXAMEN MEDICO, AUTORIZACIÓN DE ENTREGA DE RESULTADOS Y DECLARACIÓN JURADA DE VERACIDAD DEINFORMACIÓN</label>
   </div>
   <div class="espacio" style="text-align:justify">
-    <p>Yo, <%= @employee.name.upcase %>, identificado con el DNI N° <%= @employee.dni %>, con ocupación laboral de <%= @employee.assignment.upcase %> certifico con este documento, que he sido informado acerca de la naturaleza y propósito de los
-      Exámenes Médicos Ocupacionales y pruebas complementarias que la empresa  <%= @employee.enterprise.name.upcase %> solicita, de
+    <p>Yo, <%= @employee.name.upcase if @employee.name.present? %>, identificado con el DNI N° <%= @employee.dni %>, con ocupación laboral de <%= @employee.assignment.upcase if @employee.assignment.present? %> certifico con este documento, que he sido informado acerca de la naturaleza y propósito de los
+      Exámenes Médicos Ocupacionales y pruebas complementarias que la empresa  <%= @employee.enterprise.name.upcase if @employee.enterprise.name.present? %> solicita, de
       acuerdo a los riesgos de mi puesto de trabajo y que todas mis dudas y preguntas han sido absueltas. Por tanto de
       forma voluntaria otorgo mi consentimiento para que procedan a realizar los exámenes que correspondan y así
-      mismo autorizo que los resultados sean entregados área de salud ocupacional de la empresa  <%= @employee.enterprise.name.upcase %>
+      mismo autorizo que los resultados sean entregados área de salud ocupacional de la empresa  <%= @employee.enterprise.name.upcase if @employee.enterprise.name.present? %>
       , con la finalidad de realizar la vigilancia médica ocupacional ordenada por la Ley de Seguridad y salud en el
       trabajo 29783 y su modificatoria Ley 30222. Además DECLARO BAJO JURAMENTO que toda la información
       proporcionada a los profesionales médicos o funcionarios responsables es de carácter verídico, para el cargo
-      correspondiente al que postulo de la empresa  <%= @employee.enterprise.name.upcase %>.
+      correspondiente al que postulo de la empresa  <%= @employee.enterprise.name.upcase if @employee.enterprise.name.present? %>.
     </p>
     <br><br><br><br>
     <table>
@@ -213,7 +213,7 @@
       <tr>
         <td>
           <p>_________________________________</p>
-          <p><%= @employee.name.upcase %></p>
+          <p><%= @employee.name.upcase if @employee.name.present? %></p>
           <p>DNI : <%= @employee.dni %></p>
         </td>
         <td></td>
@@ -241,8 +241,8 @@
     <label class="letra" > CONSENTIMIENTO PARA EXÁMEN DE DROGAS Y EXONERACIÓN DE RESPONSABILIDADES</label>
   </div>
   <div class="espacio" style="text-align:justify">
-    <p>Yo, <%= @employee.name.upcase %>, identificado con el DNI N° <%= @employee.dni %>, con ocupación laboral de <%= @employee.assignment.upcase %> certifico que he sido informado acerca de la naturaleza y propósito de los exámenes y pruebas complementarias que la Empresa
-      <%= @employee.enterprise.name.upcase %> solicita y que todas mis dudas y preguntas al respecto han sido absueltas, así mismo, autorizo que los resultados sean entregados a la empresa la cual soy vinculante. Por tanto, en forma consiente y voluntaria doy mi consentimiento.
+    <p>Yo, <%= @employee.name.upcase if @employee.name.present? %>, identificado con el DNI N° <%= @employee.dni %>, con ocupación laboral de <%= @employee.assignment.upcase if @employee.assignment.present? %> certifico que he sido informado acerca de la naturaleza y propósito de los exámenes y pruebas complementarias que la Empresa
+      <%= @employee.enterprise.name.upcase if @employee.enterprise.name.present? %> solicita y que todas mis dudas y preguntas al respecto han sido absueltas, así mismo, autorizo que los resultados sean entregados a la empresa la cual soy vinculante. Por tanto, en forma consiente y voluntaria doy mi consentimiento.
       Yo, libero a la clínica/centro médico: policlínico San Vicente Cañete EIRL, a su personal médico, reclamo, responsabilidades y materia relacionada a que yo voluntariamente me someta a los exámenes de drogas.
       Específicamente, acuerdo y comprendo que la CLÍNICA, no es responsable en cualquier forma por ninguna consecuencia que resulte de la prueba de drogas y libero totalmente al Policlínico San Vicente Cañete EIRL, de todo reclamo y demandas que puedan provenir, surgir o ser incidentales
       a dicha prueba de drogas, y adicionalmente, doy mi consentimiento a dejar que la empresa: Por intermedio de su departamento médico o sus agentes designados vean el resultado de cualquier exámen administrado por el POLICLÍNICO. Además acuerdo no tomar acción que pueda provenir de
@@ -258,7 +258,7 @@
       <tr>
         <td>
           <p>_________________________________</p>
-          <p><%= @employee.name.upcase %></p>
+          <p><%= @employee.name.upcase if @employee.name.present? %></p>
           <p>DNI : <%= @employee.dni %></p>
         </td>
         <td></td>
