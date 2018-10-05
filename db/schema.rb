@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_24_215327) do
+ActiveRecord::Schema.define(version: 2018_10_05_060359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,26 @@ ActiveRecord::Schema.define(version: 2018_09_24_215327) do
     t.index ["type_exam_id"], name: "index_exams_on_type_exam_id"
   end
 
+  create_table "medicals", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "specialty"
+    t.string "dni"
+    t.string "phone"
+    t.string "department"
+    t.string "address"
+    t.date "birthday"
+    t.string "aptitude"
+    t.string "interests"
+    t.string "range"
+    t.string "district"
+    t.string "province"
+    t.bigint "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_medicals_on_area_id"
+  end
+
   create_table "occupational_histories", force: :cascade do |t|
     t.bigint "employee_id"
     t.string "company"
@@ -156,6 +176,7 @@ ActiveRecord::Schema.define(version: 2018_09_24_215327) do
   add_foreign_key "employees", "enterprises"
   add_foreign_key "exams", "attentions"
   add_foreign_key "exams", "type_exams"
+  add_foreign_key "medicals", "areas"
   add_foreign_key "occupational_histories", "employees"
   add_foreign_key "type_exams", "areas"
 end

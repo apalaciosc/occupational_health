@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :medicals
   resources :attentions
   get 'employees/fmo' => 'employees#fmo'
   get 'employees/roadmap' => 'employees#roadmap'

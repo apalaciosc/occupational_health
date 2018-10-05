@@ -1,0 +1,62 @@
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>DNI</label>
+      <%= form.text_field :dni, class: 'form-control just-number dni-employee', maxlength: 8 %>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="form-group">
+      <label>Nombres y apellidos</label>
+      <%= form.text_field :firstname, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Domicilio fiscal</label>
+      <%= form.text_field :address, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>Fecha de nacimiento</label>
+      <%= form.date_field :birthday, class: 'form-control datepicker' %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-3">
+    <div class="form-group ">
+      <label>Av/calle/Jr/Pasaje</label>
+      <%= form.text_field :address, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group ">
+      <label>Departamento</label>
+      <%= form.text_field :department, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group ">
+      <label>Provincia</label>
+      <%= form.text_field :province, class: 'form-control' %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group ">
+      <label>Distrito</label>
+      <%= form.text_field :district, class: 'form-control' %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>Teléfono</label>
+      <%= form.text_field :phone, class: 'form-control just-number', maxlength: 9 %>
+    </div>
+  </div>
+</div>
