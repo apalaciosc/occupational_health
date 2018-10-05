@@ -5,7 +5,7 @@
       <%= form.text_field :dni, class: 'form-control just-number dni-employee', maxlength: 8 %>
     </div>
   </div>
-  <div class="col-lg-4">
+  <div class="col-lg-7">
     <div class="form-group">
       <label>Nombres y apellidos</label>
       <%= form.text_field :name, class: 'form-control' %>
@@ -13,8 +13,16 @@
   </div>
   <div class="col-lg-3">
     <div class="form-group">
-      <label>Domicilio fiscal</label>
-      <%= form.text_field :address, class: 'form-control' %>
+      <label>Sexo</label>
+      <%= form.select(:sex, sex_for_select, { include_blank: 'Seleccionar sexo' }, {class: "form-control"}) %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Empresa</label>
+      <%= form.select(:enterprise_id, enterprises_for_select, { include_blank: 'Seleccionar empresa' }, {class: "form-control chosen"}) %>
     </div>
   </div>
   <div class="col-lg-2">
@@ -29,12 +37,18 @@
       <%= form.text_field :age, class: 'form-control just-number' %>
     </div>
   </div>
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label>Domicilio fiscal</label>
+      <%= form.text_field :address, class: 'form-control' %>
+    </div>
+  </div>
 </div>
 <div class="col-lg-12">
   <div class="col-lg-3">
     <div class="form-group ">
       <label>Av/calle/Jr/Pasaje</label>
-      <%= form.text_field :address, class: 'form-control' %>
+      <%= form.text_field :way, class: 'form-control' %>
     </div>
   </div>
   <div class="col-lg-2">
@@ -122,6 +136,12 @@
 <div class="col-lg-12">
   <div class="col-lg-2">
     <div class="form-group">
+      <label>Cargo</label>
+      <%= form.text_field :assignment, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
       <label>N° de hijos vivos</label>
       <%= form.text_field :number_children, class: 'form-control just-number', maxlength: 1 %>
     </div>
@@ -132,13 +152,13 @@
       <%= form.text_field :number_dependents, class: 'form-control col-ms-4 just-number', maxlength: 2 %>
     </div>
   </div>
-  <div class="col-lg-3">
+  <div class="col-lg-2">
     <div class="form-group ">
       <label>Grado de instrucción</label>
       <%= form.text_field :degree_instruction, class: 'form-control' %>
     </div>
   </div>
-  <div class="col-lg-3">
+  <div class="col-lg-2">
     <div class="form-group">
       <label>Email</label>
       <%= form.text_field :email, class: 'form-control validate-email' %>

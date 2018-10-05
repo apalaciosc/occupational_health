@@ -29,7 +29,7 @@ class EmployeesController < ApplicationController
       format.pdf {render template: 'employees/report-employee', pdf: 'report-employee', layout: 'pdf.html'}
     end
 
-   
+
   end
 
 def roadmap
@@ -38,7 +38,7 @@ def roadmap
       format.json
       format.pdf {render template: 'employees/roadmap', pdf: 'roadmap'}
     end
-  
+
 end
 def fmo
    respond_to do |format|
@@ -46,7 +46,7 @@ def fmo
       format.json
       format.pdf {render template: 'employees/fmo', pdf: 'fmo'}
     end
-  
+
 end
 
   # GET /employees/new
@@ -65,8 +65,6 @@ end
   # POST /employees.json
   def create
     @employee = Employee.new(employee_params)
-    #Para pruebas
-    @employee.enterprise_id = Enterprise.last.id
 
     respond_to do |format|
       if @employee.save
@@ -120,6 +118,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:enterprise_id, :name, :birthday, :age, :dni, :address, :way, :numb_depart_int, :urbanization, :district, :province, :department, :resi_in_place_work, :time_place_work, :essalud, :eps, :sctr, :other, :email, :civil_status, :degree_instruction, :number_children, :number_dependents, :phone, :pathologicals_history => {}, :pathologicals_history_family => {}, occupational_histories_attributes: [OccupationalHistory.attribute_names.map(&:to_sym).push(:_destroy)], absenteeisms_attributes: [Absenteeism.attribute_names.map(&:to_sym).push(:_destroy)])
+      params.require(:employee).permit(:enterprise_id, :name, :birthday, :age, :dni, :address, :way, :numb_depart_int, :sex, :assignment,:urbanization, :district, :province, :department, :resi_in_place_work, :time_place_work, :essalud, :eps, :sctr, :other, :email, :civil_status, :degree_instruction, :number_children, :number_dependents, :phone, :pathologicals_history => {}, :pathologicals_history_family => {}, occupational_histories_attributes: [OccupationalHistory.attribute_names.map(&:to_sym).push(:_destroy)], absenteeisms_attributes: [Absenteeism.attribute_names.map(&:to_sym).push(:_destroy)])
     end
 end

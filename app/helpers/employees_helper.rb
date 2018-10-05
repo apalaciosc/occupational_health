@@ -7,4 +7,15 @@ module EmployeesHelper
       ['Divorciado','divorciado']
     ]
   end
+
+  def enterprises_for_select
+    Enterprise.all.pluck(:name, :id)
+  end
+
+  def sex_for_select
+    [
+      ['Masculino','masculino'],
+      ['Femenino','femenino']
+    ]
+  end
 end

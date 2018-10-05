@@ -1,6 +1,7 @@
 class Employee < ApplicationRecord
   belongs_to :enterprise
   enum civil_status: [:soltero, :casado, :viudo, :divorciado]
+  enum sex: [:masculino, :femenino]
   has_many  :occupational_histories
   has_many  :absenteeisms
   has_many  :attentions
