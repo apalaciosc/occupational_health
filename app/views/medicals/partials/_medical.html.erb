@@ -7,8 +7,14 @@
   </div>
   <div class="col-lg-4">
     <div class="form-group">
-      <label>Nombres y apellidos</label>
+      <label>Nombres</label>
       <%= form.text_field :firstname, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="form-group">
+      <label>Apellidos</label>
+      <%= form.text_field :lastname, class: 'form-control' %>
     </div>
   </div>
   <div class="col-lg-3">
@@ -27,13 +33,13 @@
 <div class="col-lg-12">
   <div class="col-lg-3">
     <div class="form-group ">
-      <label>Av/calle/Jr/Pasaje</label>
-      <%= form.text_field :address, class: 'form-control' %>
+      <label>Especialidad</label>
+      <%= form.text_field :specialty, class: 'form-control' %>
     </div>
   </div>
   <div class="col-lg-2">
     <div class="form-group ">
-      <label>Departamento</label>
+      <label>Rango</label>
       <%= form.text_field :department, class: 'form-control' %>
     </div>
   </div>
@@ -57,6 +63,20 @@
     <div class="form-group">
       <label>Teléfono</label>
       <%= form.text_field :phone, class: 'form-control just-number', maxlength: 9 %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>Intereses</label>
+      <%= form.text_field :interests, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>Área</label>
+      <%= form.text_field :area_id, class: 'form-control col-ms-4 just-number' %>
     </div>
   </div>
 </div>
