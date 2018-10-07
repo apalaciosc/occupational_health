@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Médicos</h3>
+        <%= link_to new_medical_path do %>
+          <img src="<%= asset_path 'User_Ad.ico' %>">
+        <% end %>
+        <div class="box-tools">
+          <form class="" action="/medicals" method="get">
+            <div class="input-group input-group-sm" style="width: 150px;">
+              <input type="text" name="search" class="form-control pull-right" placeholder="Buscar" <%= @search %> >
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <th>Nombre</th>
+              <th>Dni</th>
+              <th>Dirección</th>
+              <th>Celular</th>
+              <th>Rango</th>
+              <th>Especialidad</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
+              <th colspan="3"></th>
+            </tr>
+            <% @medicals.each do |medical| %>
+            <tr>
+              <td><%= link_to medical.firstname, medical %></td>
+              <td><%= medical.dni %></td>
+              <td><%= medical.address %></td>
+              <td><%= medical.phone %></td>
+              <td><%= medical.range %></td>
+              <td><%= medical.specialty %></td>
+              <td><%= link_to image_tag('User_Editar.ico'), edit_medical_path(medical) %></td>
+              <td><%= link_to image_tag('User_Eliminar.ico'), medical, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+        <%= will_paginate @medicals, previous_label: "Atras", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
+    </div>
+  </div>
+</div>

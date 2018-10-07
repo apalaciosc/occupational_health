@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: MyString
+  lastname: MyString
+  specialty: MyString
+  dni: MyString
+  phone: MyString
+  firm: 
+  department: 
+  address: MyString
+  birthday: 2018-10-05
+  aptitude: MyString
+  interests: MyString
+  range: MyString
+  district: MyString
+  province: MyString
+  area: one
+
+two:
+  firstname: MyString
+  lastname: MyString
+  specialty: MyString
+  dni: MyString
+  phone: MyString
+  firm: 
+  department: 
+  address: MyString
+  birthday: 2018-10-05
+  aptitude: MyString
+  interests: MyString
+  range: MyString
+  district: MyString
+  province: MyString
+  area: two

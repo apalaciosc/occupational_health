@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :medicals
   resources :attentions
+  get 'medicals/fmo' => 'medicals#fmo'
   get 'employees/fmo' => 'employees#fmo'
   get 'employees/roadmap' => 'employees#roadmap'
   get 'attention/:id/exams', to: 'attentions#exams', as: :attention_exams

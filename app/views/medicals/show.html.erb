@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2 class="page-header">
+      <i class="fa fa-globe"></i> <%= @medical.firstname %>
+      <small class="pull-right">Fecha de nacimiento: <%= @medical.birthday.strftime(" %m-%d-%Y") %></small>
+    </h2>
+  </div>
+</div>
+<div class="row invoice-info">
+  <div class="col-sm-4 invoice-col">
+    <% if @medical.dni.present? %>
+    <strong>DNI:</strong>
+    <address>
+      <%= @medical.dni %>
+    </address>
+    <% end %>
+    <% if @medical.phone.present? %>
+    <strong>Teléfono:</strong>
+    <address>
+      <%= @medical.phone %>
+    </address>
+    <% end %>
+  </div>
+  <div class="col-sm-4 invoice-col">
+    <% if @medical.address.present? %>
+    <strong>Dirección:</strong>
+    <address>
+      <%= @medical.address %>
+    </address>
+    <% end %>
+    <% if @medical.province.present? %>
+    <strong>Provincia:</strong>
+    <address>
+      <%= @medical.province %>
+    </address>
+    <% end %>
+    <% if @medical.district.present? %>
+    <strong>Distrito:</strong>
+    <address>
+      <%= @medical.district %>
+    </address>
+    <% end %>
+    <% if @medical.department.present? %>
+    <strong>Departmento:</strong>
+    <address>
+      <%= @medical.department %>
+    </address>
+    <% end %>
+  </div>
+</div>
+<div class="row no-print">
+  <div class="col-xs-12">
+    <%= link_to medicals_path, class:"btn btn-danger pull-right", style: "margin-right: 5px;" do %>
+    <i class="fa fa-500px"></i> Volver
+    <% end %>
+    <%= link_to edit_medical_path(@medical), class:"btn btn-success pull-right",style: "margin-right: 5px;" do %>
+    <i class="fa fa-bars"></i> Editar
+    <% end %>
+  </div>
+</div>

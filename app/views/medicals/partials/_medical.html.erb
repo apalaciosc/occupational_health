@@ -1,0 +1,80 @@
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>DNI</label>
+      <%= form.text_field :dni, class: 'form-control just-number dni-employee', maxlength: 8 %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Nombres</label>
+      <%= form.text_field :firstname, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <label>Apellidos</label>
+      <%= form.text_field :lastname, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="form-group">
+      <label>Domicilio fiscal</label>
+      <%= form.text_field :address, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>F.de nacimiento</label>
+      <%= form.date_field :birthday, class: 'form-control datepicker' %>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="form-group ">
+      <label>Especialidad</label>
+      <%= form.text_field :specialty, class: 'form-control' %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group ">
+      <label>Rango</label>
+      <%= form.text_field :department, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group ">
+      <label>Provincia</label>
+      <%= form.text_field :province, class: 'form-control' %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-2">
+    <div class="form-group ">
+      <label>Distrito</label>
+      <%= form.text_field :district, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>Área</label>
+      <%= form.text_field :area_id, class: 'form-control col-ms-4 just-number' %>
+    </div>
+  </div>
+  <div class="col-lg-2">
+    <div class="form-group">
+      <label>Teléfono</label>
+      <%= form.text_field :phone, class: 'form-control just-number', maxlength: 9 %>
+    </div>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label>Intereses</label>
+      <%= form.text_field :interests, class: 'form-control' %>
+    </div>
+  </div>
+</div>
