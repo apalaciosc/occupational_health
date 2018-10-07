@@ -4,7 +4,17 @@ class MedicalsController < ApplicationController
   # GET /medicals
   # GET /medicals.json
   def index
-    @medicals = Medical.all
+    @search = params[:search]
+    if @search
+      @medicals = Medical.paginate(page:params[:page],per_page:7).where("firstname||dni ILIKE ?", "%#{@search}%")
+    else
+      @medicals = Medical.paginate(page:params[:page],per_page:7).all
+     end
+     respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'medicals/report', pdf: 'report', layout: 'pdf.html'}
+    end
   end
 
   # GET /medicals/1

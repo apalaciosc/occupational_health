@@ -56,11 +56,5 @@
     <%= link_to edit_medical_path(@medical), class:"btn btn-success pull-right",style: "margin-right: 5px;" do %>
     <i class="fa fa-bars"></i> Editar
     <% end %>
-    <%= link_to medical_path(format: :pdf, id: @medical.id),class:"btn btn-primary pull-right", style:"margin-right: 5px;", target: '_blank'  do %>
-    <i class="fa fa-download"></i> Exportar a PDF
-    <% end %>
-    <%= link_to medicals_fmo_path(format: :pdf, id: @medical.id),class:"btn btn-danger pull-center", style:"margin-right: 5px;", target: '_blank'  do %>
-    <i class="fa fa-download"></i> Exportar Ficha Médica Ocupacional
-    <% end %>
   </div>
 </div>

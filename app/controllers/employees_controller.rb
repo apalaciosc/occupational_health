@@ -29,7 +29,7 @@ class EmployeesController < ApplicationController
       format.pdf {render template: 'employees/report-employee', pdf: 'report-employee', layout: 'pdf.html'}
     end
 
-   
+
   end
 
 def roadmap
@@ -38,7 +38,7 @@ def roadmap
       format.json
       format.pdf {render template: 'employees/roadmap', pdf: 'roadmap'}
     end
-  
+
 end
 def fmo
    respond_to do |format|
@@ -46,7 +46,7 @@ def fmo
       format.json
       format.pdf {render template: 'employees/fmo', pdf: 'fmo'}
     end
-  
+
 end
 
   # GET /employees/new
