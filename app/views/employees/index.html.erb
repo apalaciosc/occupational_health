@@ -9,7 +9,7 @@
         <div class="box-tools">
           <form class="" action="/employees" method="get">
             <div style="float: left; margin-right: 3px;height:3px" >
-              <%= link_to employees_path(format: :pdf, search: @search), target: '_blank' do %>
+              <%= link_to employees_path(format: :pdf, search: @search, page: 'pdf'), target: '_blank' do %>
                 <%= image_tag ('pdft.jpg') %>
               <% end %>
             </div>
