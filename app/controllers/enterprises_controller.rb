@@ -8,11 +8,11 @@ class EnterprisesController < ApplicationController
     @search = params[:search]
     @enterprise = Enterprise.new
     if @search
-      @enterprises = Enterprise.paginate(page:params[:page],per_page:7).where("name||ruc ILIKE ?", "%#{@search}%") if params[:page] != 'pdf'
-      @enterprises = Enterprise.where("name||ruc ILIKE ?", "%#{@search}%") if params[:page] == 'pdf'
+      @enterprises = Enterprise.paginate(page:params[:page],per_page:7).where("name||ruc ILIKE ?", "%#{@search}%")
+      @enterprises = Enterprise.where("name||ruc ILIKE ?", "%#{@search}%") if request.format == "pdf"
     else
-      @enterprises = Enterprise.paginate(page:params[:page],per_page:7).all if params[:page] != 'pdf'
-      @enterprises = Enterprise.all if params[:page] == 'pdf'
+      @enterprises = Enterprise.paginate(page:params[:page],per_page:7).all
+      @enterprises = Enterprise.all if request.format == "pdf"
     end
     respond_to do |format|
       format.html

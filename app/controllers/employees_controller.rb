@@ -7,11 +7,11 @@ class EmployeesController < ApplicationController
   def index
     @search = params[:search]
     if @search
-      @employees = Employee.paginate(page:params[:page],per_page:7).where("name||dni ILIKE ?", "%#{@search}%") if params[:page] != 'pdf'
-      @employees = Employee.where("name||dni ILIKE ?", "%#{@search}%") if params[:page] == 'pdf'
+      @employees = Employee.paginate(page:params[:page],per_page:7).where("name||dni ILIKE ?", "%#{@search}%")
+      @employees = Employee.where("name||dni ILIKE ?", "%#{@search}%") if request.format == "pdf"
     else
-      @employees = Employee.paginate(page:params[:page],per_page:7).all if params[:page] != 'pdf'
-      @employees = Employee.all if params[:page] == 'pdf'
+      @employees = Employee.paginate(page:params[:page],per_page:7).all
+      @employees = Employee.all if request.format == "pdf"
      end
      respond_to do |format|
       format.html
