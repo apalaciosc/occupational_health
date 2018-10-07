@@ -25,6 +25,7 @@ gem 'raphael-rails'
 gem 'sweetalert-rails'
 gem "cocoon"
 gem 'bootstrap_notify_gem'
+gem 'chosen-rails'
 
 gem 'autoprefixer-rails', '8.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

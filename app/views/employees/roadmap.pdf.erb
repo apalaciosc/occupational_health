@@ -19,23 +19,17 @@
           <tr>
             <td> MEDICO OCUPACIONALES</td>
             <td>
-              <h4 class="col-lg-offset-2 " style="color:#0067A3">
-                POLICLINICO "SAN VICENTE"- CAÑETE E.I.R.L
-              </h4>
+              <h4 class="col-lg-offset-2 " style="color:#0067A3">POLICLINICO "SAN VICENTE"- CAÑETE E.I.R.L</h4>
             </td>
           </tr>
         </table>
         <div class="col-lg-9" align="left"></div>
         <div class="col-lg-12">
-          <h3 align="center">
-            HOJA DE RUTA DE EXÁMENES MEDICO OCUPACIONALES
-          </h3>
+          <h3 align="center">HOJA DE RUTA DE EXÁMENES MEDICO OCUPACIONALES</h3>
         </div>
       </div>
       <div class="col-lg-12">
-        <p class="col-lg-12">
-          De acuerdo al Protocolo Ocupacionales, se debe tener en cuenta estos Obligatorios, lo cual el participante debe obtener todos estos documentos que comprueban haber completado todos los examenes Médicos Ocupacionales
-        </p>
+        <p class="col-lg-12">De acuerdo al Protocolo Ocupacionales, se debe tener en cuenta estos Obligatorios, lo cual el participante debe obtener todos estos documentos que comprueban haber completado todos los examenes Médicos Ocupacionales</p>
       </div>
       <style type="text/css">td { border = 0; }</style>
       <table class="tg"  style="undefined;table-layout: fixed; width: 1042px">
@@ -50,25 +44,25 @@
         </colgroup>
         <tr>
           <td class="tg-xrpy">DNI</td>
-          <td class="tg-xrpy"><%= @employee.dni %></td>
+          <td class="tg-s268"><%= @employee.dni %></td>
           <td class="tg-xrpy">Nombres y Apellidos</td>
-          <td class="tg-xrpy" colspan="2"><%= @employee.name %></td>
+          <td class="tg-s268" colspan="2"><%= @employee.name.upcase if @employee.name.present? %></td>
           <td class="tg-xrpy">Fecha de Nacimiento</td>
-          <td class="tg-xrpy"><%= @employee.birthday %></td>
+          <td class="tg-s268"><%= @employee.birthday %></td>
         </tr>
         <tr>
           <td class="tg-xrpy">Edad</td>
-          <td class="tg-xrpy"><%= @employee.age %></td>
+          <td class="tg-s268"><%= @employee.age %></td>
           <td class="tg-xrpy">Sexo</td>
-          <td class="tg-xrpy"></td>
+          <td class="tg-s268"><%= @employee.sex.upcase if @employee.sex.present? %></td>
           <td class="tg-xrpy">Empresa</td>
-          <td class="tg-xrpy" colspan="2"><%= @employee.enterprise.name %></td>
+          <td class="tg-s268" colspan="2"><%= @employee.enterprise.name.upcase if @employee.enterprise.name.present? %></td>
         </tr>
         <tr>
           <td class="tg-xrpy">Tipo de examen</td>
-          <td class="tg-s268"></td>
+          <td class="tg-s268">PREOCUPACIONAL</td>
           <td class="tg-xrpy">Cargo</td>
-          <td class="tg-xrpy"></td>
+          <td class="tg-s268"><%= @employee.assignment.upcase if @employee.assignment.present? %></td>
         </tr>
       </table>
       <style type="text/css">
@@ -88,12 +82,8 @@
             <col style="width: 200.88889px">
           </colgroup>
           <tr>
-            <th class="tg-xrpy">
-              ACTUACIONES Y/O SERVICIOS
-            </th>
-            <th class="tg-xrpy">
-              FIRMA Y/O SELLO
-            </th>
+            <th class="tg-xrpy">ACTUACIONES Y/O SERVICIOS</th>
+            <th class="tg-xrpy">FIRMA Y/O SELLO</th>
           </tr>
           <tr>
             <td class="tg-xrpy">
@@ -105,15 +95,15 @@
           </tr>
           <tr>
             <td class="tg-xrpy">
-              LABORATORIO CLINICO
+              LABORATORIO CLÍNICO
               <br>
-              (Grupo y factor, Glucosa, Hemograma completo, Examen de orina, Colesterol total y trigiceridos)
+              (Grupo y factor, Glucosa, Hemograma completo, Examen de orina, Colesterol total y trigicéridos)
             </td>
             <td class="tg-xrpy"></td>
           </tr>
           <tr>
             <td class="tg-xrpy">
-              EXAMEN MÉDICO FISICO
+              EXAMEN MÉDICO FÍSICO
               <br>
               (Evaluación medica exploratoria, Historia Clinica, Antecedentes Personales y Familiares, Examen Musculo Esqueletico, Habitos Nocivos,etc)
             </td>
@@ -204,17 +194,17 @@
     <label class="letra" > CONSENTIMIENTO INFORMADO PARA EXAMEN MEDICO, AUTORIZACIÓN DE ENTREGA DE RESULTADOS Y DECLARACIÓN JURADA DE VERACIDAD DEINFORMACIÓN</label>
   </div>
   <div class="espacio" style="text-align:justify">
-    <p>Yo, <%= @employee.name %>, identificado con el DNI N° <%= @employee.dni %>, con ocupación laboral de OPERARIO
-      DE REPOSICION certifico con este documento, que he sido informado acerca de la naturaleza y propósito de los
-      Exámenes Médicos Ocupacionales y pruebas complementarias que la empresa  <%= @employee.enterprise.name %> solicita, de
+    <p>Yo, <%= @employee.name.upcase if @employee.name.present? %>, identificado con el DNI N° <%= @employee.dni %>, con ocupación laboral de <%= @employee.assignment.upcase if @employee.assignment.present? %> certifico con este documento, que he sido informado acerca de la naturaleza y propósito de los
+      Exámenes Médicos Ocupacionales y pruebas complementarias que la empresa  <%= @employee.enterprise.name.upcase if @employee.enterprise.name.present? %> solicita, de
       acuerdo a los riesgos de mi puesto de trabajo y que todas mis dudas y preguntas han sido absueltas. Por tanto de
       forma voluntaria otorgo mi consentimiento para que procedan a realizar los exámenes que correspondan y así
-      mismo autorizo que los resultados sean entregados área de salud ocupacional de la empresa  <%= @employee.enterprise.name %>
-      S.A., con la finalidad de realizar la vigilancia médica ocupacional ordenada por la Ley de Seguridad y salud en el
+      mismo autorizo que los resultados sean entregados área de salud ocupacional de la empresa  <%= @employee.enterprise.name.upcase if @employee.enterprise.name.present? %>
+      , con la finalidad de realizar la vigilancia médica ocupacional ordenada por la Ley de Seguridad y salud en el
       trabajo 29783 y su modificatoria Ley 30222. Además DECLARO BAJO JURAMENTO que toda la información
       proporcionada a los profesionales médicos o funcionarios responsables es de carácter verídico, para el cargo
-      correspondiente al que postulo de la empresa  <%= @employee.enterprise.name %>.
+      correspondiente al que postulo de la empresa  <%= @employee.enterprise.name.upcase if @employee.enterprise.name.present? %>.
     </p>
+    <br><br><br><br>
     <table>
       <colgroup>
         <col style="width: 500.88889px">
@@ -223,7 +213,7 @@
       <tr>
         <td>
           <p>_________________________________</p>
-          <p><%= @employee.name %></p>
+          <p><%= @employee.name.upcase if @employee.name.present? %></p>
           <p>DNI : <%= @employee.dni %></p>
         </td>
         <td></td>
@@ -237,25 +227,38 @@
       Presente documento se realiza en cumplimiento de la ley general de salud N° 26842, artículo 25 inciso a), y artículo 27, art 36 y art 15.
     </b>
   </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <h3 class="site-logo logo " id="logo">
+    <a class="site-logo-anch" href="https://www.policlinicosanvicente.com/">
+      <img alt="Policlinico San Vicente - Cañete" class="logo-img site-logo-img" src="https://www.policlinicosanvicente.com/wp-content/uploads/2018/03/Logo-Policlinico-San-Vicente-1.png" title="Laboratorio, Ecografias y Radiografias"/>
+    </a>
+    <p style="float: right;">
+      <%= Time.now.strftime("%d/%m/%Y") %>
+    </p>
+  </h3>
+  <b style="font-size:15px"></b>
   <div align="center">
-    <label class="letra" >
-      CONSENTIMIENTO INFORMADO PARA EXAMEN MEDICO, AUTORIZACIÓN DE ENTREGA DE RESULTADOS Y DECLARACIÓN JURADA DE VERACIDAD DE INFORMACIÓN
-    </label>
+    <label class="letra" > CONSENTIMIENTO PARA EXÁMEN DE DROGAS Y EXONERACIÓN DE RESPONSABILIDADES</label>
   </div>
   <div class="espacio" style="text-align:justify">
-    <p>Yo, <%= @employee.name %>, identificado con el DNI N° <%= @employee.dni %>, con ocupación laboral de OPERARIO DE REPOSICION certifico con este documento, que he sido informado acerca de la naturaleza y propósito de los Exámenes Médicos Ocupacionales y pruebas complementarias que la empresa  <%= @employee.enterprise.name %> solicita, de acuerdo a los riesgos de mi puesto de trabajo y que todas mis dudas y preguntas han sido absueltas. Por tanto de forma voluntaria otorgo mi consentimiento para que procedan a realizar los exámenes que correspondan y así
-      mismo autorizo que los resultados sean entregados área de salud ocupacional de la empresa  <%= @employee.enterprise.name %> S.A., con la finalidad de realizar la vigilancia médica ocupacional ordenada por la Ley de Seguridad y salud en el trabajo 29783 y su modificatoria Ley 30222. Además DECLARO BAJO JURAMENTO que toda la información
-      proporcionada a los profesionales médicos o funcionarios responsables es de carácter verídico, para el cargo correspondiente al que postulo de la empresa  <%= @employee.enterprise.name %>.
+    <p>Yo, <%= @employee.name.upcase if @employee.name.present? %>, identificado con el DNI N° <%= @employee.dni %>, con ocupación laboral de <%= @employee.assignment.upcase if @employee.assignment.present? %> certifico que he sido informado acerca de la naturaleza y propósito de los exámenes y pruebas complementarias que la Empresa
+      <%= @employee.enterprise.name.upcase if @employee.enterprise.name.present? %> solicita y que todas mis dudas y preguntas al respecto han sido absueltas, así mismo, autorizo que los resultados sean entregados a la empresa la cual soy vinculante. Por tanto, en forma consiente y voluntaria doy mi consentimiento.
+      Yo, libero a la clínica/centro médico: policlínico San Vicente Cañete EIRL, a su personal médico, reclamo, responsabilidades y materia relacionada a que yo voluntariamente me someta a los exámenes de drogas.
+      Específicamente, acuerdo y comprendo que la CLÍNICA, no es responsable en cualquier forma por ninguna consecuencia que resulte de la prueba de drogas y libero totalmente al Policlínico San Vicente Cañete EIRL, de todo reclamo y demandas que puedan provenir, surgir o ser incidentales
+      a dicha prueba de drogas, y adicionalmente, doy mi consentimiento a dejar que la empresa: Por intermedio de su departamento médico o sus agentes designados vean el resultado de cualquier exámen administrado por el POLICLÍNICO. Además acuerdo no tomar acción que pueda provenir de
+      los resultados de dichas pruebas una vez divulgadas al departamento médico de dicha compañía.
+      Por la presente certifico que he leído el consentimiento de exámenes de drogas y exoneración de responsabilidades y estoy totalmente de acuerdo y comprendo los contenidos del mismo.
     </p>
+    <br><br><br><br>
     <table>
       <colgroup>
-        <col style="width: 500.88889px;">
-        <col style="width: 250.88889px;">
+        <col style="width: 500.88889px">
+        <col style="width: 250.88889px">
       </colgroup>
       <tr>
         <td>
           <p>_________________________________</p>
-          <p><%= @employee.name %></p>
+          <p><%= @employee.name.upcase if @employee.name.present? %></p>
           <p>DNI : <%= @employee.dni %></p>
         </td>
         <td></td>
@@ -265,9 +268,6 @@
         </td>
       </tr>
     </table>
-    <b style="font-size:15px">
-      Presente documento se realiza en cumplimiento de la ley general de salud N° 26842, artículo 25 inciso a), y artículo 27, art 36 y art 15.
-    </b>
   </div>
 </body>
 </html>

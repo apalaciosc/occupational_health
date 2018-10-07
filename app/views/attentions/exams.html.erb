@@ -48,6 +48,7 @@
                       <th style="width: 20px">Opciones</th>
                     </tr>
                     <% @exams.each_with_index do |e,index| %>
+                    <% next if e.type_exam.view == 'occupational_health_summary' %>
                     <tr>
                       <td><%= index + 1 %></td>
                       <td><%= e.type_exam.name.capitalize %></td>

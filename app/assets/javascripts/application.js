@@ -32,13 +32,15 @@
 //= require bootstrap_notify
 //= require type_exams
 //= require exams
+//= require chosen-jquery
 
+$(function(){
+  $('.chosen').chosen({ width: '100%', allow_single_deselect: true});
+})
 //Just numbers
 $(document).on('keypress', '.just-number', function(e){
   if(isNaN(this.value + String.fromCharCode(e.charCode)))
   return false;
-}).on("cut copy paste",function(e){
-  e.preventDefault();
 });
 
 //Email validator

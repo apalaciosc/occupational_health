@@ -8,8 +8,10 @@ class EmployeesController < ApplicationController
     @search = params[:search]
     if @search
       @employees = Employee.paginate(page:params[:page],per_page:7).where("name||dni ILIKE ?", "%#{@search}%")
+      @employees = Employee.where("name||dni ILIKE ?", "%#{@search}%") if request.format == "pdf"
     else
       @employees = Employee.paginate(page:params[:page],per_page:7).all
+      @employees = Employee.all if request.format == "pdf"
      end
      respond_to do |format|
       format.html
@@ -65,8 +67,6 @@ end
   # POST /employees.json
   def create
     @employee = Employee.new(employee_params)
-    #Para pruebas
-    @employee.enterprise_id = Enterprise.last.id
 
     respond_to do |format|
       if @employee.save
@@ -120,6 +120,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:enterprise_id, :name, :birthday, :age, :dni, :address, :way, :numb_depart_int, :urbanization, :district, :province, :department, :resi_in_place_work, :time_place_work, :essalud, :eps, :sctr, :other, :email, :civil_status, :degree_instruction, :number_children, :number_dependents, :phone, :pathologicals_history => {}, :pathologicals_history_family => {}, occupational_histories_attributes: [OccupationalHistory.attribute_names.map(&:to_sym).push(:_destroy)], absenteeisms_attributes: [Absenteeism.attribute_names.map(&:to_sym).push(:_destroy)])
+      params.require(:employee).permit(:enterprise_id, :name, :birthday, :age, :dni, :address, :way, :numb_depart_int, :sex, :assignment,:urbanization, :district, :province, :department, :resi_in_place_work, :time_place_work, :essalud, :eps, :sctr, :other, :email, :civil_status, :degree_instruction, :number_children, :number_dependents, :phone, :pathologicals_history => {}, :pathologicals_history_family => {}, occupational_histories_attributes: [OccupationalHistory.attribute_names.map(&:to_sym).push(:_destroy)], absenteeisms_attributes: [Absenteeism.attribute_names.map(&:to_sym).push(:_destroy)])
     end
 end
