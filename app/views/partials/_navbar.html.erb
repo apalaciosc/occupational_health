@@ -27,19 +27,6 @@
               <%= current_user.email if !current_user.name.present? %><%= current_user.name %> <%= current_user.lastname %> - <%= current_user.position if current_user.position.present? %>
             </p>
           </li>
-          <li class="user-body">
-            <div class="row">
-              <div class="col-xs-4 text-center">
-                <a href="#">Followers</a>
-              </div>
-              <div class="col-xs-4 text-center">
-                <a href="#">Sales</a>
-              </div>
-              <div class="col-xs-4 text-center">
-                <a href="#">Friends</a>
-              </div>
-            </div>
-          </li>
           <li class="user-footer">
             <div class="pull-left">
               <%= link_to "Editar perfil" , edit_profile_users_path , class: 'btn btn-default btn-flat' %>
