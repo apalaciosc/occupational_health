@@ -101,3 +101,7 @@
 <% if @type_exam.present? && @type_exam.view == 'hepatitis_a' %>
 <%= render partial: 'attentions/partials_exams/hepatitis_a', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'lipidic_profile' %>
+<%= render partial: 'attentions/partials_exams/lipidic_profile', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
