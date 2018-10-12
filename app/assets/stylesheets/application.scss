@@ -10,18 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require style.scss
  *= require_self
- *= require AdminLTE.min
- *= require _all-skins.min
- *= require 'jvectormap'
- *= require bootstrap-datepicker.min
- *= require daterangepicker
- *= require bootstrap-wysihtml5
- *= require bootstrap.min
- *= require sweetalert
- *= require chosen
  */
-
- @import "font-awesome";
- @import 'ionicons';
- @import 'morrisjs-rails'
