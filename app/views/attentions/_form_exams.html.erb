@@ -34,8 +34,8 @@
 <%= render partial: 'attentions/partials_exams/test_ophthalmology', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
 
-<% if @type_exam.present? && @type_exam.view == 'epworth_test' %>
-<%= render partial: 'attentions/partials_exams/epworth_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% if @type_exam.present? && @type_exam.view == 'fatigue_test' %>
+<%= render partial: 'attentions/partials_exams/fatigue_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
 
 <% if @type_exam.present? && @type_exam.view == 'personality_test' %>
@@ -47,7 +47,7 @@
 <% end %>
 
 <% if @type_exam.present? && @type_exam.view == 'height_test' %>
-<%= render partial: 'attentions/partials_exams/epworth_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<%= render partial: 'attentions/partials_exams/height_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
 
 <% if @type_exam.present? && @type_exam.view == 'electrocardiogram' %>
@@ -62,8 +62,8 @@
 <%= render partial: 'attentions/partials_exams/camo', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
 
-<% if @type_exam.present? && @type_exam.view == 'muscle_tab_skeletal' %>
-<%= render partial: 'attentions/partials_exams/muscle_tab_skeletal', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% if @type_exam.present? && @type_exam.view == 'ergonomic_evaluation' %>
+<%= render partial: 'attentions/partials_exams/ergonomic_evaluation', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
 
 <% if @type_exam.present? && @type_exam.view == 'occupational_health_summary' %>

@@ -16,7 +16,6 @@ cardiologia = Area.find_by(name:'cardiología')
 
 if TypeExam.all.count == 0
   #exámenes
-  TypeExam.create(area_id:examen_medico.id ,name: 'Ficha músculo esquelética', view: 'muscle_tab_skeletal')
   TypeExam.create(area_id:examen_medico.id ,name: 'C.A.M.O', view: 'camo')
   TypeExam.create(area_id:examen_medico.id ,name: 'Resumen exámen ocupacional', view: 'occupational_health_summary')
   TypeExam.create(area_id:examen_medico.id ,name: 'exámen médico', view: 'medical_exam')
@@ -66,5 +65,4 @@ if TypeExam.all.count == 0
   TypeExam.create(area_id:laboratorio.id ,name: 'papanicolau', view: 'papanicolau')
   TypeExam.create(area_id:laboratorio.id ,name: 'imovax DT', view: 'imovax_dt')
   TypeExam.create(area_id:psicologia.id ,name: 'test de personalidad', view: 'personality_test')
-  TypeExam.create(area_id:psicologia.id ,name: 'test de epworth', view: 'epworth_test')
 end
