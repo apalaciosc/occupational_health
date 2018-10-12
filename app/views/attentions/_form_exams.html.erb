@@ -97,3 +97,7 @@
 <% if @type_exam.present? && @type_exam.view == 'blood_factor' %>
 <%= render partial: 'attentions/partials_exams/blood_factor', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'hepatitis_a' %>
+<%= render partial: 'attentions/partials_exams/hepatitis_a', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
