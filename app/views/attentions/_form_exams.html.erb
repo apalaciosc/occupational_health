@@ -73,3 +73,7 @@
 <% if @type_exam.present? && @type_exam.view == 'discard_pregnancy' %>
 <%= render partial: 'attentions/partials_exams/discard_pregnancy', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'glucose' %>
+<%= render partial: 'attentions/partials_exams/glucose', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
