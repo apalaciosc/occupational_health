@@ -69,3 +69,7 @@
 <% if @type_exam.present? && @type_exam.view == 'occupational_health_summary' %>
 <%= render partial: 'attentions/partials_exams/occupational_health_summary', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'discard_pregnancy' %>
+<%= render partial: 'attentions/partials_exams/discard_pregnancy', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
