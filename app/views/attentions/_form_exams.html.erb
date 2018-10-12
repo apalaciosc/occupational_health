@@ -93,3 +93,7 @@
 <% if @type_exam.present? && @type_exam.view == 'parasitological_examination' %>
 <%= render partial: 'attentions/partials_exams/parasitological_examination', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'blood_factor' %>
+<%= render partial: 'attentions/partials_exams/blood_factor', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
