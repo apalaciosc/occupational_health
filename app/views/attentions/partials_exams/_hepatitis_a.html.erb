@@ -1,0 +1,180 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#results" aria-expanded="false">Perfil hepático</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="results">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <label>Resultados</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label></label>
+              </div>
+              <style type="text/css">
+              .tg  {border-collapse:collapse;border-spacing:0;}
+              .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg .tg-s268{font-weight:bold;text-align:center;vertical-align:top}
+              </style>
+              <div class="col-lg-12">
+                <div class="box-body table-responsive no-padding">
+                  <div class="col-lg-12">
+                    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                      <colgroup>
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-s268" colspan="1">Exámen</th>
+                          <th class="tg-s268" colspan="1">Resultado</th>
+                          <th class="tg-s268" colspan="4">Valor referencial</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Bilirrubina total</td>
+                          <td class="tg-s268" colspan="1">
+                            <%= text_field_tag "exam[data][text_1]", @exam.data[:text_1], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][text_2]", @exam.data[:text_2], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Directa</td>
+                          <td class="tg-s268" colspan="1">
+                            <%= text_field_tag "exam[data][text_3]", @exam.data[:text_3], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][text_4]", @exam.data[:text_4], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Indirecta</td>
+                          <td class="tg-s268" colspan="1">
+                            <%= text_field_tag "exam[data][text_5]", @exam.data[:text_5], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][text_6]", @exam.data[:text_6], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">TRANSAMINASAS</td>
+                          <td class="tg-s268" colspan="5"></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">TGO</td>
+                          <td class="tg-s268" colspan="1">
+                            <%= text_field_tag "exam[data][text_7]", @exam.data[:text_7], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][text_8]", @exam.data[:text_8], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">TGP</td>
+                          <td class="tg-s268" colspan="1">
+                            <%= text_field_tag "exam[data][text_9]", @exam.data[:text_9], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][text_10]", @exam.data[:text_10], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">FOSFATA ALCALINA</td>
+                          <td class="tg-s268" colspan="1">
+                            <%= text_field_tag "exam[data][text_11]", @exam.data[:text_11], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][text_12]", @exam.data[:text_12], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268" colspan="2"></td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][text_13]", @exam.data[:text_13], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Proteínas Totales</td>
+                          <td class="tg-s268" colspan="1">
+                            <%= text_field_tag "exam[data][text_14]", @exam.data[:text_14], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][text_15]", @exam.data[:text_15], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Albumina</td>
+                          <td class="tg-s268" colspan="1">
+                            <%= text_field_tag "exam[data][text_16]", @exam.data[:text_16], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][text_17]", @exam.data[:text_17], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Globulina</td>
+                          <td class="tg-s268" colspan="1">
+                            <%= text_field_tag "exam[data][text_18]", @exam.data[:text_18], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268" colspan="4"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label></label>
+              </div>
+              <div class="col-md-12">
+                <label></label>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label>Comentarios:</label>
+                  <%= text_area_tag "exam[data][comments]", @exam.data[:comments], class: 'form-control', rows: '2' %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="form-group">
+              <div class="col-sm-offset-5 col-sm-10">
+                <%= f.submit 'Guardar', class:'btn btn-primary' %>
+                <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
