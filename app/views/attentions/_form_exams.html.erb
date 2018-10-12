@@ -85,3 +85,7 @@
 <% if @type_exam.present? && @type_exam.view == 'urine_test' %>
 <%= render partial: 'attentions/partials_exams/urine_test', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
 <% end %>
+
+<% if @type_exam.present? && @type_exam.view == 'bk_exam' %>
+<%= render partial: 'attentions/partials_exams/bk_exam', locals: { exam: @exam, type_exam: @type_exam, attention: @attention, edit: @edit } %>
+<% end %>
