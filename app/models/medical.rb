@@ -1,5 +1,6 @@
 class Medical < ApplicationRecord
   belongs_to :area
+  belongs_to :user
 
   validates :firstname, presence: true
   validates :lastname, presence: true
