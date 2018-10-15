@@ -9,7 +9,7 @@ class MedicalsController < ApplicationController
       @medicals = Medical.paginate(page:params[:page],per_page:7).where("firstname||dni ILIKE ?", "%#{@search}%")
     else
       @medicals = Medical.paginate(page:params[:page],per_page:7).all
-     end
+    end
      respond_to do |format|
       format.html
       format.json
@@ -35,7 +35,6 @@ class MedicalsController < ApplicationController
   # POST /medicals.json
   def create
     @medical = Medical.new(medical_params)
-    @user = User.new(email: medical_params[:email], password: 'san_vicente2018')
     respond_to do |format|
       if @medical.save
         format.html { redirect_to @medical, notice: 'Medical was successfully created.' }
