@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_05_161342) do
+ActiveRecord::Schema.define(version: 2018_10_15_051211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,13 @@ ActiveRecord::Schema.define(version: 2018_10_05_161342) do
     t.bigint "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "numb_depart_int"
+    t.string "urbanization"
+    t.integer "civil_status"
+    t.string "email"
+    t.integer "sex"
+    t.string "way"
+    t.string "degree_instruction"
     t.index ["area_id"], name: "index_medicals_on_area_id"
   end
 
@@ -169,7 +176,10 @@ ActiveRecord::Schema.define(version: 2018_10_05_161342) do
     t.date "birthday"
     t.text "aptitude"
     t.text "interests"
+    t.string "type_user"
+    t.bigint "medical_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["medical_id"], name: "index_users_on_medical_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

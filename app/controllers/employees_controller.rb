@@ -30,8 +30,6 @@ class EmployeesController < ApplicationController
       format.json
       format.pdf {render template: 'employees/report-employee', pdf: 'report-employee', layout: 'pdf.html'}
     end
-
-
   end
 
 def roadmap

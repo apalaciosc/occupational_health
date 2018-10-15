@@ -1,0 +1,27 @@
+<h1 align="center" style="color:#172e74 ">Reporte de médicos</h1>
+<br>
+<table class="table">
+	<thead class="thead-primary">
+		<tr><th>Nombres</th>
+			<th>Apellidos</th>
+      <th>Dni</th>
+			<th>Télefono</th>
+      <th>Especialidad</th>
+      <th>Estado civil</th>
+      <th>Dirección</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @medicals.each do |medical| %>
+		<tr>
+			<td><%= link_to medical.firstname, medical %></td>
+      <td><%= medical.lastname %></td>
+      <td><%= medical.dni %></td>
+      <td><%= medical.phone %></td>
+      <td><%= medical.specialty %></td>
+      <td><%= medical.civil_status %></td>
+      <td><%= medical.address %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
