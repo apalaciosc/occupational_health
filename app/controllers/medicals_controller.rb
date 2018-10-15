@@ -35,7 +35,7 @@ class MedicalsController < ApplicationController
   # POST /medicals.json
   def create
     @medical = Medical.new(medical_params)
-
+    @user = User.new(email: medical_params[:email], password: 'san_vicente2018')
     respond_to do |format|
       if @medical.save
         format.html { redirect_to @medical, notice: 'Medical was successfully created.' }
@@ -79,6 +79,6 @@ class MedicalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medical_params
-      params.require(:medical).permit(:firstname, :lastname, :specialty, :dni, :phone, :firm, :department, :address, :birthday, :aptitude, :interests, :range, :district, :province, :area_id)
+      params.require(:medical).permit(:firstname, :sex, :way, :civil_status, :numb_depart_int, :urbanization, :email, :degree_instruction, :lastname, :specialty, :dni, :phone, :firm, :department, :address, :birthday, :aptitude, :interests, :range, :district, :province, :area_id)
     end
 end
