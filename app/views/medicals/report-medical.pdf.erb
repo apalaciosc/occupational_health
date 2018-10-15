@@ -37,7 +37,13 @@
     <% if @medical.specialty.present? %>
     <strong>Especialidad:</strong>
     <address>
-      <%= Area.find(@medical.specialty).name %>
+      <%= @medical.specialty %>
+    </address>
+    <% end %>
+    <% if @medical.area_id.present? %>
+    <strong>Área:</strong>
+    <address>
+      <%= Area.find(@medical.area_id).name %>
     </address>
     <% end %>
   </div>

@@ -8,7 +8,7 @@ module MedicalsHelper
     ]
   end
 
-  def specialty_for_select
+  def area_id_for_select
     Area.all.pluck(:name, :id)
   end
 
