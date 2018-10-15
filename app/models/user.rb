@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :medical
+  belongs_to :medical, optional:true
   enum role_id: [:superadmin, :admin, :medical, :recepcionist]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
