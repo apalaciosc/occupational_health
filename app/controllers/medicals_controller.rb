@@ -20,6 +20,11 @@ class MedicalsController < ApplicationController
   # GET /medicals/1
   # GET /medicals/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'medicals/report-medical', pdf: 'report-employee', layout: 'pdf.html'}
+    end
   end
 
   # GET /medicals/new
