@@ -6,6 +6,7 @@ ruby '2.5.1'
 gem 'will_paginate-bootstrap'
 gem 'will_paginate'
 gem 'devise'
+gem 'cancancan', '~> 2.0'
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 gem "paperclip", "~> 6.0.0"

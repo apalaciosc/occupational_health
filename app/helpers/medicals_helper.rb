@@ -8,6 +8,10 @@ module MedicalsHelper
     ]
   end
 
+  def specialty_for_select
+    Area.all.pluck(:name, :id)
+  end
+
   def sex_medical_for_select
     [
       ['Masculino','masculino'],

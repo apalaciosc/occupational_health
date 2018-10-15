@@ -34,6 +34,12 @@
       <%= @medical.sex %>
     </address>
     <% end %>
+    <% if @medical.specialty.present? %>
+    <strong>Especialidad:</strong>
+    <address>
+      <%= Area.find(@medical.specialty).name %>
+    </address>
+    <% end %>
   </div>
   <div class="col-sm-4 invoice-col">
     <% if @medical.address.present? %>

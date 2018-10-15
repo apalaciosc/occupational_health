@@ -29,10 +29,10 @@
       <%= form.date_field :birthday, class: 'form-control datepicker' %>
     </div>
   </div>
-  <div class="col-lg-4">
-    <div class="form-group ">
+  <div class="col-lg-3">
+    <div class="form-group">
       <label>Especialidad</label>
-      <%= form.text_field :specialty, class: 'form-control' %>
+      <%= form.select(:specialty, specialty_for_select, { include_blank: 'Seleccionar especialidad' }, {class: "form-control chosen"}) %>
     </div>
   </div>
   <div class="col-lg-3">

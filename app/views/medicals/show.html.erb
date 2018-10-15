@@ -27,9 +27,9 @@
     </address>
     <% end %>
     <% if @medical.specialty.present? %>
-    <strong>Sexo:</strong>
+    <strong>Especialidad:</strong>
     <address>
-      <%= @medical.specialty %>
+      <%= Area.find(@medical.specialty).name %>
     </address>
     <% end %>
     <% if @medical.sex.present? %>

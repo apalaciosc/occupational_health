@@ -49,6 +49,7 @@
                     </tr>
                     <% @exams.each_with_index do |e,index| %>
                     <% next if e.type_exam.view == 'occupational_health_summary' %>
+                    <% if e.type_exam.area_id == current_user.medical.area_id %>
                     <tr>
                       <td><%= index + 1 %></td>
                       <td><%= e.type_exam.name.capitalize %></td>
@@ -57,6 +58,7 @@
                         <a><img src="<%= asset_path 'pdft.jpg' %>" style="width:25px"></a>
                       </td>
                     </tr>
+                    <% end %>
                     <% end %>
                   </tbody>
                 </table>

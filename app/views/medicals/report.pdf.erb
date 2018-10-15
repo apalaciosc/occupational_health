@@ -18,7 +18,7 @@
       <td><%= medical.lastname %></td>
       <td><%= medical.dni %></td>
       <td><%= medical.phone %></td>
-      <td><%= medical.specialty %></td>
+      <td><%= Area.find(medical.specialty).name %></td>
       <td><%= medical.civil_status %></td>
       <td><%= medical.address %></td>
 		</tr>

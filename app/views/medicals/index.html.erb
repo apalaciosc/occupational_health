@@ -43,7 +43,7 @@
               <td><%= medical.address %></td>
               <td><%= medical.phone %></td>
               <td><%= medical.range %></td>
-              <td><%= medical.specialty %></td>
+              <td><%= Area.find(medical.specialty).name %></td>
               <td><%= link_to image_tag('User_Editar.ico'), edit_medical_path(medical) %></td>
               <td><%= link_to image_tag('User_Eliminar.ico'), medical, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
             </tr>

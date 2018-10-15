@@ -17,28 +17,32 @@
     </div>
     <ul class="sidebar-menu tree" data-widget="tree">
       <li class="header">PANEL PRINCIPAL</li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-dashboard"></i> <span>Empresas</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li class="active"><a href="/enterprises"><i class="fa fa-circle-o"></i> Ver todas</a></li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-child"></i> <span>Empleados</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li class="active"><a href="/employees"><i class="fa fa-circle-o"></i> Ver todos</a></li>
-        </ul>
-      </li>
+      <% if user_signed_in? && current_user.role_id != 'medical'%>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Empresas</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="/enterprises"><i class="fa fa-circle-o"></i> Ver todas</a></li>
+          </ul>
+        </li>
+      <% end %>
+      <% if user_signed_in? && current_user.role_id != 'medical'%>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-child"></i> <span>Empleados</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="/employees"><i class="fa fa-circle-o"></i> Ver todos</a></li>
+          </ul>
+        </li>
+      <% end %>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-pie-chart"></i>
@@ -60,22 +64,28 @@
           </span>
         </a>
         <ul class="treeview-menu" style="display: none;">
-          <li><a href="/areas"><i class="fa fa-circle-o"></i> Ver todas</a></li>
-          <li><a href="/type_exams"><i class="fa fa-circle-o"></i> Exámenes</a></li>
+          <% if user_signed_in? && current_user.role_id == 'medical'%>
+            <li><a href="/type_exams"><i class="fa fa-circle-o"></i> Exámenes</a></li>
+          <% else %>
+            <li><a href="/areas"><i class="fa fa-circle-o"></i> Ver todas</a></li>
+            <li><a href="/type_exams"><i class="fa fa-circle-o"></i> Exámenes</a></li>
+          <% end %>
         </ul>
       </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-child"></i>
-          <span>Médicos</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu" style="display: none;">
-          <li><a href="/medicals"><i class="fa fa-circle-o"></i> Ver todos</a></li>
-        </ul>
-      </li>
+      <% if user_signed_in? && current_user.role_id != 'medical'%>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-child"></i>
+            <span>Médicos</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: none;">
+            <li><a href="/medicals"><i class="fa fa-circle-o"></i> Ver todos</a></li>
+          </ul>
+        </li>
+      <% end %>
     </ul>
   </section>
 </aside>
