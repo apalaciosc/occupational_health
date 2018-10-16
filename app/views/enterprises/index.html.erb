@@ -3,9 +3,13 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Empresas</h3>
-        <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false">
-          <img src="<%= asset_path 'User_Ad.ico' %>">
-        </a>
+        <% if current_user.role_id == 'admin' %>
+          <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false">
+            <img src="<%= asset_path 'User_Ad.ico' %>">
+          </a>
+        <% else %>
+          <a></a>
+        <% end %>
         <div class="box-tools">
           <form class="" action="/enterprises" method="get">
             <div style="float: left; margin-right: 3px;height:3px" >
@@ -44,8 +48,12 @@
               <td><%= enterprise.departament %></td>
               <td><%= enterprise.province %></td>
               <td><%= enterprise.district %></td>
-              <td><a data-toggle="modal" data-target="#modalUpdate<%= enterprise.id %>" data-backdrop="static" data-keyboard="false"><img src="<%= asset_path 'User_Editar.ico' %>"></a></td>
-              <td><%= link_to image_tag('User_Eliminar.ico'), enterprise, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+              <% if current_user.role_id == 'admin' %>
+                <td><a data-toggle="modal" data-target="#modalUpdate<%= enterprise.id %>" data-backdrop="static" data-keyboard="false"><img src="<%= asset_path 'User_Editar.ico' %>"></a></td>
+                <td><%= link_to image_tag('User_Eliminar.ico'), enterprise, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+              <% else %>
+                <td></td>
+              <% end %>
             </tr>
             <% end %>
           </tbody>

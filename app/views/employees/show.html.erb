@@ -140,15 +140,25 @@
 </div>
 <div class="row no-print">
   <div class="col-xs-12">
-    <%= link_to employees_path, class:"btn btn-danger pull-right", style: "margin-right: 5px;" do %>
-    <i class="fa fa-500px"></i> Volver
+    <% if current_user.role_id == 'medical'%>
+      <%= link_to attentions_path, class:"btn btn-danger pull-right", style: "margin-right: 5px;" do %>
+      <i class="fa fa-500px"></i> Volver
+      <% end %>
+    <% else %>
+      <%= link_to employees_path, class:"btn btn-danger pull-right", style: "margin-right: 5px;" do %>
+      <i class="fa fa-500px"></i> Volver
+      <% end %>
     <% end %>
     <% if user_signed_in? && current_user.role_id != 'medical'%>
       <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false", class="btn btn-info pull-right">
         <i class="fa fa-align-left"></i> Nueva atención
       </a>
-      <%= link_to edit_employee_path(@employee), class:"btn btn-success pull-right",style: "margin-right: 5px;" do %>
-      <i class="fa fa-bars"></i> Editar
+      <% if current_user.role_id == 'admin' %>
+        <%= link_to edit_employee_path(@employee), class:"btn btn-success pull-right",style: "margin-right: 5px;" do %>
+        <i class="fa fa-bars"></i> Editar
+        <% end %>
+      <% else %>
+        <a></a>
       <% end %>
       <%= link_to employee_path(format: :pdf, id: @employee.id),class:"btn btn-primary pull-right", style:"margin-right: 5px;", target: '_blank'  do %>
       <i class="fa fa-download"></i> Exportar a PDF
@@ -183,8 +193,6 @@
                   <%= link_to employees_roadmap_path(format: :pdf, id: @employee.id),class:"btn btn-primary pull-center", style:"margin-right: 5px;", target: '_blank'  do %>
                   <i class="fa fa-download"></i> Exportar documentos
                   <% end %>
-
-
                 </div>
                 <div class="form-group">
                   <label>Tipo:</label>
@@ -208,11 +216,8 @@
         </div>
         <div class="modal-footer">
           <div class="actions">
-
-
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
             <button type="submit" class="btn btn-primary">Guardar</button>
-
           </div>
         </div>
         <% end %>
