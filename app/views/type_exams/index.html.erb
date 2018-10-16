@@ -22,11 +22,19 @@
               <th>Área</th>
             </tr>
             <% @type_exams.each do |type_exam| %>
-            <tr>
-              <% next if type_exam.view == 'occupational_health_summary' %>
-              <td><%= type_exam.name.capitalize %></td>
-              <td><%= type_exam.area.name.capitalize %></td>
-            </tr>
+              <% if current_user.role_id != 'medical' %>
+                <tr>
+                  <% next if type_exam.view == 'occupational_health_summary' %>
+                  <td><%= type_exam.name.capitalize %></td>
+                  <td><%= type_exam.area.name.capitalize %></td>
+                </tr>
+              <% elsif type_exam.area_id == current_user.medical.area_id%>
+                <tr>
+                  <% next if type_exam.view == 'occupational_health_summary' %>
+                  <td><%= type_exam.name.capitalize %></td>
+                  <td><%= type_exam.area.name.capitalize %></td>
+                </tr>
+              <% end %>
             <% end %>
           </tbody>
         </table>

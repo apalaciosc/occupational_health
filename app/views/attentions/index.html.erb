@@ -38,8 +38,12 @@
               <td><%= attention.district.capitalize %></td>
               <td><%= link_to image_tag('exam.png', style:'width:33px'), attention_exams_path(:id => attention.id)%></td>
               <td><a data-toggle="modal" data-target="#modalNewExam<%= attention.id %>" data-backdrop="static" data-keyboard="false"><img style="width:33px" src="<%= asset_path 'doctor.png' %>"></a></td>
-              <td><a data-toggle="modal" data-target="#modalUpdate<%= attention.id %>" data-backdrop="static" data-keyboard="false"><img src="<%= asset_path 'User_Editar.ico' %>"></a></td>
-              <td><%= link_to image_tag('User_Eliminar.ico'), attention, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+              <% if user_signed_in? && current_user.role_id != 'medical'%>
+                <td><a data-toggle="modal" data-target="#modalUpdate<%= attention.id %>" data-backdrop="static" data-keyboard="false"><img src="<%= asset_path 'User_Editar.ico' %>"></a></td>
+              <% end %>
+              <% if user_signed_in? && current_user.role_id != 'medical'%>
+                <td><%= link_to image_tag('User_Eliminar.ico'), attention, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+              <% end %>
             </tr>
             <% end %>
           </tbody>
@@ -125,10 +129,17 @@
                 <div class="row">
                   <div class="col-lg-12">
                     <% @type_exams.each do |type_exam| %>
-                    <% next if type_exam.view == 'occupational_health_summary' %>
-                    <div class="col-lg-6">
-                      <i class="fa fa-fw fa-ambulance"></i> <%= link_to type_exam.name.capitalize, attention_new_exams_path(:id => attention.id, :type_exam => type_exam.id), target: '_blank' %>
-                    </div>
+                      <% if current_user.role_id != 'medical' %>
+                        <% next if type_exam.view == 'occupational_health_summary' %>
+                        <div class="col-lg-6">
+                          <i class="fa fa-fw fa-ambulance"></i> <%= link_to type_exam.name.capitalize, attention_new_exams_path(:id => attention.id, :type_exam => type_exam.id), target: '_blank' %>
+                        </div>
+                      <% elsif type_exam.area_id == current_user.medical.area_id%>
+                        <% next if type_exam.view == 'occupational_health_summary' %>
+                        <div class="col-lg-6">
+                          <i class="fa fa-fw fa-ambulance"></i> <%= link_to type_exam.name.capitalize, attention_new_exams_path(:id => attention.id, :type_exam => type_exam.id), target: '_blank' %>
+                        </div>
+                      <% end %>
                     <% end %>
                   </div>
                 </div>

@@ -7,7 +7,7 @@
       <th>Dni</th>
 			<th>Télefono</th>
       <th>Especialidad</th>
-      <th>Estado civil</th>
+			<th>Área</th>
       <th>Dirección</th>
 		</tr>
 	</thead>
@@ -18,8 +18,8 @@
       <td><%= medical.lastname %></td>
       <td><%= medical.dni %></td>
       <td><%= medical.phone %></td>
-      <td><%= medical.specialty %></td>
-      <td><%= medical.civil_status %></td>
+			<td><%= medical.specialty %></td>
+      <td><%= Area.find(medical.area_id).name %></td>
       <td><%= medical.address %></td>
 		</tr>
 		<% end %>

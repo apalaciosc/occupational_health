@@ -3,6 +3,13 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Empleados</h3>
+        <% if current_user.role_id == 'admin' %>
+          <%= link_to new_employee_path do %>
+            <img src="<%= asset_path 'User_Ad.ico' %>">
+          <% end %>
+        <% else %>
+          <a></a>
+        <% end %>
         <div class="box-tools">
           <form class="" action="/employees" method="get">
             <div class="row">
@@ -54,8 +61,12 @@
               <td><%= employee.eps? ? "Si" : "No" %></td>
               <td><%= employee.sctr? ? "Si" : "No" %></td>
               <td><%= employee.other? ? "Si" : "No" %></td>
-              <td><%= link_to 'Editar', edit_employee_path(employee) %></td>
-              <td><%= link_to 'Eliminar', employee, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+              <% if current_user.role_id == 'admin' %>
+                <td><%= link_to 'Editar', edit_employee_path(employee) %></td>
+                <td><%= link_to 'Eliminar', employee, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+              <% else %>
+                <a></a>
+              <% end %>
             </tr>
             <% end %>
           </tbody>

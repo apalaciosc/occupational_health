@@ -29,8 +29,8 @@
       <%= form.date_field :birthday, class: 'form-control datepicker' %>
     </div>
   </div>
-  <div class="col-lg-4">
-    <div class="form-group ">
+  <div class="col-lg-3">
+    <div class="form-group">
       <label>Especialidad</label>
       <%= form.text_field :specialty, class: 'form-control' %>
     </div>
@@ -87,10 +87,10 @@
       <%= form.text_field :district, class: 'form-control' %>
     </div>
   </div>
-  <div class="col-lg-2">
+  <div class="col-lg-3">
     <div class="form-group">
       <label>Área</label>
-      <%= form.text_field :area_id, class: 'form-control col-ms-4 just-number' %>
+      <%= form.select(:area_id, area_id_for_select, { include_blank: 'Seleccionar área' }, {class: "form-control chosen"}) %>
     </div>
   </div>
   <div class="col-lg-2">

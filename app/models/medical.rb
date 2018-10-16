@@ -14,7 +14,7 @@ class Medical < ApplicationRecord
   before_update :update_user, if: :email_changed?
 
   def create_user
-    User.create(email: self.email, password: "#{self.firstname}#{self.lastname}", medical_id: self.id)
+    User.create(role_id: 2, email: self.email, password: "#{self.firstname}#{self.lastname}", medical_id: self.id)
   end
 
   def update_user
