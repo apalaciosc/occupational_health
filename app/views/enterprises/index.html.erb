@@ -76,9 +76,13 @@
     </div>
   </div>
   <div class="col-xs-12 text-center">
-    <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false" class="btn btn-success">
-      Agregar empresa
-    </a>
+    <% if current_user.role_id == 'recepcionist' %>
+      <a></a>
+    <% else %>
+      <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false" class="btn btn-success">
+        Agregar empresa
+      </a>
+    <% end %>
   </div>
 </div>
 

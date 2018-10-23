@@ -76,8 +76,12 @@
     </div>
   </div>
   <div class="col-xs-12 text-center">
-    <%= link_to new_employee_path, class: 'btn btn-success' do %>
-      Agregar empleado
+    <% if current_user.role_id == 'recepcionist' %>
+      <a></a>
+    <% else %>
+      <%= link_to new_employee_path, class: 'btn btn-success' do %>
+        Agregar empleado
+      <% end %>
     <% end %>
   </div>
 </div>
