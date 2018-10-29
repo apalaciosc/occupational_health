@@ -40,6 +40,9 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="/employees"><i class="fa fa-circle-o"></i> Ver todos</a></li>
+            <% if user_signed_in? && current_user.role_id == 'admin' %>
+            <li><a href="/employees/new"><i class="fa fa-circle-o"></i> Nuevo empleado</a></li>
+            <% end %>
           </ul>
         </li>
       <% end %>
@@ -83,6 +86,9 @@
           </a>
           <ul class="treeview-menu" style="display: none;">
             <li><a href="/medicals"><i class="fa fa-circle-o"></i> Ver todos</a></li>
+            <% if user_signed_in? && current_user.role_id == 'admin' %>
+            <li><a href="/medicals/new"><i class="fa fa-circle-o"></i> Nuevo médico</a></li>
+            <% end %>
           </ul>
         </li>
       <% end %>
