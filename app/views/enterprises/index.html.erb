@@ -3,13 +3,6 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Empresas</h3>
-        <% if current_user.role_id == 'admin' %>
-          <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false">
-            <img src="<%= asset_path 'User_Ad.ico' %>">
-          </a>
-        <% else %>
-          <a></a>
-        <% end %>
         <div class="box-tools">
           <form class="" action="/enterprises" method="get">
             <div class="row">
@@ -61,23 +54,18 @@
               <td><%= enterprise.departament %></td>
               <td><%= enterprise.province %></td>
               <td><%= enterprise.district %></td>
-<<<<<<< HEAD
               <% if current_user.role_id == 'admin' %>
-                <td><a data-toggle="modal" data-target="#modalUpdate<%= enterprise.id %>" data-backdrop="static" data-keyboard="false"><img src="<%= asset_path 'User_Editar.ico' %>"></a></td>
-                <td><%= link_to image_tag('User_Eliminar.ico'), enterprise, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
-              <% else %>
-                <td></td>
-              <% end %>
-=======
               <td><a data-toggle="modal" data-target="#modalUpdate<%= enterprise.id %>" data-backdrop="static" data-keyboard="false">Editar</a></td>
               <td><%= link_to 'Eliminar', enterprise, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
->>>>>>> f911ad82d101267518cd6373d488a64e5c6efb0c
+              <% else %>
+              <td></td>
+              <% end %>
             </tr>
             <% end %>
           </tbody>
         </table>
       </div>
-       <%= will_paginate @employees, previous_label: "Atrás", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
+      <%= will_paginate @employees, previous_label: "Atrás", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
     </div>
   </div>
   <div class="col-xs-12 text-center">
