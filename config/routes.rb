@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'type_exams', to: 'type_exams#index', as: :type_exams
   devise_for :users
   patch '/users/:id', to: 'users#update_profile'
+  get '/users', to: 'users#index', as: :users
   resources :users do
     collection do
       get 'edit_profile'
