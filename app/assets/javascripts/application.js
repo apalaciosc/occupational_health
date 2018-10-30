@@ -29,8 +29,25 @@
 //= require type_exams
 //= require exams
 //= require chosen-jquery
+//= require bootstrap_notify
 
 $(function(){
+  var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
+  var today = new Date();
+  var date_exp = new Date().setDate(new Date().getDate() + 365)
+  if (today >= date_exp ) {
+    $.ajax({
+      url : '/users/sign_out',
+      type: 'DELETE',
+      data: {
+        authenticity_token: AUTH_TOKEN
+      },
+      success: function(res){
+        swal("Alerta", "Su licencia ha expirado", "warning");
+        window.setTimeout('redirect_login()',3000);
+      }
+    })
+  }
   $('.chosen').chosen({ width: '100%', allow_single_deselect: true});
 })
 //Just numbers
@@ -47,3 +64,7 @@ $(document).on('change', '.validate-email', function(e){
     $(this).val('');
   }
 })
+
+function redirect_login(){
+  window.location = '/users/sign_in'
+}

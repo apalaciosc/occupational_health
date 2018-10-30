@@ -42,7 +42,7 @@ class MedicalsController < ApplicationController
     @medical = Medical.new(medical_params)
     respond_to do |format|
       if @medical.save
-        format.html { redirect_to @medical, notice: 'Medical was successfully created.' }
+        format.html { redirect_to @medical, notice: 'El médico fue creado de forma correcta.' }
         format.json { render :show, status: :created, location: @medical }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class MedicalsController < ApplicationController
   def update
     respond_to do |format|
       if @medical.update(medical_params)
-        format.html { redirect_to @medical, notice: 'Medical was successfully updated.' }
+        format.html { redirect_to @medical, notice: 'El médico fue correctamente actualizado.' }
         format.json { render :show, status: :ok, location: @medical }
       else
         format.html { render :edit }
@@ -70,7 +70,7 @@ class MedicalsController < ApplicationController
   def destroy
     @medical.destroy
     respond_to do |format|
-      format.html { redirect_to medicals_url, notice: 'Medical was successfully destroyed.' }
+      format.html { redirect_to medicals_url, notice: 'El médico fue correctamente eliminado.' }
       format.json { head :no_content }
     end
   end

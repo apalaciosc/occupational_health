@@ -3,13 +3,6 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Empleados</h3>
-        <% if current_user.role_id == 'admin' %>
-          <%= link_to new_employee_path do %>
-            <img src="<%= asset_path 'User_Ad.ico' %>">
-          <% end %>
-        <% else %>
-          <a></a>
-        <% end %>
         <div class="box-tools">
           <form class="" action="/employees" method="get">
             <div class="row">
@@ -74,10 +67,5 @@
       </div>
         <%= will_paginate @employees, previous_label: "Atrás", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
     </div>
-  </div>
-  <div class="col-xs-12 text-center">
-    <%= link_to new_employee_path, class: 'btn btn-success' do %>
-      Agregar empleado
-    <% end %>
   </div>
 </div>
