@@ -3,13 +3,6 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Empresas</h3>
-        <% if current_user.role_id == 'admin' %>
-          <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false">
-            <img src="<%= asset_path 'User_Ad.ico' %>">
-          </a>
-        <% else %>
-          <a></a>
-        <% end %>
         <div class="box-tools">
           <form class="" action="/enterprises" method="get">
             <div class="row">
@@ -72,7 +65,7 @@
           </tbody>
         </table>
       </div>
-       <%= will_paginate @employees, previous_label: "Atrás", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
+      <%= will_paginate @employees, previous_label: "Atrás", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
     </div>
   </div>
   <div class="col-xs-12 text-center">
@@ -85,7 +78,6 @@
     <% end %>
   </div>
 </div>
-
 <div class="container">
   <div class="modal" id="modalCreate">
     <div class="modal-dialog">
@@ -107,7 +99,6 @@
     </div>
   </div>
 </div>
-
 <% @enterprises.each do |enterprise| %>
 <div class="container modalUpdate">
   <div class="modal" id="modalUpdate<%= enterprise.id %>">
