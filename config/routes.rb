@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :medicals
   resources :attentions
+  get "/404", :to => "errors#error_404"
+  get "/422", :to => "errors#error_404"
+  get "/500", :to => "errors#error_500"
+  get "/505", :to => "errors#error_505"
   get 'medicals/fmo' => 'medicals#fmo'
   get 'employees/fmo' => 'employees#fmo'
   get 'employees/roadmap' => 'employees#roadmap'

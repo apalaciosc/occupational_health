@@ -1,5 +1,6 @@
 class ExamsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   def save_exam
     if request.post?

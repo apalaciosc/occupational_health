@@ -2,6 +2,7 @@ class AttentionsController < ApplicationController
   before_action :set_attention, only: [:show, :edit, :update, :destroy, :update_general, :new_exams, :exams]
   before_action :set_exam, only: [:new_exams, :edit_exams]
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /attentions
   # GET /attentions.json
