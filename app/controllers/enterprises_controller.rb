@@ -1,6 +1,7 @@
 class EnterprisesController < ApplicationController
   before_action :set_enterprise, only: [:update, :destroy]
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /enterprises
   # GET /enterprises.json

@@ -1,5 +1,6 @@
 class MedicalsController < ApplicationController
   before_action :set_medical, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /medicals
   # GET /medicals.json

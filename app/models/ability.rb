@@ -2,6 +2,9 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    p '################'
+    p user
+    p user.type_user
     # Define abilities for the passed in user here. For example:
     user ||= User.new # guest user (not logged in)
 
@@ -10,16 +13,16 @@ class Ability
     alias_action :create, :update, :delete, to: :cud
     alias_action :create, :read, :update, :delete, to: :crud
 
-    if user.type_user == 'admin'
+    if user.role_id == 'admin'
       can :manage, :all
-    elsif user.type_user == 'recepcionist'
+    elsif user.role_id == 'recepcionist'
       can :read, :all
       can :crud, Attention
       can :read, Employee
       can :read, Enterprise
       can :cru, Exam
       can :cru, TypeExam
-    elsif user.type_user == 'medical'
+    elsif user.role_id == 'medical'
       can :read, Employee
       can :read, Attention
       can :cru, Exam
