@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_051211) do
+ActiveRecord::Schema.define(version: 2018_10_31_180311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,29 +103,10 @@ ActiveRecord::Schema.define(version: 2018_10_15_051211) do
   end
 
   create_table "medicals", force: :cascade do |t|
-    t.string "firstname"
-    t.string "lastname"
     t.string "specialty"
-    t.string "dni"
-    t.string "phone"
-    t.string "department"
-    t.string "address"
-    t.date "birthday"
-    t.string "aptitude"
-    t.string "interests"
-    t.string "range"
-    t.string "district"
-    t.string "province"
     t.bigint "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "numb_depart_int"
-    t.string "urbanization"
-    t.integer "civil_status"
-    t.string "email"
-    t.integer "sex"
-    t.string "way"
-    t.string "degree_instruction"
     t.index ["area_id"], name: "index_medicals_on_area_id"
   end
 
