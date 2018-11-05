@@ -59,7 +59,7 @@
                           <% else %>
                             <a><%= link_to image_tag('User_Editar.ico', style:'width:25px'), exam_edit_path(:id => e.id, :type_exam => e.type_exam.id)%></a>
                           <% end %>
-                          <a><img src="<%= asset_path 'pdft.jpg' %>" style="width:25px"></a>
+                          <a><%= link_to image_tag('pdft.jpg', style:'width:25px'), create_pdf_exam_path(format: :pdf, :id => e.id),target: '_blank'%></a>
                         </td>
                       </tr>
                     <% elsif e.type_exam.area_id == current_user.medical.area_id%>

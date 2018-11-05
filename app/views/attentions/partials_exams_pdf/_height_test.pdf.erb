@@ -1,0 +1,661 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="box box-default">
+        <div class="box-body">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-2">
+                <label class="col-lg-12">Test de altura</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label>¿TRABAJA EN ALTURA , CONDUCCION DE VEHICULO O ESPACIOS CONFINADOS?</label>
+              </div>
+              <div class="col-lg-2">
+                <%= radio_button_tag 'exam[data][height_vehicle_spaces]', '1', !!(@exam.data[:height_vehicle_spaces] == '1') %>
+                SI
+                <%= radio_button_tag 'exam[data][height_vehicle_spaces]', '0', !!(@exam.data[:height_vehicle_spaces] == '0') %>
+                NO
+              </div>
+              <div class="col-lg-1 ">
+                <label class="col-sm-offset-3">
+                  Tipo de examen:
+                </label>
+              </div>
+              <div class="col-lg-3 ">
+                <%= text_field_tag "exam[data][type_exam]", @exam.data[:type_exam], class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label>
+            </label>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label>Marque con una cruz la opcion correcta.Declaracion jurada.Para completar por el trabajador:</label>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label>
+                Tiene o tuvo el ultimo año :
+              </label>
+              <%= text_field_tag "exam[data][have_last_year?]", @exam.data[:have_last_year?], class: 'form-control' %>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label>
+            </label>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <style type="text/css">
+                .tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-s6z2{text-align:center}
+.tg .tg-hgcj{font-weight:bold;text-align:center}
+.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+              </style>
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 380px">
+                    <col style="width: 77px">
+                      <col style="width: 73px">
+                        <col style="width: 350px">
+                          <col style="width: 74px">
+                            <col style="width: 72px">
+                            </col>
+                          </col>
+                        </col>
+                      </col>
+                    </col>
+                  </col>
+                </colgroup>
+                <tr>
+                  <th>
+                    1-¿ Mareos,vertigos o desmayos ?
+                  </th>
+                  <th class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][question_1]', '1', !!(@exam.data[:question_1] == '1') %>
+                    SI
+                  </th>
+                  <th>
+                    <%= radio_button_tag 'exam[data][question_1]', '0', !!(@exam.data[:question_1] == '0') %>
+                    NO
+                  </th>
+                  <th>
+                    2-¿ Epilepsia y/o convulsiones?
+                  </th>
+                  <th class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][question_2]', '1', !!(@exam.data[:question_2] == '1') %>
+                    SI
+                  </th>
+                  <th>
+                    <%= radio_button_tag 'exam[data][question_2]', '0', !!(@exam.data[:question_2] == '0') %>
+                    NO
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    3-¿ Hipoglucemia ( descanso sintomatico del azúcar )?
+                  </td>
+                  <th class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][question_3]', '1', !!(@exam.data[:question_3] == '1') %>
+                    SI
+                  </th>
+                  <th>
+                    <%= radio_button_tag 'exam[data][question_3]', '0', !!(@exam.data[:question_3] == '0') %>
+                    NO
+                  </th>
+                  <td>
+                    4-¿Pico de presion arterial ?
+                  </td>
+                  <th class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][question_4]', '1', !!(@exam.data[:question_4] == '1') %>
+                    SI
+                  </th>
+                  <th>
+                    <%= radio_button_tag 'exam[data][question_4]', '0', !!(@exam.data[:question_4] == '0') %>
+                    NO
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    5-¿ Caidas desde altura ?
+                  </td>
+                  <th class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][question_5]', '1', !!(@exam.data[:question_5] == '1') %>
+                    SI
+                  </th>
+                  <th>
+                    <%= radio_button_tag 'exam[data][question_5]', '0', !!(@exam.data[:question_5] == '0') %>
+                    NO
+                  </th>
+                  <td>
+                    6.¿Golpe severo en el cráneo?
+                  </td>
+                  <th class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][question_6]', '1', !!(@exam.data[:question_6] == '1') %>
+                    SI
+                  </th>
+                  <th>
+                    <%= radio_button_tag 'exam[data][question_6]', '0', !!(@exam.data[:question_6] == '0') %>
+                    NO
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    7-¿Toma alguna medicacion neurologica o medicamentos que produzcan somnolencia ?
+                  </td>
+                  <th class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][question_7]', '1', !!(@exam.data[:question_7] == '1') %>
+                    SI
+                  </th>
+                  <th>
+                    <%= radio_button_tag 'exam[data][question_7]', '0', !!(@exam.data[:question_7] == '0') %>
+                    NO
+                  </th>
+                  <td>
+                    8-¿Trastornos depresivos o fobias ?
+                  </td>
+                  <th class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][question_8]', '1', !!(@exam.data[:question_8] == '1') %>
+                    SI
+                  </th>
+                  <th>
+                    <%= radio_button_tag 'exam[data][question_8]', '0', !!(@exam.data[:question_8] == '0') %>
+                    NO
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    9-¿ Conoce alguna razon para considerar inseguro para usted o para terceros , que usted realice trabajos en altura y/o trabajo en espacios confinados ?
+                  </td>
+                  <th class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][question_9]', '1', !!(@exam.data[:question_9] == '1') %>
+                    SI
+                  </th>
+                  <th>
+                    <%= radio_button_tag 'exam[data][question_9]', '0', !!(@exam.data[:question_9] == '0') %>
+                    NO
+                  </th>
+                  <td>
+                    10-¿ Conoce alguna razón para considerar inseguro para usted o para terceros , que usted realice conduccion de vehiculos ?
+                  </td>
+                  <th class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][question_10]', '1', !!(@exam.data[:question_10] == '1') %>
+                    SI
+                  </th>
+                  <th>
+                    <%= radio_button_tag 'exam[data][question_10]', '0', !!(@exam.data[:question_10] == '0') %>
+                    NO
+                  </th>
+                </tr>
+              </table>
+              <br/>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label>
+                Observaciones a completar por el medico ( realizar las especificaciones por cada item con respuestas afirmativas ):
+              </label>
+              <%= text_field_tag "exam[data][observations]", @exam.data[:observations], class: 'form-control' %>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 227px">
+                    <col style="width: 133px">
+                      <col style="width: 63px">
+                        <col style="width: 89px">
+                          <col style="width: 70px">
+                            <col style="width: 117px">
+                              <col style="width: 331px">
+                              </col>
+                            </col>
+                          </col>
+                        </col>
+                      </col>
+                    </col>
+                  </col>
+                </colgroup>
+                <tr>
+                  <th colspan="7">
+                    <span style="font-weight:bold">
+                      Para completar por el medico . Examen Neurologico :
+                    </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    Prueba dedo - nariz
+                  </td>
+                  <td class="tg-s6z2">
+                    NORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][finger_nose?]', 'normal', !!(@exam.data[:finger_nose?] == 'normal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    ANORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][finger_nose?]', 'anormal', !!(@exam.data[:finger_nose?] == 'anormal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIPCION :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_finger_nose]", @exam.data[:description_finger_nose], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Prueba de Romberg
+                  </td>
+                  <td class="tg-s6z2">
+                    NORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][romberg]', 'normal', !!(@exam.data[:romberg] == 'normal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    ANORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][romberg]', 'anormal', !!(@exam.data[:romberg] == 'anormal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIPCION :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_romberg]", @exam.data[:description_romberg], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Prueba de Seguimiento ocular
+                  </td>
+                  <td class="tg-s6z2">
+                    NORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][eye_tracking]', 'normal', !!(@exam.data[:eye_tracking] == 'normal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    ANORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][eye_tracking]', 'anormal', !!(@exam.data[:eye_tracking] == 'anormal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIPCION :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_eye_tracking]", @exam.data[:description_eye_tracking], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Examen de Miembros Superiores (Sensitivos y Motor )
+                  </td>
+                  <td class="tg-s6z2">
+                    NORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][superior_members]', 'normal', !!(@exam.data[:superior_members] == 'normal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    ANORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][superior_members]', 'anormal', !!(@exam.data[:superior_members] == 'anormal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIPCION :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_superior_members]", @exam.data[:description_superior_members], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Examen de Miembros Inferiores (Sensitivo y Motor )
+                  </td>
+                  <td class="tg-s6z2">
+                    NORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][lower_members]', 'normal', !!(@exam.data[:lower_members] == 'normal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    ANORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][lower_members]', 'anormal', !!(@exam.data[:lower_members] == 'anormal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIPCION :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_lower_members]", @exam.data[:description_lower_members], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+              </table>
+              <br/>
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 238px">
+                    <col style="width: 140px">
+                      <col style="width: 66px">
+                        <col style="width: 94px">
+                          <col style="width: 73px">
+                            <col style="width: 123px">
+                              <col style="width: 300px">
+                              </col>
+                            </col>
+                          </col>
+                        </col>
+                      </col>
+                    </col>
+                  </col>
+                </colgroup>
+                <tr>
+                  <th colspan="7">
+                    <span style="font-weight:bold">
+                      PARA COMPLETAR POR EL MEDICO . ENFERMEDADES COMPLEMENTARIAS:
+                    </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="tg-s6z2">
+                    GLUCOSA
+                  </td>
+                  <td class="tg-s6z2">
+                    NORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][glucose]', 'normal', !!(@exam.data[:glucose] == 'nnormal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    ANORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][glucose]', 'anormal', !!(@exam.data[:glucose] == 'anormal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIBIR :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_glucose]", @exam.data[:description_glucose], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    ENFERMEDADES METABOLICAS
+                  </td>
+                  <td class="tg-s6z2">
+                    NORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][metabolic_diseases]', 'normal', !!(@exam.data[:metabolic_diseases] == 'normal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    ANORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][metabolic_diseases]', 'anormal', !!(@exam.data[:metabolic_diseases] == 'anormal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIBIR :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_metabolic_diseases]", @exam.data[:description_metabolic_diseases], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    OBESIDAD >90KG
+                  </td>
+                  <td class="tg-s6z2">
+                    NORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][obesity]', 'normal', !!(@exam.data[:obesity] == 'normal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    ANORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][obesity]', 'anormal', !!(@exam.data[:obesity] == 'anormal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIBIR :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_obesity]", @exam.data[:description_obesity], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    BAJO DE PESO < 60 kg
+                  </td>
+                  <td class="tg-s6z2">
+                    NORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][under_weight]', 'normal', !!(@exam.data[:under_weight] == 'normal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    ANORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][under_weight]', 'anormal', !!(@exam.data[:under_weight] == 'anormal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIBIR :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_under_weight]", @exam.data[:description_under_weight], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    ALCOHOLISMO
+                  </td>
+                  <td class="tg-s6z2">
+                    NO
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][alcoholism]', '0', !!(@exam.data[:alcoholism] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    SI
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][alcoholism]', '1', !!(@exam.data[:alcoholism] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIBIR :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_alcoholism]", @exam.data[:description_alcoholism], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    ENFERMEDADES PSIQUIATRICAS
+                  </td>
+                  <td class="tg-s6z2">
+                    NO
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][psychiatric_diseases]', '0', !!(@exam.data[:psychiatric_diseases] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    SI
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][psychiatric_diseases]', '1', !!(@exam.data[:psychiatric_diseases] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIBIR :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_psychiatric]", @exam.data[:description_psychiatric], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    USO DE MEDICAMENTOS ACTUALES
+                  </td>
+                  <td class="tg-s6z2">
+                    NO
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][current_medications]', '0', !!(@exam.data[:current_medications] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    SI
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][current_medications]', '1', !!(@exam.data[:current_medications] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIBIR :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_current_medications]", @exam.data[:description_current_medications], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    EKG EN REPOSO
+                  </td>
+                  <td class="tg-s6z2">
+                    NORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][ekg]', 'normal', !!(@exam.data[:ekg] == 'normal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    ANORMAL
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][ekg]', 'anormal', !!(@exam.data[:ekg] == 'anormal') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    DESCRIBIR :
+                  </td>
+                  <td>
+                    <%= text_field_tag "exam[data][description_ekg]", @exam.data[:description_ekg], class: 'form-control', rows: '1' %>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label>
+            </label>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label>
+                  RESULTADOS DE LOS EXAMENES AUXILIARES DENTRO DE LO NORMAL:
+                </label>
+              </div>
+              <div class="col-lg-1">
+                <%= radio_button_tag 'exam[data][normal_results?]', 'yes', !!(@exam.data[:normal_results?] == 'yes') %>
+                SI
+              </div>
+              <div class="col-lg-1">
+                <%= radio_button_tag 'exam[data][normal_results?]', 'no', !!(@exam.data[:normal_results?] == 'no') %>
+                NO
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label>
+            </label>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 487px">
+                    <col style="width: 98px">
+                      <col style="width: 450px">
+                      </col>
+                    </col>
+                  </col>
+                </colgroup>
+                <tr>
+                  <th class="tg-s6z2" colspan="2">
+                    Resultados
+                  </th>
+                  <th class="tg-s6z2">
+                    Limitaciones
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    APTO ( no se evidencia limitaciones para realizar trabajos en alturas , trabajos en espacio confinados y conduccion de vehiculo )
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][results_suitable?]', 'apto', !!(@exam.data[:results_suitable?] == 'apto') %>
+                  </td>
+                  <td rowspan="2">
+                    <%= text_area_tag "exam[data][limitations]", @exam.data[:limitations], class: 'form-control', rows: '6' %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    NO APTO( se evidencia limitaciones para realizar trabajos trabajos en alturas , trabajos en espacio en espacio confinados y conduccion de vehiculo )
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][results_suitable?]', 'no apto', !!(@exam.data[:results_suitable?] == 'no apto') %>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <br>
+              <label>
+                Conclusiones:
+              </label>
+              <%= text_area_tag "exam[data][conclusion]", @exam.data[:conclusion], class: 'form-control', rows: '4' %>
+            </div>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="form-group">
+            <div class="col-sm-offset-5 col-sm-10">
+              <%= f.submit 'Guardar', class:'btn btn-primary' %>
+              <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

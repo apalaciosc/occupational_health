@@ -1,0 +1,2103 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="box box-default">
+        <div class="box-body">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-2">
+                <label class="col-lg-12">Test de Estres</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <style type="text/css">
+              .tg  {border-collapse:collapse;border-spacing:0;}
+              .tg td{font-family:Arial, sans-serif;font-size:14px;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg .tg-s6z2{text-align:center;font-weight:bold}
+              .tg .tg-hgcj{font-weight:bold;text-align:center}
+              .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+              </style>
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 500.88889px">
+                  <col style="width: 80px">
+                  <col style="width: 81.88889px">
+                  <col style="width: 120px">
+                  <col style="width: 100px">
+                  <col style="width: 100.88889px">
+                </colgroup>
+                <tr>
+                  <th class="tg-s6z2">Estilo de vida</th>
+                  <th class="tg-s6z2">Nunca</th>
+                  <th class="tg-s6z2">Casi nunca</th>
+                  <th class="tg-s6z2">Frecuentemente</th>
+                  <th class="tg-s6z2">Casi siempre</th>
+                  <th class="tg-s6z2">Total</th>
+                </tr>
+                <tr>
+                  <td>Duermo un numero de horas adecuado a mis necesidades</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_1]', '3', !!(@exam.data[:st_question_1] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_1]', '2', !!(@exam.data[:st_question_1] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_1]', '1', !!(@exam.data[:st_question_1] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_1]', '0', !!(@exam.data[:st_question_1] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_1]", @exam.data[:st_answer_1], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Como a horas fijas</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_2]', '3', !!(@exam.data[:st_question_2] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_2]', '2', !!(@exam.data[:st_question_2] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_2]', '1', !!(@exam.data[:st_question_2] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_2]', '0', !!(@exam.data[:st_question_2] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_2]", @exam.data[:st_answer_2], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Cuando estoy nervioso tomo tranquilizantes</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_3]', '3', !!(@exam.data[:st_question_3] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_3]', '2', !!(@exam.data[:st_question_3] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_3]', '1', !!(@exam.data[:st_question_3] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_3]', '0', !!(@exam.data[:st_question_3] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_3]", @exam.data[:st_answer_3], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Para ocupar mi tiempo libre veo la televisión o el video</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_4]', '3', !!(@exam.data[:st_question_4] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_4]', '2', !!(@exam.data[:st_question_4] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_4]', '1', !!(@exam.data[:st_question_4] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_4]', '0', !!(@exam.data[:st_question_4] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_4]", @exam.data[:st_answer_4], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Hago ejercicio físico de forma regular</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_5]', '3', !!(@exam.data[:st_question_5] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_5]', '2', !!(@exam.data[:st_question_5] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_5]', '1', !!(@exam.data[:st_question_5] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_5]', '0', !!(@exam.data[:st_question_5] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_5]", @exam.data[:st_answer_5], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Como deprisa</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_6]', '3', !!(@exam.data[:st_question_6] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_6]', '2', !!(@exam.data[:st_question_6] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_6]', '1', !!(@exam.data[:st_question_6] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_6]', '0', !!(@exam.data[:st_question_6] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_6]", @exam.data[:st_answer_6], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Como muchas cosas saturadas de colesterol</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_7]', '3', !!(@exam.data[:st_question_7] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_7]', '2', !!(@exam.data[:st_question_7] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_7]', '1', !!(@exam.data[:st_question_7] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_7]', '0', !!(@exam.data[:st_question_7] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_7]", @exam.data[:st_answer_7], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Consumo frutas y verduras diariamente</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_8]', '3', !!(@exam.data[:st_question_8] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_8]', '2', !!(@exam.data[:st_question_8] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_8]', '1', !!(@exam.data[:st_question_8] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_8]', '0', !!(@exam.data[:st_question_8] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_8]", @exam.data[:st_answer_8], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bebo agua fuera de las comidas</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_9]', '3', !!(@exam.data[:st_question_9] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_9]', '2', !!(@exam.data[:st_question_9] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_9]', '1', !!(@exam.data[:st_question_9] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_9]', '0', !!(@exam.data[:st_question_9] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_9]", @exam.data[:st_answer_9], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Pico entre horas</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_10]', '3', !!(@exam.data[:st_question_10] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_10]', '2', !!(@exam.data[:st_question_10] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_10]', '1', !!(@exam.data[:st_question_10] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_10]', '0', !!(@exam.data[:st_question_10] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_10]", @exam.data[:st_answer_10], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Realizo un desayuno abundante</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_11]', '3', !!(@exam.data[:st_question_11] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_11]', '2', !!(@exam.data[:st_question_11] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_11]', '1', !!(@exam.data[:st_question_11] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_11]', '0', !!(@exam.data[:st_question_11] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_11]", @exam.data[:st_answer_11], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ceno de forma frugal, ligera</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_12]', '3', !!(@exam.data[:st_question_12] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_12]', '2', !!(@exam.data[:st_question_12] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_12]', '1', !!(@exam.data[:st_question_12] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_12]', '0', !!(@exam.data[:st_question_12] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_12]", @exam.data[:st_answer_12], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Fumo</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_13]', '3', !!(@exam.data[:st_question_13] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_13]', '2', !!(@exam.data[:st_question_13] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_13]', '1', !!(@exam.data[:st_question_13] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_13]', '0', !!(@exam.data[:st_question_13] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_13]", @exam.data[:st_answer_13], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bebo alcohol con frecuencia</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_14]', '3', !!(@exam.data[:st_question_14] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_14]', '2', !!(@exam.data[:st_question_14] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_14]', '1', !!(@exam.data[:st_question_14] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_14]', '0', !!(@exam.data[:st_question_14] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_14]", @exam.data[:st_answer_14], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Disfruto de naturaleza y aire puro cuando puedo</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_15]', '3', !!(@exam.data[:st_question_15] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_15]', '2', !!(@exam.data[:st_question_15] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_15]', '1', !!(@exam.data[:st_question_15] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_15]', '0', !!(@exam.data[:st_question_15] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_15]", @exam.data[:st_answer_15], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tengo una afición que me ayuda a relajarme</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_16]', '3', !!(@exam.data[:st_question_16] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_16]', '2', !!(@exam.data[:st_question_16] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_16]', '1', !!(@exam.data[:st_question_16] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_16]', '0', !!(@exam.data[:st_question_16] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_16]", @exam.data[:st_answer_16], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-s6z2" colspan="5">Total Estilo de vida</td>
+                  <td>
+                    <%= text_field_tag "exam[data][total_1]", @exam.data[:total_1], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-l2">
+            <label></label>
+          </div>
+          <div class="col-l2">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 500.88889px">
+                  <col style="width: 80px">
+                  <col style="width: 81.88889px">
+                  <col style="width: 120px">
+                  <col style="width: 100px">
+                  <col style="width: 100.88889px">
+                </colgroup>
+                <tr>
+                  <th class="tg-s6z2">Ambiente</th>
+                  <th class="tg-s6z2">Nunca</th>
+                  <th class="tg-s6z2">Casi nunca</th>
+                  <th class="tg-s6z2">Frecuentemente</th>
+                  <th class="tg-s6z2">Casi siempre</th>
+                  <th class="tg-s6z2">Total</th>
+                </tr>
+                <tr>
+                  <td>Mi familia es bastante ruidosa</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_17]', '3', !!(@exam.data[:st_question_17] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_17]', '2', !!(@exam.data[:st_question_17] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_17]', '1', !!(@exam.data[:st_question_17] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_17]', '0', !!(@exam.data[:st_question_17] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_17]", @exam.data[:st_answer_17], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Siento que necesito más espacio en casa</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_18]', '3', !!(@exam.data[:st_question_18] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_18]', '2', !!(@exam.data[:st_question_18] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_18]', '1', !!(@exam.data[:st_question_18] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_18]', '0', !!(@exam.data[:st_question_18] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_18]", @exam.data[:st_answer_18], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Todas mis cosas están en su sitio</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_19]', '3', !!(@exam.data[:st_question_19] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_19]', '2', !!(@exam.data[:st_question_19] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_19]', '1', !!(@exam.data[:st_question_19] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_19]', '0', !!(@exam.data[:st_question_19] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_19]", @exam.data[:st_answer_19], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Disfruto de mi casa y de las personas que hay dentro</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_20]', '3', !!(@exam.data[:st_question_20] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_20]', '2', !!(@exam.data[:st_question_20] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_20]', '1', !!(@exam.data[:st_question_20] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_20]', '0', !!(@exam.data[:st_question_20] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_20]", @exam.data[:st_answer_20], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mis vecinos son muy escandalosos</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_21]', '3', !!(@exam.data[:st_question_21] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_21]', '2', !!(@exam.data[:st_question_21] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_21]', '1', !!(@exam.data[:st_question_21] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_21]', '0', !!(@exam.data[:st_question_21] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_21]", @exam.data[:st_answer_21], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Suele haber mucha gente y ruído en la zona donde vivo</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_22]', '3', !!(@exam.data[:st_question_22] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_22]', '2', !!(@exam.data[:st_question_22] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_22]', '1', !!(@exam.data[:st_question_22] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_22]', '0', !!(@exam.data[:st_question_22] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_22]", @exam.data[:st_answer_22], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mi casa está ordenada y limpia</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_23]', '3', !!(@exam.data[:st_question_23] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_23]', '2', !!(@exam.data[:st_question_23] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_23]', '1', !!(@exam.data[:st_question_23] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_23]', '0', !!(@exam.data[:st_question_23] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_23]", @exam.data[:st_answer_23], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>En casa me relajo con facilidad</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_24]', '3', !!(@exam.data[:st_question_24] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_24]', '2', !!(@exam.data[:st_question_24] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_24]', '1', !!(@exam.data[:st_question_24] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_24]', '0', !!(@exam.data[:st_question_24] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_24]", @exam.data[:st_answer_24], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>El dormitorio se me hace pequeño</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_25]', '3', !!(@exam.data[:st_question_25] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_25]', '2', !!(@exam.data[:st_question_25] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_25]', '1', !!(@exam.data[:st_question_25] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_25]', '0', !!(@exam.data[:st_question_25] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_25]", @exam.data[:st_answer_25], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Siento que vivimos demasiados en una casa como esta</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_26]', '3', !!(@exam.data[:st_question_26] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_26]', '2', !!(@exam.data[:st_question_26] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_26]', '1', !!(@exam.data[:st_question_26] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_26]', '0', !!(@exam.data[:st_question_26] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_26]", @exam.data[:st_answer_26], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me gusta la decoración de mi casa</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_27]', '3', !!(@exam.data[:st_question_27] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_27]', '2', !!(@exam.data[:st_question_27] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_27]', '1', !!(@exam.data[:st_question_27] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_27]', '0', !!(@exam.data[:st_question_27] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_27]", @exam.data[:st_answer_27], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mi casa es suficiente para las necesidades actuales</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_28]', '3', !!(@exam.data[:st_question_28] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_28]', '2', !!(@exam.data[:st_question_28] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_28]', '1', !!(@exam.data[:st_question_28] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_28]', '0', !!(@exam.data[:st_question_28] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_28]", @exam.data[:st_answer_28], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>En mi barrio hay olores desagradables</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_29]', '3', !!(@exam.data[:st_question_29] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_29]', '2', !!(@exam.data[:st_question_29] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_29]', '1', !!(@exam.data[:st_question_29] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_29]', '0', !!(@exam.data[:st_question_29] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_29]", @exam.data[:st_answer_29], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>La zona en al que vivo es ruidosa</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_30]', '3', !!(@exam.data[:st_question_30] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_30]', '2', !!(@exam.data[:st_question_30] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_30]', '1', !!(@exam.data[:st_question_30] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_30]', '0', !!(@exam.data[:st_question_30] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_30]", @exam.data[:st_answer_30], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>El aire que se respira en mi localidad es muy limpio</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_31]', '3', !!(@exam.data[:st_question_31] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_31]', '2', !!(@exam.data[:st_question_31] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_31]', '1', !!(@exam.data[:st_question_31] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_31]', '0', !!(@exam.data[:st_question_31] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_31]", @exam.data[:st_answer_31], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Las calles y espacios públicos están cuidados</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_32]', '3', !!(@exam.data[:st_question_32] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_32]', '2', !!(@exam.data[:st_question_32] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_32]', '1', !!(@exam.data[:st_question_32] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_32]', '0', !!(@exam.data[:st_question_32] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_32]", @exam.data[:st_answer_32], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-s6z2" colspan="5">Total Ambiente</td>
+                  <td>
+                    <%= text_field_tag "exam[data][total_2]", @exam.data[:total_2], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-l2">
+            <label></label>
+          </div>
+          <div class="col-l2">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 500.88889px">
+                  <col style="width: 80px">
+                  <col style="width: 81.88889px">
+                  <col style="width: 120px">
+                  <col style="width: 100px">
+                  <col style="width: 100.88889px">
+                </colgroup>
+                <tr>
+                  <th class="tg-s6z2">Sintomas</th>
+                  <th class="tg-s6z2">Nunca</th>
+                  <th class="tg-s6z2">Casi nunca</th>
+                  <th class="tg-s6z2">Frecuentemente</th>
+                  <th class="tg-s6z2">Casi siempre</th>
+                  <th class="tg-s6z2">Total</th>
+                </tr>
+                <tr>
+                  <td>Sufro dolores de cabeza</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_33]', '3', !!(@exam.data[:st_question_33] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_33]', '2', !!(@exam.data[:st_question_33] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_33]', '1', !!(@exam.data[:st_question_33] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_33]', '0', !!(@exam.data[:st_question_33] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_33]", @exam.data[:st_answer_33], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tengo dolores abdominales</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_34]', '3', !!(@exam.data[:st_question_34] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_34]', '2', !!(@exam.data[:st_question_34] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_34]', '1', !!(@exam.data[:st_question_34] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_34]', '0', !!(@exam.data[:st_question_34] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_34]", @exam.data[:st_answer_34], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Hago bien la digestión</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_35]', '3', !!(@exam.data[:st_question_35] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_35]', '2', !!(@exam.data[:st_question_35] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_35]', '1', !!(@exam.data[:st_question_35] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_35]', '0', !!(@exam.data[:st_question_35] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_35]", @exam.data[:st_answer_35], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Voy al baño con regularidad</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_36]', '3', !!(@exam.data[:st_question_36] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_36]', '2', !!(@exam.data[:st_question_36] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_36]', '1', !!(@exam.data[:st_question_36] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_36]', '0', !!(@exam.data[:st_question_36] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_36]", @exam.data[:st_answer_36], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me molesta la zona lumbar</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_37]', '3', !!(@exam.data[:st_question_37] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_37]', '2', !!(@exam.data[:st_question_37] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_37]', '1', !!(@exam.data[:st_question_37] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_37]', '0', !!(@exam.data[:st_question_37] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_37]", @exam.data[:st_answer_37], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sufro de taquicardias</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_38]', '3', !!(@exam.data[:st_question_38] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_38]', '2', !!(@exam.data[:st_question_38] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_38]', '1', !!(@exam.data[:st_question_38] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_38]', '0', !!(@exam.data[:st_question_38] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_38]", @exam.data[:st_answer_38], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tengo alergía todos los años</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_39]', '3', !!(@exam.data[:st_question_39] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_39]', '2', !!(@exam.data[:st_question_39] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_39]', '1', !!(@exam.data[:st_question_39] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_39]', '0', !!(@exam.data[:st_question_39] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_39]", @exam.data[:st_answer_39], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sufro de sensaciones de ahogo</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_40]', '3', !!(@exam.data[:st_question_40] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_40]', '2', !!(@exam.data[:st_question_40] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_40]', '1', !!(@exam.data[:st_question_40] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_40]', '0', !!(@exam.data[:st_question_40] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_40]", @exam.data[:st_answer_40], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Se me tensan la espalda y el cuello</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_41]', '3', !!(@exam.data[:st_question_41] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_41]', '2', !!(@exam.data[:st_question_41] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_41]', '1', !!(@exam.data[:st_question_41] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_41]', '0', !!(@exam.data[:st_question_41] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_41]", @exam.data[:st_answer_41], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mi tensión sanguínea está dentro de la normalidad</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_42]', '3', !!(@exam.data[:st_question_42] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_42]', '2', !!(@exam.data[:st_question_42] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_42]', '1', !!(@exam.data[:st_question_42] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_42]', '0', !!(@exam.data[:st_question_42] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_42]", @exam.data[:st_answer_42], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mi memoria es bastante eficaz, sin apenas olvidos</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_43]', '3', !!(@exam.data[:st_question_43] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_43]', '2', !!(@exam.data[:st_question_43] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_43]', '1', !!(@exam.data[:st_question_43] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_43]', '0', !!(@exam.data[:st_question_43] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_43]", @exam.data[:st_answer_43], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tengo poco apetito</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_44]', '3', !!(@exam.data[:st_question_44] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_44]', '2', !!(@exam.data[:st_question_44] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_44]', '1', !!(@exam.data[:st_question_44] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_44]', '0', !!(@exam.data[:st_question_44] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_44]", @exam.data[:st_answer_44], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me siento cansado y sin apenas energía</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_45]', '3', !!(@exam.data[:st_question_45] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_45]', '2', !!(@exam.data[:st_question_45] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_45]', '1', !!(@exam.data[:st_question_45] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_45]', '0', !!(@exam.data[:st_question_45] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_45]", @exam.data[:st_answer_45], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Padezco de insomnio</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_46]', '3', !!(@exam.data[:st_question_46] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_46]', '2', !!(@exam.data[:st_question_46] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_46]', '1', !!(@exam.data[:st_question_46] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_46]', '0', !!(@exam.data[:st_question_46] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_46]", @exam.data[:st_answer_46], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sudo mucho, aunque no haya motivos objetivos</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_47]', '3', !!(@exam.data[:st_question_47] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_47]', '2', !!(@exam.data[:st_question_47] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_47]', '1', !!(@exam.data[:st_question_47] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_47]', '0', !!(@exam.data[:st_question_47] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_47]", @exam.data[:st_answer_47], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me desespero, incluso lloro, con facilidad</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_48]', '3', !!(@exam.data[:st_question_48] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_48]', '2', !!(@exam.data[:st_question_48] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_48]', '1', !!(@exam.data[:st_question_48] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_48]', '0', !!(@exam.data[:st_question_48] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_48]", @exam.data[:st_answer_48], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-s6z2" colspan="5">Total Sintomas</td>
+                  <td>
+                    <%= text_field_tag "exam[data][total_3]", @exam.data[:total_3], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-l2">
+            <label></label>
+          </div>
+          <div class="col-l2">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 500.88889px">
+                  <col style="width: 80px">
+                  <col style="width: 81.88889px">
+                  <col style="width: 120px">
+                  <col style="width: 100px">
+                  <col style="width: 100.88889px">
+                </colgroup>
+                <tr>
+                  <th class="tg-s6z2">Trabajo y ocupaciones</th>
+                  <th class="tg-s6z2">Nunca</th>
+                  <th class="tg-s6z2">Casi nunca</th>
+                  <th class="tg-s6z2">Frecuentemente</th>
+                  <th class="tg-s6z2">Casi siempre</th>
+                  <th class="tg-s6z2">Total</th>
+                </tr>
+                <tr>
+                  <td>Mi labor cotidiana me provoca mucha tensión</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_49]', '3', !!(@exam.data[:st_question_49] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_49]', '2', !!(@exam.data[:st_question_49] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_49]', '1', !!(@exam.data[:st_question_49] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_49]', '0', !!(@exam.data[:st_question_49] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_49]", @exam.data[:st_answer_49], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>En mis ratos libres pienso en los problemas del trabajo</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_50]', '3', !!(@exam.data[:st_question_50] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_50]', '2', !!(@exam.data[:st_question_50] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_50]', '1', !!(@exam.data[:st_question_50] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_50]', '0', !!(@exam.data[:st_question_50] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_50]", @exam.data[:st_answer_50], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mi horario de trabajo es bastante bueno</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_51]', '3', !!(@exam.data[:st_question_51] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_51]', '2', !!(@exam.data[:st_question_51] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_51]', '1', !!(@exam.data[:st_question_51] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_51]', '0', !!(@exam.data[:st_question_51] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_51]", @exam.data[:st_answer_51], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Puedo comer con tranquilidad, tengo tiempo</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_52]', '3', !!(@exam.data[:st_question_52] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_52]', '2', !!(@exam.data[:st_question_52] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_52]', '1', !!(@exam.data[:st_question_52] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_52]', '0', !!(@exam.data[:st_question_52] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_52]", @exam.data[:st_answer_52], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Trabajo por la noche, incluso algún fin de semana en casa</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_53]', '3', !!(@exam.data[:st_question_53] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_53]', '2', !!(@exam.data[:st_question_53] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_53]', '1', !!(@exam.data[:st_question_53] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_53]', '0', !!(@exam.data[:st_question_53] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_53]", @exam.data[:st_answer_53], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tengo que trabajar en más de un sitio /empresa</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_54]', '3', !!(@exam.data[:st_question_54] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_54]', '2', !!(@exam.data[:st_question_54] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_54]', '1', !!(@exam.data[:st_question_54] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_54]', '0', !!(@exam.data[:st_question_54] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_54]", @exam.data[:st_answer_54], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Trabajando se me pasa el tiempo volando</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_55]', '3', !!(@exam.data[:st_question_55] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_55]', '2', !!(@exam.data[:st_question_55] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_55]', '1', !!(@exam.data[:st_question_55] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_55]', '0', !!(@exam.data[:st_question_55] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_55]", @exam.data[:st_answer_55], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me siento útil y estoy satisfecho con lo que hago</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_56]', '3', !!(@exam.data[:st_question_56] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_56]', '2', !!(@exam.data[:st_question_56] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_56]', '1', !!(@exam.data[:st_question_56] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_56]', '0', !!(@exam.data[:st_question_56] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_56]", @exam.data[:st_answer_56], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tengo miedo de perder el empleo en algún momento</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_57]', '3', !!(@exam.data[:st_question_57] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_57]', '2', !!(@exam.data[:st_question_57] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_57]', '1', !!(@exam.data[:st_question_57] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_57]', '0', !!(@exam.data[:st_question_57] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_57]", @exam.data[:st_answer_57], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me llevo mal con la gente del trabajo</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_58]', '3', !!(@exam.data[:st_question_58] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_58]', '2', !!(@exam.data[:st_question_58] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_58]', '1', !!(@exam.data[:st_question_58] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_58]', '0', !!(@exam.data[:st_question_58] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_58]", @exam.data[:st_answer_58], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mantengo buenas relaciones con mi jefe</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_59]', '3', !!(@exam.data[:st_question_59] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_59]', '2', !!(@exam.data[:st_question_59] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_59]', '1', !!(@exam.data[:st_question_59] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_59]', '0', !!(@exam.data[:st_question_59] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_59]", @exam.data[:st_answer_59], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Considero muy estable mi trabajo /profesión</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_60]', '3', !!(@exam.data[:st_question_60] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_60]', '2', !!(@exam.data[:st_question_60] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_60]', '1', !!(@exam.data[:st_question_60] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_60]', '0', !!(@exam.data[:st_question_60] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_60]", @exam.data[:st_answer_60], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Utilizó el coche para moverme por temas de trabajo</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_61]', '3', !!(@exam.data[:st_question_61] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_61]', '2', !!(@exam.data[:st_question_61] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_61]', '1', !!(@exam.data[:st_question_61] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_61]', '0', !!(@exam.data[:st_question_61] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_61]", @exam.data[:st_answer_61], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>A veces me olvido de comer por urgencias laborales</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_62]', '3', !!(@exam.data[:st_question_62] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_62]', '2', !!(@exam.data[:st_question_62] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_62]', '1', !!(@exam.data[:st_question_62] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_62]', '0', !!(@exam.data[:st_question_62] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_62]", @exam.data[:st_answer_62], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Estoy capacitado para lo que tengo que hacer</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_63]', '3', !!(@exam.data[:st_question_63] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_63]', '2', !!(@exam.data[:st_question_63] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_63]', '1', !!(@exam.data[:st_question_63] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_63]', '0', !!(@exam.data[:st_question_63] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_63]", @exam.data[:st_answer_63], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mi familia y mi jefe parecen valorar lo que hago</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_64]', '3', !!(@exam.data[:st_question_64] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_64]', '2', !!(@exam.data[:st_question_64] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_64]', '1', !!(@exam.data[:st_question_64] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_64]', '0', !!(@exam.data[:st_question_64] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_64]", @exam.data[:st_answer_64], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-s6z2" colspan="5">Total Trabajo y Ocupaciones</td>
+                  <td>
+                    <%= text_field_tag "exam[data][total_4]", @exam.data[:total_4], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-l2">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 500.88889px">
+                  <col style="width: 80px">
+                  <col style="width: 81.88889px">
+                  <col style="width: 120px">
+                  <col style="width: 100px">
+                  <col style="width: 100.88889px">
+                </colgroup>
+                <tr>
+                  <th class="tg-s6z2">Relaciones</th>
+                  <th class="tg-s6z2">Nunca</th>
+                  <th class="tg-s6z2">Casi nunca</th>
+                  <th class="tg-s6z2">Frecuentemente</th>
+                  <th class="tg-s6z2">Casi siempre</th>
+                  <th class="tg-s6z2">Total</th>
+                </tr>
+                <tr>
+                  <td>Disfruto siendo amable y cortes con la gente</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_65]', '3', !!(@exam.data[:st_question_65] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_65]', '2', !!(@exam.data[:st_question_65] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_65]', '1', !!(@exam.data[:st_question_65] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_65]', '0', !!(@exam.data[:st_question_65] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_65]", @exam.data[:st_answer_65], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Suelo confiar en los demás</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_66]', '3', !!(@exam.data[:st_question_66] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_66]', '2', !!(@exam.data[:st_question_66] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_66]', '1', !!(@exam.data[:st_question_66] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_66]', '0', !!(@exam.data[:st_question_66] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_66]", @exam.data[:st_answer_66], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me siento molesto /a cuando mis planes dependen de otros</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_67]', '3', !!(@exam.data[:st_question_67] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_67]', '2', !!(@exam.data[:st_question_67] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_67]', '1', !!(@exam.data[:st_question_67] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_67]', '0', !!(@exam.data[:st_question_67] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_67]", @exam.data[:st_answer_67], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me afectan mucho las disputas con otras personas</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_68]', '3', !!(@exam.data[:st_question_68] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_68]', '2', !!(@exam.data[:st_question_68] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_68]', '1', !!(@exam.data[:st_question_68] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_68]', '0', !!(@exam.data[:st_question_68] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_68]", @exam.data[:st_answer_68], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Hay personas amigas dispuesta a escucharme</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_69]', '3', !!(@exam.data[:st_question_69] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_69]', '2', !!(@exam.data[:st_question_69] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_69]', '1', !!(@exam.data[:st_question_69] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_69]', '0', !!(@exam.data[:st_question_69] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_69]", @exam.data[:st_answer_69], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Soy una persona sexualmente satisfecha</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_70]', '3', !!(@exam.data[:st_question_70] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_70]', '2', !!(@exam.data[:st_question_70] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_70]', '1', !!(@exam.data[:st_question_70] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_70]', '0', !!(@exam.data[:st_question_70] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_70]", @exam.data[:st_answer_70], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>La opinión de los demás sobre mi es muy importante</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_71]', '3', !!(@exam.data[:st_question_71] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_71]', '2', !!(@exam.data[:st_question_71] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_71]', '1', !!(@exam.data[:st_question_71] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_71]', '0', !!(@exam.data[:st_question_71] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_71]", @exam.data[:st_answer_71], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Siempre compito por hacer las cosas mejor que los demás</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_72]', '3', !!(@exam.data[:st_question_72] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_72]', '2', !!(@exam.data[:st_question_72] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_72]', '1', !!(@exam.data[:st_question_72] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_72]', '0', !!(@exam.data[:st_question_72] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_72]", @exam.data[:st_answer_72], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mis compañeros de trabajo son personas amigas también</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_73]', '3', !!(@exam.data[:st_question_73] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_73]', '2', !!(@exam.data[:st_question_73] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_73]', '1', !!(@exam.data[:st_question_73] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_73]', '0', !!(@exam.data[:st_question_73] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_73]", @exam.data[:st_answer_73], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Soy paciente escuchando los problemas de otras personas</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_74]', '3', !!(@exam.data[:st_question_74] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_74]', '2', !!(@exam.data[:st_question_74] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_74]', '1', !!(@exam.data[:st_question_74] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_74]', '0', !!(@exam.data[:st_question_74] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_74]", @exam.data[:st_answer_74], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mi pareja tiene que cambiar para mejorar la relación</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_75]', '3', !!(@exam.data[:st_question_75] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_75]', '2', !!(@exam.data[:st_question_75] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_75]', '1', !!(@exam.data[:st_question_75] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_75]', '0', !!(@exam.data[:st_question_75] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_75]", @exam.data[:st_answer_75], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Hablo demasiado</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_76]', '3', !!(@exam.data[:st_question_76] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_76]', '2', !!(@exam.data[:st_question_76] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_76]', '1', !!(@exam.data[:st_question_76] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_76]', '0', !!(@exam.data[:st_question_76] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_76]", @exam.data[:st_answer_76], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Cuando discuto tiendo a alzar la voz muy pronto</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_77]', '3', !!(@exam.data[:st_question_77] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_77]', '2', !!(@exam.data[:st_question_77] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_77]', '1', !!(@exam.data[:st_question_77] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_77]', '0', !!(@exam.data[:st_question_77] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_77]", @exam.data[:st_answer_77], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Siento envidia de que a muchos otros les va mejor</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_78]', '3', !!(@exam.data[:st_question_78] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_78]', '2', !!(@exam.data[:st_question_78] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_78]', '1', !!(@exam.data[:st_question_78] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_78]', '0', !!(@exam.data[:st_question_78] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_78]", @exam.data[:st_answer_78], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Cuando discuto pienso más en qué decir que en escuchar</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_79]', '3', !!(@exam.data[:st_question_79] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_79]', '2', !!(@exam.data[:st_question_79] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_79]', '1', !!(@exam.data[:st_question_79] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_79]', '0', !!(@exam.data[:st_question_79] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_79]", @exam.data[:st_answer_79], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Cuando me dan órdenes me pongo nervioso</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_80]', '3', !!(@exam.data[:st_question_80] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_80]', '2', !!(@exam.data[:st_question_80] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_80]', '1', !!(@exam.data[:st_question_80] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_80]', '0', !!(@exam.data[:st_question_80] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_80]", @exam.data[:st_answer_80], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-s6z2" colspan="5">Total Relaciones</td>
+                  <td>
+                    <%= text_field_tag "exam[data][total_5]", @exam.data[:total_5], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-l2">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <br/>
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 500.88889px">
+                  <col style="width: 80px">
+                  <col style="width: 81.88889px">
+                  <col style="width: 120px">
+                  <col style="width: 100px">
+                  <col style="width: 100.88889px">
+                </colgroup>
+                <tr>
+                  <th class="tg-s6z2">Personalidad</th>
+                  <th class="tg-s6z2">Nunca</th>
+                  <th class="tg-s6z2">Casi nunca</th>
+                  <th class="tg-s6z2">Frecuentemente</th>
+                  <th class="tg-s6z2">Casi siempre</th>
+                  <th class="tg-s6z2">Total</th>
+                </tr>
+                <tr>
+                  <td>En general me siento satisfecho con mi vida</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_81]', '3', !!(@exam.data[:st_question_81] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_81]', '2', !!(@exam.data[:st_question_81] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_81]', '1', !!(@exam.data[:st_question_81] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_81]', '0', !!(@exam.data[:st_question_81] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_81]", @exam.data[:st_answer_81], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me gusta hablar bien de la gente</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_82]', '3', !!(@exam.data[:st_question_82] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_82]', '2', !!(@exam.data[:st_question_82] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_82]', '1', !!(@exam.data[:st_question_82] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_82]', '0', !!(@exam.data[:st_question_82] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_82]", @exam.data[:st_answer_82], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Cuando conduzco me molestan los que van muy lento</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_83]', '3', !!(@exam.data[:st_question_83] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_83]', '2', !!(@exam.data[:st_question_83] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_83]', '1', !!(@exam.data[:st_question_83] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_83]', '0', !!(@exam.data[:st_question_83] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_83]", @exam.data[:st_answer_83], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Si hay demasiada cola en un lugar me marcho sin esperar</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_84]', '3', !!(@exam.data[:st_question_84] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_84]', '2', !!(@exam.data[:st_question_84] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_84]', '1', !!(@exam.data[:st_question_84] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_84]', '0', !!(@exam.data[:st_question_84] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_84]", @exam.data[:st_answer_84], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Suelo darme tiempo para hacer las cosas, sin presionarme</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_85]', '3', !!(@exam.data[:st_question_85] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_85]', '2', !!(@exam.data[:st_question_85] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_85]', '1', !!(@exam.data[:st_question_85] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_85]', '0', !!(@exam.data[:st_question_85] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_85]", @exam.data[:st_answer_85], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tengo confianza en el futuro</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_86]', '3', !!(@exam.data[:st_question_86] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_86]', '2', !!(@exam.data[:st_question_86] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_86]', '1', !!(@exam.data[:st_question_86] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_86]', '0', !!(@exam.data[:st_question_86] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_86]", @exam.data[:st_answer_86], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Aun cuando no me agrada, suelo ponerme en lo peor</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_87]', '3', !!(@exam.data[:st_question_87] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_87]', '2', !!(@exam.data[:st_question_87] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_87]', '1', !!(@exam.data[:st_question_87] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_87]', '0', !!(@exam.data[:st_question_87] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_87]", @exam.data[:st_answer_87], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me irrito cuando no puedo hacer algo a mi manera</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_88]', '3', !!(@exam.data[:st_question_88] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_88]', '2', !!(@exam.data[:st_question_88] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_88]', '1', !!(@exam.data[:st_question_88] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_88]', '0', !!(@exam.data[:st_question_88] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_88]", @exam.data[:st_answer_88], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tengo un gran sentido del humor</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_89]', '3', !!(@exam.data[:st_question_89] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_89]', '2', !!(@exam.data[:st_question_89] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_89]', '1', !!(@exam.data[:st_question_89] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_89]', '0', !!(@exam.data[:st_question_89] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_89]", @exam.data[:st_answer_89], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>En general estoy cómodo con mi forma de ser</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_90]', '3', !!(@exam.data[:st_question_90] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_90]', '2', !!(@exam.data[:st_question_90] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_90]', '1', !!(@exam.data[:st_question_90] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_90]', '0', !!(@exam.data[:st_question_90] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_90]", @exam.data[:st_answer_90], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Si estoy enfrascado en algo no acepto interrupciones</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_91]', '3', !!(@exam.data[:st_question_91] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_91]', '2', !!(@exam.data[:st_question_91] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_91]', '1', !!(@exam.data[:st_question_91] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_91]', '0', !!(@exam.data[:st_question_91] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_91]", @exam.data[:st_answer_91], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Soy perfeccionista</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_92]', '3', !!(@exam.data[:st_question_92] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_92]', '2', !!(@exam.data[:st_question_92] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_92]', '1', !!(@exam.data[:st_question_92] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_92]', '0', !!(@exam.data[:st_question_92] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_92]", @exam.data[:st_answer_92], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Pienso en el dinero que me deben con frecuencia</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_93]', '3', !!(@exam.data[:st_question_93] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_93]', '2', !!(@exam.data[:st_question_93] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_93]', '1', !!(@exam.data[:st_question_93] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_93]', '0', !!(@exam.data[:st_question_93] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_93]", @exam.data[:st_answer_93], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me pongo nervioso en los atascos de tráfico</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_94]', '3', !!(@exam.data[:st_question_94] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_94]', '2', !!(@exam.data[:st_question_94] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_94]', '1', !!(@exam.data[:st_question_94] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_94]', '0', !!(@exam.data[:st_question_94] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_94]", @exam.data[:st_answer_94], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>En las vacaciones me aburro pronto y deseo regresar</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_95]', '3', !!(@exam.data[:st_question_95] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_95]', '2', !!(@exam.data[:st_question_95] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_95]', '1', !!(@exam.data[:st_question_95] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_95]', '0', !!(@exam.data[:st_question_95] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_95]", @exam.data[:st_answer_95], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Me aterra poder contraer una enfermedad grave</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_96]', '3', !!(@exam.data[:st_question_96] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_96]', '2', !!(@exam.data[:st_question_96] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_96]', '1', !!(@exam.data[:st_question_96] == '1') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_96]', '0', !!(@exam.data[:st_question_96] == '0') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_96]", @exam.data[:st_answer_96], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-s6z2" colspan="5">Total Personalidad</td>
+                  <td>
+                    <%= text_field_tag "exam[data][total_6]", @exam.data[:total_6], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+              </table>
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 319.88889px">
+                  <col style="width: 67.88889px">
+                  <col style="width: 322.88889px">
+                  <col style="width: 65.88889px">
+                  <col style="width: 71.88889px">
+                </colgroup>
+                <tr>
+                  <th class="tg-s6z2" colspan="4">Elija las siguientes opciones</th>
+                  <th class="tg-s6z2">Total</th>
+                </tr>
+                <tr>
+                  <td>Entre 25 y 34 años</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_97]', '2', !!(@exam.data[:st_question_97] == '2') %>
+                  </td>
+                  <td>Entre 35 y 60 años</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_97]', '3', !!(@exam.data[:st_question_97] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_97]", @exam.data[:st_answer_97], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>¿Está divorciada o separada?</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_98]', '3', !!(@exam.data[:st_question_98] == '3') %>
+                  </td>
+                  <td>¿Está soltera o es una persona viuda?</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_98]', '2', !!(@exam.data[:st_question_98] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_98]", @exam.data[:st_answer_98], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>¿Vive en una ciudad muy pequeña?</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_99]', '2', !!(@exam.data[:st_question_99] == '2') %>
+                  </td>
+                  <td>¿Vive en una ciudad grande?</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_99]', '3', !!(@exam.data[:st_question_99] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_99]", @exam.data[:st_answer_99], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>¿Tiene hasta dos hijos viviendo en su casa?</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_100]', '2', !!(@exam.data[:st_question_100] == '2') %>
+                  </td>
+                  <td>¿Tiene más de dos hijos viviendo en su casa?</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_100]', '3', !!(@exam.data[:st_question_100] == '3') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_100]", @exam.data[:st_answer_100], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>¿Está desempleada?</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_101]', '3', !!(@exam.data[:st_question_101] == '3') %>
+                  </td>
+                  <td>¿Tiene trabajos temporales?</td>
+                  <td class="tg-s6z2">
+                    <%= radio_button_tag 'exam[data][st_question_101]', '2', !!(@exam.data[:st_question_101] == '2') %>
+                  </td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][st_answer_101]", @exam.data[:st_answer_101], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-s6z2" colspan="4">Total</td>
+                  <td class="tg-s6z2">
+                    <%= text_field_tag "exam[data][total_7]", @exam.data[:total_7], class: 'form-control col-lg-12', readonly: true %>
+                  </td>
+                </tr>
+              </table>
+              <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                <colgroup>
+                  <col style="width: 500px">
+                  <col style="width: 46.88889px">
+                </colgroup>
+                <tr>
+                  <th class="tg-s6z2">Puntuación global</th>
+                  <th>
+                    <%= text_field_tag "exam[data][global]", @exam.data[:global], class: 'form-control col-lg-12', readonly: true %>
+                  </th>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label>Conclusiones:</label>
+              <%= text_area_tag "exam[data][conclusion]", @exam.data[:conclusion], class: 'form-control col-lg-12' %>
+            </div>
+          </div>
+          <div class="col-l2">
+            <label></label>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="form-group">
+            <div class="col-sm-offset-5 col-sm-10">
+              <%= f.submit 'Guardar', class:'btn btn-primary' %>
+              <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

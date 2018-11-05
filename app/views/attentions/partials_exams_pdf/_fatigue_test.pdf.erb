@@ -1,0 +1,485 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#activity">Test de Epworth</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="active tab-pane" id="activity">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>
+                      Este cuestionario pretende valorar y calificar la facilidad de quedarse dormido en
+                      cada una de las diferentes situaciones. Aunque no haya vivido alguna de estas situaciones recientemente, intente imaginar como le habría afectado.
+                    </label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>Seleccione la opción deseada:</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="box-body table-responsive no-padding">
+                    <style type="text/css">
+                    .tg  {border-collapse:collapse;border-spacing:0;}
+                    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                    .tg .tg-s6z2{text-align:center}
+                    .tg .tg-hgcj{font-weight:bold;text-align:center}
+                    .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+                    </style>
+                    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                      <colgroup>
+                        <col style="width: 200px">
+                        <col style="width: 40px">
+                        <col style="width: 52px">
+                        <col style="width: 220px">
+                        <col style="width: 48px">
+                        <col style="width: 161px">
+                        <col style="width: 48px">
+                        <col style="width: 52px">
+                        <col style="width: 198px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-s6z2" style="background-color: #f57c00; color: white">
+                            <span style="font-weight:bold">SITUACIÓN</span>
+                          </th>
+                          <th class="tg-s6z2" colspan="3" style="background-color: #f57c00; color: white">
+                            <span style="font-weight:bold">PROBABILIDAD DE QUE LE DÉ SUEÑO</span>
+                          </th>
+                          <th class="tg-s268" rowspan="5" style="border-collapse:collapse; border: none;"></th>
+                          <th class="tg-hgcj" style="background-color: #f57c00; color: white">SITUACIÓN</th>
+                          <th class="tg-amwm" colspan="3" style="background-color: #f57c00; color: white">PROBABILIDAD DE QUE LE DÉ SUEÑO</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-s6z2" rowspan="4">
+                            <span style="font-weight:bold">1.- Sentado y Leyendo</span>
+                          </td>
+                          <td class="tg-hgcj">a</td>
+                          <td class="tg-hgcj">
+                            <%= radio_button_tag 'exam[data][question1]', '0', !!(@exam.data[:question1] == '0') %>
+                          </td>
+                          <td class="tg-s268">Nunca Tengo Sueño</td>
+                          <td class="tg-s6z2" rowspan="4">
+                            <span style="font-weight:bold">2.- Viendo la Tv</span>
+                          </td>
+                          <td class="tg-amwm">a</td>
+                          <td class="tg-hgcj">
+                            <%= radio_button_tag 'exam[data][question2]', '0', !!(@exam.data[:question2] == '0') %>
+                          </td>
+                          <td class="tg-0lax">Nunca Tengo Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">b</td>
+                          <td class="tg-hgcj">
+                            <%= radio_button_tag 'exam[data][question1]', '1', !!(@exam.data[:question1] == '1') %>
+                          </td>
+                          <td class="tg-s268">Ligera Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">b</td>
+                          <td class="tg-hgcj">
+                            <%= radio_button_tag 'exam[data][question2]', '1', !!(@exam.data[:question2] == '1') %>
+                          </td>
+                          <td class="tg-0lax">Ligera Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">c</td>
+                          <td class="tg-hgcj">
+                            <%= radio_button_tag 'exam[data][question1]', '2', !!(@exam.data[:question1] == '2') %>
+                          </td>
+                          <td class="tg-s268">Moderada Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">c</td>
+                          <td class="tg-hgcj">
+                            <%= radio_button_tag 'exam[data][question2]', '2', !!(@exam.data[:question2] == '2') %>
+                          </td>
+                          <td class="tg-0lax">Moderada Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">d</td>
+                          <td class="tg-hgcj">
+                            <%= radio_button_tag 'exam[data][question1]', '3', !!(@exam.data[:question1] == '3') %>
+                          </td>
+                          <td class="tg-s268">Alta  Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">d</td>
+                          <td class="tg-hgcj">
+                            <%= radio_button_tag 'exam[data][question2]', '3', !!(@exam.data[:question2] == '3') %>
+                          </td>
+                          <td class="tg-0lax">Alta  Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj" colspan="2">Total</td>
+                          <td class="tg-0lax" style="background-color: #e5e5e5">
+                            <%= text_field_tag "exam[data][total_1]", @exam.data[:total_1], class: 'form-control', readonly: true %>
+                          </td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                          <td class="tg-s6z2" colspan="2">
+                            <span style="font-weight:bold;">Total</span>
+                          </td>
+                          <td class="tg-0lax" style="background-color: #e5e5e5">
+                            <%= text_field_tag "exam[data][total_2]", @exam.data[:total_2], class: 'form-control', readonly: true %>
+                          </td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br>
+                    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                      <colgroup>
+                        <col style="width: 200px">
+                        <col style="width: 40px">
+                        <col style="width: 52px">
+                        <col style="width: 220px">
+                        <col style="width: 48px">
+                        <col style="width: 161px">
+                        <col style="width: 48px">
+                        <col style="width: 52px">
+                        <col style="width: 198px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-s6z2" style="background-color: #f57c00; color: white">
+                            <span style="font-weight:bold">SITUACIÓN</span>
+                          </th>
+                          <th class="tg-s6z2" colspan="3" style="background-color: #f57c00; color: white">
+                            <span style="font-weight:bold">PROBABILIDAD DE QUE LE DÉ SUEÑO</span>
+                          </th>
+                          <th class="tg-s268" rowspan="5" style="border-collapse:collapse; border: none;"></th>
+                          <th class="tg-hgcj" style="background-color: #f57c00; color: white">SITUACIÓN</th>
+                          <th class="tg-amwm" colspan="3" style="background-color: #f57c00; color: white">PROBABILIDAD DE QUE LE DÉ SUEÑO</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-s6z2" rowspan="4">
+                            <span style="font-weight:bold">3.-Sentado,inactivo en un lugar publico(Ej: cine,teatro,etc)</span>
+                          </td>
+                          <td class="tg-hgcj">a</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question3]', '0', !!(@exam.data[:question3] == '0') %>
+                          </td>
+                          <td class="tg-s268">Nunca Tengo Sueño</td>
+                          <td class="tg-s6z2" rowspan="4">
+                            <span style="font-weight:bold">
+                              4.- Como pasajero en un coche en un viaje de 1 hora sin paradas
+                            </span>
+                          </td>
+                          <td class="tg-amwm">a</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question4]', '0', !!(@exam.data[:question4] == '0') %>
+                          </td>
+                          <td class="tg-0lax">Nunca Tengo Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">b</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question3]', '1', !!(@exam.data[:question3] == '1') %>
+                          </td>
+                          <td class="tg-s268">Ligera Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">b</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question4]', '1', !!(@exam.data[:question4] == '1') %>
+                          </td>
+                          <td class="tg-0lax">Ligera Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">c</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question3]', '2', !!(@exam.data[:question3] == '2') %>
+                          </td>
+                          <td class="tg-s268">Moderada Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">c</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question4]', '2', !!(@exam.data[:question4] == '2') %>
+                          </td>
+                          <td class="tg-0lax">Moderada Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">d</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question3]', '3', !!(@exam.data[:question3] == '3') %>
+                          </td>
+                          <td class="tg-s268">Alta  Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">d</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question4]', '3', !!(@exam.data[:question4] == '3') %>
+                          </td>
+                          <td class="tg-0lax">Alta  Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj" colspan="2">Total</td>
+                          <td class="tg-0lax" style="background-color: #e5e5e5">
+                            <%= text_field_tag "exam[data][total_3]", @exam.data[:total_3], class: 'form-control', readonly: true %>
+                          </td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                          <td class="tg-s6z2" colspan="2">
+                            <span style="font-weight:bold;">Total</span>
+                          </td>
+                          <td class="tg-0lax" style="background-color: #e5e5e5">
+                            <%= text_field_tag "exam[data][total_4]", @exam.data[:total_4], class: 'form-control', readonly: true %>
+                          </td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;">
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br>
+                    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                      <colgroup>
+                        <col style="width: 200px">
+                        <col style="width: 40px">
+                        <col style="width: 52px">
+                        <col style="width: 220px">
+                        <col style="width: 48px">
+                        <col style="width: 161px">
+                        <col style="width: 48px">
+                        <col style="width: 52px">
+                        <col style="width: 198px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-s6z2" style="background-color: #f57c00; color: white">
+                            <span style="font-weight:bold">SITUACIÓN</span>
+                          </th>
+                          <th class="tg-s6z2" colspan="3" style="background-color: #f57c00; color: white">
+                            <span style="font-weight:bold">PROBABILIDAD DE QUE LE DÉ SUEÑO</span>
+                          </th>
+                          <th class="tg-s268" rowspan="5" style="border-collapse:collapse; border: none;"></th>
+                          <th class="tg-hgcj" style="background-color: #f57c00; color: white">SITUACIÓN</th>
+                          <th class="tg-amwm" colspan="3" style="background-color: #f57c00; color: white">PROBABILIDAD DE QUE LE DÉ SUEÑO</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-s6z2" rowspan="4">
+                            <span style="font-weight:bold">5.- Estirado para descansar al mediodia cuando las circunstancias lo permiten</span>
+                          </td>
+                          <td class="tg-hgcj">a</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question5]', '0', !!(@exam.data[:question5] == '0') %>
+                          </td>
+                          <td class="tg-s268">Nunca Tengo Sueño</td>
+                          <td class="tg-s6z2" rowspan="4">
+                            <span style="font-weight:bold">6.- Sentado hablando con otra Persona</span>
+                          </td>
+                          <td class="tg-amwm">a</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question6]', '0', !!(@exam.data[:question6] == '0') %>
+                          </td>
+                          <td class="tg-0lax">Nunca Tengo Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">b</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question5]', '1', !!(@exam.data[:question5] == '1') %>
+                          </td>
+                          <td class="tg-s268">Ligera Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">b</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question6]', '1', !!(@exam.data[:question6] == '1') %>
+                          </td>
+                          <td class="tg-0lax">Ligera Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">c</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question5]', '2', !!(@exam.data[:question5] == '2') %>
+                          </td>
+                          <td class="tg-s268">Moderada Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">c</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question6]', '2', !!(@exam.data[:question6] == '2') %>
+                          </td>
+                          <td class="tg-0lax">Moderada Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">d</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question5]', '3', !!(@exam.data[:question5] == '3') %>
+                          </td>
+                          <td class="tg-s268">Alta  Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">d</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question6]', '3', !!(@exam.data[:question6] == '3') %>
+                          </td>
+                          <td class="tg-0lax">Alta  Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj" colspan="2">Total</td>
+                          <td class="tg-0lax" style="background-color: #e5e5e5">
+                            <%= text_field_tag "exam[data][total_5]", @exam.data[:total_5], class: 'form-control', readonly: true %>
+                          </td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                          <td class="tg-s6z2" colspan="2">
+                            <span style="font-weight:bold;">Total</span>
+                          </td>
+                          <td class="tg-0lax" style="background-color: #e5e5e5">
+                            <%= text_field_tag "exam[data][total_6]", @exam.data[:total_6], class: 'form-control', readonly: true %>
+                          </td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br>
+                    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                      <colgroup>
+                        <col style="width: 200px">
+                        <col style="width: 40px">
+                        <col style="width: 52px">
+                        <col style="width: 220px">
+                        <col style="width: 48px">
+                        <col style="width: 161px">
+                        <col style="width: 48px">
+                        <col style="width: 52px">
+                        <col style="width: 198px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-s6z2" style="background-color: #f57c00; color: white">
+                            <span style="font-weight:bold">SITUACIÓN</span>
+                          </th>
+                          <th class="tg-s6z2" colspan="3" style="background-color: #f57c00; color: white">
+                            <span style="font-weight:bold">PROBABILIDAD DE QUE LE DÉ SUEÑO</span>
+                          </th>
+                          <th class="tg-s268" rowspan="5" style="border-collapse:collapse; border: none;"></th>
+                          <th class="tg-hgcj" style="background-color: #f57c00; color: white">SITUACIÓN</th>
+                          <th class="tg-amwm" colspan="3" style="background-color: #f57c00; color: white">PROBABILIDAD DE QUE LE DÉ SUEÑO</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-s6z2" rowspan="4">
+                            <span style="font-weight:bold">7.- Sentado tranquilamente despues de una comida sin alcohol</span>
+                          </td>
+                          <td class="tg-hgcj">a</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question7]', '0', !!(@exam.data[:question7] == '0') %>
+                          </td>
+                          <td class="tg-s268">Nunca Tengo Sueño</td>
+                          <td class="tg-s6z2" rowspan="4">
+                            <span style="font-weight:bold">8.- En un coche,estando parado por el transito unos minutos (EJ:</span>
+                          </td>
+                          <td class="tg-amwm">a</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question8]', '0', !!(@exam.data[:question8] == '0') %>
+                          </td>
+                          <td class="tg-0lax">Nunca Tengo Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">b</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question7]', '1', !!(@exam.data[:question7] == '1') %>
+                          </td>
+                          <td class="tg-s268">Ligera Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">b</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question8]', '1', !!(@exam.data[:question8] == '1') %>
+                          </td>
+                          <td class="tg-0lax">Ligera Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">c</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question7]', '2', !!(@exam.data[:question7] == '2') %>
+                          </td>
+                          <td class="tg-s268">Moderada Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">c</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question8]', '2', !!(@exam.data[:question8] == '2') %>
+                          </td>
+                          <td class="tg-0lax">Moderada Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj">d</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question7]', '3', !!(@exam.data[:question7] == '3') %>
+                          </td>
+                          <td class="tg-s268">Alta  Probabilidad de tener Sueño</td>
+                          <td class="tg-amwm">d</td>
+                          <td class="tg-amwm">
+                            <%= radio_button_tag 'exam[data][question8]', '3', !!(@exam.data[:question8] == '3') %>
+                          </td>
+                          <td class="tg-0lax">Alta  Probabilidad de tener Sueño</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-hgcj" colspan="2">Total</td>
+                          <td class="tg-0lax" style="background-color: #e5e5e5">
+                            <%= text_field_tag "exam[data][total_7]", @exam.data[:total_7], class: 'form-control', readonly: true %>
+                          </td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                          <td class="tg-s6z2" colspan="2">
+                            <span style="font-weight:bold;">Total</span>
+                          </td>
+                          <td class="tg-0lax" style="background-color: #e5e5e5">
+                            <%= text_field_tag "exam[data][total_8]", @exam.data[:total_8], class: 'form-control', readonly: true %>
+                          </td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br>
+                    <table class="tg" style="undefined;table-layout: fixed; width: 900px">
+                      <colgroup>
+                        <col style="width: 200px">
+                        <col style="width: 340px">
+                        <col style="width: 260px">
+                        <col style="width: 224px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-s6z2" colspan="4" style="background-color: #f57c00; color: white"></th>
+                        </tr>
+                        <tr>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                          <td class="tg-s6z2">
+                            <span style="font-weight:bold;">Total</span>
+                          </td>
+                          <td class="tg-0lax" style="background-color: #e5e5e5">
+                            <%= text_field_tag "exam[data][total_general]", @exam.data[:total_general], class: 'form-control', readonly: true %>
+                          </td>
+                          <td class="tg-0lax" style="border-collapse:collapse; border: none;"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>Conclusiones:</label>
+                    <%= text_area_tag "exam[data][conclusions]", @exam.data[:conclusions], class: 'form-control' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="form-group">
+            <div class="col-sm-offset-5 col-sm-10">
+              <%= f.submit 'Guardar', class:'btn btn-primary' %>
+              <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
