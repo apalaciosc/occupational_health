@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :medical, optional:true
+  belongs_to :area, optional:true
   enum role_id: [:superadmin, :admin, :medical, :recepcionist]
   attr_accessor :skip_password_validation, :skip_password_confirmation_validation
   # Include default devise modules. Others available are:
