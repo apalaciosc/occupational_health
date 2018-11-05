@@ -1,91 +1,188 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="box box-info">
-      <div class="box-header with-border">
-        <h3 class="box-title">Cambiar contraseña</h3>
-      </div>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'forms-horizontal'  }) do |f| %>
-      <%= devise_error_messages! %>
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-      <div class="box-body">
-        <div class="form-group">
-          <div class="row">
-            <div class="col-lg-12">
-              <label for="inputEmail3" class="col-sm-2 control-label">Contraseña</label>
-              <div class="col-sm-10">
-                <%= f.password_field :password, :class => "form-control input-sm", autocomplete: "new-password" %>
-                <% if @minimum_password_length %>
-                  <br />
-                  <em><%= @minimum_password_length %> caracteres como mínimo</em>
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#general" data-toggle="tab">General</a></li>
+          <li><a href="#change_password" data-toggle="tab">Cambiar contraseña</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="general">
+            <%= form_for(resource, as: resource_name, remote: true, url: registration_path(resource_name), html: { class: "form-horizontal", multipart: true }) do |f| %>
+            <%= devise_error_messages! %>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+            <div class="box-body">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Nombres</label>
+                    <div class="col-sm-10">
+                      <%= f.text_field :name, :class => "form-control input-sm", :maxlength => "255", :placeholder => "Ingrese nombre" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Apellidos</label>
+                    <div class="col-sm-10">
+                      <%= f.text_field :lastname, :class => "form-control input-sm", :maxlength => "255", :placeholder => "Ingrese apellidos" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">DNI</label>
+                    <div class="col-sm-10">
+                      <%= f.text_field :dni, :class => "form-control input-sm just-number", :maxlength => "255", :placeholder => "Ingrese nro. de DNI" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Correo</label>
+                    <div class="col-sm-10">
+                      <%= f.text_field :email, :class => "form-control input-sm", :maxlength => "255", :placeholder => "Ingrese correo electrónico" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Foto</label>
+                    <div class="col-sm-10">
+                      <%= f.file_field :avatar, :class => "form-control input-sm" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Teléfono</label>
+                    <div class="col-sm-10">
+                      <%= f.text_field :phone, :class => "form-control input-sm just-number", :maxlength => "255", :placeholder => "Ingrese teléfono" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Cargo</label>
+                    <div class="col-sm-10">
+                      <%= f.text_field :position, :class => "form-control input-sm", :maxlength => "255", :placeholder => "Ingrese cargo" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Departamento</label>
+                    <div class="col-sm-10">
+                      <%= f.text_field :department, :class => "form-control input-sm", :maxlength => "255", :placeholder => "Ingrese departamento" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Dirección</label>
+                    <div class="col-sm-10">
+                      <%= f.text_field :address, :class => "form-control input-sm", :maxlength => "255", :placeholder => "Ingrese dirección" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Fecha de nacimiento</label>
+                    <div class="col-sm-10">
+                      <%= f.date_field :birthday, :class => "form-control input-sm", :maxlength => "255" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Aptitudes</label>
+                    <div class="col-sm-10">
+                      <%= f.text_area :aptitude, :class => "form-control input-sm", :maxlength => "255", :placeholder => "Ingrese sus aptitudes" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Intereses</label>
+                    <div class="col-sm-10">
+                      <%= f.text_area :interests, :class => "form-control input-sm", :maxlength => "255", :placeholder => "Ingrese sus intereses" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% if current_user.role_id == 'medical' %>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label class="col-sm-2 control-label">Especialidad</label>
+                    <div class="col-sm-10">
+                      <%= f.text_field :speciality, :class => "form-control input-sm", :maxlength => "255", :placeholder => "Ingrese su especialidad" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+              <div class="box-footer">
+                <%= link_to "Volver", root_path, class:'btn btn-default' %>
+                <%= f.submit 'Guardar', class:'btn btn-info pull-right' %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="tab-pane" id="change_password">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="box-body">
+                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                  <%= devise_error_messages! %>
+                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                  <% end %>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Contraseña</label>
+                        <div class="col-sm-10">
+                          <%= f.password_field :password, :class => "form-control input-sm", autocomplete: "off" %>
+                          <% if @minimum_password_length %>
+                          <br />
+                          <em><%= @minimum_password_length %> caracteres como mínimo</em>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Confirmación de la contraseña</label>
+                        <div class="col-sm-10">
+                          <%= f.password_field :password_confirmation, :class => "form-control input-sm", autocomplete: "off" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Contraseña actual</label>
+                        <div class="col-sm-10">
+                          <%= f.password_field :current_password, autocomplete: "off", :class => "form-control input-sm" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-footer">
+                  <%= link_to "Volver", root_path, class:'btn btn-default' %>
+                  <%= f.submit 'Guardar', class:'btn btn-info pull-right' %>
+                </div>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-lg-12">
-              <label for="inputEmail3" class="col-sm-2 control-label">Confirmación de la contraseña</label>
-              <div class="col-sm-10">
-                <%= f.password_field :password_confirmation, :class => "form-control input-sm", autocomplete: "new-password" %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-lg-12">
-              <label for="inputEmail3" class="col-sm-2 control-label">Contraseña actual</label>
-              <div class="col-sm-10">
-                <%= f.password_field :current_password, autocomplete: "current-password", :class => "form-control input-sm" %>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="box-footer">
-        <%= link_to "Volver", root_path, class:'btn btn-default' %>
-        <%= f.submit 'Guardar', class:'btn btn-info pull-right' %>
-      </div>
-      <% end %>
     </div>
   </div>
-</div>
-<!--
-
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<%= link_to "Back", :back %> -->
+</section>

@@ -56,6 +56,11 @@
         </a>
         <ul class="treeview-menu" style="display: none;">
           <li><a href="/attentions"><i class="fa fa-circle-o"></i> Ver todas</a></li>
+          <li>
+            <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false">
+              <i class="fa fa-circle-o"></i> Nueva atención
+            </a>
+          </li>
         </ul>
       </li>
       <li class="treeview">
@@ -75,23 +80,6 @@
           <% end %>
         </ul>
       </li>
-      <% if user_signed_in? && current_user.role_id != 'medical'%>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-fw fa-heart"></i>
-          <span>Médicos</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu" style="display: none;">
-          <li><a href="/medicals"><i class="fa fa-circle-o"></i> Ver todos</a></li>
-          <% if user_signed_in? && current_user.role_id == 'admin' %>
-          <li><a href="/medicals/new"><i class="fa fa-circle-o"></i> Nuevo médico</a></li>
-          <% end %>
-        </ul>
-      </li>
-      <% end %>
       <% if user_signed_in? && current_user.role_id == 'admin' %>
       <li class="treeview">
         <a href="#">
@@ -103,10 +91,68 @@
         </a>
         <ul class="treeview-menu" style="display: none;">
           <li><a href="/users"><i class="fa fa-circle-o"></i> Ver todos</a></li>
-          <li><a href="/users/new"><i class="fa fa-circle-o"></i> Nuevo usuario</a></li>
+          <li><a href="/users/medicals"><i class="fa fa-circle-o"></i> Médicos</a></li>
+          <li><a href="/users/recepcionists"><i class="fa fa-circle-o"></i> Recepcionistas</a></li>
+          <li><a href="/users/new_user"><i class="fa fa-circle-o"></i> Nuevo usuario</a></li>
         </ul>
       </li>
       <% end %>
     </ul>
   </section>
 </aside>
+
+
+<div class="container">
+  <div class="modal" id="modalCreate">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="col-lg-12">
+            <div class="col-lg-11 text-center">
+              <h4 class="modal-title">Nueva Atención</h4>
+            </div>
+            <div class="col-lg-1 text-right">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+          </div>
+        </div>
+        <%= form_for(Attention.new, url: particular_attention_path, remote: 'true') do |f| %>
+        <div class="modal-body" >
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="box-body">
+                <div class="form-group">
+                  <label>Paciente:</label>
+                  <%= f.select(:employee_id, employee_for_select, { include_blank: 'Seleccionar paciente' }, {class: "form-control chosen" }) %>
+                </div>
+                <div class="form-group">
+                  <label>Tipo:</label>
+                  <%= f.select(:type_attention, type_attention_for_select, { include_blank: 'Seleccionar tipo' }, {class: "form-control" }) %>
+                </div>
+                <div class="form-group">
+                  <label>Departamento:</label>
+                  <%= f.text_field :department, class: "form-control input-sm" %>
+                </div>
+                <div class="form-group">
+                  <label>Provincia:</label>
+                  <%= f.text_field :province, class: "form-control input-sm" %>
+                </div>
+                <div class="form-group">
+                  <label>Distrito:</label>
+                  <%= f.text_field :district, class: "form-control input-sm" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="actions">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
