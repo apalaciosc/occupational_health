@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Recepcionistas</h3>
+        <div class="box-tools">
+          <form class="" action="/users" method="get">
+            <div class="row">
+              <div class="col-lg-2 col-xs-6 text-right">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-block btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <%= link_to users_path(format: :pdf, search: @search), target: '_blank' do %>
+                      Exportar a pdf
+                      <% end %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-10 col-xs-6 text-right">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="search" class="form-control pull-right" placeholder="Buscar" <%= @search %> >
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>DNI</th>
+              <th>Especialidad</th>
+              <th>Cargo</th>
+              <th>Departamento</th>
+              <th>Dirección</th>
+              <th>F. Nacimiento</th>
+              <th>Aptitudes</th>
+              <th>Intereses</th>
+              <th>Teléfono</th>
+              <th colspan="3"></th>
+            </tr>
+            <% @users.each do |user| %>
+            <% next if user.role_id == 'superadmin' %>
+            <tr>
+              <td><%= user.name %> <%= user.lastname %></td>
+              <td><%= user.email %></td>
+              <td><%= user.dni %></td>
+              <td><%= user.speciality %></td>
+              <td><%= user.position %></td>
+              <td><%= user.department %></td>
+              <td><%= user.address %></td>
+              <td><%= user.birthday %></td>
+              <td><%= user.aptitude %></td>
+              <td><%= user.interests %></td>
+              <td><%= user.phone %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <%= will_paginate @users, previous_label: "Atrás", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
+    </div>
+  </div>
+</div>

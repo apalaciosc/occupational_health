@@ -11,6 +11,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def index_medicals
+    @search = params[:search]
+    if @search
+      @users = User.paginate(page:params[:page],per_page:7).where(role_id: 'medical').where("name ILIKE ?", "%#{@search}%")
+    else
+      @users = User.paginate(page:params[:page],per_page:7).where(role_id: 'medical')
+    end
+  end
+
+  def index_recepcionists
+    @search = params[:search]
+    if @search
+      @users = User.paginate(page:params[:page],per_page:7).where(role_id: 'recepcionist').where("name ILIKE ?", "%#{@search}%")
+    else
+      @users = User.paginate(page:params[:page],per_page:7).where(role_id: 'recepcionist')
+    end
+  end
+
   def new_user
     @user = User.new
   end

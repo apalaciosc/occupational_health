@@ -75,23 +75,6 @@
           <% end %>
         </ul>
       </li>
-      <% if user_signed_in? && current_user.role_id != 'medical'%>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-fw fa-heart"></i>
-          <span>Médicos</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu" style="display: none;">
-          <li><a href="/medicals"><i class="fa fa-circle-o"></i> Ver todos</a></li>
-          <% if user_signed_in? && current_user.role_id == 'admin' %>
-          <li><a href="/medicals/new"><i class="fa fa-circle-o"></i> Nuevo médico</a></li>
-          <% end %>
-        </ul>
-      </li>
-      <% end %>
       <% if user_signed_in? && current_user.role_id == 'admin' %>
       <li class="treeview">
         <a href="#">
@@ -103,6 +86,8 @@
         </a>
         <ul class="treeview-menu" style="display: none;">
           <li><a href="/users"><i class="fa fa-circle-o"></i> Ver todos</a></li>
+          <li><a href="/users/medicals"><i class="fa fa-circle-o"></i> Médicos</a></li>
+          <li><a href="/users/recepcionists"><i class="fa fa-circle-o"></i> Recepcionistas</a></li>
           <li><a href="/users/new_user"><i class="fa fa-circle-o"></i> Nuevo usuario</a></li>
         </ul>
       </li>

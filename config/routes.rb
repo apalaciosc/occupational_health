@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get "/422", :to => "errors#error_404"
   get "/500", :to => "errors#error_500"
   get "/505", :to => "errors#error_505"
-  get 'medicals/fmo' => 'medicals#fmo'
+  get 'users/medicals', to: 'users#index_medicals', as: :index_medicals
+  get 'users/recepcionists', to: 'users#index_recepcionists', as: :index_recepcionists
   get 'employees/fmo' => 'employees#fmo'
   get 'employees/roadmap' => 'employees#roadmap'
   get 'attention/:id/exams', to: 'attentions#exams', as: :attention_exams
