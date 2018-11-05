@@ -18,10 +18,12 @@ Rails.application.routes.draw do
   resources :areas, except: [:show]
   resources :enterprises, except: [:show]
   get 'type_exams', to: 'type_exams#index', as: :type_exams
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+
   patch '/users/:id', to: 'users#update_profile'
   get '/users', to: 'users#index', as: :users
   post '/users/create/:id', to: 'users#create_user', as: :users_create
+  patch '/users/change_rol/:id', to: 'users#change_rol', as: :change_rol
   resources :users do
     collection do
       get 'edit_profile'

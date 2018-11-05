@@ -55,6 +55,7 @@
               <td><%= user.phone %></td>
               <td><%= user.position %></td>
               <td><%= user.address %></td>
+              <td><a data-toggle="modal" data-target="#modalUpdate<%= user.id %>" data-backdrop="static" data-keyboard="false">Cambiar rol</a></td>
             </tr>
             <% end %>
           </tbody>
@@ -64,3 +65,44 @@
     </div>
   </div>
 </div>
+
+<% @users.each do |user| %>
+<div class="container modalUpdate">
+  <div class="modal" id="modalUpdate<%= user.id %>">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="col-lg-12">
+            <div class="col-lg-11 text-center">
+              <h4 class="modal-title">Actualizar Rol</h4>
+            </div>
+            <div class="col-lg-1 text-right">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+          </div>
+        </div>
+        <%= form_for(user, url: change_rol_path(user.id), remote: 'true') do |f| %>
+        <div class="modal-body" >
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="box-body">
+                <div class="form-group">
+                  <label>Rol:</label>
+                  <%= f.select(:role_id, user_role_for_select, { include_blank: 'Seleccionar Rol' }, :class => "form-control") %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="actions">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            <%= f.submit 'Guardar', class:'btn btn-primary' %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

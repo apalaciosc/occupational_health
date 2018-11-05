@@ -43,6 +43,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def change_rol
+    @user = User.find(params[:id])
+    if params[:user][:role_id].present?
+      @user.role_id = params[:user][:role_id]
+      if @user.save
+        flash[:notice] = "Rol actualizado correctamente."
+        flash.keep(:notice)
+        render js: "window.location = '/users'"
+      end
+    else
+      puts @user.errors.messages
+      render js: 'swal("Alerta", "Por favor seleccione el rol.", "warning");'
+    end
+  end
+
   private
 
   def user_params
