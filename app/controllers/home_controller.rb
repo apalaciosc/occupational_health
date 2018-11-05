@@ -14,7 +14,7 @@ class HomeController < ApplicationController
         flash[:notice] = "Debe cambiar su contraseña por defecto antes de continuar."
         redirect_to edit_user_registration_path
       elsif current_user.name.blank? || current_user.lastname.blank? || current_user.dni.blank?
-        flash[:notice] = "Por favor completar sus datos principales."
+        flash[:notice] = "Por favor completar sus datos principales (Nombre, Apellidos, DNI)."
         redirect_to edit_user_registration_path
       end
     end
