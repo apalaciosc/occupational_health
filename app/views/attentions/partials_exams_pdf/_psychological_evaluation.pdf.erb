@@ -1,3 +1,13 @@
+<<<<<<< e1dd711cb559d5fb6198cb14edd25deb3069954e
+=======
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+>>>>>>> Wip
 <div class="box box-default">
   <div class="box-header with-border">
     <div class="box-tools pull-right">
@@ -246,4 +256,19 @@
       </div>
     </div>
   </div>
+<<<<<<< e1dd711cb559d5fb6198cb14edd25deb3069954e
 </div>
+=======
+  <form class="form-horizontal">
+    <div class="box-body">
+      <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-10">
+          <%= f.submit 'Guardar', class:'btn btn-primary' %>
+          <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<% end %>
+>>>>>>> Wip
