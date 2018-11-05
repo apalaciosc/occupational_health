@@ -27,9 +27,24 @@ class ExamsController < ApplicationController
     end
   end
 
+  def create_pdf_exam
+    p params
+    @exam = Exam.find(params[:id])
+    @type_exam = TypeExam.find(@exam.type_exam_id)
+    respond_to do |format|
+     format.html
+     format.json
+     format.pdf {render template:"attentions/partials_exams_pdf/_#{@type_exam.view}", pdf: 'report', layout: 'pdf.html'}
+   end
+  end
+
   private
 
   def exam_params
     params.require(:exam).permit(:type_exam_id, :attention_id, :result, :data => {})
+  end
+
+  def exam_params
+    params.permit(:id, :attention_id)
   end
 end
