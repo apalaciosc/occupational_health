@@ -1,0 +1,624 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#activity">Audiometría</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="active tab-pane" id="activity">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>Datos Generales:</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label class="col-lg-2">Nombres y Apellidos</label>
+                        <div class="col-lg-6">
+                          <% if @edit == 0 %>
+                          <%= text_field_tag "exam[data][name_lastname]", @exam.data[:name_lastname], value: @attention.employee.name, class: 'form-control', readonly: true %>
+                          <% else %>
+                          <%= text_field_tag "exam[data][name_lastname]", @exam.data[:name_lastname], value: @exam.attention.employee.name, class: 'form-control', readonly: true %>
+                          <% end %>
+                        </div>
+                        <label class="col-lg-2">Fecha de nacimiento</label>
+                        <div class="col-lg-2">
+                          <% if @edit == 0 %>
+                          <%= text_field_tag "exam[data][birthday]", @exam.data[:birthday], value: @attention.employee.birthday, class: 'form-control', readonly: true %>
+                          <% else %>
+                          <%= text_field_tag "exam[data][birthday]", @exam.data[:birthday], value: @exam.attention.employee.birthday, class: 'form-control', readonly: true %>
+                          <% end %>
+                        </div>
+                      </div><br><br>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label class="col-lg-1">Edad</label>
+                        <div class="col-lg-1">
+                          <% if @edit == 0 %>
+                          <%= text_field_tag "exam[data][age]", @exam.data[:age], value: @attention.employee.age, class: 'form-control', readonly: true %>
+                          <% else %>
+                          <%= text_field_tag "exam[data][age]", @exam.data[:age], value: @exam.attention.employee.age, class: 'form-control', readonly: true %>
+                          <% end %>
+                        </div>
+                        <label class="col-lg-1">Empresa</label>
+                        <div class="col-lg-5">
+                          <% if @edit == 0 %>
+                          <%= text_field_tag "exam[data][company]", @exam.data[:company], value: @attention.employee.enterprise.name, class: 'form-control', readonly: true %>
+                          <% else %>
+                          <%= text_field_tag "exam[data][company]", @exam.data[:company], value: @exam.attention.employee.enterprise.name, class: 'form-control', readonly: true %>
+                          <% end %>
+                        </div>
+                        <label class="col-lg-2">Tipo de exámen</label>
+                        <div class="col-lg-2">
+                          <%= text_field_tag "exam[data][type_exam]", @exam.data[:type_exam], value: @type_exam.name.capitalize , class: 'form-control col-lg-12',readonly: true %>
+                        </div>
+                      </div><br><br>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label class="col-lg-1">Horas de exposición</label>
+                        <div class="col-lg-1">
+                          <%= text_field_tag "exam[data][hours_of_exposure]", @exam.data[:hours_of_exposure], class: 'form-control col-lg-12 just-number', maxlength: 4 %>
+                        </div>
+                        <label class="col-lg-1">Apreciación de ruido</label>
+                        <div class="col-lg-2">
+                          <%= select_tag("exam[data][noise_appreciation]", options_for_select([["Ruido muy intenso","1"],["Ruido moderado","2"],["Ruido no molesto","3"]], @exam.data[:noise_appreciation] ), class: 'form-control') %>
+                        </div>
+                        <label class="col-lg-1">Uso de protectores auditivos</label>
+                        <div class="col-lg-2">
+                          <%= select_tag("exam[data][auditive_protectors]", options_for_select([["Tapones","1"],["Orejeras","2"],["Otro","3"]], @exam.data[:auditive_protectors] ), class: 'form-control') %>
+                        </div>
+                        <label class="col-lg-1">Orejeras</label>
+                        <div class="col-lg-3">
+                          <%= text_field_tag "exam[data][earmuffs]", @exam.data[:earmuffs], class: 'form-control col-lg-12' %>
+                        </div>
+                      </div>
+                    </div>
+                  </div><br>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>Este cuestionario pretende valorar y calificar la facilidad de quedarse dormido en cada una de las diferentes situaciones. Aunque no haya vivido alguna de estas situaciones recientemente, intente imaginar como le habría afectado.</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>Marque con una x la opción deseada:</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="box-body table-responsive no-padding">
+                    <style type="text/css">
+                    .tg {
+                      border-collapse: collapse;
+                      border-spacing: 0;
+                    }
+                    .tg td {
+                      font-family: Arial, sans-serif;
+                      font-size: 14px;
+                      padding: 9px 5px;
+                      border-style: solid;
+                      border-width: 1px;
+                      overflow: hidden;
+                      word-break: normal;
+                      border-color: black;
+                    }
+                    .tg th {
+                      font-family: Arial, sans-serif;
+                      font-size: 14px;
+                      font-weight: normal;
+                      padding: 9px 5px;
+                      border-style: solid;
+                      border-width: 1px;
+                      overflow: hidden;
+                      word-break: normal;
+                      border-color: black;
+                    }
+                    .tg .tg-hgcj {
+                      font-weight: bold;
+                      text-align: center;
+                    }
+                    .tg .tg-amwm {
+                      font-weight: bold;
+                      text-align: center;
+                      vertical-align: top;
+                    }
+                    </style>
+                    <div class="col-lg-12">
+                      <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                        <colgroup>
+                          <col style="width: 250px">
+                          <col style="width: 90.88889px">
+                          <col style="width: 79.88889px">
+                          <col style="width: 120.88889px">
+                          <col style="width: 250px">
+                          <col style="width: 89.88889px">
+                          <col style="width: 81.88889px">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th class="tg-amwm">Antecedentes ralacionados</th>
+                            <th class="tg-amwm">SI</th>
+                            <th class="tg-amwm">NO</th>
+                            <th class="tg-88nc" rowspan="7" style="border-collapse:collapse; border: none;"></th>
+                            <th class="tg-amwm">Sintomas</th>
+                            <th class="tg-amwm">SI</th>
+                            <th class="tg-amwm">NO</th>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Consumo de tabaco</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][tobacco]', '1', !!(@exam.data[:tobacco] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][tobacco]', '0', !!(@exam.data[:tobacco] == '0') %>
+                            </td>
+                            <td class="tg-amwm">
+                              Disminución de la audición
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][hearing]', '1', !!(@exam.data[:hearing] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][hearing]', '0', !!(@exam.data[:hearing] == '0') %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Servicio militar</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][military_service]', '1', !!(@exam.data[:military_service] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][military_service]', '0', !!(@exam.data[:military_service] == '0') %>
+                            </td>
+                            <td class="tg-amwm">Dolor de oídos</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][earache]', '1', !!(@exam.data[:earache] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][earache]', '0', !!(@exam.data[:earache] == '0') %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Hobbies con exposición a ruido</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][exposure_to_noise_hobbies]', '1', !!(@exam.data[:exposure_to_noise_hobbies] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][exposure_to_noise_hobbies]', '0', !!(@exam.data[:exposure_to_noise_hobbies] == '0') %>
+                            </td>
+                            <td class="tg-amwm">Zumbidos</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][buzz]', '1', !!(@exam.data[:buzz] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][buzz]', '0', !!(@exam.data[:buzz] == '0') %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Exposición laboral a quimicos</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][exposure_to_chemicals]', '1', !!(@exam.data[:exposure_to_chemicals] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][exposure_to_chemicals]', '0', !!(@exam.data[:exposure_to_chemicals] == '0') %>
+                            </td>
+                            <td class="tg-amwm">Mareos</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][dizziness]', '1', !!(@exam.data[:dizziness] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][dizziness]', '0', !!(@exam.data[:dizziness] == '0') %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Infección al oído</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][ear_infection]', '1', !!(@exam.data[:ear_infection] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][ear_infection]', '0', !!(@exam.data[:ear_infection] == '0') %>
+                            </td>
+                            <td class="tg-amwm">
+                              Infección al oído
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][ear_infection_symptom]', '1', !!(@exam.data[:ear_infection_symptom] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][ear_infection_symptom]', '0', !!(@exam.data[:ear_infection_symptom] == '0') %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Uso de ototóxicos</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][ototoxico]', '1', !!(@exam.data[:ototoxico] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][ototoxico]', '0', !!(@exam.data[:ototoxico] == '0') %>
+                            </td>
+                            <td class="tg-amwm">Otro</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][other_option]', '1', !!(@exam.data[:other_option] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][other_option]', '0', !!(@exam.data[:other_option] == '0') %>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <br>
+                    </div>
+                    <div class="col-lg-12">
+                      <label class="col-lg-12" style="text-align: center;">OTOSCOPIA</label>
+                    </div>
+                    <div class="col-lg-12">
+                      <label></label>
+                    </div>
+                    <div class="col-lg-12">
+                      <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                        <colgroup>
+                          <col style="width: 250px">
+                          <col style="width: 90.88889px">
+                          <col style="width: 79.88889px">
+                          <col style="width: 120.88889px">
+                          <col style="width: 250px">
+                          <col style="width: 89.88889px">
+                          <col style="width: 81.88889px">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th class="tg-amwm">Oído derecho</th>
+                            <th class="tg-amwm">SI</th>
+                            <th class="tg-amwm">NO</th>
+                            <th class="tg-88nc" rowspan="7" style="border-collapse:collapse; border: none;"></th>
+                            <th class="tg-amwm">Oído izquierdo</th>
+                            <th class="tg-amwm">SI</th>
+                            <th class="tg-amwm">NO</th>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Triángulo de luz</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][triangle_of_light_right]', '1', !!(@exam.data[:triangle_of_light_right] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][triangle_of_light_right]', '0', !!(@exam.data[:triangle_of_light_right] == '0') %>
+                            </td>
+                            <td class="tg-amwm">Triángulo de luz</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][triangle_of_light_left]', '1', !!(@exam.data[:triangle_of_light_left] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][triangle_of_light_left]', '0', !!(@exam.data[:triangle_of_light_left] == '0') %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Perforaciones</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][perforations_right]', '1', !!(@exam.data[:perforations_right] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][perforations_right]', '0', !!(@exam.data[:perforations_right] == '0') %>
+                            </td>
+                            <td class="tg-amwm">Perforaciones</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][perforations_left]', '1', !!(@exam.data[:perforations_left] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][perforations_left]', '0', !!(@exam.data[:perforations_left] == '0') %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Abombamiento</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][bulging_right]', '1', !!(@exam.data[:bulging_right] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][bulging_right]', '0', !!(@exam.data[:bulging_right] == '0') %>
+                            </td>
+                            <td class="tg-amwm">Abombamiento</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][bulging_left]', '1', !!(@exam.data[:bulging_left] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][bulging_left]', '0', !!(@exam.data[:bulging_left] == '0') %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Tapón de cerumen</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][earwax_right]', '1', !!(@exam.data[:earwax_right] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][earwax_right]', '0', !!(@exam.data[:earwax_right] == '0') %>
+                            </td>
+                            <td class="tg-amwm">Tapón de cerumen</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][earwax_left]', '1', !!(@exam.data[:earwax_left] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][earwax_left]', '0', !!(@exam.data[:earwax_left] == '0') %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Otros</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][other_right]', '1', !!(@exam.data[:other_right] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][other_right]', '0', !!(@exam.data[:other_right] == '0') %>
+                            </td>
+                            <td class="tg-amwm">Otros</td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][other_left]', '1', !!(@exam.data[:other_left] == '1') %>
+                            </td>
+                            <td class="tg-amwm">
+                              <%= radio_button_tag 'exam[data][other_left]', '0', !!(@exam.data[:other_left] == '0') %>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <br>
+                      <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                        <tbody>
+                          <tr>
+                            <td class="tg-amwm" colspan="3">OTOSCOPIA</td>
+                            <td class="tg-amwm" colspan="4">
+                              <%= text_field_tag "exam[data][otoscopy]", @exam.data[:otoscopy], class: 'form-control col-lg-12' %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm" colspan="3">Observaciones</td>
+                            <td class="tg-0lax" colspan="4">
+                              <%= text_area_tag "exam[data][observations]", @exam.data[:observations], class: 'form-control col-lg-12' %>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="col-lg-12">
+                      <label></label>
+                    </div>
+                    <div class="col-lg-12">
+                      <label class="col-lg-12" style="text-align: center;">Audiograma</label>
+                    </div>
+                    <div class="col-lg-12">
+                      <label></label>
+                    </div>
+                    <table class="tg" style="undefined;table-layout: fixed; width: 995px">
+                      <colgroup>
+                        <col style="width: 84px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 30px">
+                        <col style="width: 84px">
+                        <col style="width: 60px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                        <col style="width: 60.88889px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-xldj" style="border-collapse:collapse; border: none;"></th>
+                          <th class="tg-amwm">250</th>
+                          <th class="tg-amwm">500</th>
+                          <th class="tg-amwm">1000<br></th>
+                          <th class="tg-amwm">2000</th>
+                          <th class="tg-amwm">3000</th>
+                          <th class="tg-amwm">4000</th>
+                          <th class="tg-amwm">6000</th>
+                          <th class="tg-amwm">8000</th>
+                          <th class="tg-0pky" rowspan="3" style="border-collapse:collapse; border: none;"></th>
+                          <th class="tg-0pky" style="border-collapse:collapse; border: none;"></th>
+                          <th class="tg-amwm">250</th>
+                          <th class="tg-amwm">500</th>
+                          <th class="tg-amwm">1000</th>
+                          <th class="tg-amwm">2000</th>
+                          <th class="tg-amwm">3000</th>
+                          <th class="tg-amwm">4000</th>
+                          <th class="tg-amwm">6000</th>
+                          <th class="tg-amwm">8000</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-amwm">O.D. Aéreo</td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od250_right]", @exam.data[:air_od250_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od500_right]", @exam.data[:air_od500_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od1000_right]", @exam.data[:air_od1000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od2000_right]", @exam.data[:air_od2000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od3000_right]", @exam.data[:air_od3000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od4000_right]", @exam.data[:air_od4000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-0pky">
+                            <%= text_field_tag "exam[data][air_od6000_right]", @exam.data[:air_od6000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-0pky">
+                            <%= text_field_tag "exam[data][air_od8000_right]", @exam.data[:air_od8000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-amwm">O.D. Aéreo</td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od250_left]", @exam.data[:air_od250_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od500_left]", @exam.data[:air_od500_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od1000_left]", @exam.data[:air_od1000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od2000_left]", @exam.data[:air_od2000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od3000_left]", @exam.data[:air_od3000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_od4000_left]", @exam.data[:air_od4000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-0pky">
+                            <%= text_field_tag "exam[data][air_od6000_left]", @exam.data[:air_od6000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-0pky">
+                            <%= text_field_tag "exam[data][air_od8000_left]", @exam.data[:air_od8000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-amwm">O.I. Aéreo</td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi250_right]", @exam.data[:air_oi250_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi500_right]", @exam.data[:air_oi500_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi1000_right]", @exam.data[:air_oi1000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi2000_right]", @exam.data[:air_oi2000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi3000_right]", @exam.data[:air_oi3000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi4000_right]", @exam.data[:air_oi4000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-0pky">
+                            <%= text_field_tag "exam[data][air_oi6000_right]", @exam.data[:air_oi6000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-0pky">
+                            <%= text_field_tag "exam[data][air_oi8000_right]", @exam.data[:air_oi8000_right], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-amwm">O.I. Aéreo</td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi250_left]", @exam.data[:air_oi250_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi500_left]", @exam.data[:air_oi500_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi1000_left]", @exam.data[:air_oi1000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi2000_left]", @exam.data[:air_oi2000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi3000_left]", @exam.data[:air_oi3000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-xldj">
+                            <%= text_field_tag "exam[data][air_oi4000_left]", @exam.data[:air_oi4000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-0pky">
+                            <%= text_field_tag "exam[data][air_oi6000_left]", @exam.data[:air_oi6000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-0pky">
+                            <%= text_field_tag "exam[data][air_oi8000_left]", @exam.data[:air_oi8000_left], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-lg-12">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <div class="col-lg-2">
+                    <label>Audiómetro marca</label>
+                    <%= text_field_tag "exam[data][audiometer_mark]", @exam.data[:audiometer_mark], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>Modelo</label>
+                    <%= text_field_tag "exam[data][model]", @exam.data[:model], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>Serie</label>
+                    <%= text_field_tag "exam[data][serie]", @exam.data[:serie], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>Procedencia</label>
+                    <%= text_field_tag "exam[data][origin]", @exam.data[:origin], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>Calibración acústica</label>
+                    <%= text_field_tag "exam[data][acoustic_calibration]", @exam.data[:acoustic_calibration], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>Calibración biológica</label>
+                    <%= text_field_tag "exam[data][biological_calibration]", @exam.data[:biological_calibration], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <label>Conclusión:</label>
+                  <%= text_area_tag "exam[data][conclusion]", @exam.data[:conclusion], class: 'form-control col-lg-12' %>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <label>Recomendaciones y control:</label>
+                  <%= text_area_tag "exam[data][recommendations]", @exam.data[:recommendations], class: 'form-control col-lg-12' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="form-group">
+            <div class="col-sm-offset-5 col-sm-10">
+              <%= f.submit 'Guardar', class:'btn btn-primary' %>
+              <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

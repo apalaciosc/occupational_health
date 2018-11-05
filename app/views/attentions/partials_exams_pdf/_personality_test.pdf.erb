@@ -1,0 +1,394 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="box box-default">
+        <div class="box-body">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-2">
+                <label>Test de Personalidad</label>
+              </div>
+            </div>
+          </div>
+          <div class="box-body table-responsive no-padding">
+            <style type="text/css">
+              .tg  {border-collapse:collapse;border-spacing:0;}
+      .tg td{font-family:Arial, sans-serif;font-size:14px;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+      .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:9px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+      .tg .tg-s6z2{text-align:center}
+      .tg .tg-hgcj{font-weight:bold;text-align:center}
+      .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+            </style>
+            <br/>
+            <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+              <colgroup>
+                <col style="width: 52.88889px">
+                  <col style="width: 801.88889px">
+                    <col style="width: 56.88889px">
+                      <col style="width: 56.88889px">
+                      </col>
+                    </col>
+                  </col>
+                </col>
+              </colgroup>
+              <tr>
+                <th class="tg-hgcj" colspan="2">
+                    MARCAR
+                </th>
+                <th class="tg-hgcj">
+                    SI
+                </th>
+                <th class="tg-hgcj">
+                    NO
+                </th>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                    1
+                </td>
+                <td>
+                    ¿Cree que el día no tiene bastantes horas para todas las cosas que debería hacer?
+                </td>
+                <td class="tg-hgcj">
+                    <%= radio_button_tag 'exam[data][question_1]', '1', !!(@exam.data[:question_1] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                    <%= radio_button_tag 'exam[data][question_1]', '0', !!(@exam.data[:question_1] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  2
+                </td>
+                <td>
+                  ¿Siempre se mueve, camina o come con rapidez?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_2]', '1', !!(@exam.data[:question_2] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_2]', '0', !!(@exam.data[:question_2] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  3
+                </td>
+                <td>
+                  Suele sentirse impaciente por el ritmo con el que se manejan los demás?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_3]', '1', !!(@exam.data[:question_3] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_3]', '0', !!(@exam.data[:question_3] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  4
+                </td>
+                <td>
+                  ¿Suele decir “ajá”, “bien, bien” o frases así para apremiar a una persona a que acabe de decir lo que le está contando?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_4]', '1', !!(@exam.data[:question_4] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_4]', '0', !!(@exam.data[:question_4] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  5
+                </td>
+                <td>
+                  ¿Tiene tendencia a terminar las frases de otra persona cuando ella duda?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_5]', '1', !!(@exam.data[:question_5] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_5]', '0', !!(@exam.data[:question_5] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  6
+                </td>
+                <td>
+                  ¿Le irrita que el coche que circula delante suyo vaya a una velocidad que usted considera demasiado lenta?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_6]', '1', !!(@exam.data[:question_6] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_6]', '0', !!(@exam.data[:question_6] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  7
+                </td>
+                <td>
+                  ¿Considera molesto tener que hacer cola o esperar turno para conseguir una mesa en un restaurante?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_7]', '1', !!(@exam.data[:question_7] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_7]', '0', !!(@exam.data[:question_7] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  8
+                </td>
+                <td>
+                  ¿Le resulta intolerable observar cómo otras personas realizan tareas que usted sabe que puede hacer más rápido?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_8]', '1', !!(@exam.data[:question_8] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_8]', '0', !!(@exam.data[:question_8] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  9
+                </td>
+                <td>
+                  ¿Le impacienta verse obligado a realizar tareas repetitivas, como firmar papeles o lavar platos, que son necesarias pero que le impiden hacer las cosas que realmente le interesan?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_9]', '1', !!(@exam.data[:question_9] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_9]', '0', !!(@exam.data[:question_9] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  10
+                </td>
+                <td>
+                  ¿Lee a toda prisa?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_10]', '1', !!(@exam.data[:question_10] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_10]', '0', !!(@exam.data[:question_10] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  11
+                </td>
+                <td>
+                  ¿Suele pensar o hacer dos o más cosas simultáneamente?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_11]', '1', !!(@exam.data[:question_11] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_11]', '0', !!(@exam.data[:question_11] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  12
+                </td>
+                <td>
+                  Mientras disfruta de un descanso ¿continúa pensando en sus problemas laborales, domésticos o profesionales?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_12]', '1', !!(@exam.data[:question_12] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_12]', '0', !!(@exam.data[:question_12] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  13
+                </td>
+                <td>
+                  ¿Tiene el hábito de acentuar excesivamente varias palabras que considera clave en su conversación ordinaria?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_13]', '1', !!(@exam.data[:question_13] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_13]', '0', !!(@exam.data[:question_13] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  14
+                </td>
+                <td>
+                  ¿Se esfuerza por llevar cualquier conversación hacia los temas que le interesan a usted?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_14]', '1', !!(@exam.data[:question_14] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_14]', '0', !!(@exam.data[:question_14] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  15
+                </td>
+                <td>
+                  ¿Se siente vagamente culpable cuando descansa y no hace nada durante varias horas o varios días?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_15]', '1', !!(@exam.data[:question_15] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_15]', '0', !!(@exam.data[:question_15] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  16
+                </td>
+                <td>
+                  ¿Intenta programar todo, para dejar cada vez menos margen a los imprevistos?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_16]', '1', !!(@exam.data[:question_16] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_16]', '0', !!(@exam.data[:question_16] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  17
+                </td>
+                <td>
+                  Al conversar, ¿da palmadas en la mesa o golpea con un puño la palma de la otra mano para dar más énfasis a un punto particular de la discusión?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_17]', '1', !!(@exam.data[:question_17] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_17]', '0', !!(@exam.data[:question_17] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  18
+                </td>
+                <td>
+                  En el trabajo ¿se somete a plazos difíciles de cumplir?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_18]', '1', !!(@exam.data[:question_18] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_18]', '0', !!(@exam.data[:question_18] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  19
+                </td>
+                <td>
+                  ¿Se ha descubierto apretando las mandíbulas, hasta el punto de que le rechinan los dientes?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_19]', '1', !!(@exam.data[:question_19] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_19]', '0', !!(@exam.data[:question_19] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  20
+                </td>
+                <td>
+                  ¿Lleva material relacionado con su trabajo o estudios a casa para trabajar por la noche?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_20]', '1', !!(@exam.data[:question_20] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_20]', '0', !!(@exam.data[:question_20] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  21
+                </td>
+                <td>
+                  ¿Acostumbra a evaluar en términos numéricos sus actividades?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_21]', '1', !!(@exam.data[:question_21] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_21]', '0', !!(@exam.data[:question_21] == '0') %>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-hgcj">
+                  22
+                </td>
+                <td>
+                  ¿Se siente insatisfecho con su actual trabajo o estudios?
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_22]', '1', !!(@exam.data[:question_22] == '1') %>
+                </td>
+                <td class="tg-hgcj">
+                  <%= radio_button_tag 'exam[data][question_22]', '0', !!(@exam.data[:question_22] == '0') %>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label>Conclusiones: </label>
+            <%= text_area_tag "exam[data][conclusion]", @exam.data[:conclusion], class: 'form-control', rows: '4' %>
+            </input>
+          </div>
+        </div>
+        <div class="col-l2">
+          <label>
+            <br/>
+          </label>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label>Recomendaciones: </label>
+            <%= text_area_tag "exam[data][recommendations]", @exam.data[:recommendations], class: 'form-control', rows: '4' %>
+            </input>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="form-group">
+            <div class="col-sm-offset-5 col-sm-10">
+              <%= f.submit 'Guardar', class:'btn btn-primary' %>
+              <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

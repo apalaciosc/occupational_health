@@ -95,6 +95,16 @@ class AttentionsController < ApplicationController
     @edit = 1
   end
 
+  def create_pdf_exam
+    @exam = Exam.find(params[:id])
+    @type_exam = TypeExam.find(@exam.type_exam_id)
+    respond_to do |format|
+     format.html
+     format.json
+     format.pdf {render template:"attentions/partials_exams_pdf/_#{@type_exam.view}", pdf: 'report', layout: 'pdf.html'}
+   end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_attention
@@ -108,5 +118,9 @@ class AttentionsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def attention_params
     params.require(:attention).permit(:employee_id, :nro_hc, :type_attention, :department, :province, :district, :general, :physical, :psychological, :radiology, :x_ray_oit, :pathological_findings, :audiometry, :spirometry, :ophthalmological, :electrocardiogram, :epworth_test, :structural_height_test, :stress_test, :personality_test, :odontogram, :occupational_medical_diagnosis, :other_diagnoses, :recommendations)
+  end
+
+  def exam_params
+    params.permit(:id, :data)
   end
 end
