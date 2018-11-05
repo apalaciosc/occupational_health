@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'exam/:id/edit', to: 'attentions#edit_exams', as: :exam_edit
   get 'attention/:id/new_exams', to: 'attentions#new_exams', as: :attention_new_exams
   post 'attention/:employee_id/create', to: 'attentions#create', as: :attention_create
+  post 'particular_attention', to: 'attentions#particular_attention', as: :particular_attention
   patch 'attention/:id/update_general', to: 'attentions#update_general', as: :attention_update_general
   match '/exams/save', to: 'exams#save_exam', via: [:post, :patch], as: :save_exam
   resources :employees
