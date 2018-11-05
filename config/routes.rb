@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :medicals
   resources :attentions
   get "/404", :to => "errors#error_404"
   get "/422", :to => "errors#error_404"
