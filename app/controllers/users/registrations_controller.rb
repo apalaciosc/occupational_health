@@ -28,14 +28,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     respond_to do |format|
       if updated
         format.js { render action: 'update', statuts: :updated }
-        format.html {
-          redirect_to root_path
-        }
+        format.html { redirect_to root_path, notice: "Actualizada correctamente."}
       else
         format.js { render json: resource.errors, status: :unprocessable_entity }
-        format.html {
-          redirect_to root_path
-        }
+        puts resource.errors.messages
+        format.html {redirect_to root_path, notice: "Ocurrió un error al actualizar."}
       end
     end
   end
@@ -60,6 +57,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def user_params
-    params.required(:user).permit(:email, :dni, :name, :lastname, :avatar, :phone, :position, :department, :address, :birthday, :aptitude, :interests, :role_id)
+    params.required(:user).permit(:password, :password_confirmation, :current_password,:email, :dni, :name, :lastname, :avatar, :phone, :position, :department, :address, :birthday, :aptitude, :interests, :role_id)
   end
 end
