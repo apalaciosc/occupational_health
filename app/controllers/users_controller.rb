@@ -32,6 +32,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if params[:user][:role_id].present?
       @user.role_id = params[:user][:role_id]
+      @user.first_change_password = false
       if @user.save
         flash[:notice] = "Rol actualizado correctamente."
         flash.keep(:notice)

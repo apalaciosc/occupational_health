@@ -20,6 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     if params[:user] && params[:user][:current_password].present? and params[:user][:password].present? and params[:user][:password_confirmation].present?
       updated = resource.update_with_password(user_params)
+      current_user.update(first_change_password: true)
     else
       self.resource.skip_password_validation = true
       self.resource.skip_password_confirmation_validation = true
@@ -57,6 +58,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def user_params
-    params.required(:user).permit(:password, :password_confirmation, :current_password,:email, :dni, :name, :lastname, :avatar, :phone, :position, :department, :address, :birthday, :aptitude, :interests, :role_id)
+    params.required(:user).permit(:password, :password_confirmation, :current_password,:email, :dni, :name, :lastname, :avatar, :phone, :position, :department, :address, :birthday, :aptitude, :interests, :role_id, :first_change_password)
   end
 end
