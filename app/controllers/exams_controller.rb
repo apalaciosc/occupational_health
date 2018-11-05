@@ -43,8 +43,4 @@ class ExamsController < ApplicationController
   def exam_params
     params.require(:exam).permit(:type_exam_id, :attention_id, :result, :data => {})
   end
-
-  def exam_params
-    params.permit(:id, :attention_id)
-  end
 end
