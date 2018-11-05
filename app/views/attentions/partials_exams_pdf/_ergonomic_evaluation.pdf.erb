@@ -1,0 +1,455 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="box box-default">
+        <div class="box-body">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-2">
+                <label class="col-lg-12">Ficha Músculo-Esquelética</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="col-lg-12">
+              <label>¿Tuvo episodio previo el doctor de espalda?</label>
+              <label></label>
+              <%= radio_button_tag 'exam[data][back?]', 'yes', !!(@exam.data[:back?] == 'yes') %>SI
+              <%= radio_button_tag 'exam[data][back?]', 'no', !!(@exam.data[:back?] == 'no') %>NO
+            </div>
+            <div class="col-lg-12">
+              <label></label>
+            </div>
+            <div class="col-lg-2">
+              <label>¿Levanta peso?</label>
+            </div>
+            <div class="col-lg-1">
+              SI
+              <%= radio_button_tag 'exam[data][kg?]', 'yes', !!(@exam.data[:kg?] == 'yes') %>
+            </div>
+            <b class="col-lg-1">¿Cuánto?</b>
+            <div class="col-lg-2">
+              <%= text_field_tag "exam[data][amount]", @exam.data[:amount], class: 'form-control col-lg-12' %>
+            </div>
+            <div class="col-lg-1">
+              NO
+              <%= radio_button_tag 'exam[data][kg?]', 'no', !!(@exam.data[:kg?] == 'no') %>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <style type="text/css">
+              .tg  {border-collapse:collapse;border-spacing:0;}
+              .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg .tg-baqh{text-align:center;vertical-align:top}
+              .tg .tg-hgcj{font-weight:bold;text-align:center}
+              .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+              </style>
+              <table class="tg" style="undefined;table-layout: fixed; width: 1020px">
+                <colgroup>
+                  <col style="width: 130.88889px">
+                  <col style="width: 120.88889px">
+                  <col style="width: 150.88889px">
+                  <col style="width: 130px">
+                  <col style="width: 140px">
+                  <col style="width: 60.88889px">
+                  <col style="width: 236.88889px">
+                </colgroup>
+                <tr>
+                  <th class="tg-hgcj">Aptitud de Espalda</th>
+                  <th class="tg-hgcj">Excelente</th>
+                  <th class="tg-hgcj">Bueno</th>
+                  <th class="tg-hgcj">Regular</th>
+                  <th class="tg-hgcj">Malo</th>
+                  <th class="tg-hgcj">Puntos</th>
+                  <th class="tg-hgcj">Observaciones</th>
+                </tr>
+                <tr>
+                  <td class="tg-hgcj">
+                    Flexibilidad / Fuerza
+                    <br>
+                    Abdomen
+                  </td>
+                  <td class="tg-hgcj">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_1]', '3', !!(@exam.data[:st_question_1] == '3') %>
+                      <img src="<%= asset_path 'abdomen.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-hgcj">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_1]', '2', !!(@exam.data[:st_question_1] == '2') %>
+                      <img src="<%= asset_path 'abs2.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-hgcj">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_1]', '1', !!(@exam.data[:st_question_1] == '1') %>
+                      <img src="<%= asset_path 'abs3.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-hgcj">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_1]', '0', !!(@exam.data[:st_question_1] == '0') %>
+                      <img src="<%= asset_path 'abs4.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-hgcj">
+                    <%= text_field_tag "exam[data][st_answer_1]", @exam.data[:st_answer_1], class: 'form-control', readonly: true %>
+                  </td>
+                  <td class="tg-hgcj">
+                    <%= text_field_tag "exam[data][observations_abdomen]", @exam.data[:observations_abdomen], class: 'form-control col-lg-12'%>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-hgcj">Cadera</td>
+                  <td class="tg-hgcj">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_2]', '3', !!(@exam.data[:st_question_2] == '3') %>
+                      <img src="<%= asset_path 'cadera.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-hgcj">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_2]', '2', !!(@exam.data[:st_question_2] == '2') %>
+                      <img src="<%= asset_path 'cadera2.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-hgcj">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_2]', '1', !!(@exam.data[:st_question_2] == '1') %>
+                      <img src="<%= asset_path 'cadera3.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-hgcj">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_2]', '0', !!(@exam.data[:st_question_2] == '0') %>
+                      <img src="<%= asset_path 'cadera4.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-hgcj">
+                    <%= text_field_tag "exam[data][st_answer_2]", @exam.data[:st_answer_2], class: 'form-control', readonly: true %>
+                  </td>
+                  <td class="tg-hgcj">
+                    <%= text_field_tag "exam[data][observations_hip]", @exam.data[:observations_hip], class: 'form-control col-lg-12'%>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-amwm">
+                    Muslo
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_3]', '3', !!(@exam.data[:st_question_3] == '3') %>
+                      <img src="<%= asset_path 'muslo.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_3]', '2', !!(@exam.data[:st_question_3] == '2') %>
+                      <img src="<%= asset_path 'muslo2.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_3]', '1', !!(@exam.data[:st_question_3] == '1') %>
+                      <img src="<%= asset_path 'muslo3.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_3]', '0', !!(@exam.data[:st_question_3] == '0') %>
+                      <img src="<%= asset_path 'muslo4.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= text_field_tag "exam[data][st_answer_3]", @exam.data[:st_answer_3], class: 'form-control', readonly: true %>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= text_field_tag "exam[data][observations_thigh]", @exam.data[:observations_thigh], class: 'form-control col-lg-12'%>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-amwm">Abdomen Lateral</td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_4]', '3', !!(@exam.data[:st_question_4] == '3') %>
+                      <img src="<%= asset_path 'ab.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_4]', '2', !!(@exam.data[:st_question_4] == '2') %>
+                      <img src="<%= asset_path 'ab2.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_4]', '1', !!(@exam.data[:st_question_4] == '1') %>
+                      <img src="<%= asset_path 'ab3.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_4]', '0', !!(@exam.data[:st_question_4] == '0') %>
+                      <img src="<%= asset_path 'ab4.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= text_field_tag "exam[data][st_answer_4]", @exam.data[:st_answer_4], class: 'form-control', readonly: true %>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= text_field_tag "exam[data][observations_lateral]", @exam.data[:observations_lateral], class: 'form-control col-lg-12'%>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-amwm" colspan="5">Total</td>
+                  <td class="tg-baqh">
+                    <%= text_field_tag "exam[data][total1]", @exam.data[:total1], class: 'form-control', readonly: true %>
+                  </td>
+                </tr>
+              </table>
+              <div class="col-lg-12">
+                <label></label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <label></label>
+          </div>
+          <div class="col-lg-12">
+            <div class="box-body table-responsive no-padding">
+              <table class="tg" style="undefined;table-layout: fixed; width: 1020px">
+                <colgroup>
+                  <col style="width: 247.88889px">
+                  <col style="width: 172.88889px">
+                  <col style="width: 150.88889px">
+                  <col style="width: 153.88889px">
+                  <col style="width: 99.88889px">
+                  <col style="width: 182.88889px">
+                </colgroup>
+                <tr>
+                  <th class="tg-amwm">Rangos Articulares</th>
+                  <th class="tg-amwm">Óptimo</th>
+                  <th class="tg-amwm">Limitado</th>
+                  <th class="tg-amwm">Muy Limitado</th>
+                  <th class="tg-amwm">Puntos</th>
+                  <th class="tg-amwm">Dolor con Resistencia</th>
+                </tr>
+                <tr>
+                  <td class="tg-amwm">
+                    Abducción de Hombro
+                    <br>
+                    (Normal 0° - 180°)
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_5]', '3', !!(@exam.data[:st_question_5] == '3') %>
+                      <img src="<%= asset_path 'abdu.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_5]', '2', !!(@exam.data[:st_question_5] == '2') %>
+                      <img src="<%= asset_path 'abdu2.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_5]', '1', !!(@exam.data[:st_question_5] == '1') %>
+                      <img src="<%= asset_path 'abdu3.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= text_field_tag "exam[data][st_answer_5]", @exam.data[:st_answer_5], class: 'form-control', readonly: true %>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= radio_button_tag 'exam[data][queen_1?]', 'si', !!(@exam.data[:queen_1?] == 'si') %>SI
+                    <%= radio_button_tag 'exam[data][queen_1?]', 'no', !!(@exam.data[:queen_1?] == 'no') %>NO
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-amwm">
+                    Aducción de Hombro
+                    <br>
+                    (Normal 0° - 80°)
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_6]', '3', !!(@exam.data[:st_question_6] == '3') %>
+                      <img src="<%= asset_path 'homb.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_6]', '2', !!(@exam.data[:st_question_6] == '2') %>
+                      <img src="<%= asset_path 'homb2.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_6]', '1', !!(@exam.data[:st_question_6] == '1') %>
+                      <img src="<%= asset_path 'homb3.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= text_field_tag "exam[data][st_answer_6]", @exam.data[:st_answer_6], class: 'form-control', readonly: true %>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= radio_button_tag 'exam[data][queen_2?]', 'si', !!(@exam.data[:queen_2?] == 'si') %>SI
+                    <%= radio_button_tag 'exam[data][queen_2?]', 'no', !!(@exam.data[:queen_2?] == 'no') %>NO
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-amwm">
+                    Rotación Externa
+                    <br>
+                    (Normal 0° - 90°)
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_7]', '3', !!(@exam.data[:st_question_7] == '3') %>
+                      <img src="<%= asset_path 'rot.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_7]', '2', !!(@exam.data[:st_question_7] == '2') %>
+                      <img src="<%= asset_path 'rot2.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_7]', '1', !!(@exam.data[:st_question_7] == '1') %>
+                      <img src="<%= asset_path 'rot3.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= text_field_tag "exam[data][st_answer_7]", @exam.data[:st_answer_7], class: 'form-control', readonly: true %>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= radio_button_tag 'exam[data][queen_3?]', 'si', !!(@exam.data[:queen_3?] == 'si') %>SI
+                    <%= radio_button_tag 'exam[data][queen_3?]', 'no', !!(@exam.data[:queen_3?] == 'no') %>NO
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-amwm">
+                    Abducción Interna
+                    <br>
+                    (Normal 0° - 90°)
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_8]', '3', !!(@exam.data[:st_question_8] == '3') %>
+                      <img src="<%= asset_path 'roti.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_8]', '2', !!(@exam.data[:st_question_8] == '2') %>
+                      <img src="<%= asset_path 'roti2.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <label>
+                      <%= radio_button_tag 'exam[data][st_question_8]', '1', !!(@exam.data[:st_question_8] == '1') %>
+                      <img src="<%= asset_path 'roti3.png' %>"></img>
+                    </label>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= text_field_tag "exam[data][st_answer_8]", @exam.data[:st_answer_8], class: 'form-control', readonly: true %>
+                  </td>
+                  <td class="tg-amwm">
+                    <%= radio_button_tag 'exam[data][queen_4?]', 'si', !!(@exam.data[:queen_4?] == 'si') %>SI
+                    <%= radio_button_tag 'exam[data][queen_4?]', 'no', !!(@exam.data[:queen_4?] == 'no') %>NO
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tg-amwm " colspan="4">Total</td>
+                  <td class="tg-0lax">
+                    <%= text_field_tag "exam[data][total_2]", @exam.data[:total_2], class: 'form-control', readonly: true %>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="form-group">
+            <div class="col-sm-offset-5 col-sm-10">
+              <%= f.submit 'Guardar', class:'btn btn-primary' %>
+              <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+//****************************++++Musculo-esqueletica*********************************
+$('input[type=radio][name="exam[data][st_question_1]"]').on( 'change', function() {
+  ExamSkeletal('st_question_1')
+});
+$('input[type=radio][name="exam[data][st_question_2]"]').on( 'change', function() {
+  ExamSkeletal('st_question_2')
+});
+$('input[type=radio][name="exam[data][st_question_3]"]').on( 'change', function() {
+  ExamSkeletal('st_question_3')
+});
+$('input[type=radio][name="exam[data][st_question_4]"]').on( 'change', function() {
+  ExamSkeletal('st_question_4')
+});
+$('input[type=radio][name="exam[data][st_question_5]"]').on( 'change', function() {
+  ExamSkeletal('st_question_5')
+});
+$('input[type=radio][name="exam[data][st_question_6]"]').on( 'change', function() {
+  ExamSkeletal('st_question_6')
+});
+$('input[type=radio][name="exam[data][st_question_7]"]').on( 'change', function() {
+  ExamSkeletal('st_question_7')
+});
+$('input[type=radio][name="exam[data][st_question_8]"]').on( 'change', function() {
+  ExamSkeletal('st_question_8')
+});
+
+function ExamSkeletal(quest){
+  var value_radio = $('input[name="exam[data][' + quest + ']"]:checked').val();
+  var num = quest.split('_')
+  $('#exam_data_st_answer_' + num[2]).val(value_radio);
+  if (quest == 'st_question_1' || quest == 'st_question_2' || quest == 'st_question_3' || quest == 'st_question_4'){
+    if (!$('#exam_data_st_answer_1').val() || !$('#exam_data_st_answer_2').val() || !$('#exam_data_st_answer_3').val() || !$('#exam_data_st_answer_4').val()) {
+      $('#exam_data_total1').val('-')
+    }
+    else{
+      var total = parseInt($('#exam_data_st_answer_1').val()) + parseInt($('#exam_data_st_answer_2').val()) + parseInt($('#exam_data_st_answer_3').val()) + parseInt($('#exam_data_st_answer_4').val())
+      console.log(total)
+      $('#exam_data_total1').val(total)
+    }
+  }
+  else if (quest == 'st_question_5' || quest == 'st_question_6' || quest == 'st_question_7' || quest == 'st_question_8'){
+    if (!$('#exam_data_st_answer_5').val() || !$('#exam_data_st_answer_6').val() || !$('#exam_data_st_answer_7').val() || !$('#exam_data_st_answer_8').val()) {
+      $('#exam_data_total_2').val('-')
+    }
+    else{
+      var total = parseInt($('#exam_data_st_answer_5').val()) + parseInt($('#exam_data_st_answer_6').val()) + parseInt($('#exam_data_st_answer_7').val()) + parseInt($('#exam_data_st_answer_8').val())
+      $('#exam_data_total_2').val(total)
+    }
+  }
+}
+</script>
+<% end %>

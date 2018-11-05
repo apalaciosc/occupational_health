@@ -1,0 +1,609 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#activity" aria-expanded="true">Evaluación de agudeza visual</a>
+        </li>
+        <li class="">
+          <a data-toggle="tab" href="#ishihara" aria-expanded="false">Test de Ishihara</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="activity">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus">
+                  </i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>II. Test de Ishihara:</label>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 1</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_1]", @exam.data[:oi_1], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_1]", @exam.data[:od_1], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 2</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_2]", @exam.data[:oi_2], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_2]", @exam.data[:od_2], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 3</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_3]", @exam.data[:oi_3], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_3]", @exam.data[:od_3], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 4</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_4]", @exam.data[:oi_4], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_4]", @exam.data[:od_4], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 5</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_5]", @exam.data[:oi_5], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_6]", @exam.data[:od_6], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 6</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_6]", @exam.data[:oi_6], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_6]", @exam.data[:od_6], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 7</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_7]", @exam.data[:oi_7], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_7]", @exam.data[:od_7], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 8</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_8]", @exam.data[:oi_8], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_8]", @exam.data[:od_8], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 9</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_9]", @exam.data[:oi_9], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_9]", @exam.data[:od_9], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 10</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_10]", @exam.data[:oi_10], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_10]", @exam.data[:od_10], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 11</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_11]", @exam.data[:oi_11], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_11]", @exam.data[:od_11], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 12</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_12]", @exam.data[:oi_12], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_12]", @exam.data[:od_12], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 13</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_13]", @exam.data[:oi_13], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_13]", @exam.data[:od_13], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 14</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_14]", @exam.data[:oi_14], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_14]", @exam.data[:od_14], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 15</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_15]", @exam.data[:oi_15], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_15]", @exam.data[:od_15], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 16</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_16]", @exam.data[:oi_16], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_16]", @exam.data[:od_16], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 17</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_17]", @exam.data[:oi_17], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_17]", @exam.data[:od_17], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 18</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_18]", @exam.data[:oi_18], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_18]", @exam.data[:od_18], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 19</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_19]", @exam.data[:oi_19], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_19]", @exam.data[:od_19], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 20</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_20]", @exam.data[:oi_20], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_20]", @exam.data[:od_20], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 21</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_21]", @exam.data[:oi_21], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_21]", @exam.data[:od_21], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 22</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_22]", @exam.data[:oi_22], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_22]", @exam.data[:od_22], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 23</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_23]", @exam.data[:oi_23], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_23]", @exam.data[:od_23], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label>Lámina 24</label>
+                  <br>
+                  <div class="col-lg-6">
+                    <label>OI</label>
+                    <%= text_field_tag "exam[data][oi_24]", @exam.data[:oi_24], class: 'form-control col-lg-12' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>OD</label>
+                    <%= text_field_tag "exam[data][od_24]", @exam.data[:od_24], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="form-group">
+              <div class="col-sm-offset-5 col-sm-10">
+                <%= f.submit 'Guardar', class:'btn btn-primary' %>
+                <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="ishihara">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>I. Datos Generales:</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <style type="text/css">
+                  .tg  {border-collapse:collapse;border-spacing:0;}
+                  .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                  .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                  .tg .tg-88nc{font-weight:bold;border-color:inherit;text-align:center}
+                  .tg .tg-uys7{border-color:inherit;text-align:center}
+                  .tg .tg-xldj{border-color:inherit;text-align:left}
+                  .tg .tg-7btt{font-weight:bold;border-color:inherit;text-align:center;vertical-align:top}
+                  .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+                  </style>
+                  <table class="tg table-hover" style="undefined;table-layout: fixed; width: 985px">
+                    <colgroup>
+                      <col style="width: 318px">
+                      <col style="width: 194px">
+                      <col style="width: 108px">
+                      <col style="width: 107px">
+                      <col style="width: 81px">
+                      <col style="width: 77px">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th class="tg-uys7" rowspan="5">
+                          <span style="font-weight:bold">AGUDEZA VISUAL</span>
+                        </th>
+                        <th class="tg-uys7" rowspan="2">
+                          <span style="font-weight:bold">OJOS</span>
+                        </th>
+                        <th class="tg-uys7" colspan="2">
+                          <span style="font-weight:bold">SIN CORRECTOR</span>
+                        </th>
+                        <th class="tg-uys7" colspan="2">
+                          <span style="font-weight:bold">CON CORRECTOR</span>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td class="tg-88nc">OD.</td>
+                        <td class="tg-88nc">OI.</td>
+                        <td class="tg-88nc">OD.</td>
+                        <td class="tg-88nc">OI</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-uys7">
+                          <span style="font-weight:bold">VISIÓN CERCANA</span>
+                        </td>
+                        <td class="tg-xldj">
+                          <%= text_field_tag "exam[data][ishihara_od1]", @exam.data[:ishihara_od1], class: 'form-control col-lg-12' %>
+                        </td>
+                        <td class="tg-xldj">
+                          <%= text_field_tag "exam[data][ishihara_oi1]", @exam.data[:ishihara_oi1], class: 'form-control col-lg-12' %>
+                        </td>
+                        <td class="tg-xldj">
+                          <%= text_field_tag "exam[data][ishihara_od2]", @exam.data[:ishihara_od2], class: 'form-control col-lg-12' %>
+                        </td>
+                        <td class="tg-xldj">
+                          <%= text_field_tag "exam[data][ishihara_oi2]", @exam.data[:ishihara_oi2], class: 'form-control col-lg-12' %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-uys7">
+                          <span style="font-weight:bold">VISIÓN DE LEJOS</span>
+                        </td>
+                        <td class="tg-xldj">
+                          <%= text_field_tag "exam[data][ishihara_od3]", @exam.data[:ishihara_od3], class: 'form-control col-lg-12' %>
+                        </td>
+                        <td class="tg-xldj">
+                          <%= text_field_tag "exam[data][ishihara_oi3]", @exam.data[:ishihara_oi3], class: 'form-control col-lg-12' %>
+                        </td>
+                        <td class="tg-xldj">
+                          <%= text_field_tag "exam[data][ishihara_od4]", @exam.data[:ishihara_od4], class: 'form-control col-lg-12' %>
+                        </td>
+                        <td class="tg-xldj">
+                          <%= text_field_tag "exam[data][ishihara_oi4]", @exam.data[:ishihara_oi4], class: 'form-control col-lg-12' %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-7btt">Derecho:</td>
+                        <td class="tg-0pky">
+                          <%= text_field_tag "exam[data][ishihara_od5]", @exam.data[:ishihara_od5], class: 'form-control col-lg-12' %>
+                        </td>
+                        <td class="tg-7btt">Izquierdo:</td>
+                        <td class="tg-0pky" colspan="2">
+                          <%= text_field_tag "exam[data][ishihara_od6]", @exam.data[:ishihara_od6], class: 'form-control col-lg-12' %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">CAMPO VISUAL :</span>
+                        </td>
+                        <td class="tg-0pky" colspan="5">
+                          <%= select_tag("exam[data][select_option1]", options_for_select([["Elija una opción","0"],["No aplica","1"],["Adecuado","2"],["No adecuado","3"]], @exam.data[:select_option1] ), class: 'form-control') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">VISIÓN DE PROFUNDIDAD :</span>
+                        </td>
+                        <td class="tg-0pky" colspan="5">
+                          <%= select_tag("exam[data][select_option2]", options_for_select([["Elija una opción","0"],["No aplica","1"],["Adecuado","2"],["No adecuado","3"]], @exam.data[:select_option2] ), class: 'form-control') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">
+                            DISCRIMINACIÓN DE COLORES :
+                          </span>
+                        </td>
+                        <td class="tg-0pky" colspan="5">
+                          <%= select_tag("exam[data][select_option3]", options_for_select([["Elija una opción","0"],["No aplica","1"],["Adecuado","2"],["No adecuado","3"]], @exam.data[:select_option3] ), class: 'form-control') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">DESVIACIÓN DE EJE VISUAL VERTICAL :</span>
+                        </td>
+                        <td class="tg-0pky" colspan="5">
+                          <%= select_tag("exam[data][select_option4]", options_for_select([["Elija una opción","0"],["No aplica","1"],["Adecuado","2"],["No adecuado","3"]], @exam.data[:select_option4] ), class: 'form-control') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">
+                            DESVIACIÓN DE EJE VISUAL HORIZONTAL:
+                          </span>
+                        </td>
+                        <td class="tg-0pky" colspan="5">
+                          <%= select_tag("exam[data][select_option5]", options_for_select([["Elija una opción","0"],["No aplica","1"],["Adecuado","2"],["No adecuado","3"]], @exam.data[:select_option5] ), class: 'form-control') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">VISIÓN NOCTURNA :</span>
+                        </td>
+                        <td class="tg-0pky" colspan="5">
+                          <%= select_tag("exam[data][select_option6]", options_for_select([["Elija una opción","0"],["No aplica","1"],["Adecuado","2"],["No adecuado","3"]], @exam.data[:select_option6] ), class: 'form-control') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">ENCANDILAMIENTO :</span>
+                        </td>
+                        <td class="tg-0pky" colspan="5">
+                          <%= select_tag("exam[data][select_option7]", options_for_select([["Elija una opción","0"],["No aplica","1"],["Adecuado","2"],["No adecuado","3"]], @exam.data[:select_option7] ), class: 'form-control') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">REACCIÓN DE ENCANDILAMIENTO :</span>
+                        </td>
+                        <td class="tg-0pky" colspan="5">
+                          <%= select_tag("exam[data][select_option8]", options_for_select([["Elija una opción","0"],["No aplica","1"],["Adecuado","2"],["No adecuado","3"]], @exam.data[:select_option8] ), class: 'form-control') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">TEST DE ISHIHARA:</span>
+                        </td>
+                        <td class="tg-0pky" colspan="5">
+                          <%= select_tag("exam[data][select_option9]", options_for_select([["Elija una opción","0"],["No aplica","1"],["Adecuado","2"],["No adecuado","3"]], @exam.data[:select_option9] ), class: 'form-control') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">TONOMETRIA :</span>
+                        </td>
+                        <td class="tg-7btt">Derecho:</td>
+                        <td class="tg-0pky">
+                          <%= text_field_tag "exam[data][tonometria_right]", @exam.data[:tonometria_right], class: 'form-control col-lg-12' %>
+                        </td>
+                        <td class="tg-7btt">Izquierdo:</td>
+                        <td class="tg-0pky" colspan="2">
+                          <%= text_field_tag "exam[data][tonometria_left]", @exam.data[:tonometria_left], class: 'form-control col-lg-12' %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">ESTEREOPSIS:</span>
+                        </td>
+                        <td class="tg-0pky" colspan="5">
+                          <%= select_tag("exam[data][select_option10]", options_for_select([["Elija una opción","0"],["No aplica","1"],["Adecuado","2"],["No adecuado","3"]], @exam.data[:select_option10] ), class: 'form-control') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">FORIA :</span>
+                        </td>
+                        <td class="tg-0pky" colspan="5">
+                          <%= select_tag("exam[data][select_option11]", options_for_select([["Elija una opción","0"],["No aplica","1"],["Adecuado","2"],["No adecuado","3"]], @exam.data[:select_option11] ), class: 'form-control') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0pky">
+                          <span style="font-weight:bold">TEST DE SCHIRMER :</span>
+                        </td>
+                        <td class="tg-0pky" colspan="2">
+                          <%= text_field_tag "exam[data][test_schirmer1]", @exam.data[:test_schirmer1], class: 'form-control col-lg-12' %>
+                        </td>
+                        <td class="tg-0pky" colspan="3">
+                          <%= text_field_tag "exam[data][test_schirmer2]", @exam.data[:test_schirmer2], class: 'form-control col-lg-12' %>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <label>Conclusiones:</label>
+                </div>
+                <div class="col-lg-12">
+                  <%= text_area_tag "exam[data][conclusion]", @exam.data[:conclusion], class: 'form-control col-lg-12' %>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <label>Recomendaciones:</label>
+                </div>
+                <div class="col-lg-12">
+                  <%= text_area_tag "exam[data][recommendations]", @exam.data[:recommendations], class: 'form-control col-lg-12' %>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <label></label>
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="form-group">
+              <div class="col-lg-offset-5 col-lg-12">
+                <%= f.submit 'Guardar', class:'btn btn-primary' %>
+                <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

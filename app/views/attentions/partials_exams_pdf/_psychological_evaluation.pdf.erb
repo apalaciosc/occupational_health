@@ -1,0 +1,267 @@
+<%= form_for(@exam, url: save_exam_path, remote: 'true') do |f| %>
+<%= hidden_field_tag "exam[type_exam_id]", "#{@type_exam.id}" %>
+<% if @edit == 0 %>
+<%= hidden_field_tag "exam[attention_id]", "#{@attention.id}" %>
+<% else %>
+<%= hidden_field_tag "exam[exam_id]", "#{@exam.id}" %>
+<% end %>
+<div class="box box-default">
+  <div class="box-header with-border">
+    <div class="box-tools pull-right">
+      <button class="btn btn-box-tool" data-widget="collapse" type="button">
+        <i class="fa fa-minus"></i>
+      </button>
+    </div>
+  </div>
+  <div class="box-body">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label>I. Motivo de la Evaluación:</label>
+          <%= text_area_tag "exam[data][evaluation_reason]", @exam.data[:evaluation_reason], class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label>II. Observación de Conducta:</label>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label>Presentación:</label>
+            <%= radio_button_tag 'exam[data][presentation]', 'Adecuado', !!(@exam.data[:presentation] == 'Adecuado') %> Adecuado
+            <%= radio_button_tag 'exam[data][presentation]', 'Inadecuado', !!(@exam.data[:presentation] == 'Inadecuado') %> Inadecuado
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="form-group">
+            <label>Postura:</label>
+            <%= radio_button_tag 'exam[data][posture]', 'Erguida', !!(@exam.data[:posture] == 'Erguida') %> Erguida
+            <%= radio_button_tag 'exam[data][posture]', 'Encorvada', !!(@exam.data[:posture] == 'Encorvada') %> Encorvada
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="col-lg-12">
+          <label>Discurso:</label>
+        </div>
+        <div class="col-lg-12">
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label>Ritmo:</label>
+              <%= radio_button_tag 'exam[data][rhythm]', 'Lento', !!(@exam.data[:rhythm] == 'Lento') %> Lento
+              <%= radio_button_tag 'exam[data][rhythm]', 'Rapido', !!(@exam.data[:rhythm] == 'Rapido') %> Rapido
+              <%= radio_button_tag 'exam[data][rhythm]', 'Fluido', !!(@exam.data[:rhythm] == 'Fluido') %> Fluido
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label>Tono:</label>
+              <%= radio_button_tag 'exam[data][tone]', 'Bajo', !!(@exam.data[:tone] == 'Lento') %> Bajo
+              <%= radio_button_tag 'exam[data][tone]', 'Moderado', !!(@exam.data[:tone] == 'Moderado') %> Moderado
+              <%= radio_button_tag 'exam[data][tone]', 'Alto', !!(@exam.data[:tone] == 'Alto') %> Alto
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label>Articulación:</label>
+              <%= radio_button_tag 'exam[data][joint]', 'Con dificultad', !!(@exam.data[:joint] == 'Con dificultad') %> Con dificultad
+              <%= radio_button_tag 'exam[data][joint]', 'Sin dificultad', !!(@exam.data[:joint] == 'Sin dificultad') %> Sin dificultad
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="col-lg-12">
+          <label>Orientacion:</label>
+        </div>
+        <div class="col-lg-12">
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label>Tiempo:</label>
+              <%= radio_button_tag 'exam[data][time]', 'Orientado', !!(@exam.data[:time] == 'Orientado') %> Orientado
+              <%= radio_button_tag 'exam[data][time]', 'Desorientado', !!(@exam.data[:time] == 'Desorientado') %> Desorientado
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label>Espacio:</label>
+              <%= radio_button_tag 'exam[data][space]', 'Orientado', !!(@exam.data[:space] == 'Orientado') %> Orientado
+              <%= radio_button_tag 'exam[data][space]', 'Desorientado', !!(@exam.data[:space] == 'Desorientado') %> Desorientado
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label>Persona:</label>
+              <%= radio_button_tag 'exam[data][person]', 'Orientado', !!(@exam.data[:person] == 'Orientado') %> Orientado
+              <%= radio_button_tag 'exam[data][person]', 'Desorientado', !!(@exam.data[:person] == 'Desorientado') %> Desorientado
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label>III. Resultado de la evaluación:</label>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label>Nivel Intelectual</label>
+            <%= text_field_tag "exam[data][intelectual_level]", @exam.data[:intelectual_level], class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label>Coordinación viso motriz</label>
+            <%= text_field_tag "exam[data][viso_motriz]", @exam.data[:viso_motriz], class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label>Nivel de memoria</label>
+            <%= text_field_tag "exam[data][memory_level]", @exam.data[:memory_level], class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Personalidad</label>
+            <%= text_field_tag "exam[data][personality]", @exam.data[:personality], class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Afectividad</label>
+            <%= text_field_tag "exam[data][afectivity]", @exam.data[:afectivity], class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label>IV. Conclusiones:</label>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Área Cognitiva</label>
+            <%= text_field_tag "exam[data][cognitive_area]", @exam.data[:cognitive_area], class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Área emocional</label>
+            <%= text_field_tag "exam[data][emocional_area]", @exam.data[:emocional_area], class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label>V. Conclusiones:</label>
+          <%= text_area_tag "exam[data][conclusions]", @exam.data[:conclusions], class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label>VII. Condición final:</label>
+          <%= select_tag("exam[data][final_condition]", options_for_select([["Apto",1],["No Apto",2]], @exam.data[:final_condition] ), class:"form-control") %>
+        </div>
+      </div>
+    </div>
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg .tg-hgcj{font-weight:bold;text-align:center}
+    .tg .tg-s268{text-align:left}
+    </style>
+    <div class="col-lg-12">
+      <div class="col-lg-6">
+        <div class="box-body table-responsive no-padding">
+          <table class="tg" style="undefined;table-layout: fixed; width: 457px">
+            <colgroup>
+              <col style="width: 112px">
+              <col style="width: 345px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="tg-hgcj">
+                  Puntaje
+                </th>
+                <th class="tg-hgcj">
+                  Prueba Psicológica
+                </th>
+              </tr>
+              <tr>
+                <td class="tg-s268" style="text-align: center;">
+                  <%= check_box_tag 'exam[data][mips]', 'yes',  @exam.data[:mips]%>
+                </td>
+                <td class="tg-s268">
+                  Inventario Millon de estilos de personalidad - MIPS
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-s268" style="text-align: center;">
+                  <%= check_box_tag 'exam[data][mps]', 'yes',  @exam.data[:mps]%>
+                </td>
+                <td class="tg-s268">
+                  Escala de motivaciones Psicosociales - MPS
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-s268" style="text-align: center;">
+                  <%= check_box_tag 'exam[data][maslach]', 'yes',  @exam.data[:maslach]%>
+                </td>
+                <td class="tg-s268">
+                  Inventario de Burnout de Maslach
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-s268" style="text-align: center;">
+                  <%= check_box_tag 'exam[data][working_environment]', 'yes',  @exam.data[:working_environment]%>
+                </td>
+                <td class="tg-s268">
+                  Clima Laboral
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-s268" style="text-align: center;">
+                  <%= check_box_tag 'exam[data][anxiety_and_depression]', 'yes',  @exam.data[:anxiety_and_depression]%>
+                </td>
+                <td class="tg-s268">
+                  Inventario de Ansiedad y Depresion ZUNG
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-s268" style="text-align: center;">
+                  <%= check_box_tag 'exam[data][human_figure]', 'yes',  @exam.data[:human_figure]%>
+                </td>
+                <td class="tg-s268">
+                  Figura Humana
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-s268" style="text-align: center;">
+                  <%= check_box_tag 'exam[data][bender_test]', 'yes',  @exam.data[:bender_test]%>
+                </td>
+                <td class="tg-s268">Test de BENDER</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form class="form-horizontal">
+    <div class="box-body">
+      <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-10">
+          <%= f.submit 'Guardar', class:'btn btn-primary' %>
+          <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<% end %>
