@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'medicals/fmo' => 'medicals#fmo'
   get 'employees/fmo' => 'employees#fmo'
   get 'employees/roadmap' => 'employees#roadmap'
-  get 'attention/:id/exams/:id', to: 'attentions#create_pdf_exam', as: :create_pdf_exam
+  get 'exam/:id', to: 'attentions#create_pdf_exam', as: :create_pdf_exam
   get 'attention/:id/exams', to: 'attentions#exams', as: :attention_exams
   get 'exam/:id/edit', to: 'attentions#edit_exams', as: :exam_edit
   get 'attention/:id/new_exams', to: 'attentions#new_exams', as: :attention_new_exams
