@@ -21,9 +21,11 @@ Rails.application.routes.draw do
   devise_for :users
   patch '/users/:id', to: 'users#update_profile'
   get '/users', to: 'users#index', as: :users
+  post '/users/create/:id', to: 'users#create_user', as: :users_create
   resources :users do
     collection do
       get 'edit_profile'
+      get 'new_user'
     end
   end
   root 'home#index'

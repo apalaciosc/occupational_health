@@ -26,16 +26,26 @@ class UsersController < ApplicationController
     end
   end
 
-  def new
+  def new_user
     @user = User.new
   end
 
-  def edit
+  def create_user
+    @user = User.new(user_params)
+    @user.password = 'saludocupacional'
+    if @user.save
+      flash[:notice] = "Usuario creado correctamente con la contraseña por defecto: saludocupacional"
+      flash.keep(:notice)
+      render js: "window.location = '/users'"
+    else
+      puts @user.errors.messages
+      render js: 'swal("Alerta", "Por favor verificar todos los datos.", "warning");'
+    end
   end
 
   private
 
   def user_params
-    params.required(:user).permit(:email, :dni, :name, :lastname, :avatar, :phone, :position, :department, :address, :birthday, :aptitude, :interests)
+    params.required(:user).permit(:email, :dni, :name, :lastname, :avatar, :phone, :position, :department, :address, :birthday, :aptitude, :interests, :role_id)
   end
 end
