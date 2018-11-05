@@ -6,4 +6,8 @@ module UsersHelper
       ['Recepcionista','recepcionist']
     ]
   end
+
+  def areas_for_select
+    Area.all.pluck(:name, :id)
+  end
 end
