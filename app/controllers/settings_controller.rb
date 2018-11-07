@@ -1,12 +1,15 @@
 class SettingsController < ApplicationController
-  before_action :setting, only: [:settings, :save_settings]
+  before_action :setting, only: [:config_settings, :save_settings]
 
   def config_settings
   end
 
   def save_settings
-    @setting.update(params[:setting].permit!)
-    redirect_to config_settings_path
+    if @setting.update(params[:setting].permit!)
+      flash[:notice] = "Configuración actualizada correctamente."
+      flash.keep(:notice)
+      redirect_to config_settings_path
+    end
   end
 
   protected
