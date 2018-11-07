@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/505", :to => "errors#error_505"
   get 'config_settings', to: 'settings#config_settings', as: :config_settings
   post 'save_settings', to: 'settings#save_settings', as: :save_settings
+  get 'settings/data_license', to: 'settings#data_license', as: :setting_data_license
   get 'users/medicals', to: 'users#index_medicals', as: :index_medicals
   get 'users/recepcionists', to: 'users#index_recepcionists', as: :index_recepcionists
   get 'employees/fmo' => 'employees#fmo'
