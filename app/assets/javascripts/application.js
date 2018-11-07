@@ -28,6 +28,7 @@
 //= require cocoon
 //= require type_exams
 //= require exams
+//= require users
 //= require chosen-jquery
 //= require bootstrap_notify
 

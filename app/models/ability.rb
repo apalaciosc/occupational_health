@@ -19,6 +19,7 @@ class Ability
       can :read, Enterprise
       can :cru, Exam
       can :cru, TypeExam
+      can [:edit_profile], User
     elsif user.role_id == 'medical'
       can :read, Employee
       can :read, Attention

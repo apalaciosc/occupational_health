@@ -47,6 +47,24 @@ class AttentionsController < ApplicationController
     end
   end
 
+  def particular_attention
+    employee_id = params[:attention][:employee_id]
+    if employee_id.present?
+      nro_attention = Attention.where(employee_id: employee_id).count + 1
+      @attention = Attention.new(attention_params)
+      @attention.nro_hc = '00'+ @attention.employee.dni.to_s + nro_attention.to_s
+      if @attention.save
+        flash[:notice] = "Creada correctamente."
+        flash.keep(:notice)
+        render js: "window.location = '/attentions'"
+      else
+        render js: 'swal("Alerta", "Verificar todos los datos.", "warning");'
+      end
+    else
+      render js: 'swal("Alerta", "Verificar todos los datos.", "warning");'
+    end
+  end
+
   # PATCH/PUT /attentions/1
   # PATCH/PUT /attentions/1.json
   def update

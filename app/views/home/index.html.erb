@@ -12,7 +12,7 @@
           <h3 class="profile-username text-center"><%= current_user.email if !current_user.name.present? %></h3>
           <h3 class="profile-username text-center"><%= current_user.name %></h3>
           <p class="text-muted text-center"><%= current_user.position if current_user.position.present? %></p>
-          <%= link_to "Editar perfil" , edit_profile_users_path , class: 'btn btn-primary btn-block' %>
+          <%= link_to "Editar perfil" , edit_user_registration_path , class: 'btn btn-primary btn-block' %>
         </div>
       </div>
       <div class="box box-primary">

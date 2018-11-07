@@ -55,8 +55,8 @@
               <td><%= enterprise.province %></td>
               <td><%= enterprise.district %></td>
               <% if current_user.role_id == 'admin' %>
-                <td><a data-toggle="modal" data-target="#modalUpdate<%= enterprise.id %>" data-backdrop="static" data-keyboard="false"><img src="<%= asset_path 'User_Editar.ico' %>"></a></td>
-                <td><%= link_to image_tag('User_Eliminar.ico'), enterprise, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+                <td><a data-toggle="modal" data-target="#modalUpdate<%= enterprise.id %>" data-backdrop="static" data-keyboard="false">Editar</a></td>
+                <td><%= link_to 'Eliminar', enterprise, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
               <% else %>
                 <td></td>
               <% end %>

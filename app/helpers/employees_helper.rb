@@ -18,4 +18,16 @@ module EmployeesHelper
       ['Femenino','femenino']
     ]
   end
+
+  def employee_for_select
+    @employees_select = []
+    @employees = Employee.all.order(name: :asc)
+    @employees.each do |e|
+      employee = []
+      x = e.dni + ' : ' +e.name
+      employee.push(x,e.id)
+      @employees_select.push(employee)
+    end
+    @employees_select
+  end
 end
