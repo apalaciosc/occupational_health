@@ -1,21 +1,16 @@
 <div class="row">
   <div class="col-md-12">
     <div class="nav-tabs-custom">
+      <div style="text-align:center">
+        <a href="#activity">Examen C.A.M.O</a>
+      </div>
       <ul class="nav nav-tabs">
         <li class="active">
-          <a data-toggle="tab" href="#activity">C.A.M.O</a>
         </li>
       </ul>
       <div class="tab-content">
         <div class="active tab-pane" id="activity">
           <div class="box box-default">
-            <div class="box-header with-border">
-              <div class="box-tools pull-right">
-                <button class="btn btn-box-tool" data-widget="collapse" type="button">
-                  <i class="fa fa-minus"></i>
-                </button>
-              </div>
-            </div>
             <div class="box-body">
               <div class="row">
                 <div class="col-lg-12">
@@ -76,7 +71,7 @@
                 </div>
                 <div class="col-md-12">
                   <label>Restricciones</label>
-                  <%= text_area_tag "exam[data][restrictions]", @exam.data[:restrictions], class: 'form-control', rows: 4 %>
+                  <%= text_area_tag "exam[data][restrictions]", @exam.data[:restrictions], class: 'form-control', rows: 10 %>
                 </div>
               </div>
             </div>

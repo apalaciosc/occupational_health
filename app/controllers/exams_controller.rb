@@ -28,7 +28,6 @@ class ExamsController < ApplicationController
   end
 
   def create_pdf_exam
-    p params
     @exam = Exam.find(params[:id])
     @type_exam = TypeExam.find(@exam.type_exam_id)
     respond_to do |format|
