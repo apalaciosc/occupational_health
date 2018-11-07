@@ -1,0 +1,83 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <div style="text-align:center">
+        <a href="#activity">Examen C.A.M.O</a>
+      </div>
+      <ul class="nav nav-tabs">
+        <li class="active">
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="active tab-pane" id="activity">
+          <div class="box box-default">
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>Datos Generales:</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Puesto al que postula</label>
+                      <%= text_field_tag "exam[data][post_postulates]", @exam.data[:post_postulates], class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Ocupación Actual o última Ocupación</label>
+                      <%= text_field_tag "exam[data][current_ocupation]", @exam.data[:current_ocupation], class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>Recomendaciones:</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <%= text_area_tag "exam[data][recomendations]", @exam.data[:recomendations], class: 'form-control', rows: 8 %>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label>Apto</label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][result]', '0', !!(@exam.data[:result] == '0') %>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label>Apto con restricciones</label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][result]', '1', !!(@exam.data[:result] == '1') %>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label>No Apto</label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][result]', '2', !!(@exam.data[:result] == '2') %>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <label>Restricciones</label>
+                  <%= text_area_tag "exam[data][restrictions]", @exam.data[:restrictions], class: 'form-control', rows: 10 %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

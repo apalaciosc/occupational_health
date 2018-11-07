@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'users/recepcionists', to: 'users#index_recepcionists', as: :index_recepcionists
   get 'employees/fmo' => 'employees#fmo'
   get 'employees/roadmap' => 'employees#roadmap'
+  get 'exam/:id', to: 'exams#create_pdf_exam', as: :create_pdf_exam
   get 'attention/:id/exams', to: 'attentions#exams', as: :attention_exams
   get 'exam/:id/edit', to: 'attentions#edit_exams', as: :exam_edit
   get 'attention/:id/new_exams', to: 'attentions#new_exams', as: :attention_new_exams

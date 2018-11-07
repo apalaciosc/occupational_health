@@ -1,0 +1,252 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#results" aria-expanded="false">Resultados</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="results">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <label>Resultados exámen de orina:</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label></label>
+              </div>
+              <div class="col-md-12">
+                <label></label>
+              </div>
+              <style type="text/css">
+              .tg  {border-collapse:collapse;border-spacing:0;}
+              .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg .tg-s268{font-weight:bold;text-align:center;vertical-align:top}
+              </style>
+              <div class="col-lg-12">
+                <div class="box-body table-responsive no-padding">
+                  <div class="col-lg-12">
+                    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                      <colgroup>
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-s268" colspan="3">Exámen físico</th>
+                          <th class="tg-s268" colspan="3">Exámen químico</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Color</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_1]", @exam.data[:text_1], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">Proteínas</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= radio_button_tag 'exam[data][rb_1]', '0', !!(@exam.data[:rb_1] == '0') %> Negativo
+                            <%= radio_button_tag 'exam[data][rb_1]', '1', !!(@exam.data[:rb_1] == '1') %> Positivo
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Olor</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_3]", @exam.data[:text_3], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">Nitrito</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= radio_button_tag 'exam[data][rb_2]', '0', !!(@exam.data[:rb_2] == '0') %> Negativo
+                            <%= radio_button_tag 'exam[data][rb_2]', '1', !!(@exam.data[:rb_2] == '1') %> Positivo
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Aspecto</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_5]", @exam.data[:text_5], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">Glucosa</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= radio_button_tag 'exam[data][rb_3]', '0', !!(@exam.data[:rb_3] == '0') %> Negativo
+                            <%= radio_button_tag 'exam[data][rb_3]', '1', !!(@exam.data[:rb_3] == '1') %> Positivo
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Reacción/Ph</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_7]", @exam.data[:text_7], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">Bilirrubina</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= radio_button_tag 'exam[data][rb_4]', '0', !!(@exam.data[:rb_4] == '0') %> Negativo
+                            <%= radio_button_tag 'exam[data][rb_4]', '1', !!(@exam.data[:rb_4] == '1') %> Positivo
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Densidad</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_9]", @exam.data[:text_9], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">Pigmento biliar</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= radio_button_tag 'exam[data][rb_5]', '0', !!(@exam.data[:rb_5] == '0') %> Negativo
+                            <%= radio_button_tag 'exam[data][rb_5]', '1', !!(@exam.data[:rb_5] == '1') %> Positivo
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268" colspan="3"></td>
+                          <td class="tg-s268">Ácido ascórbico</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= radio_button_tag 'exam[data][rb_6]', '0', !!(@exam.data[:rb_6] == '0') %> Negativo
+                            <%= radio_button_tag 'exam[data][rb_6]', '1', !!(@exam.data[:rb_6] == '1') %> Positivo
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268" colspan="3"></td>
+                          <td class="tg-s268">Sangre</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= radio_button_tag 'exam[data][rb_7]', '0', !!(@exam.data[:rb_7] == '0') %> Negativo
+                            <%= radio_button_tag 'exam[data][rb_7]', '1', !!(@exam.data[:rb_7] == '1') %> Positivo
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268" colspan="3"></td>
+                          <td class="tg-s268">Cetona</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= radio_button_tag 'exam[data][rb_8]', '0', !!(@exam.data[:rb_8] == '0') %> Negativo
+                            <%= radio_button_tag 'exam[data][rb_8]', '1', !!(@exam.data[:rb_8] == '1') %> Positivo
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label></label>
+              </div>
+              <div class="col-md-12">
+                <label></label>
+              </div>
+              <div class="col-lg-12">
+                <div class="box-body table-responsive no-padding">
+                  <div class="col-lg-12">
+                    <table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+                      <colgroup>
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                        <col style="width: 150.88889px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-s268" colspan="3">Exámen microscópico</th>
+                          <th class="tg-s268" colspan="3">Cilíndros</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Células epiteliales</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_10]", @exam.data[:text_10], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">Hialinos</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_11]", @exam.data[:text_11], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Leucositos</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_12]", @exam.data[:text_12], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">Granulosos</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_13]", @exam.data[:text_13], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Piocitos</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_14]", @exam.data[:text_14], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">Grasos</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_15]", @exam.data[:text_15], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Hematíes</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_16]", @exam.data[:text_16], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">Hemático</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_17]", @exam.data[:text_17], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Trichomonas</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_18]", @exam.data[:text_18], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">Leucocitario</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_19]", @exam.data[:text_19], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Gérmenes</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_20]", @exam.data[:text_20], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">Cristales</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_21]", @exam.data[:text_21], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">Levaduras</td>
+                          <td class="tg-s268" colspan="2">
+                            <%= text_field_tag "exam[data][text_22]", @exam.data[:text_22], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268" colspan="3"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label></label>
+              </div>
+              <div class="col-md-12">
+                <label></label>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label>Observaciones:</label>
+                  <%= text_area_tag "exam[data][observations]", @exam.data[:observations], class: 'form-control', rows: '2' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

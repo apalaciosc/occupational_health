@@ -1,0 +1,970 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">
+          <b>
+            INFORME RADIOGRAFICO CON METODOLOGIA OIT 2000
+          </b>
+        </h3>
+      </div>
+      <div class="box-body table-responsive no-padding">
+        <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg .tg-88nc{font-weight:bold;border-color:inherit;text-align:center}
+        .tg .tg-xldj{border-color:inherit;text-align:left}
+        .tg .tg-7btt{font-weight:bold;border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+        .tg .tg-fymr{font-weight:bold;border-color:inherit;text-align:left;vertical-align:top}
+        </style>
+        <table class="tg table-hover" style="undefined;table-layout: fixed; width: 1036px">
+          <colgroup>
+            <col style="width: 158px">
+            <col style="width: 127px">
+            <col style="width: 108px">
+            <col style="width: 119px">
+            <col style="width: 122px">
+            <col style="width: 33px">
+            <col style="width: 117px">
+            <col style="width: 51px">
+            <col style="width: 29px">
+            <col style="width: 120px">
+            <col style="width: 52px">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="tg-88nc">
+                Placa N°
+              </th>
+              <th class="tg-xldj">
+                <%= text_field_tag "exam[data][plaque]", @exam.data[:plaque], class: 'form-control' %>
+              </th>
+              <th class="tg-7btt">
+                HC
+              </th>
+              <th class="tg-0pky">
+                <% if @edit == 0 %>
+                <%= text_field_tag "exam[data][hc]", @exam.data[:hc], value: @attention.nro_hc , class: 'form-control', readonly: true %>
+                <% else %>
+                <%= text_field_tag "exam[data][hc]", @exam.data[:hc], value: @exam.attention.nro_hc , class: 'form-control', readonly: true %>
+                <% end %>
+              </th>
+              <th class="tg-7btt">
+                Lector
+              </th>
+              <th class="tg-0pky" colspan="6">
+                <%= text_field_tag "exam[data][reader]", @exam.data[:reader], class: 'form-control' %>
+              </th>
+            </tr>
+            <tr>
+              <td class="tg-88nc">
+                Nombre y apellidos
+              </td>
+              <td class="tg-xldj" colspan="5">
+                <% if @edit == 0 %>
+                <%= text_field_tag "exam[data][name_lastname]", @exam.data[:name_lastname], value: @attention.employee.name, class: 'form-control', readonly: true %>
+                <% else %>
+                <%= text_field_tag "exam[data][name_lastname]", @exam.data[:name_lastname], value: @exam.attention.employee.name, class: 'form-control', readonly: true %>
+                <% end %>
+              </td>
+              <td class="tg-c3ow" colspan="3">
+                <span style="font-weight:bold">
+                  Edad
+                </span>
+              </td>
+              <td class="tg-0pky" colspan="2">
+                <% if @edit == 0 %>
+                <%= text_field_tag "exam[data][age]", @exam.data[:age], value: @attention.employee.age, class: 'form-control', readonly: true %>
+                <% else %>
+                <%= text_field_tag "exam[data][age]", @exam.data[:age], value: @exam.attention.employee.age, class: 'form-control', readonly: true %>
+                <% end %>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-88nc" colspan="2">
+                Fecha de lectura
+              </td>
+              <td class="tg-0pky" colspan="2">
+                <%= date_field_tag "exam[data][reading_date]", @exam.data[:reading_date], class: 'form-control' %>
+              </td>
+              <td class="tg-7btt" colspan="2">
+                Fecha de radiografía
+              </td>
+              <td class="tg-0pky" colspan="5">
+                <%= date_field_tag "exam[data][radiography_date]", @exam.data[:radiography_date], class: 'form-control' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-88nc" rowspan="4">I. Calidad de radiografia</td>
+              <td class="tg-88nc">1</td>
+              <td class="tg-88nc">Buena</td>
+              <td class="tg-0pky" style="text-align: center;">
+                <%= radio_button_tag 'exam[data][radiography_quality]', '1', !!(@exam.data[:radiography_quality] == '1') %>
+              </td>
+              <td class="tg-7btt" rowspan="4">
+                <br><br><br>
+                Causas
+                <br><br><br>
+              </td>
+              <td class="tg-88nc">
+                <span style="font-weight:bold">1</span>
+              </td>
+              <td class="tg-88nc">Sobre exposición</td>
+              <td class="tg-fymr" style="text-align: center;">
+                <%= radio_button_tag 'exam[data][causes]', '1', !!(@exam.data[:causes] == '1') %>
+              </td>
+              <td class="tg-88nc">5</td>
+              <td class="tg-88nc">Escapulas</td>
+              <td class="tg-0pky" style="text-align: center;">
+                <%= radio_button_tag 'exam[data][causes]', '5', !!(@exam.data[:causes] == '5') %>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-88nc">2</td>
+              <td class="tg-88nc">Aceptable</td>
+              <td class="tg-0pky" style="text-align: center;">
+                <%= radio_button_tag 'exam[data][radiography_quality]', '2', !!(@exam.data[:radiography_quality] == '2') %>
+              </td>
+              <td class="tg-88nc">2</td>
+              <td class="tg-88nc">Subexploración</td>
+              <td class="tg-fymr" style="text-align: center;">
+                <%= radio_button_tag 'exam[data][causes]', '2', !!(@exam.data[:causes] == '2') %>
+              </td>
+              <td class="tg-88nc">6</td>
+              <td class="tg-88nc">Artefactos</td>
+              <td class="tg-0pky" style="text-align: center;">
+                <%= radio_button_tag 'exam[data][causes]', '6', !!(@exam.data[:causes] == '6') %>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-88nc">3</td>
+              <td class="tg-88nc">Baja calidad</td>
+              <td class="tg-0pky" style="text-align: center;">
+                <%= radio_button_tag 'exam[data][radiography_quality]', '3', !!(@exam.data[:radiography_quality] == '3') %>
+              </td>
+              <td class="tg-88nc">3</td>
+              <td class="tg-88nc">Posición centrado</td>
+              <td class="tg-fymr" style="text-align: center;">
+                <%= radio_button_tag 'exam[data][causes]', '3', !!(@exam.data[:causes] == '3') %>
+              </td>
+              <td class="tg-88nc">7</td>
+              <td class="tg-88nc">Otros</td>
+              <td class="tg-0pky" style="text-align: center;">
+                <%= radio_button_tag 'exam[data][causes]', '7', !!(@exam.data[:causes] == '7') %>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-88nc">4</td>
+              <td class="tg-88nc">Inaceptable</td>
+              <td class="tg-0pky" style="text-align: center;">
+                <%= radio_button_tag 'exam[data][radiography_quality]', '4', !!(@exam.data[:radiography_quality] == '4') %>
+              </td>
+              <td class="tg-88nc">4</td>
+              <td class="tg-88nc">Inspiración insuficiente</td>
+              <td class="tg-fymr" style="text-align: center;">
+                <%= radio_button_tag 'exam[data][causes]', '4', !!(@exam.data[:causes] == '4') %>
+              </td>
+              <td class="tg-fymr"></td>
+              <td class="tg-fymr"></td>
+              <td class="tg-0pky"></td>
+            </tr>
+            <tr>
+              <td class="tg-88nc" style="text-align: center;">
+                Comentario sobre defectos técnicos
+              </td>
+              <td class="tg-xldj" colspan="10">
+                <%= text_field_tag "exam[data][technicals_comments]", @exam.data[:technicals_comments], class: 'form-control' %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <label></label>
+        </div>
+      </div>
+      <div class="tab-content">
+        <div class="active tab-pane" id="activity">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body table-responsive no-padding" style="">
+              <div class="box-header">
+                <h3 class="box-title">
+                  <b>II. Anormalidades Parenquimatosa(si no hay anormalidades pase al III A. Pleurales)</b>
+                </h3>
+              </div>
+              <style type="text/css">
+              .tg  {border-collapse:collapse;border-spacing:0;}
+              .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+              .tg .tg-s6z2{text-align:center}
+              .tg .tg-hgcj{font-weight:bold;text-align:center}
+              .tg .tg-0lax{text-align:left;vertical-align:top}
+              </style>
+              <table class="tg table-hover" style="undefined;table-layout: fixed; width: 1029px">
+                <colgroup>
+                  <col style="width: 190px">
+                  <col style="width: 75px">
+                  <col style="width: 98px">
+                  <col style="width: 78px">
+                  <col style="width: 107px">
+                  <col style="width: 96px">
+                  <col style="width: 56px">
+                  <col style="width: 46px">
+                  <col style="width: 50px">
+                  <col style="width: 38px">
+                  <col style="width: 48px">
+                  <col style="width: 43px">
+                  <col style="width: 45px">
+                  <col style="width: 59px">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th class="tg-s6z2" colspan="3">
+                      <span style="font-weight:bold">2.1 Zona afectada</span>(marque todas las zonas afectadas)
+                    </th>
+                    <th class="tg-s6z2" colspan="3">
+                      <span style="font-weight:bold">2.2 Profusión (</span>opacidades pequeñas
+                      <span style="font-weight:bold">) (</span>escala de 12 puntos
+                      <span style="font-weight:bold">) (</span>consulte las radiografias estandar - marque la subcategoria de profusion
+                      <span style="font-weight:bold">)</span>
+                    </th>
+                    <th class="tg-s6z2" colspan="4">
+                      <span style="font-weight:bold">2.3 Forma y tamaño</span>:
+                      <span style="font-weight:bold">(</span>Consulte las radiografias , se requieren dos simbolos ; marque un primario y un secundario
+                      <span style="font-weight:bold">)</span>
+                    </th>
+                    <th class="tg-s6z2" colspan="4">
+                      <span style="font-weight:bold">2.4 Opacidades Grandes</span>:
+                      <span style="font-weight:bold">(</span><br>marque  O si no hay ninguna ó marque A,B o C
+                      <span style="font-weight:bold">)</span>
+                      <br>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="tg-s268"></td>
+                    <td class="tg-5ua9">Derecha</td>
+                    <td class="tg-5ua9">Izquierda</td>
+                    <td class="tg-hgcj">0/-</td>
+                    <td class="tg-hgcj">0/0</td>
+                    <td class="tg-hgcj">0/<span style="font-weight:bold">1</span></td>
+                    <td class="tg-hgcj" colspan="2">Primaria</td>
+                    <td class="tg-hgcj" colspan="2">Secundaria</td>
+                    <td class="tg-hgcj" colspan="3">O</td>
+                    <td class="tg-0lax" style="text-align: center;">
+                      <%= radio_button_tag 'exam[data][large_opacities]', 'O', !!(@exam.data[:large_opacities] == 'O') %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-hgcj">Superior</td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][upper_right]", @exam.data[:upper_right], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][upper_left]", @exam.data[:upper_left], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][upper_0]", @exam.data[:upper_0], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][upper_00]", @exam.data[:upper_00], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][upper_01]", @exam.data[:upper_01], class: 'form-control' %>
+                    </td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][upper_shape_primary]', 'uspp', !!(@exam.data[:upper_shape_primary] == 'uspp') %>
+                      <b>p</b>
+                    </td>
+                    <td class="tg-s268">
+                      <%= radio_button_tag 'exam[data][upper_shape_primary]', 'usps', !!(@exam.data[:upper_shape_primary] == 'usps') %>
+                      <b>s</b>
+                    </td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][upper_shape_secundary]', 'ussp', !!(@exam.data[:upper_shape_secundary] == 'ussp') %>
+                      <b>p</b>
+                    </td>
+                    <td class="tg-s268">
+                      <%= radio_button_tag 'exam[data][upper_shape_secundary]', 'usss', !!(@exam.data[:upper_shape_secundary] == 'usss') %>
+                      <b>s</b>
+                    </td>
+                    <td class="tg-hgcj" colspan="3">A</td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][large_opacities]', 'A', !!(@exam.data[:large_opacities] == 'A') %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-hgcj">
+                      Medio
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][medium_right]", @exam.data[:medium_right], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][medium_left]", @exam.data[:medium_left], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][medium_0]", @exam.data[:medium_0], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][medium_00]", @exam.data[:medium_00], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][medium_01]", @exam.data[:medium_00], class: 'form-control' %>
+                    </td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][medium_shape_primary]', 'mspq', !!(@exam.data[:medium_shape_primary] == 'mspq') %>
+                      <b>q</b>
+                    </td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][medium_shape_primary]', 'mspt', !!(@exam.data[:medium_shape_primary] == 'mspt') %>
+                      <b>t</b>
+                    </td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][medium_shape_secundary]', 'mssq', !!(@exam.data[:medium_shape_secundary] == 'mssq') %>
+                      <b>q</b>
+                    </td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][medium_shape_secundary]', 'msst', !!(@exam.data[:medium_shape_secundary] == 'msst') %>
+                      <b>t</b>
+                    </td>
+                    <td class="tg-hgcj" colspan="3">B</td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][large_opacities]', 'B', !!(@exam.data[:large_opacities] == 'B') %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-hgcj">Inferior</td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][lower_right]", @exam.data[:lower_right], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][lower_left]", @exam.data[:lower_left], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][lower_0]", @exam.data[:lower_0], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][lower_00]", @exam.data[:lower_00], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][lower_01]", @exam.data[:lower_01], class: 'form-control' %>
+                    </td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][lower_shape_primary]', 'lspr', !!(@exam.data[:lower_shape_primary] == 'lspr') %>
+                      <b>r</b>
+                    </td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][lower_shape_primary]', 'lspu', !!(@exam.data[:lower_shape_primary] == 'lspu') %>
+                      <b>u</b>
+                    </td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][lower_shape_secundary]', 'lssr', !!(@exam.data[:lower_shape_secundary] == 'lssr') %>
+                      <b>r</b>
+                    </td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][lower_shape_secundary]', 'lssu', !!(@exam.data[:lower_shape_secundary] == 'lssu') %>
+                      <b>u</b>
+                    </td>
+                    <td class="tg-hgcj" colspan="3">C</td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][large_opacities]', 'C', !!(@exam.data[:large_opacities] == 'C') %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax" colspan="10"></td>
+                    <td class="tg-hgcj">Si</td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][large_opacities_option]', 'yes', !!(@exam.data[:large_opacities_option] == 'yes') %>
+                    </td>
+                    <td class="tg-hgcj">No</td>
+                    <td class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][large_opacities_option]', 'no', !!(@exam.data[:large_opacities_option] == 'no') %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div>
+                <label></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content">
+        <div class="active tab-pane" id="activity">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body table-responsive no-padding">
+              <div class="box-header">
+                <h3 class="box-title">
+                  <b>III.Anormalidades PLURALES ( si NO hay anormalidades pase a simbolos * )</b>
+                </h3>
+              </div>
+              <style type="text/css">
+              .tg  {border-collapse:collapse;border-spacing:0;}
+              .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg .tg-88nc{font-weight:bold;border-color:inherit;text-align:center}
+              .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+              .tg .tg-uys7{border-color:inherit;text-align:center}
+              .tg .tg-xldj{border-color:inherit;text-align:left}
+              .tg .tg-7btt{font-weight:bold;border-color:inherit;text-align:center;vertical-align:top}
+              .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+              </style>
+              <table class="tg table-hover" style="undefined;table-layout: fixed; width: 1090px">
+                <colgroup>
+                  <col style="width: 167px">
+                  <col style="width: 53px">
+                  <col style="width: 62px">
+                  <col style="width: 53px">
+                  <col style="width: 62px">
+                  <col style="width: 49px">
+                  <col style="width: 59px">
+                  <col style="width: 52px">
+                  <col style="width: 43px">
+                  <col style="width: 40px">
+                  <col style="width: 41px">
+                  <col style="width: 38px">
+                  <col style="width: 35px">
+                  <col style="width: 41px">
+                  <col style="width: 36px">
+                  <col style="width: 36px">
+                  <col style="width: 21px">
+                  <col style="width: 21px">
+                  <col style="width: 21px">
+                  <col style="width: 21px">
+                  <col style="width: 20px">
+                  <col style="width: 20px">
+                  <col style="width: 20px">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th class="tg-xldj" colspan="23">
+                      <span style="font-weight:bold">3.1 Placas pleurales ( 0 = Ninguna , D: Hemitorax ;  I: Hemitorax Izquierdo)</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="tg-uys7" colspan="4" rowspan="4">
+                      <span style="font-weight:bold">Sitio ( Marque las casillas adecuadas  )</span>
+                    </td>
+                    <td class="tg-uys7" colspan="3" rowspan="4">
+                      <span style="font-weight:bold">Calcificación ( marque )</span>
+                    </td>
+                    <td class="tg-88nc" colspan="9">
+                      Extensión ( pared toráctica ; combinada para placas de perfil y de frente
+                    </td>
+                    <td class="tg-7btt" colspan="7">
+                      <span style="font-weight:bold">Ancho ( opcional)</span>
+                      <br>
+                      <span style="font-weight:bold">(</span>ancho minimo exigido : 3 mm)
+                      <br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-88nc">1</td>
+                    <td class="tg-88nc" colspan="8">
+                      &gt;1/4 de la pared lateral del torax
+                    </td>
+                    <td class="tg-7btt">a</td>
+                    <td class="tg-7btt" colspan="6">De 3 a 5 mm</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-88nc">2</td>
+                    <td class="tg-88nc" colspan="8">Entre 1/4 y 1/2 de la pared lateral del torax</td>
+                    <td class="tg-7btt">b</td>
+                    <td class="tg-7btt" colspan="6">De 5 a 10 mm</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-88nc">3</td>
+                    <td class="tg-88nc" colspan="8">&gt; 1/2 de la pared lateral del torax</td>
+                    <td class="tg-7btt">c</td>
+                    <td class="tg-7btt" colspan="6">Mayor a 10 mm</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-88nc">Pared toráctica de perfil</td>
+                    <td class="tg-xldj">
+                      <%= select_tag("exam[data][practical_profile1]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile1] )) %>
+                    </td>
+                    <td class="tg-xldj">
+                      <%= select_tag("exam[data][practical_profile2]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile2] )) %>
+                    </td>
+                    <td class="tg-xldj">
+                      <%= select_tag("exam[data][practical_profile3]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile3] )) %>
+                    </td>
+                    <td class="tg-xldj">
+                      <%= select_tag("exam[data][practical_profile4]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile4] )) %>
+                    </td>
+                    <td class="tg-xldj">
+                      <%= select_tag("exam[data][practical_profile5]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile5] )) %>
+                    </td>
+                    <td class="tg-xldj">
+                      <%= select_tag("exam[data][practical_profile6]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile6] )) %>
+                    </td>
+                    <td class="tg-xldj" rowspan="4"></td>
+                    <td class="tg-xldj" colspan="2">
+                      <%= select_tag("exam[data][practical_profile7]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile7] )) %>
+                    </td>
+                    <td class="tg-xldj" colspan="2">
+                      <%= select_tag("exam[data][practical_profile8]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile8] )) %>
+                    </td>
+                    <td class="tg-xldj" colspan="2">
+                      <%= select_tag("exam[data][practical_profile9]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile9] )) %>
+                    </td>
+                    <td class="tg-xldj" colspan="2">
+                      <%= select_tag("exam[data][practical_profile10]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile10] )) %>
+                    </td>
+                    <td class="tg-0pky" rowspan="2"></td>
+                    <td class="tg-xldj" colspan="3">
+                      <%= select_tag("exam[data][practical_profile11]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile11] )) %>
+                    </td>
+                    <td class="tg-xldj" colspan="3">
+                      <%= select_tag("exam[data][practical_profile12]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:practical_profile12] )) %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-7btt">De frente</td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][head_on1]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:head_on1] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][head_on2]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:head_on2] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][head_on3]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:head_on3] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][head_on4]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:head_on4] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][head_on5]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:head_on5] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][head_on6]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:head_on6] )) %>
+                    </td>
+                    <td class="tg-7btt">
+                      <label>1</label>
+                    </td>
+                    <td class="tg-7btt" colspan="2">
+                      <label>2</label>
+                    </td>
+                    <td class="tg-7btt">
+                      <label>3</label>
+                    </td>
+                    <td class="tg-7btt">
+                      <label>1</label>
+                    </td>
+                    <td class="tg-7btt" colspan="2">
+                      <label>2</label>
+                    </td>
+                    <td class="tg-7btt">
+                      <label>3</label>
+                    </td>
+                    <td class="tg-7btt">
+                      <label>a</label>
+                    </td>
+                    <td class="tg-7btt">
+                      <label>b</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>c</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>a</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>b</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>c</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-7btt">Diagrama</td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][diagram1]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:diagram1] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][diagram2]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:diagram2] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][diagram3]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:diagram3] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][diagram4]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:diagram4] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][diagram5]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:diagram5] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][diagram6]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:diagram6] )) %>
+                    </td>
+                    <td class="tg-0pky" colspan="15" rowspan="2"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-7btt">Otros (s) sitios (s)</td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][other_sites1]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:other_sites1] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][other_sites2]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:other_sites2] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][other_sites3]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:other_sites3] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][other_sites4]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:other_sites4] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][other_sites5]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:other_sites5] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][other_sites6]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:other_sites6] )) %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-7btt" colspan="7">Obliteracion del ángulo Costofrénico</td>
+                    <td class="tg-0pky">
+                      <label>O</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= text_field_tag "exam[data][costphrenic_angleO]", @exam.data[:costphrenic_angleO], class: 'form-control' %>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>D</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= text_field_tag "exam[data][costphrenic_angleD]", @exam.data[:costphrenic_angleD], class: 'form-control' %>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>I</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= text_field_tag "exam[data][costphrenic_angleI]", @exam.data[:costphrenic_angleI], class: 'form-control' %>
+                    </td>
+                    <td class="tg-0pky" colspan="10"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky" colspan="23">
+                      <span style="font-weight:bold">3.2 Engrosamiento difuso de la Pleura ( 0= Ninguna , D Hemitorax ; I=Hemitorax Izquierdo )</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-c3ow" colspan="4">
+                      <span style="font-weight:bold">Pared toráctica</span>
+                    </td>
+                    <td class="tg-7btt" colspan="4">Calificacion</td>
+                    <td class="tg-0pky"></td>
+                    <td class="tg-7btt" colspan="8">Extensión</td>
+                    <td class="tg-7btt" colspan="6">Ancho</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-7btt">De perfil</td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][profile1]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile1] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][profile2]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile2] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][profile3]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile3] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][profile4]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile4] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][profile5]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile5] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][profile6]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile6] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][profile7]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile7] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                    </td>
+                    <td class="tg-0pky" colspan="2">
+                      <%= select_tag("exam[data][profile8]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile8] )) %>
+                    </td>
+                    <td class="tg-0pky" colspan="2">
+                      <%= select_tag("exam[data][profile9]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile9] )) %>
+                    </td>
+                    <td class="tg-0pky" colspan="2">
+                      <%= select_tag("exam[data][profile10]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile10] )) %>
+                    </td>
+                    <td class="tg-0pky" colspan="2">
+                      <%= select_tag("exam[data][profile11]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile11] )) %>
+                    </td>
+                    <td class="tg-0pky" colspan="3">
+                      <%= select_tag("exam[data][profile12]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile12] )) %>
+                    </td>
+                    <td class="tg-0pky" colspan="3">
+                      <%= select_tag("exam[data][profile13]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:profile13] )) %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-7btt">
+                      De frente
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][tor_head_on1]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:tor_head_on1] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][tor_head_on2]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:tor_head_on2] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][tor_head_on3]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:tor_head_on3] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][tor_head_on4]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:tor_head_on4] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][tor_head_on5]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:tor_head_on5] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][tor_head_on6]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:tor_head_on6] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                      <%= select_tag("exam[data][tor_head_on7]", options_for_select([["O","O"],["D","D"],["I","I"]], @exam.data[:tor_head_on7] )) %>
+                    </td>
+                    <td class="tg-0pky">
+                    </td>
+                    <td class="tg-7btt">
+                      <label>1</label>
+                    </td>
+                    <td class="tg-7btt" colspan="2">
+                      <label>2</label>
+                    </td>
+                    <td class="tg-7btt">
+                      <label>3</label>
+                    </td>
+                    <td class="tg-7btt">
+                      <label>1</label>
+                    </td>
+                    <td class="tg-7btt" colspan="2">
+                      <label>2</label>
+                    </td>
+                    <td class="tg-7btt">
+                      <label>3</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>a</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>b</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>c</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>a</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>b</label>
+                    </td>
+                    <td class="tg-0pky">
+                      <label>c</label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div>
+                <label></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content">
+        <div class="active tab-pane" id="activity">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body table-responsive no-padding">
+              <div class="box-header">
+                <h3 class="box-title">
+                  <b>IV. Simbolo *1</b>
+                </h3>
+              </div>
+              <style type="text/css">
+              .tg  {border-collapse:collapse;border-spacing:0;}
+              .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg .tg-hgcj{font-weight:bold;text-align:center}
+              .tg .tg-s268{text-align:left}
+              </style>
+              <table class="tg table-hover" style="undefined;table-layout: fixed; width: 1069px">
+                <colgroup>
+                  <col style="width: 80px">
+                  <col style="width: 66px">
+                  <col style="width: 136px">
+                  <col style="width: 55px">
+                  <col style="width: 65px">
+                  <col style="width: 76px">
+                  <col style="width: 75px">
+                  <col style="width: 62px">
+                  <col style="width: 65px">
+                  <col style="width: 63px">
+                  <col style="width: 65px">
+                  <col style="width: 65px">
+                  <col style="width: 72px">
+                  <col style="width: 65px">
+                  <col style="width: 71px">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th class="tg-hgcj" colspan="11">Simbolo</th>
+                    <th class="tg-hgcj">Si</th>
+                    <th class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][symbol_option]', 'yes', !!(@exam.data[:symbol_option] == 'yes') %>
+                    </th>
+                    <th class="tg-hgcj">No</th>
+                    <th class="tg-hgcj">
+                      <%= radio_button_tag 'exam[data][symbol_option]', 'no', !!(@exam.data[:symbol_option] == 'no') %>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="tg-hgcj" colspan="15">
+                      Marca o Rodee la respuesta adecuada ; si rodea OD , escriba a continuacion un  COMENTARIO
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-hgcj">
+                      <%= text_field_tag "exam[data][symbol1]", @exam.data[:symbol1], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol2]", @exam.data[:symbol2], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol3]", @exam.data[:symbol3], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol4]", @exam.data[:symbol4], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol5]", @exam.data[:symbol5], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol6]", @exam.data[:symbol6], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol7]", @exam.data[:symbol7], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol8]", @exam.data[:symbol8], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol9]", @exam.data[:symbol9], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol10]", @exam.data[:symbol10], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol11]", @exam.data[:symbol11], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol12]", @exam.data[:symbol12], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol13]", @exam.data[:symbol13], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol14]", @exam.data[:symbol14], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol15]", @exam.data[:symbol15], class: 'form-control' %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-hgcj">
+                      <%= text_field_tag "exam[data][symbol16]", @exam.data[:symbol16], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol17]", @exam.data[:symbol17], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol18]", @exam.data[:symbol18], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol19]", @exam.data[:symbol19], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol20]", @exam.data[:symbol20], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol21]", @exam.data[:symbol21], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol22]", @exam.data[:symbol22], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol23]", @exam.data[:symbol23], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol24]", @exam.data[:symbol24], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol25]", @exam.data[:symbol25], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol26]", @exam.data[:symbol26], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol27]", @exam.data[:symbol27], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol28]", @exam.data[:symbol28], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol29]", @exam.data[:symbol29], class: 'form-control' %>
+                    </td>
+                    <td class="tg-s268">
+                      <%= text_field_tag "exam[data][symbol30]", @exam.data[:symbol30], class: 'form-control' %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div>
+                <label></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content">
+        <div class="active tab-pane" id="activity">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="col-lg-12">
+                <label>Comentarios:</label>
+                <%= text_area_tag "exam[data][comments]", @exam.data[:comments], class: 'form-control' %>
+              </div>
+              <div class="col-lg-12">
+                <label></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

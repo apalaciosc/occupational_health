@@ -1,0 +1,643 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#cuestionario" aria-expanded="true">Cuestionario Espirometría</a>
+        </li>
+        <li class="">
+          <a data-toggle="tab" href="#activity" aria-expanded="false">Resultados Espirometría</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="cuestionario">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <label>Antecedentes Médicos:</label>
+                </div>
+                <div class="col-lg-12">
+                  <div class="col-lg-6">
+                    <label>Fumador</label>
+                    <%= select_tag("exam[data][smoker]", options_for_select([["Si","1"],["No","0"]], @exam.data[:smoker] ), class: 'form-control') %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>Grupo Étnico</label>
+                    <%= text_field_tag "exam[data][ethnic_group]", @exam.data[:ethnic_group], class: 'form-control col-lg-12' %>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <h3>Cuestionario:</h3>
+                </div>
+                <div class="col-lg-12">
+                  <h4>
+                    <b>Pregunta para todos los candidatos a ESPIROMETRÍA (Relacionadas a criterios de exclusión)</b>
+                  </h4>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>
+                    1. ¿Tuvo desprendimiento de la retina o una operación (cirugía) de los ojos, tórax o abdomen, en los últimos 3 meses?
+                  </label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][question_1]', '1', !!(@exam.data[:question_1] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][question_1]', '0', !!(@exam.data[:question_1] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label>
+                  </label>
+                </div>
+                <div class="col-lg-9">
+                  <label>2. ¿Ha tenido algún ataque cardíaco al corazón en los ultimos 3 meses?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][question_2]', '1', !!(@exam.data[:question_2] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][question_2]', '0', !!(@exam.data[:question_2] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>3. ¿Ha estado hospitalizado(a) por cualquier otro problema del corazón los ultimos 3 meses?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][question_3]', '1', !!(@exam.data[:question_3] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][question_3]', '0', !!(@exam.data[:question_3] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>4. ¿Está usando medicamentos para la tuberculosis en este momento?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][question_4]', '1', !!(@exam.data[:question_4] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][question_4]', '0', !!(@exam.data[:question_4] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>5. En caso de ser mujer. ¿Esta usted embarazada actualmente?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][question_5]', '1', !!(@exam.data[:question_5] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][question_5]', '0', !!(@exam.data[:question_5] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <h4>
+                    <b>Para ser llenado por el profesional que realiza la prueba</b>
+                  </h4>
+                  <div class="col-lg-12">
+                    <label></label>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>6. HEMOPTOSIS</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <%= radio_button_tag 'exam[data][hemoptosis]', '1', !!(@exam.data[:hemoptosis] == '1') %>
+                    <label>SI</label>
+                    <label></label>
+                    <label></label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][hemoptosis]', '0', !!(@exam.data[:hemoptosis] == '0') %>
+                    <label>NO</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>7. PNLIMOTORAX</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <%= radio_button_tag 'exam[data][pnlimotorax]', '1', !!(@exam.data[:pnlimotorax] == '1') %>
+                    <label>SI</label>
+                    <label></label>
+                    <label></label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][pnlimotorax]', '0', !!(@exam.data[:pnlimotorax] == '0') %>
+                    <label>NO</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>8. TRAQUEOSTOMIA</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <%= radio_button_tag 'exam[data][traqueostomia]', '1', !!(@exam.data[:traqueostomia] == '1') %>
+                    <label>SI</label>
+                    <label></label>
+                    <label></label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][traqueostomia]', '0', !!(@exam.data[:traqueostomia] == '0') %>
+                    <label>NO</label>
+                  </div>
+                  <div class="col-lg-12">
+                    <label></label>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>9. ZONA PLEURAL</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <%= radio_button_tag 'exam[data][pleural_area]', '1', !!(@exam.data[:pleural_area] == '1') %>
+                    <label>SI</label>
+                    <label></label>
+                    <label></label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][pleural_area]', '0', !!(@exam.data[:pleural_area] == '0') %>
+                    <label>NO</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>10. ANEURISMAS CEREBRAL, ABDOMEN, TORAX</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <%= radio_button_tag 'exam[data][aneurysm]', '1', !!(@exam.data[:aneurysm] == '1') %>
+                    <label>SI</label>
+                    <label></label>
+                    <label></label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][aneurysm]', '0', !!(@exam.data[:aneurysm] == '0') %>
+                    <label>NO</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>11. EMBOLIA PULMONAR</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <%= radio_button_tag 'exam[data][embolism]', '1', !!(@exam.data[:embolism] == '1') %>
+                    <label>SI</label>
+                    <label></label>
+                    <label></label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][embolism]', '0', !!(@exam.data[:embolism] == '0') %>
+                    <label>NO</label>
+                  </div>
+                  <div class="col-lg-12">
+                    <label></label>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>12. INFARTO RECIENTE</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <%= radio_button_tag 'exam[data][recent_heart_attack]', '1', !!(@exam.data[:recent_heart_attack] == '1') %>
+                    <label>SI</label>
+                    <label></label>
+                    <label></label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][recent_heart_attack]', '0', !!(@exam.data[:recent_heart_attack] == '0') %>
+                    <label>NO</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>13. INESTABILIDAD CV</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <%= radio_button_tag 'exam[data][instability]', '1', !!(@exam.data[:instability] == '1') %>
+                    <label>SI</label>
+                    <label></label>
+                    <label></label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][instability]', '0', !!(@exam.data[:instability] == '0') %>
+                    <label>NO</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>14. FIEBRE, NAUSEAS, VOMITO</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <%= radio_button_tag 'exam[data][fever_nausea_vomit]', '1', !!(@exam.data[:fever_nausea_vomit] == '1') %>
+                    <label>SI</label>
+                    <label></label>
+                    <label></label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][fever_nausea_vomit]', '0', !!(@exam.data[:fever_nausea_vomit] == '0') %>
+                    <label>NO</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label>
+                  </label>
+                </div>
+                <div class="col-lg-12">
+                  <div class="col-lg-2">
+                    <label>15. EMBARAZO AVANZADO</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <%= radio_button_tag 'exam[data][advanced_pregnancy]', '1', !!(@exam.data[:advanced_pregnancy] == '1') %>
+                    <label>SI</label>
+                    <label></label>
+                    <label></label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][advanced_pregnancy]', '0', !!(@exam.data[:advanced_pregnancy] == '0') %>
+                    <label>NO</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <label>16. EMBARAZO COMPLICADO</label>
+                  </div>
+                  <div class="col-lg-2">
+                    <%= radio_button_tag 'exam[data][complicated_pregnancy]', '1', !!(@exam.data[:complicated_pregnancy] == '1') %>
+                    <label>SI</label>
+                    <label></label>
+                    <label></label>
+                    <label></label>
+                    <%= radio_button_tag 'exam[data][complicated_pregnancy]', '0', !!(@exam.data[:complicated_pregnancy] == '0') %>
+                    <label>NO</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <h4>
+                    <b>Pregunta para todos los entrevistados que no tiene los criterios de exclusión y que por lo tanto  deben hacer ESPIROMETRÍA.</b>
+                  </h4>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>1. ¿Tuvo una infección respiratoria (resfriado), en las últimas 3 semanas?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][cold]', '1', !!(@exam.data[:cold] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][cold]', '0', !!(@exam.data[:cold] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>2. ¿Tuvo una infección en el oido en las ultimas 3 semanas?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][ear_infection]', '1', !!(@exam.data[:ear_infection] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][ear_infection]', '0', !!(@exam.data[:ear_infection] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>3. ¿Usó aerosoles (sprays inhalados) o nebulizaciones con broncodilatadores, en las últimas 3 horas?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][aerosol_sprays]', '1', !!(@exam.data[:aerosol_sprays] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][aerosol_sprays]', '0', !!(@exam.data[:aerosol_sprays] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>4. ¿Ha usado algún medicamento broncodilatador en las últimas 8 horas?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][bronchodilator]', '1', !!(@exam.data[:bronchodilator] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][bronchodilator]', '0', !!(@exam.data[:bronchodilator] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>5. ¿Fumó (cualquier tipo de cigarro), en las últimas 2 horas?, si la respuesta es sí ¿cuántos?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][cigar]', '1', !!(@exam.data[:cigar] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][cigar]', '0', !!(@exam.data[:cigar] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label>
+                  </label>
+                </div>
+                <div class="col-lg-9">
+                  <label>6. ¿Realizó algún ejercicio fisico fuerte (como gimnasia, caminta o trotar), en la ultima hora?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][strong_exercise]', '1', !!(@exam.data[:strong_exercise] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][strong_exercise]', '0', !!(@exam.data[:strong_exercise] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>7. ¿Comió, en la última hora?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][comier_last_hour]', '1', !!(@exam.data[:comier_last_hour] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][comier_last_hour]', '0', !!(@exam.data[:comier_last_hour] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>7. ¿Ha sufrido de tuberculosis?. ¿Completó el tratamiento?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][tuberculosis]', '1', !!(@exam.data[:tuberculosis] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][tuberculosis]', '0', !!(@exam.data[:tuberculosis] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <label>9. Si es fumador ¿Ha fumado (cualquier cigarro), en las últimas 2 horas?</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][smoker]', '1', !!(@exam.data[:smoker] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][smoker]', '0', !!(@exam.data[:smoker] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9 table-hover">
+                  <label>10. ¿Sufre de asma?. Indicar ultimo espisodio</label>
+                </div>
+                <div class="col-lg-3">
+                  <%= radio_button_tag 'exam[data][asthma]', '1', !!(@exam.data[:asthma] == '1') %>
+                  <label>SI</label>
+                  <label></label>
+                  <label></label>
+                  <label></label>
+                  <%= radio_button_tag 'exam[data][asthma]', '0', !!(@exam.data[:asthma] == '0') %>
+                  <label>NO</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <h4><b>Nota de personal.</b></h4>
+              </div>
+              <div class="col-lg-12">
+                <div class="col-lg-3 table-hover">
+                  <label>Persona colabora con la prueba</label>
+                </div>
+                <div class="col-lg-2">
+                  <%= radio_button_tag 'exam[data][colaboration]', '0', !!(@exam.data[:colaboration] == '0') %>
+                </div>
+                <div class="col-lg-2 ">
+                  <label>No colabora</label>
+                </div>
+                <div class="col-lg-1">
+                  <%= radio_button_tag 'exam[data][colaboration]', '1', !!(@exam.data[:colaboration] == '1') %>
+                </div>
+                <div class="col-lg-3 table-hover">
+                  <label>Colabora de forma poco adecuada</label>
+                </div>
+                <div class="col-lg-1">
+                  <%= radio_button_tag 'exam[data][colaboration]', '2', !!(@exam.data[:colaboration] == '2') %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form class="form-horizontal">
+            <div class="box-body">
+              <div class="form-group">
+                <div class="col-sm-offset-5 col-sm-10">
+                  <%= f.submit 'Guardar', class:'btn btn-primary' %>
+                  <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane" id="activity">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <label>Resultados de Espirometría:</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label></label>
+              </div>
+              <div class="col-md-12">
+                <label></label>
+              </div>
+              <style type="text/css">
+              .tg  {border-collapse:collapse;border-spacing:0;}
+              .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+              .tg .tg-s268{font-weight:bold;text-align:center;vertical-align:top}
+              </style>
+              <div class="col-lg-12">
+                <div class="box-body table-responsive no-padding">
+                  <div class="col-lg-12">
+                    <table class="tg" style="undefined;table-layout: fixed; width: 962px">
+                      <colgroup>
+                        <col style="width: 217.88889px">
+                        <col style="width: 137.88889px">
+                        <col style="width: 113.88889px">
+                        <col style="width: 117.88889px">
+                        <col style="width: 125.88889px">
+                        <col style="width: 120.88889px">
+                        <col style="width: 127.88889px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-s268">Parámetros</th>
+                          <th class="tg-s268">Teórico</th>
+                          <th class="tg-s268">PRE</th>
+                          <th class="tg-s268">Teórico %</th>
+                          <th class="tg-s268">PRE#1</th>
+                          <th class="tg-s268">PRE#2</th>
+                          <th class="tg-s268">PRE#3</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">FVC</td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fvc_1]", @exam.data[:fvc_1], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fvc_2]", @exam.data[:fvc_2], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fvc_3]", @exam.data[:fvc_3], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fvc_4]", @exam.data[:fvc_4], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fvc_5]", @exam.data[:fvc_5], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fvc_6]", @exam.data[:fvc_6], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">FEV1</td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_1]", @exam.data[:fev_1], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_2]", @exam.data[:fev_2], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_3]", @exam.data[:fev_3], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_4]", @exam.data[:fev_4], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_5]", @exam.data[:fev_5], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_6]", @exam.data[:fev_6], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">FEV1/FVC</td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_fvc_1]", @exam.data[:fev_fvc_1], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_fvc_2]", @exam.data[:fev_fvc_2], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_fvc_3]", @exam.data[:fev_fvc_3], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_fvc_4]", @exam.data[:fev_fvc_4], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_fvc_5]", @exam.data[:fev_fvc_5], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_fvc_6]", @exam.data[:fev_fvc_6], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268">FEV 25% - 75%</td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_2575_1]", @exam.data[:fev_2575_1], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_2575_2]", @exam.data[:fev_2575_2], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_2575_3]", @exam.data[:fev_2575_3], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_2575_4]", @exam.data[:fev_2575_4], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_2575_5]", @exam.data[:fev_2575_5], class: 'form-control col-lg-12' %>
+                          </td>
+                          <td class="tg-s268">
+                            <%= text_field_tag "exam[data][fev_2575_6]", @exam.data[:fev_2575_6], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268" colspan="3">Calidad</td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][quality]", @exam.data[:quality], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268" colspan="3">Conclusiones</td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][conclusion]", @exam.data[:conclusion], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-s268" colspan="3">Recomendaciones y Control</td>
+                          <td class="tg-s268" colspan="4">
+                            <%= text_field_tag "exam[data][recommendations]", @exam.data[:recommendations], class: 'form-control col-lg-12' %>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

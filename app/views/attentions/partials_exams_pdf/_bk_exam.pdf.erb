@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="box box-default">
+        <div class="box-body">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-2">
+                <label class="col-lg-12">Laboratorio</label>
+              </div>
+              <div class="col-lg-9">
+                <%= text_field_tag "exam[data][type_laboratory]", @exam.data[:type_laboratory], value: @type_exam.name.capitalize , class: 'form-control col-lg-12',readonly: true %>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 text-center">
+            <div class="form-group">
+              <label>COLORACIÓN ZEEL NEELSEN</label>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label>Exámen microscópico</label>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label>1era muestra:</label>
+              <%= text_field_tag "exam[data][first]", @exam.data[:first], class: 'form-control' %>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label>Comentarios:</label>
+              <%= text_area_tag "exam[data][comments]", @exam.data[:comments], class: 'form-control', rows: '4' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

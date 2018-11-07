@@ -1,0 +1,691 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#activity">Resúmen Salud Ocupacional</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="active tab-pane" id="activity">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>Datos Generales:</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>DNI</label>
+                      <% if @edit == 0 %>
+                      <%= text_field_tag "exam[data][dni]", @attention.employee.dni, class: 'form-control col-lg-12', readonly: true %>
+                      <% else %>
+                      <%= text_field_tag "exam[data][dni]", @exam.data[:dni], class: 'form-control', readonly: true %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label>Nombres y Apellidos</label>
+                      <% if @edit == 0 %>
+                      <%= text_field_tag "exam[data][name_lastname]", @attention.employee.name, class: 'form-control col-lg-12', readonly: true %>
+                      <% else %>
+                      <%= text_field_tag "exam[data][name_lastname]", @exam.data[:name_lastname], class: 'form-control', readonly: true %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Fecha</label>
+                      <% if @edit == 0 %>
+                      <%= text_field_tag "exam[data][birthday]", @attention.employee.birthday, class: 'form-control col-lg-12', readonly: true %>
+                      <% else %>
+                      <%= text_field_tag "exam[data][birthday]", @exam.data[:birthday], class: 'form-control', readonly: true %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-lg-1">
+                    <div class="form-group">
+                      <label>Edad</label>
+                      <% if @edit == 0 %>
+                      <%= text_field_tag "exam[data][age]", @attention.employee.age, class: 'form-control col-lg-12', readonly: true %>
+                      <% else %>
+                      <%= text_field_tag "exam[data][age]", @exam.data[:age], class: 'form-control', readonly: true %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Sexo</label>
+                      <input class="form-control" placeholder="Sexo" readonly="readonly" type="text">
+                    </div>
+                  </div>
+                  <div class="col-lg-1">
+                    <div class="form-group">
+                      <label>Código</label>
+                      <% if @edit == 0 %>
+                      <%= text_field_tag "exam[data][code]", @attention.id, class: 'form-control col-lg-12', readonly: true %>
+                      <% else %>
+                      <%= text_field_tag "exam[data][code]", @exam.data[:code], class: 'form-control', readonly: true %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Empresa</label>
+                      <% if @edit == 0 %>
+                      <%= text_field_tag "exam[data][enterprise_name]", @attention.employee.enterprise.name, class: 'form-control col-lg-12', readonly: true %>
+                      <% else %>
+                      <%= text_field_tag "exam[data][enterprise_name]", @exam.data[:enterprise_name], class: 'form-control', readonly: true %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label>Cargo</label>
+                      <input class="form-control" placeholder="Cargo" readonly="readonly" type="text">
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Fecha de atención</label>
+                      <% if @edit == 0 %>
+                      <%= text_field_tag "exam[data][date_attention]", Time.now.to_date, class: 'form-control col-lg-12', readonly: true %>
+                      <% else %>
+                      <%= text_field_tag "exam[data][date_attention]", @exam.data[:date_attention], class: 'form-control', readonly: true %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label>Resumen:</label>
+                  </div>
+                </div>
+                <style type="text/css">
+                .tg  {border-collapse:collapse;border-spacing:0;}
+                .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg .tg-xldj{text-align:center;font-weight:bold;}
+                .tg .tg-0pky{text-align:center}
+                </style>
+              </div>
+              <div class="col-lg-12">
+                <div class="box-body table-responsive no-padding">
+                  <div class="col-lg-5">
+                    <table class="tg" style="undefined;table-layout: fixed; width: 350px">
+                      <colgroup>
+                        <col style="width: 160px">
+                        <col style="width: 170px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-xldj">Determinación</th>
+                          <th class="tg-xldj">Resultados</th>
+                        </tr>
+                        <% @medical_exam = TypeExam.find_by(view: 'medical_exam') %>
+                        <% @data_medical_exam = @attention.exams.find_by(type_exam_id: @medical_exam.id) if @edit == 0 %>
+                        <% @data_medical_exam = @exam.attention.exams.find_by(type_exam_id: @medical_exam.id) if @edit == 1 %>
+                        <tr>
+                          <td class="tg-xldj">Presión Arterial</td>
+                          <td class="tg-xldj">
+                            <% if @data_medical_exam.data[:pa].present? %>
+                            <%= text_field_tag "exam[data][pa]", @data_medical_exam.data[:pa], class: 'form-control', readonly:true %>
+                            <% else %>
+                            <%= text_field_tag "exam[data][pa]", '-', class: 'form-control' %>
+                            <% end %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Talla</td>
+                          <td class="tg-xldj">
+                            <% if @data_medical_exam.data[:size].present? %>
+                            <%= text_field_tag "exam[data][size]", @data_medical_exam.data[:size], class: 'form-control', readonly:true %>
+                            <% else %>
+                            <%= text_field_tag "exam[data][size]", '-', class: 'form-control', readonly:true %>
+                            <% end %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Peso</td>
+                          <td class="tg-0pky">
+                            <% if @data_medical_exam.data[:weight].present? %>
+                            <%= text_field_tag "exam[data][weight]", @data_medical_exam.data[:weight], class: 'form-control', readonly:true %>
+                            <% else %>
+                            <%= text_field_tag "exam[data][weight]", '-', class: 'form-control', readonly:true %>
+                            <% end %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">
+                            <label>IMC</label>
+                          </td>
+                          <td class="tg-0pky">
+                            <% if @data_medical_exam.data[:imc].present? %>
+                            <%= text_field_tag "exam[data][imc]", @data_medical_exam.data[:imc], class: 'form-control', readonly:true %>
+                            <% else %>
+                            <%= text_field_tag "exam[data][imc]", '-', class: 'form-control', readonly:true %>
+                            <% end %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Frecuencia Cardíaca</td>
+                          <td class="tg-0pky">
+                            <% if @data_medical_exam.data[:heart_rate].present? %>
+                            <%= text_field_tag "exam[data][heart_rate]", @data_medical_exam.data[:heart_rate], class: 'form-control', readonly:true %>
+                            <% else %>
+                            <%= text_field_tag "exam[data][heart_rate]", '-', class: 'form-control', readonly:true %>
+                            <% end %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Frecuencia Respiratoria</td>
+                          <td class="tg-0pky">
+                            <% if @data_medical_exam.data[:breathing_frequency].present? %>
+                            <%= text_field_tag "exam[data][breathing_frequency]", @data_medical_exam.data[:breathing_frequency], class: 'form-control', readonly:true %>
+                            <% else %>
+                            <%= text_field_tag "exam[data][breathing_frequency]", '-', class: 'form-control', readonly:true %>
+                            <% end %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Perímetro Abdominal</td>
+                          <td class="tg-0pky">
+                            <% if @data_medical_exam.data[:abdominal_perimeter].present? %>
+                            <%= text_field_tag "exam[data][abdominal_perimeter]", @data_medical_exam.data[:abdominal_perimeter], class: 'form-control', readonly:true %>
+                            <% else %>
+                            <%= text_field_tag "exam[data][abdominal_perimeter]", '-', class: 'form-control', readonly:true %>
+                            <% end %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Perímetro Cervical</td>
+                          <td class="tg-0pky">
+                            <% if @data_medical_exam.data[:cervical_perimeter].present? %>
+                            <%= text_field_tag "exam[data][cervical_perimeter]", @data_medical_exam.data[:cervical_perimeter], class: 'form-control', readonly:true %>
+                            <% else %>
+                            <%= text_field_tag "exam[data][cervical_perimeter]", '-', class: 'form-control', readonly:true %>
+                            <% end %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky" colspan="2" style="border:none"></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky">Grupo y Factor</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky">Cocaína</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky">Marihuana</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-lg-3">
+                    <table class="tg" style="undefined;table-layout: fixed; width: 250px">
+                      <colgroup>
+                        <col style="width: 120px">
+                        <col style="width: 130px">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="tg-xldj">Hemograma</th>
+                          <th class="tg-xldj">Resultados</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Hb</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Hto</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Leucocito</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Plaqueta</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky" colspan="2" style="border:none"></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky" colspan="2" style="border:none"></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky" colspan="2" style="border:none"></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky" colspan="2" style="border:none"></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky" colspan="2" style="border:none"></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Bioquímica</td>
+                          <td class="tg-xldj">Resultados</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Glucosa</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Colesterol total</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">Triglicéridos</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">HDL</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">LDL</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-xldj">VLDL</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky">Colinesterasa</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky">Úrea</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky">Creatinina</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky">TGO</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky">TGP</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0pky">Uroanálisis</td>
+                          <td class="tg-0pky">
+                            dato
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="col-sm-offset-2">
+                      <table class="tg" style="undefined;table-layout: fixed; width: 220px">
+                        <colgroup>
+                          <col style="width: 220px">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th class="tg-xldj">Valores referenciales</th>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">
+                              Abastonado     0.0%
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">
+                              Segmentado          66%
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">
+                              Linfocito&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;29%
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">
+                              Monocito&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.0%
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">
+                              Eusinofilo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.0%
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">
+                              Basolfilo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0%
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0lax" style="border:none"></td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0lax" style="border:none"></td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0lax" style="border:none"></td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0lax" style="border:none"></td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0lax" style="border:none"></td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0lax" style="border:none"></td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky" style="height: 50px">70 - 110    mg/dl</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky" style="height: 50px">&lt; 200</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky" style="height: 55px">30 a 160&nbsp;&nbsp;&nbsp;mg/dl</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky" style="height: 57px">25 a 68&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mg/dl</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky" style="height: 57px">
+                              <span style="font-style:italic">&lt; 140</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky" style="height: 54px">5 A 40      mg/dl</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky" style="height: 54px">
+                              <span>5,500 a 13,400 U/l</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky" style="height: 54px">
+                              <span style="font-style:italic">10-50               &nbsp;&nbsp;mg/dl</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky" style="height: 57px">
+                              <span style="font-style:italic">0.4-1.4            &nbsp;&nbsp;mg/dl</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky" style="height: 54px">
+                              <span style="font-style:italic">8-33                 C/U</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky" style="height: 54px">
+                              <span style="font-style:italic">8.35                 C/U</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <label></label>
+                  </div>
+                  <div class="col-lg-12">
+                    <label></label>
+                  </div>
+                  <div class="col-lg-12">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label>Conclusiones:</label>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-9">
+                  <table class="tg" style="undefined;table-layout: fixed; width: 669px">
+                    <colgroup>
+                      <col style="width: 183.88889px">
+                      <col style="width: 231.88889px">
+                      <col style="width: 252.88889px">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th class="tg-xldj">Conclusiones</th>
+                        <th class="tg-0pky" colspan="2">
+                          datos
+                        </th>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Audiometría</td>
+                        <th class="tg-0pky" colspan="2">
+                          datos
+                        </th>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Espirometría</td>
+                        <th class="tg-0pky" colspan="2">
+                          datos
+                        </th>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Rayos x OIT</td>
+                        <th class="tg-0pky" colspan="2">
+                          datos
+                        </th>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Rayos x</td>
+                        <th class="tg-0pky" colspan="2">
+                          datos
+                        </th>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj" rowspan="2">
+                          <br>
+                          Oftalmológico
+                          <br>
+                        </td>
+                        <td class="tg-0lax">
+                          <span style="font-weight:bold">EMÉTROPE :</span>
+                        </td>
+                        <td class="tg-0pky">
+                          datos
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0lax">
+                          <span style="font-weight:bold">TEST ISHIHARA :</span>
+                        </td>
+                        <td class="tg-0pky">
+                          datos
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj" rowspan="2">
+                          <br>
+                          Laboratorio Clínico
+                          <br>
+                        </td>
+                        <td class="tg-0lax">
+                          <span style="font-weight:bold">ANÁLISIS DE SANGRE :</span>
+                        </td>
+                        <td class="tg-0pky">
+                          datos
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-0lax">
+                          <span style="font-weight:bold">UROANÁLISIS :</span>
+                        </td>
+                        <td class="tg-0pky">
+                          datos
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Electrocardiograma</td>
+                        <td class="tg-0pky" colspan="2">
+                          datos
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Test de altura</td>
+                        <td class="tg-0pky" colspan="2">
+                          datos
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Test de Epworth</td>
+                        <td class="tg-0pky" colspan="2">
+                          datos
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj" rowspan="3">
+                          <br><br>Test de Estrés<br><br>
+                        </td>
+                        <td class="tg-0pky" colspan="2" rowspan="3">
+                          datos
+                        </td>
+                      </tr>
+                      <tr></tr>
+                      <tr></tr>
+                      <tr>
+                        <td class="tg-xldj">Evaluación Psicológica</td>
+                        <td class="tg-0pky" colspan="2">
+                          datos
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Odontograma</td>
+                        <td class="tg-0pky" colspan="2">
+                          datos
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Test de personalidad</td>
+                        <td class="tg-0pky" colspan="2">
+                          datos
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Odontología</td>
+                        <td class="tg-0pky" colspan="2">
+                          datos
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-lg-3">
+                  <table class="tg" style="undefined;table-layout: fixed; width: 225px">
+                    <colgroup>
+                      <col style="width: 162.88889px">
+                      <col style="width: 61.88889px">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th class="tg-xldj" colspan="2">Aptitud</th>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Apto</td>
+                        <td class="tg-xldj">
+                          <%= radio_button_tag 'exam[data][result]', '0', !!(@exam.data[:result] == '0') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">Apto con restricciones</td>
+                        <td class="tg-xldj">
+                          <%= radio_button_tag 'exam[data][result]', '1', !!(@exam.data[:result] == '1') %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="tg-xldj">No apto</td>
+                        <td class="tg-xldj">
+                          <%= radio_button_tag 'exam[data][result]', '2', !!(@exam.data[:result] == '2') %>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-lg-l2">
+                  <label class="col-lg-12">Recomendaciones</label>
+                  <%= text_area_tag "exam[data][recomendations]", @exam.data[:recomendations], class: 'form-control' %>
+                </div>
+                <div class="col-md-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-l2">
+                  <label class="col-lg-12">Interconsultas</label>
+                  <%= text_area_tag "exam[data][interconsultations]", @exam.data[:interconsultations], class: 'form-control' %>
+                </div>
+                <div class="col-md-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-l2">
+                  <label class="col-lg-12">Restricciones</label>
+                  <%= text_area_tag "exam[data][restrictions]", @exam.data[:restrictions], class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

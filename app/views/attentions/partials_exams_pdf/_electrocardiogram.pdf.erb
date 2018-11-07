@@ -1,0 +1,148 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#activity">Electrocardiograma</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="active tab-pane" id="activity">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="col-lg-3">
+                    <div class="form-group">
+                      <label>Patología cardiaca previa</label>
+                      <%= text_field_tag "exam[data][previous_cardiac_pathology]", @exam.data[:previous_cardiac_pathology], class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="form-group">
+                      <label>Medicación cardiológica</label>
+                      <%= text_field_tag "exam[data][cardiology_medication]", @exam.data[:cardiology_medication], class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Ritmo</label>
+                      <%= text_field_tag "exam[data][rhythm]", @exam.data[:rhythm], class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Frec. auricular(lpm)</label>
+                      <%= text_field_tag "exam[data][handset_lpm]", @exam.data[:handset_lpm], class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Frec. ventricular(lpm)</label>
+                      <%= text_field_tag "exam[data][ventricular_lpm]", @exam.data[:ventricular_lpm], class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="form-group">
+                      <label>Onda P (seg)</label>
+                      <%= text_field_tag "exam[data][ondap]", @exam.data[:ondap], class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>PR (seg)</label>
+                      <%= text_field_tag "exam[data][pr]", @exam.data[:pr], class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>Onda QRS (seg)</label>
+                      <%= text_field_tag "exam[data][qrs]", @exam.data[:qrs], class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="form-group">
+                      <label>QT (seg)</label>
+                      <%= text_field_tag "exam[data][qt]", @exam.data[:qt], class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="form-group">
+                      <label>QT Corregido (seg)</label>
+                      <%= text_field_tag "exam[data][corrected_qt]", @exam.data[:corrected_qt], class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label>Conclusión:</label>
+                  <%= text_area_tag "exam[data][conclusion]", @exam.data[:conclusion], class: 'form-control' %>
+                </div>
+                <div class="col-lg-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <label>Impresión diagnóstica:</label>
+                </div>
+                <div id="cie10">
+                  <% if @edit == 0 %>
+                  <div class="col-lg-6">
+                    <label>CIE 10:</label>
+                    <%= text_field_tag "exam[data][cie10][]", '', class: 'form-control' %>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>Descripción:</label>
+                    <%= text_field_tag "exam[data][description_cie10][]", '', class: 'form-control' %>
+                  </div>
+                  <% else %>
+                  <div class="col-lg-6">
+                    <% @exam.data[:cie10].each do |cie| %>
+                    <label>CIE 10:</label>
+                    <%= text_field_tag "exam[data][cie10][]", cie, class: 'form-control' %>
+                    <% end %>
+                  </div>
+                  <div class="col-lg-6">
+                    <% @exam.data[:description_cie10].each do |description| %>
+                    <label>Descripción:</label>
+                    <%= text_field_tag "exam[data][description_cie10][]", description, class: 'form-control' %>
+                    <% end %>
+                  </div>
+                  <% end %>
+                </div>
+                <div class="col-md-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <input class="btn btn-primary" type="button" id="add-cie10" value="+">
+                </div>
+                <div class="col-md-12">
+                  <label></label>
+                </div>
+                <div class="col-lg-12">
+                  <label>Recomendaciones y controles:</label>
+                  <%= text_area_tag "exam[data][recomendations]", @exam.data[:recomendations], class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="form-horizontal">
+          <div class="box-body">
+            <div class="form-group">
+              <div class="col-sm-offset-5 col-sm-10">
+                <%= f.submit 'Guardar', class:'btn btn-primary' %>
+                <%= link_to 'Volver', :back, class:'btn btn-danger' %>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,7 +14,7 @@ class Ability
       can :manage, :all
     elsif user.role_id == 'recepcionist'
       can :read, :all
-      can :crud, Attention
+      can :manage, Attention
       can :read, Employee
       can :read, Enterprise
       can :cru, Exam
