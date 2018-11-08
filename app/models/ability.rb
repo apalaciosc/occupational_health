@@ -23,7 +23,7 @@ class Ability
     elsif user.role_id == 'medical'
       can :read, Employee
       can [:read,:new_exams, :edit_exams, :exams], Attention
-      can [:crud], Exam
+      can [:crud, :save_exam], Exam
       can :cru, TypeExam
     end
   end
