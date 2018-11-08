@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_08_212540) do
+ActiveRecord::Schema.define(version: 2018_11_08_222604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,10 @@ ActiveRecord::Schema.define(version: 2018_11_08_212540) do
     t.date "license_expiration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar_clinic_file_name"
+    t.string "avatar_clinic_content_type"
+    t.integer "avatar_clinic_file_size"
+    t.datetime "avatar_clinic_updated_at"
   end
 
   create_table "type_exams", force: :cascade do |t|
