@@ -1,5 +1,6 @@
 class Attention < ApplicationRecord
   belongs_to :employee
+  belongs_to :user
   has_many :exams
   enum type_attention: [:'pre-ocupacional', :periódica, :retiro, :otro]
 
