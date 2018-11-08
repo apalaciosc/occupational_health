@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-        <title>
-        </title>
-        <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        </link>
-    </head>
-    <body>
-        <div class="logo-container logosize--yes zn-original-logo" id="logo-container">
-            <!-- Logo -->
-            <h3 class="site-logo logo " id="logo">
-                <a class="site-logo-anch" href="https://www.policlinicosanvicente.com/">
-                    <img alt="Policlinico San Vicente - Cañete" class="logo-img site-logo-img" src="https://www.policlinicosanvicente.com/wp-content/uploads/2018/03/Logo-Policlinico-San-Vicente-1.png" title="Laboratorio, Ecografias y Radiografias"/>
-                </a>
-                <p style="float: right;">
-                    <%= Time.now.strftime("%d/%m/%Y") %>
-                </p>
-            </h3>
-
-        </div>
-
-   <%= yield %>
-       
-    </body>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>
+  </title>
+  <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</link>
+</head>
+<body>
+  <div class="logo-container logosize--yes zn-original-logo" id="logo-container">
+    <h3 class="site-logo logo " id="logo">
+      <a class="site-logo-anch" href="">
+        <% if !Setting.first.avatar_clinic.url(:medium).include? '/avatars/medium/missing.png' %>
+        <%= wicked_pdf_image_tag Setting.first.avatar_clinic.url(:thumb), alt:'Clínica', class: "logo-img site-logo-img" %>
+        <% else %>
+        <%= wicked_pdf_image_tag ('default-profile.jpg'), alt:'Clínica', class: "logo-img site-logo-img" %>
+        <% end %>
+      </a>
+      <p style="float: right;">
+        <%= Time.now.strftime("%d/%m/%Y") %>
+      </p>
+    </h3>
+  </div>
+  <%= yield %>
+</body>
 </html>
-<!-- InfoCard -->
