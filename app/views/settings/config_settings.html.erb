@@ -10,11 +10,15 @@
           <div class="col-sm-4">
             <%= f.text_field :name_clinic, class: 'form-control', required: true %>
           </div>
+        </div>
+        <% if user_signed_in? && current_user.role_id == 'superadmin'%>
+        <div class="form-group">
           <label class="col-sm-2 control-label">Vencimiento licencia</label>
           <div class="col-sm-4">
             <%= f.date_field :license_expiration, class: 'form-control datepicker' %>
           </div>
         </div>
+        <% end %>
       </div>
       <div class="box-footer">
         <%= link_to 'Volver', :back, class:'btn btn-default' %>
