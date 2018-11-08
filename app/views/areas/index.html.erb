@@ -3,9 +3,6 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Áreas</h3>
-        <!-- <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false">
-          <img src="<%= asset_path 'User_Ad.ico' %>">
-        </a> -->
         <div class="box-tools">
           <form class="" action="/areas" method="get">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -29,25 +26,33 @@
             <tr>
               <td><%= area.name.capitalize %></td>
               <td><%= area.description.capitalize %></td>
+              <% if user_signed_in? && (current_user.role_id == 'superadmin' || current_user.role_id == 'admin')%>
               <td><a data-toggle="modal" data-target="#modalUpdate<%= area.id %>" data-backdrop="static" data-keyboard="false">Editar</a></td>
               <td><%= link_to 'Eliminar', area, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+              <% end %>
             </tr>
             <% end %>
           </tbody>
         </table>
       </div>
-      <%= will_paginate @areas, previous_label: "Atrás", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <%= will_paginate @areas, previous_label: "Atrás", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
+        </div>
+      </div>
     </div>
   </div>
+  <% if user_signed_in? && (current_user.role_id == 'superadmin' || current_user.role_id == 'admin')%>
   <div class="col-xs-12 text-center">
-    <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false" class="btn btn-success">
+    <a data-toggle="modal" data-target="#modalCreate_area" data-backdrop="static" data-keyboard="false" class="btn btn-success">
       Agregar área
     </a>
   </div>
+  <% end %>
 </div>
 
 <div class="container">
-  <div class="modal" id="modalCreate">
+  <div class="modal" id="modalCreate_area">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

@@ -54,7 +54,7 @@
               <td><%= employee.eps? ? "Si" : "No" %></td>
               <td><%= employee.sctr? ? "Si" : "No" %></td>
               <td><%= employee.other? ? "Si" : "No" %></td>
-              <% if current_user.role_id == 'admin' %>
+              <% if user_signed_in? && (current_user.role_id == 'superadmin' || current_user.role_id == 'admin' ||  current_user.role_id == 'recepcionist')%>
                 <td><%= link_to 'Editar', edit_employee_path(employee) %></td>
                 <td><%= link_to 'Eliminar', employee, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
               <% else %>
@@ -67,14 +67,5 @@
       </div>
         <%= will_paginate @employees, previous_label: "Atrás", next_label: "Siguiente", innner_window:1, outer_window: 0,renderer: BootstrapPagination::Rails %>
     </div>
-  </div>
-  <div class="col-xs-12 text-center">
-    <% if current_user.role_id == 'recepcionist' %>
-      <a></a>
-    <% else %>
-      <%= link_to new_employee_path, class: 'btn btn-success' do %>
-        Agregar empleado
-      <% end %>
-    <% end %>
   </div>
 </div>

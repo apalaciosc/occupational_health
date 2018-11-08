@@ -10,13 +10,13 @@ class Ability
     alias_action :create, :update, :delete, to: :cud
     alias_action :create, :read, :update, :delete, to: :crud
 
-    if user.role_id == 'admin'
+    if user.role_id == 'superadmin' || user.role_id == 'admin'
       can :manage, :all
     elsif user.role_id == 'recepcionist'
-      can :read, :all
-      can :crud, Attention
-      can :read, Employee
-      can :read, Enterprise
+      can [:crud, :particular_attention, :exams, :update_general], Attention
+      can [:index], Area
+      can :crud, Employee
+      can :crud, Enterprise
       can :cru, Exam
       can :cru, TypeExam
       can [:edit_profile], User

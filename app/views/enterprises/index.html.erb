@@ -54,7 +54,7 @@
               <td><%= enterprise.departament %></td>
               <td><%= enterprise.province %></td>
               <td><%= enterprise.district %></td>
-              <% if current_user.role_id == 'admin' %>
+              <% if user_signed_in? && (current_user.role_id == 'superadmin' || current_user.role_id == 'admin' ||  current_user.role_id == 'recepcionist')%>
                 <td><a data-toggle="modal" data-target="#modalUpdate<%= enterprise.id %>" data-backdrop="static" data-keyboard="false">Editar</a></td>
                 <td><%= link_to 'Eliminar', enterprise, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
               <% else %>
@@ -69,12 +69,10 @@
     </div>
   </div>
   <div class="col-xs-12 text-center">
-    <% if current_user.role_id == 'recepcionist' %>
-      <a></a>
-    <% else %>
-      <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false" class="btn btn-success">
-        Agregar empresa
-      </a>
+    <% if user_signed_in? && (current_user.role_id == 'superadmin' || current_user.role_id == 'admin' ||  current_user.role_id == 'recepcionist')%>
+    <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false" class="btn btn-success">
+      Agregar empresa
+    </a>
     <% end %>
   </div>
 </div>
