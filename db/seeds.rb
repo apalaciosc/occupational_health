@@ -46,3 +46,6 @@ if TypeExam.all.count == 0
   TypeExam.create(area_id:examen_medico.id ,name: 'test estructural de altura', view: 'height_test')
   TypeExam.create(area_id:psicologia.id ,name: 'test de personalidad', view: 'personality_test')
 end
+
+expiration = Time.now.to_date + 365
+Setting.create!([{ name_clinic: '', license_expiration: expiration }]) if Setting.count == 0

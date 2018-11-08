@@ -35,20 +35,23 @@
 $(function(){
   var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
   var today = new Date();
-  var date_exp = new Date().setDate(new Date().getDate() + 365)
-  if (today >= date_exp ) {
-    $.ajax({
-      url : '/users/sign_out',
-      type: 'DELETE',
-      data: {
-        authenticity_token: AUTH_TOKEN
-      },
-      success: function(res){
-        swal("Alerta", "Su licencia ha expirado", "warning");
-        window.setTimeout('redirect_login()',3000);
-      }
-    })
-  }
+  $.get('/settings/data_license', function(data){
+    date_exp = new Date(data.license_expiration)
+    role_user = data.role_user
+    if (today >= new Date(date_exp) && role_user != 'superadmin') {
+      $.ajax({
+        url : '/users/sign_out',
+        type: 'DELETE',
+        data: {
+          authenticity_token: AUTH_TOKEN
+        },
+        success: function(res){
+          swal("Alerta", "Su licencia ha expirado", "warning");
+          window.setTimeout('redirect_login()',3000);
+        }
+      })
+    }
+  })
   $('.chosen').chosen({ width: '100%', allow_single_deselect: true});
 })
 //Just numbers

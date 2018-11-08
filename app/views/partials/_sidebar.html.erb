@@ -17,7 +17,7 @@
     </div>
     <ul class="sidebar-menu tree" data-widget="tree">
       <li class="header">PANEL PRINCIPAL</li>
-      <% if user_signed_in? && current_user.role_id != 'medical'%>
+      <% if user_signed_in? && (current_user.role_id == 'superadmin' || current_user.role_id == 'admin' ||  current_user.role_id == 'recepcionist')%>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-dashboard"></i> <span>Empresas</span>
@@ -30,7 +30,7 @@
         </ul>
       </li>
       <% end %>
-      <% if user_signed_in? && current_user.role_id != 'medical'%>
+      <% if user_signed_in? && (current_user.role_id == 'superadmin' || current_user.role_id == 'admin' ||  current_user.role_id == 'recepcionist')%>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-child"></i> <span>Empleados</span>
@@ -40,12 +40,11 @@
         </a>
         <ul class="treeview-menu">
           <li class="active"><a href="/employees"><i class="fa fa-circle-o"></i> Ver todos</a></li>
-          <% if user_signed_in? && current_user.role_id == 'admin' %>
           <li><a href="/employees/new"><i class="fa fa-circle-o"></i> Nuevo empleado</a></li>
-          <% end %>
         </ul>
       </li>
       <% end %>
+
       <li class="treeview">
         <a href="#">
           <i class="fa fa-pie-chart"></i>
@@ -56,13 +55,16 @@
         </a>
         <ul class="treeview-menu" style="display: none;">
           <li><a href="/attentions"><i class="fa fa-circle-o"></i> Ver todas</a></li>
+          <% if user_signed_in? && (current_user.role_id == 'superadmin' || current_user.role_id == 'admin' ||  current_user.role_id == 'recepcionist')%>
           <li>
             <a data-toggle="modal" data-target="#modalCreate" data-backdrop="static" data-keyboard="false">
               <i class="fa fa-circle-o"></i> Nueva atención
             </a>
           </li>
+          <% end %>
         </ul>
       </li>
+      <% if user_signed_in? && (current_user.role_id == 'superadmin' || current_user.role_id == 'admin' ||  current_user.role_id == 'recepcionist')%>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-laptop"></i>
@@ -72,15 +74,12 @@
           </span>
         </a>
         <ul class="treeview-menu" style="display: none;">
-          <% if user_signed_in? && current_user.role_id == 'medical'%>
-          <li><a href="/type_exams"><i class="fa fa-circle-o"></i> Exámenes</a></li>
-          <% else %>
           <li><a href="/areas"><i class="fa fa-circle-o"></i> Ver todas</a></li>
           <li><a href="/type_exams"><i class="fa fa-circle-o"></i> Exámenes</a></li>
-          <% end %>
         </ul>
       </li>
-      <% if user_signed_in? && current_user.role_id == 'admin' %>
+      <% end %>
+      <% if user_signed_in? && (current_user.role_id == 'superadmin' || current_user.role_id == 'admin') %>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-fw fa-odnoklassniki"></i>
@@ -94,6 +93,20 @@
           <li><a href="/users/medicals"><i class="fa fa-circle-o"></i> Médicos</a></li>
           <li><a href="/users/recepcionists"><i class="fa fa-circle-o"></i> Recepcionistas</a></li>
           <li><a href="/users/new_user"><i class="fa fa-circle-o"></i> Nuevo usuario</a></li>
+        </ul>
+      </li>
+      <% end %>
+      <% if user_signed_in? && (current_user.role_id == 'superadmin' || current_user.role_id == 'admin') %>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-fw fa-cog"></i>
+          <span>Configuración</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu" style="display: none;">
+          <li><a href="/config_settings"><i class="fa fa-circle-o"></i> Avanzada</a></li>
         </ul>
       </li>
       <% end %>

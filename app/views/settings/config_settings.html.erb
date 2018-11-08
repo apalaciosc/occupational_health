@@ -1,0 +1,29 @@
+<div class="col-md-12">
+  <div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">Configuración avanzada</h3>
+    </div>
+    <%= form_for @setting, url: save_settings_path, method: :post, html: { class: "form-horizontal" } do |f| %>
+      <div class="box-body">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Nombre de institución</label>
+          <div class="col-sm-4">
+            <%= f.text_field :name_clinic, class: 'form-control', required: true %>
+          </div>
+        </div>
+        <% if user_signed_in? && current_user.role_id == 'superadmin'%>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Vencimiento licencia</label>
+          <div class="col-sm-4">
+            <%= f.date_field :license_expiration, class: 'form-control datepicker' %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="box-footer">
+        <%= link_to 'Volver', :back, class:'btn btn-default' %>
+        <%= f.submit  'Guardar' ,class: "btn btn-info pull-right" %>
+      </div>
+    <% end %>
+  </div>
+</div>
