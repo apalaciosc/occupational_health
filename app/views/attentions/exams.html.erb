@@ -49,46 +49,24 @@
                     </tr>
                     <% @exams.each_with_index do |e,index| %>
                     <% next if e.type_exam.view == 'occupational_health_summary' %>
-                    <% if current_user.role_id != 'medical' %>
-                      <tr>
-                        <td><%= index + 1 %></td>
-                        <td><%= e.type_exam.name.capitalize %></td>
-                        <td>
-                          <% if current_user.role_id == 'recepcionist' %>
-                            <a></a>
-                          <% else %>
-                            <a><%= link_to image_tag('User_Editar.ico', style:'width:25px'), exam_edit_path(:id => e.id, :type_exam => e.type_exam.id)%></a>
-                          <% end %>
-                          <a><img src="<%= asset_path 'pdft.jpg' %>" style="width:25px"></a>
-                        </td>
-                      </tr>
-                    <% elsif e.type_exam.area_id == current_user.area_id%>
-                      <tr>
-                        <td><%= index + 1 %></td>
-                        <td><%= e.type_exam.name.capitalize %></td>
-                        <td>
-                          <a><%= link_to image_tag('User_Editar.ico', style:'width:25px'), exam_edit_path(:id => e.id, :type_exam => e.type_exam.id)%></a>
-                          <a><img src="<%= asset_path 'pdft.jpg' %>" style="width:25px"></a>
-                        </td>
-                      </tr>
-                    <% end %>
+                    <tr>
+                      <td><%= index + 1 %></td>
+                      <td><%= e.type_exam.name.capitalize %></td>
+                      <td>
+                        <% if user_signed_in? && current_user.role_id == 'medical' && current_user.area_id == e.type_exam.area_id %>
+                        <a><%= link_to image_tag('User_Editar.ico', style:'width:25px'), exam_edit_path(id: e.id, type_exam: e.type_exam.id)%></a>
+                        <% end %>
+                        <a><img src="<%= asset_path 'pdft.jpg' %>" style="width:25px"></a>
+                      </td>
+                    </tr>
                     <% end %>
                   </tbody>
                 </table>
               </div>
-              <!-- <div class="box-footer clearfix">
-              <ul class="pagination pagination-sm no-margin pull-right">
-              <li><a href="#">«</a></li>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">»</a></li>
-            </ul>
-          </div> -->
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
 </div>

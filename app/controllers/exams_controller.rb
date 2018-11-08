@@ -5,6 +5,7 @@ class ExamsController < ApplicationController
   def save_exam
     if request.post?
       @exam = Exam.new(exam_params)
+      @exam.user_id = current_user.id
       if @exam.save
         flash[:notice] = "El exámen fue guardado correctamente."
         flash.keep(:notice)

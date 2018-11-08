@@ -38,6 +38,7 @@ class AttentionsController < ApplicationController
     @attention = Attention.new(attention_params)
     @attention.employee_id = params[:employee_id]
     @attention.nro_hc = '00'+ @attention.employee.dni.to_s + nro_attention.to_s
+    @attention.user_id = current_user.id
     if @attention.save
       flash[:notice] = "Creada correctamente."
       flash.keep(:notice)
@@ -53,6 +54,7 @@ class AttentionsController < ApplicationController
       nro_attention = Attention.where(employee_id: employee_id).count + 1
       @attention = Attention.new(attention_params)
       @attention.nro_hc = '00'+ @attention.employee.dni.to_s + nro_attention.to_s
+      @attention.user_id = current_user.id
       if @attention.save
         flash[:notice] = "Creada correctamente."
         flash.keep(:notice)

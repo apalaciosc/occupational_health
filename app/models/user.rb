@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   belongs_to :area, optional:true
+  has_many :attentions
+  has_many :exams
   enum role_id: [:superadmin, :admin, :medical, :recepcionist]
   attr_accessor :skip_password_validation, :skip_password_confirmation_validation
   # Include default devise modules. Others available are:

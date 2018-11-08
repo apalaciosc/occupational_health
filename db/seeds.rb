@@ -16,7 +16,7 @@ cardiologia = Area.find_by(name:'cardiología')
 
 if TypeExam.all.count == 0
   #exámenes
-  TypeExam.create(area_id:examen_medico.id ,name: 'C.A.M.O', view: 'camo')
+  TypeExam.create(area_id:examen_medico.id ,name: 'Certificado de aptitud médico ocupacional', view: 'camo')
   TypeExam.create(area_id:examen_medico.id ,name: 'Resumen exámen ocupacional', view: 'occupational_health_summary')
   TypeExam.create(area_id:examen_medico.id ,name: 'exámen médico', view: 'medical_exam')
   TypeExam.create(area_id:examen_medico.id ,name: 'exámen físico', view: 'physical_exam')

@@ -10,6 +10,10 @@
           <div class="col-sm-4">
             <%= f.text_field :name_clinic, class: 'form-control', required: true %>
           </div>
+          <label class="col-sm-2 control-label">Logo institución</label>
+          <div class="col-sm-4">
+            <%= f.file_field :avatar_clinic, class: "form-control input-sm" %>
+          </div>
         </div>
         <% if user_signed_in? && current_user.role_id == 'superadmin'%>
         <div class="form-group">
